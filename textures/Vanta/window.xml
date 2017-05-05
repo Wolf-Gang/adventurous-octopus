@@ -1,0 +1,8 @@
+<atlas>
+	<rain
+	x="0"
+	y="0"
+	w="64"
+	h="64"
+	frames="3" interval="75" loop="true"/>
+</atlas>

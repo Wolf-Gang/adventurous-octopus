@@ -1,0 +1,67 @@
+<atlas>
+  <default:right
+	  x="96"
+	  y="0"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:left
+	  x="144"
+	  y="0"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:down
+	  x="0"
+	  y="0"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:up
+	  x="48"
+	  y="0"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:default
+	  x="16"
+	  y="0"
+	  w="16"
+	  h="27"/>
+	  
+  <unstable:right
+	  x="96"
+	  y="27"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <unstable:left
+	  x="144"
+	  y="27"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <unstable:down
+	  x="0"
+	  y="27"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <unstable:up
+	  x="48"
+	  y="27"
+	  w="16"
+	  h="27"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <unstable:default
+	  x="16"
+	  y="27"
+	  w="16"
+	  h="27"/>
+	  
+  <sit_right
+	  x="192"
+	  y="0"
+	  w="16"
+	  h="27"/>
+</atlas>

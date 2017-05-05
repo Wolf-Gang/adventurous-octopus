@@ -1,0 +1,96 @@
+<atlas>
+	<default:down
+		x="0" 
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="300" loop="1"/>
+	<default:right
+		x="30" 
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="300" loop="1"/>
+	<default:up
+    x="540"
+    y="0"
+    w="15"
+    h="26"
+    frames="2" interval="300" loop="1"/>
+	<default:left
+		x="90" 
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="300" loop="1"/>
+	<default:default
+		x="0" 
+		y="0" 
+		w="15" 
+		h="26"/>
+	<talk
+		x="120" 
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<talk_sinister
+		x="180"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<talk_squint
+		x="300"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<talk_happy
+		x="210"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<talk_blank
+		x="150"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<blank_left
+		x="240"
+		y="0" 
+		w="15" 
+		h="26"
+		/>
+	<blank_right
+		x="255"
+		y="0" 
+		w="15" 
+		h="26"
+		/>
+	<talk_squint_right
+		x="270"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<talk_whatever
+		x="330"
+		y="0" 
+		w="15" 
+		h="26"
+		frames="2" interval="200" loop="1"/>
+	<no_face
+		x="405"
+		y="0" 
+		w="15" 
+		h="26"/>
+  <back_up_talk
+    x="510"
+    y="0"
+    w="15"
+    h="26"
+    frames="2" interval="200" loop="1"/>
+</atlas>

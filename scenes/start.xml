@@ -1,0 +1,8 @@
+<scene>
+    <boundary w="31" h="800"/>
+    <map>
+        <texture>hub_atlas</texture>
+    </map>
+    <collisionboxes>
+    </collisionboxes>
+</scene>

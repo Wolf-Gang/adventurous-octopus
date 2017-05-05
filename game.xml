@@ -1,0 +1,9 @@
+<game>
+	<scene  name="start"/>
+	
+	<player texture="somedude1"/>
+	
+	<tile_size pixels="32"/>
+	
+	<!-- Left to the defaults -->
+</game>

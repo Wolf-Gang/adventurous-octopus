@@ -1,0 +1,65 @@
+<atlas>
+	<light
+		x="0" 
+		y="0" 
+		w="96" 
+		h="64"/>
+	<cold_light
+		x="128" 
+		y="0" 
+		w="96" 
+		h="64"/>
+	<eyes1
+		x="0" 
+		y="64" 
+		w="32" 
+		h="32"/>
+	<eyes2
+		x="32" 
+		y="64" 
+		w="32" 
+		h="32"/>
+	<eyes3
+		x="0" 
+		y="96" 
+		w="32" 
+		h="32"
+		frames="4" pingpong="1" interval="500"/>
+	<light_thingy
+		x="64"
+		y="64"
+		w="7"
+		h="7"
+		frames="6" interval="100" loop="1"/>
+	<path
+		x="96"
+		y="16"
+		w="32"
+		h="32"/>
+	<full_wall
+		x="160"
+		y="64"
+		w="32"
+		h="64"/>
+	<sign
+		x="128"
+		y="64"
+		w="32"
+		h="32"/>
+	<light_disperse
+		x="0"
+		y="128"
+		w="32"
+		h="64"
+		frames="6" interval="100"/>
+	<door_blue
+		x="192"
+		y="64"
+		w="32"
+		h="32"/>
+	<door_red
+		x="192"
+		y="96"
+		w="32"
+		h="32"/>
+</atlas>

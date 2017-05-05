@@ -1,0 +1,33 @@
+<atlas>
+	<default:default
+		x="0"
+		y="0"
+		w="32"
+		h="34"/>
+	<default:down
+		x="0"
+		y="0"
+		w="32"
+		h="34"/>
+	<default:up
+		x="0"
+		y="34"
+		w="32"
+		h="34"/>
+	<default:left
+		x="0"
+		y="68"
+		w="32"
+		h="34"/>
+	<default:right
+		x="0"
+		y="102"
+		w="32"
+		h="34"/>	
+	<talk
+		x="0"
+		y="136"
+		w="32"
+		h="34"
+		frames="2" interval="200" loop="1"/>	
+</atlas>

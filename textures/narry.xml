@@ -1,0 +1,32 @@
+<atlas>
+  <default:right
+	  x="0"
+	  y="77"
+	  w="29"
+	  h="39"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:left
+	  x="0"
+	  y="39"
+	  w="29"
+	  h="38"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:down
+	  x="0"
+	  y="0"
+	  w="28"
+	  h="39"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:up
+	  x="0"
+	  y="115"
+	  w="28"
+	  h="40"
+	  frames="3" interval="160" pingpong="1" default="1"/>
+  <default:default
+	  x="28"
+	  y="0"
+	  w="28"
+	  h="37"
+	  />
+</atlas>

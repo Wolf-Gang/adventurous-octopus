@@ -1,0 +1,25 @@
+<atlas>
+  <default:default 
+    x="26"
+    y="0"
+    w="26"
+    h="48"/>
+	<default:down
+	x="0"
+    y="0"
+    w="26"
+    h="48"
+	frames="3" interval="200" pingpong="1" default="1"/>
+	<magic
+	x="0"
+	y="48"
+	w="45"
+	h="46"
+	frames="4" interval="150" loop="true"/>
+	<death
+	x="0"
+	y="94"
+	w="25"
+	h="46"
+	frames="5" interval="100"/>
+</atlas>

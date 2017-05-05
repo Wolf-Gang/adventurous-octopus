@@ -1,0 +1,19 @@
+<atlas>
+	<nothiding
+		x="0" 
+		y="0" 
+		w="32" 
+		h="32"
+		frames="4" interval="400" loop="1"/>
+	<hiding
+		x="128" 
+		y="0" 
+		w="32" 
+		h="32"/>
+	<sneaking
+		x="160" 
+		y="0" 
+		w="32" 
+		h="32"
+		frames="2" interval="400" loop="1"/>
+</atlas>

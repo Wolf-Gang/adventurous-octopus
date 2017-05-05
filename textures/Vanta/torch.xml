@@ -1,0 +1,20 @@
+<atlas>
+	<torch
+	x="0"
+	y="32"
+	w="32"
+	h="32"
+	/>
+	<ignite
+	x="32"
+	y="0"
+	w="32"
+	h="64"
+	frames="8" interval="100"/>
+	<light
+	x="288"
+	y="0"
+	w="32"
+	h="64"
+	frames="8" interval="100" loop="true"/>
+</atlas>

@@ -1,0 +1,12 @@
+<atlas>
+	<shadow
+		x="0" 
+		y="0" 
+		w="32" 
+		h="16"/>
+	<small_shadow
+		x="0" 
+		y="16" 
+		w="16" 
+		h="8"/>
+</atlas>

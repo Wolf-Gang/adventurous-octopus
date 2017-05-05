@@ -1,0 +1,8 @@
+<atlas>
+	<flash
+	x="0"
+	y="y"
+	w="64"
+	h="64"
+	frames="8" interval="100"/>
+</atlas>

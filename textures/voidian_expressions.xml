@@ -1,0 +1,14 @@
+<atlas>
+	<neutral
+		x="0"
+		y="0"
+		w="62"
+		h="62"
+		frames="2" interval="160" loop="1"/>
+	<angry
+		x="124"
+		y="0"
+		w="62"
+		h="62"
+		frames="2" interval="160" loop="1"/>
+</atlas>

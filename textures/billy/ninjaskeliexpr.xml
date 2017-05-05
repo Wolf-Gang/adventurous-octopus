@@ -1,0 +1,26 @@
+<atlas>
+	<face
+		x="0" 
+		y="0" 
+		w="69" 
+		h="69"
+		frames="2" interval="200" loop="true"/>
+	<cough_talk
+		x="276" 
+		y="0" 
+		w="69" 
+		h="69"
+		frames="2" interval="200" loop="true"/>
+	<umm_talk
+		x="138" 
+		y="0" 
+		w="69" 
+		h="69"
+		frames="2" interval="200" loop="true"/>
+	<chill_talk
+		x="414" 
+		y="0" 
+		w="69" 
+		h="69"
+		frames="2" interval="200" loop="true"/>
+</atlas>

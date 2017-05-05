@@ -1,0 +1,49 @@
+<atlas>
+  <default:default
+	  x="0"
+	  y="0"
+	  w="20"
+	  h="24"/>
+  <default:left
+	  x="260"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="3" interval="100" pingpong="1" default="1"/>
+  <default:right
+	  x="200"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="3" interval="100" pingpong="1" default="1"/>
+  <default:up
+	  x="140"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="3" interval="100" pingpong="1" default="1"/>
+  <default:down
+	  x="80"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="3" interval="100" pingpong="1" default="1"/>
+  <talk
+	  x="0"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="2" interval="160" loop="1"/>
+  <dance
+	  x="40"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="2" interval="100" loop="1"/>
+  <attack
+	  x="320"
+	  y="0"
+	  w="20"
+	  h="24"
+	  frames="2" interval="300"/>
+</atlas>

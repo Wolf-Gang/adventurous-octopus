@@ -1,0 +1,8 @@
+<atlas>
+  <default:default 
+    x="0"
+    y="0"
+    w="96"
+    h="96"
+	frames="8" interval="200"/>
+</atlas>

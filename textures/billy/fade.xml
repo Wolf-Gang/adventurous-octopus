@@ -1,0 +1,12 @@
+<atlas>
+	<fade_left
+		x="0" 
+		y="0" 
+		w="186" 
+		h="256"/>
+	<fade_right
+		x="186" 
+		y="0" 
+		w="186" 
+		h="256"/>
+</atlas>

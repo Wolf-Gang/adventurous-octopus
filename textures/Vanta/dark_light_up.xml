@@ -1,0 +1,19 @@
+<atlas>
+	<dark
+	x="0"
+	y="0"
+	w="64"
+	h="64"/>
+	<light
+	x="64"
+	y="0"
+	w="64"
+	h="64"
+	frames="8" interval="100"/>
+	<flicker
+	x="576"
+	y="0"
+	w="64"
+	h="64"
+	frames="2" interval="100" loop="1"/>
+</atlas>
