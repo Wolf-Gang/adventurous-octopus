@@ -1,0 +1,52 @@
+<scene>
+    <boundary w="10" h="10"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="0">
+            <ground x="1" y="0" w="9"/>
+            <ground x="0" y="1" w="10" h="8"/>
+            <ground x="0" y="9" w="10" r="2"/>
+        </layer>
+        <layer id="1">
+            <cloud_tile x="0" y="0" r="1"/>
+            <side_clouds x="1" y="0"/>
+            <side_clouds x="3.5" y="0" r="2"/>
+            <cloud_tile x="4.5" y="0" h="2"/>
+            <side_clouds x="5.5" y="0"/>
+            <side_clouds x="8" y="0" r="2"/>
+            <cloud_tile x="9" y="0" h="2"/>
+            <cloud_tile x="0" y="1"/>
+            <side_cloud_corner x="0" y="2" r="1"/>
+            <side_clouds_edge x="1" y="2" r="1"/>
+            <side_clouds_edge x="3.5" y="2" r="2"/>
+            <side_cloud x="4.5" y="2" r="1"/>
+            <side_clouds_edge x="5.5" y="2" r="1"/>
+            <side_clouds_edge x="8" y="2" r="2"/>
+            <side_cloud_corner x="9" y="2" r="2"/>
+            <side_cloud x="0" y="3"/>
+            <side_cloud x="9" y="3" r="2"/>
+            <side_clouds x="0" y="4"/>
+            <side_clouds x="9" y="4" r="2"/>
+            <side_clouds x="0" y="6"/>
+            <side_clouds x="9" y="6" r="2"/>
+            <side_clouds x="0" y="8"/>
+            <side_clouds x="9" y="8" r="2"/>
+        </layer>
+        <layer id="2">
+            <hearts x="2.5" y="-0.5" h="4"/>
+            <hearts x="6.5" y="-0.5" h="4"/>
+            <fork_sign x="4.5" y="1"/>
+            <hearts x="2.5" y="3.5" w="5"/>
+            <hearts x="4.5" y="4.5" h="5"/>
+            <hearts x="4.5" y="9.5"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="0" y="0" w="1" h="10"/>
+        <door x="1" y="10" w="8" h="1" name="south" destination="north" scene="start" offsetx="0" offsety="-1"/>
+        <wall x="9" y="0" w="1" h="10"/>
+        <wall x="1" y="0" w="1" h="3"/>
+        <wall x="3.5" y="0" w="3" h="3"/>
+        <wall x="8" y="0" w="1" h="3"/>
+    </collisionboxes>
+</scene>

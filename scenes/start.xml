@@ -1,5 +1,5 @@
 <scene>
-    <boundary w="10" h="20"/>
+    <boundary w="10" h="14"/>
     <map>
         <texture>dreamland</texture>
         <layer id="0">
@@ -11,10 +11,26 @@
             <hearts x="4.5" y="0" h="13"/>
             <house x="7" y="0"/>
             <house x="1" y="2"/>
+            <flowers x="5.5" y="2"/>
+            <flowers x="6.5" y="2" r="3"/>
             <hearts x="5.5" y="3" w="3"/>
+            <flowers x="8.5" y="3" r="2"/>
+            <flowers x="0.5" y="4" h="2"/>
+            <flowers x="3.5" y="4"/>
+            <flowers x="5.5" y="4" r="3"/>
+            <flowers x="6.5" y="4" w="2"/>
+            <flowers x="8.5" y="4" r="1"/>
             <hearts x="1.5" y="5" w="3"/>
+            <flowers x="0.5" y="6" r="2"/>
+            <flowers x="1.5" y="6"/>
+            <flowers x="2.5" y="6" r="1"/>
+            <flowers x="3.5" y="6" r="2"/>
             <house x="7" y="6"/>
+            <flowers x="5.5" y="8" r="2"/>
+            <flowers x="6.5" y="8" r="1"/>
             <hearts x="5.5" y="9" w="3"/>
+            <flowers x="8.5" y="9" r="2"/>
+            <flowers x="5.5" y="10" w="4" r="3"/>
             <hearts x="4.5" y="13"/>
         </layer>
         <layer id="2">
@@ -36,12 +52,14 @@
     </map>
     <collisionboxes>
         <trigger x="3" y="5" w="4" h="1" group="meetunicorn"/>
-        <wall x="9" y="0" w="1" h="12"/>
-        <wall x="0" y="0" w="1" h="12"/>
+        <wall x="9" y="0" w="1" h="14"/>
+        <wall x="0" y="0" w="1" h="14"/>
         <wall x="1" y="2" w="2" h="3"/>
         <wall x="7" y="6" w="2" h="3"/>
         <wall x="7" y="0" w="2" h="3"/>
         <button x="1" y="4" w="2" h="1" group="lockedhouse"/>
         <button x="7" y="8" w="2" h="1" group="lockedhouse"/>
+        <door x="1" y="-1" w="8" h="1" name="north" destination="south" scene="fork" offsetx="0" offsety="1"/>
+        <wall x="1" y="14" w="8" h="1"/>
     </collisionboxes>
 </scene>
