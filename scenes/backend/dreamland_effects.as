@@ -21,3 +21,14 @@ void dreamland_clouds()
 			set_position(cloud, focus::get() - vec(random(-4, 4), 2));
 	} while(yield());
 }
+
+void unicorn_disappear(entity pUnicorn)
+{
+	scoped_entity hearts = add_entity("heartsburst");
+	set_position(hearts , get_position(pUnicorn));
+	
+	remove_entity(pUnicorn);
+	animation::start(hearts);
+	animation::play_wait(hearts);
+}
+

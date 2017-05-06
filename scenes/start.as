@@ -19,7 +19,7 @@ void create_unicorn()
 [start]
 void start()
 {
-	music::open("doodle104");
+	music::open("doodle104_2");
 	music::volume(70);
 	set_position(get_player(), vec(5, 13));
 	set_direction(get_player(), direction::up);
@@ -47,14 +47,7 @@ void meetunicorn()
 	narrative::end();
 	
 	
-	{
-		scoped_entity hearts = add_entity("heartsburst");
-		set_position(hearts , get_position(unicorn));
-		
-		remove_entity(unicorn);
-		animation::start(hearts);
-		animation::play_wait(hearts);
-	}
+	unicorn_disappear(unicorn);
 	
 	music::fade_volume(70, 1);
 	focus::move(get_position(get_player()), 0.5);
