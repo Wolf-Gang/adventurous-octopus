@@ -1,5 +1,8 @@
 <atlas>
+    <cloud x="64" y="32" w="64" h="64"/>
     <ground x="0" y="0" w="32" h="32"/>
+    <hearts x="32" y="32" w="32" h="32"/>
+    <house x="0" y="96" w="64" h="96" loop="1"/>
     <path x="64" y="0" w="32" h="32"/>
     <path_corner x="96" y="0" w="32" h="32"/>
     <path_end x="32" y="0" w="32" h="32"/>

@@ -1,15 +1,47 @@
 <scene>
-    <boundary w="31" h="800"/>
+    <boundary w="10" h="20"/>
     <map>
         <texture>dreamland</texture>
         <layer id="0">
-            <ground x="0" y="0" w="10" h="10" r="1"/>
-            <ground x="0" y="10" w="10" r="1"/>
+            <ground x="0" y="0" w="10" h="11" r="1"/>
+            <ground x="0" y="11" w="10" h="2"/>
+            <ground x="0" y="13" w="10"/>
         </layer>
         <layer id="1">
-            <path x="4.5" y="0" h="10" r="1"/>
-            <path x="4.5" y="10" r="1"/>
+            <hearts x="4.5" y="0" h="13"/>
+            <house x="7" y="0"/>
+            <house x="1" y="2"/>
+            <hearts x="5.5" y="3" w="3"/>
+            <hearts x="1.5" y="5" w="3"/>
+            <house x="7" y="6"/>
+            <hearts x="5.5" y="9" w="3"/>
+            <hearts x="4.5" y="13"/>
+        </layer>
+        <layer id="2">
+            <side_clouds x="0" y="0"/>
+            <side_clouds x="9" y="0" r="2"/>
+            <side_clouds x="0" y="2"/>
+            <side_clouds x="9" y="2" r="2"/>
+            <side_clouds x="0" y="4"/>
+            <side_clouds x="9" y="4" r="2"/>
+            <side_clouds x="0" y="6"/>
+            <side_clouds x="9" y="6" r="2"/>
+            <side_clouds x="0" y="8"/>
+            <side_clouds x="9" y="8" r="2"/>
+            <side_clouds x="0" y="10"/>
+            <side_clouds x="9" y="10" r="2"/>
+            <side_clouds x="0" y="12"/>
+            <side_clouds x="9" y="12" r="2"/>
         </layer>
     </map>
-    <collisionboxes/>
+    <collisionboxes>
+        <trigger x="3" y="5" w="4" h="1" group="meetunicorn"/>
+        <wall x="9" y="0" w="1" h="12"/>
+        <wall x="0" y="0" w="1" h="12"/>
+        <wall x="1" y="2" w="2" h="3"/>
+        <wall x="7" y="6" w="2" h="3"/>
+        <wall x="7" y="0" w="2" h="3"/>
+        <button x="1" y="4" w="2" h="1" group="lockedhouse"/>
+        <button x="7" y="8" w="2" h="1" group="lockedhouse"/>
+    </collisionboxes>
 </scene>

@@ -1,7 +1,7 @@
 <game>
 	<scene  name="start"/>
 	
-	<player texture="somedude1"/>
+	<player texture="mc"/>
 	
 	<tile_size pixels="32"/>
 	
