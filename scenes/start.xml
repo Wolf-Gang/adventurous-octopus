@@ -1,8 +1,15 @@
 <scene>
     <boundary w="31" h="800"/>
     <map>
-        <texture>hub_atlas</texture>
+        <texture>dreamland</texture>
+        <layer id="0">
+            <ground x="0" y="0" w="10" h="10" r="1"/>
+            <ground x="0" y="10" w="10" r="1"/>
+        </layer>
+        <layer id="1">
+            <path x="4.5" y="0" h="10" r="1"/>
+            <path x="4.5" y="10" r="1"/>
+        </layer>
     </map>
-    <collisionboxes>
-    </collisionboxes>
+    <collisionboxes/>
 </scene>
