@@ -5,6 +5,8 @@ entity unicorn;
 [start]
 void start()
 {
+	music::open("doodle104_2");
+	music::volume(70);
 	set_position(get_player(), vec(3, 0));
 }
 
