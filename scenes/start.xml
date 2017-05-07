@@ -61,5 +61,6 @@
         <button x="7" y="8" w="2" h="1" group="lockedhouse"/>
         <door x="1" y="-1" w="8" h="1" name="north" destination="south" scene="fork" offsetx="0" offsety="1"/>
         <wall x="1" y="14" w="8" h="1"/>
+        <button x="7" y="2" w="2" h="1" group="lockedhouse"/>
     </collisionboxes>
 </scene>
