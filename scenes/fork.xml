@@ -49,5 +49,6 @@
         <wall x="3.5" y="0" w="3" h="3"/>
         <wall x="8" y="0" w="1" h="3"/>
         <trigger x="1" y="7" w="8" h="1" group="talktounicorn"/>
+        <door x="2" y="-1" w="1.5" h="1" name="left" destination="south" scene="bridge" offsetx="0" offsety="1"/>
     </collisionboxes>
 </scene>

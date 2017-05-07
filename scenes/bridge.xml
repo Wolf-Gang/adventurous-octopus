@@ -1,0 +1,41 @@
+<scene>
+    <boundary x="0" y="-3" w="30" h="8"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="-1">
+            <fade x="12" y="-2" w="15"/>
+        </layer>
+        <layer id="0">
+            <ground x="0" y="-3" w="12" h="7"/>
+            <ground x="12" y="-3" w="15"/>
+            <rainbowbridge x="12" y="0" w="15"/>
+            <ground x="0" y="4" w="27"/>
+        </layer>
+        <layer id="1">
+            <side_cloud_corner x="0" y="-3" r="1"/>
+            <side_cloud x="1" y="-3" w="26" r="1"/>
+            <side_cloud x="0" y="-2"/>
+            <side_clouds x="0" y="-1"/>
+            <sparkles x="12" y="0" w="15" h="2"/>
+            <side_clouds x="0" y="1"/>
+            <side_cloud x="0" y="3"/>
+            <side_cloud_corner x="0" y="4"/>
+            <side_cloud x="1" y="4" w="2" r="3"/>
+            <side_cloud x="2.5" y="4" r="3"/>
+            <side_clouds_edge x="3.5" y="4"/>
+            <side_clouds_edge x="6" y="4" r="3"/>
+            <side_cloud x="7" y="4" w="20" r="3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="12" y="2" w="15" h="3"/>
+        <wall x="12" y="-3" w="15" h="3"/>
+        <wall x="1" y="-3" w="11" h="1"/>
+        <wall x="0" y="-3" w="1" h="7"/>
+        <wall x="10" y="4" w="2" h="1"/>
+        <wall x="0" y="4" w="4.5" h="1"/>
+        <wall x="6" y="4" w="4" h="1"/>
+        <door x="4.5" y="5" w="1.5" h="1" name="south" destination="left" scene="fork" offsetx="0" offsety="-1"/>
+        <trigger x="9" y="-2" w="1" h="6" group="talktounicorn"/>
+    </collisionboxes>
+</scene>

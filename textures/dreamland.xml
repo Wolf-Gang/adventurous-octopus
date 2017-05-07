@@ -1,16 +1,19 @@
 <atlas>
     <cloud x="64" y="32" w="64" h="64"/>
     <cloud_tile x="128" y="0" w="32" h="32"/>
+    <fade x="160" y="96" w="32" h="192"/>
     <flowers x="32" y="64" w="32" h="32"/>
     <fork_sign x="160" y="32" w="32" h="64" frames="2" interval="600" loop="1"/>
     <ground x="0" y="0" w="32" h="32"/>
     <hearts x="32" y="32" w="32" h="32"/>
-    <house x="0" y="96" w="64" h="96" loop="1"/>
+    <house x="0" y="96" w="64" h="96"/>
     <path x="64" y="0" w="32" h="32"/>
     <path_corner x="96" y="0" w="32" h="32"/>
     <path_end x="32" y="0" w="32" h="32"/>
+    <rainbowbridge x="0" y="192" w="32" h="64"/>
     <side_cloud x="128" y="96" w="32" h="32"/>
     <side_cloud_corner x="128" y="64" w="32" h="32"/>
     <side_clouds x="0" y="32" w="32" h="64"/>
     <side_clouds_edge x="128" y="32" w="32" h="32"/>
+    <sparkles x="32" y="192" w="32" h="32" frames="4" interval="200" loop="1"/>
 </atlas>

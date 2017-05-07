@@ -1,21 +1,18 @@
 #include "backend/dreamland_effects.as"
 
+entity unicorn;
+
 [start]
 void start()
 {
-	music::open("doodle104_2");
-	music::volume(70);
-	set_position(get_player(), vec(5, 9));
-	set_direction(get_player(), direction::up);
+	set_position(get_player(), vec(3, 0));
 }
-
-entity unicorn;
 
 [start]
 void create_unicorn()
 {
 	unicorn = add_entity("unicorn", "talk");
-	set_position(unicorn, vec(5,5));
+	set_position(unicorn, vec(11,1));
 }
 
 
@@ -27,9 +24,10 @@ void talktounicorn()
 	//focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
 	narrative::show();
 	narrative::set_speaker(unicorn);
-	say("OH NO! It's a fork!");
-	nl("Watch out for these.\nThey'll eat you right up!");
-	say("In this case, veer left\nand you might make it.");
+	say("Hello again.");
+	say("This is the bridge of your\nhopes and dreams.");
+	say("I have some place to be at the\nmoment so I won\'t see you for\na while.");
+	say("Don't get lost and die.");
 	narrative::end();
 	
 	
