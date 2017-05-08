@@ -8,6 +8,7 @@
         </layer>
         <layer id="1">
             <stairs_down x="2" y="-3"/>
+            <vase x="3" y="0"/>
         </layer>
     </map>
     <collisionboxes>
@@ -21,5 +22,6 @@
         <wall x="-4" y="1" w="1" h="1"/>
         <wall x="-4" y="-3" w="1" h="1"/>
         <button x="-4" y="-1" w="1" h="1.5" group="housedude"/>
+        <wall x="3" y="0" w="1" h="2"/>
     </collisionboxes>
 </scene>
