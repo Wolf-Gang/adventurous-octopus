@@ -27,5 +27,6 @@
         <wall x="4" y="5" w="2" h="1"/>
         <wall x="5.8000002" y="6" w="1" h="2"/>
         <wall x="3.2" y="6" w="1" h="2"/>
+        <button x="4" y="5" w="2" h="1" group="eyetoeye"/>
     </collisionboxes>
 </scene>

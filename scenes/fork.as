@@ -14,8 +14,12 @@ entity unicorn;
 [start]
 void create_unicorn()
 {
-	unicorn = add_entity("unicorn", "talk");
-	set_position(unicorn, vec(5,5));
+  if(!has_flag("unicorn_fork")) {
+    unicorn = add_entity("unicorn", "talk");
+    set_position(unicorn, vec(5,5));
+  } else {
+    group::enable("talktounicorn", false);
+  }
 }
 
 
@@ -41,4 +45,5 @@ void talktounicorn()
 	player::lock(false);
 	
 	group::enable("talktounicorn", false);
+  set_flag("unicorn_fork");
 }
