@@ -11,9 +11,8 @@
     <path_corner x="96" y="0" w="32" h="32"/>
     <path_end x="32" y="0" w="32" h="32"/>
     <rainbowbridge x="0" y="192" w="32" h="64"/>
-    <side_cloud x="128" y="96" w="32" h="32"/>
     <side_cloud_corner x="128" y="64" w="32" h="32"/>
-    <side_clouds x="0" y="32" w="32" h="64"/>
+    <side_clouds x="0" y="32" w="32" h="32"/>
     <side_clouds_edge x="128" y="32" w="32" h="32"/>
     <sparkles x="32" y="192" w="32" h="32" frames="4" interval="200" loop="1"/>
 </atlas>

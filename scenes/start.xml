@@ -34,20 +34,9 @@
             <hearts x="4.5" y="13"/>
         </layer>
         <layer id="2">
-            <side_clouds x="0" y="0"/>
-            <side_clouds x="9" y="0" r="2"/>
-            <side_clouds x="0" y="2"/>
-            <side_clouds x="9" y="2" r="2"/>
-            <side_clouds x="0" y="4"/>
-            <side_clouds x="9" y="4" r="2"/>
-            <side_clouds x="0" y="6"/>
-            <side_clouds x="9" y="6" r="2"/>
-            <side_clouds x="0" y="8"/>
-            <side_clouds x="9" y="8" r="2"/>
-            <side_clouds x="0" y="10"/>
-            <side_clouds x="9" y="10" r="2"/>
-            <side_clouds x="0" y="12"/>
-            <side_clouds x="9" y="12" r="2"/>
+            <side_clouds x="0" y="0" h="14"/>
+            <side_clouds x="9" y="0" h="13" r="2"/>
+            <side_clouds x="9" y="13" r="2"/>
         </layer>
     </map>
     <collisionboxes>
