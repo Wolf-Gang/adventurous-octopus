@@ -8,6 +8,7 @@
         </layer>
         <layer id="1">
             <staris x="2" y="-3"/>
+            <rug x="-1" y="1"/>
         </layer>
     </map>
     <collisionboxes>
