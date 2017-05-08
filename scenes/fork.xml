@@ -9,28 +9,23 @@
         </layer>
         <layer id="1">
             <cloud_tile x="0" y="0" r="1"/>
-            <side_clouds x="1" y="0"/>
-            <side_clouds x="3.5" y="0" r="2"/>
+            <side_clouds x="1" y="0" h="2"/>
+            <side_clouds x="3.5" y="0" h="2" r="2"/>
             <cloud_tile x="4.5" y="0" h="2"/>
-            <side_clouds x="5.5" y="0"/>
-            <side_clouds x="8" y="0" r="2"/>
+            <side_clouds x="5.5" y="0" h="2"/>
+            <side_clouds x="8" y="0" h="2" r="2"/>
             <cloud_tile x="9" y="0" h="2"/>
             <cloud_tile x="0" y="1"/>
             <side_cloud_corner x="0" y="2" r="1"/>
             <side_clouds_edge x="1" y="2" r="1"/>
             <side_clouds_edge x="3.5" y="2" r="2"/>
-            <side_cloud x="4.5" y="2" r="1"/>
+            <side_clouds x="4.5" y="2" r="1"/>
             <side_clouds_edge x="5.5" y="2" r="1"/>
             <side_clouds_edge x="8" y="2" r="2"/>
             <side_cloud_corner x="9" y="2" r="2"/>
-            <side_cloud x="0" y="3"/>
-            <side_cloud x="9" y="3" r="2"/>
-            <side_clouds x="0" y="4"/>
-            <side_clouds x="9" y="4" r="2"/>
-            <side_clouds x="0" y="6"/>
-            <side_clouds x="9" y="6" r="2"/>
-            <side_clouds x="0" y="8"/>
-            <side_clouds x="9" y="8" r="2"/>
+            <side_clouds x="0" y="3" h="7"/>
+            <side_clouds x="9" y="3" h="6" r="2"/>
+            <side_clouds x="9" y="9" r="2"/>
         </layer>
         <layer id="2">
             <hearts x="2.5" y="-0.5" h="4"/>

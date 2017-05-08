@@ -11,13 +11,13 @@
             <ground x="3" y="7" w="4"/>
         </layer>
         <layer id="1">
-            <side_cloud x="-0.5" y="5" w="4" r="3"/>
+            <side_clouds x="-0.5" y="5" w="4" r="3"/>
             <side_clouds_edge x="3.5" y="5"/>
             <side_clouds_edge x="5.5" y="5" r="3"/>
-            <side_cloud x="6.5" y="5" w="4" r="3"/>
+            <side_clouds x="6.5" y="5" w="4" r="3"/>
             <cloud_tile x="-0.5" y="6" w="4" h="2" r="3"/>
-            <side_clouds x="3.5" y="6"/>
-            <side_clouds x="5.5" y="6" r="2"/>
+            <side_clouds x="3.5" y="6" h="2"/>
+            <side_clouds x="5.5" y="6" h="2" r="2"/>
             <cloud_tile x="6.5" y="6" w="4" r="3"/>
             <cloud_tile x="6.5" y="7" w="4" r="3"/>
         </layer>
