@@ -1,0 +1,5 @@
+<atlas>
+    <floor x="0" y="0" w="32" h="32"/>
+    <stairs_down x="64" y="0" w="32" h="32"/>
+    <staris x="32" y="0" w="32" h="32"/>
+</atlas>

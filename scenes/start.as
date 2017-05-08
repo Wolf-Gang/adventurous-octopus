@@ -2,18 +2,51 @@
 
 entity unicorn;
 
+int house_count = 0;
+
 [group lockedhouse]
 void lockedhouse()
 {
-	say("Nobodies home unfortunately.");
+	say("Nobody\'s home, unfortunately.");
 	narrative::end();
+}
+
+[start]
+void unlock_house() {
+  
+  if(has_flag("house_unlocked")) {
+    
+    group::enable("lockedhouse?", false);
+    group::enable("lockeddoor", false);
+    
+  }
+  
+}
+
+[group lockedhouse?]
+void lockedhouse_()
+{
+  if(house_count < 9) {
+    say("\"Nobody\'s home, unfortunately.\"");
+    narrative::end();
+    house_count++;
+  } else {
+    say("Oh all right, come in.");
+    set_flag("house_unlocked");
+    narrative::end();
+    load_scene("house");
+  }
 }
 
 [start]
 void create_unicorn()
 {
-	unicorn = add_entity("unicorn", "talk");
-	set_position(unicorn, vec(5,4));
+  if(has_flag("start_unicorn")) {
+    group::enable("meetunicorn", false);
+  } else {
+    unicorn = add_entity("unicorn", "talk");
+    set_position(unicorn, vec(5,4));
+  }
 }
 	
 [start]
@@ -54,4 +87,5 @@ void meetunicorn()
 	focus::player();
 	player::lock(false);
 	group::enable("meetunicorn", false);
+  set_flag("start_unicorn");
 }

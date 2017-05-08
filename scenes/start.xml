@@ -45,11 +45,15 @@
         <wall x="0" y="0" w="1" h="14"/>
         <wall x="1" y="2" w="2" h="3"/>
         <wall x="7" y="6" w="2" h="3"/>
-        <wall x="7" y="0" w="2" h="3"/>
         <button x="1" y="4" w="2" h="1" group="lockedhouse"/>
         <button x="7" y="8" w="2" h="1" group="lockedhouse"/>
         <door x="1" y="-1" w="8" h="1" name="north" destination="south" scene="fork" offsetx="0" offsety="1"/>
         <wall x="1" y="14" w="8" h="1"/>
-        <button x="7" y="2" w="2" h="1" group="lockedhouse"/>
+        <button x="7" y="2" w="2" h="1" group="lockedhouse?"/>
+        <wall x="7" y="2" w="2" h="1" group="lockeddoor"/>
+        <wall x="7" y="2" w="0.1" h="1"/>
+        <wall x="8.8999996" y="2" w="0.1" h="1"/>
+        <wall x="7" y="0" w="2" h="2"/>
+        <door x="7" y="2" w="2" h="1" name="house" destination="front_door" scene="house" offsetx="0" offsety="1"/>
     </collisionboxes>
 </scene>

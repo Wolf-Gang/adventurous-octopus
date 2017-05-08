@@ -1,0 +1,24 @@
+<scene>
+    <map>
+        <texture>house_tilemap</texture>
+        <layer id="0">
+            <floor x="-3" y="-3" w="7"/>
+            <floor x="-4" y="-2" w="9" h="3"/>
+            <floor x="-3" y="1" w="7"/>
+        </layer>
+        <layer id="1">
+            <stairs_down x="2" y="-3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="4" y="-3" w="1" h="1"/>
+        <wall x="5" y="-2" w="1" h="3"/>
+        <wall x="4" y="1" w="1" h="1"/>
+        <door x="2" y="-3" w="1" h="1" name="down_stairs" destination="up_stairs" scene="house" offsetx="-1" offsety="0.40000001"/>
+        <wall x="-3" y="-4" w="7" h="1"/>
+        <wall x="-3" y="2" w="7" h="1"/>
+        <wall x="-5" y="-2" w="1" h="3"/>
+        <wall x="-4" y="1" w="1" h="1"/>
+        <wall x="-4" y="-3" w="1" h="1"/>
+    </collisionboxes>
+</scene>
