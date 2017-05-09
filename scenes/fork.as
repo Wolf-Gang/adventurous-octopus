@@ -9,6 +9,24 @@ void start()
 	set_direction(get_player(), direction::up);
 }
 
+void create_bush(vec pPosition, int t)
+{
+	entity bush;
+	if(t == 1)
+		bush = add_entity("dreamland", "cloudbush1");
+	if(t == 2)
+		bush = add_entity("dreamland", "cloudbush2");
+	set_position(bush, pPosition);
+}
+
+[start]
+void create_cloud_bushes()
+{
+	create_bush(vec(4.25, 3.5), 1);
+	create_bush(vec(5.75, 3.25), 1);
+	create_bush(vec(4, 3), 2);
+}
+
 entity unicorn;
 
 [start]

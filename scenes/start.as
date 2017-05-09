@@ -58,6 +58,47 @@ void start()
 	set_direction(get_player(), direction::up);
 }
 
+void create_tree(vec pPosition)
+{
+	entity tree1 = add_entity("cloud tree", "rustle");
+	set_position(tree1, pPosition);
+	animation::start(tree1);
+}
+
+[start]
+void create_cloud_trees()
+{
+	create_tree(vec(7, 6));
+	create_tree(vec(3, 8));
+}
+
+void create_bush(vec pPosition, int t)
+{
+	entity bush;
+	if(t == 1)
+		bush = add_entity("dreamland", "cloudbush1");
+	if(t == 2)
+		bush = add_entity("dreamland", "cloudbush2");
+	set_position(bush, pPosition);
+}
+
+[start]
+void create_cloud_bushes()
+{
+	create_bush(vec(6, 5), 1);
+	create_bush(vec(6.5, 5.25), 2);
+	create_bush(vec(7.5, 5), 2);
+	create_bush(vec(9, 5.15), 1);
+	
+	create_bush(vec(1, 7.5), 1);
+	create_bush(vec(2, 7), 1);
+	
+	create_bush(vec(7, 9), 1);
+	create_bush(vec(6.5, 9.25), 1);
+	create_bush(vec(6, 9), 1);
+	create_bush(vec(9, 9.25), 1);
+}
+
 [group meetunicorn]
 void meetunicorn()
 {
