@@ -1,6 +1,8 @@
 [start]
 void start()
 {
+	music::open("doodle108");
+	music::volume(70);
 	//set_position(get_player(), vec(0, 0));
 }
 

@@ -4,6 +4,8 @@ entity housedude;
 [start]
 void start()
 {
+	music::open("doodle108");
+	music::volume(70);
 	//set_position(get_player(), vec(0, 0));
   housedude = add_character("voidian");
   set_position(housedude, vec(-3.5, 0));
