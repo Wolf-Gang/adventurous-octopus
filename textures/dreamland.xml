@@ -1,4 +1,5 @@
 <atlas>
+    <breakingbridge x="32" y="224" w="32" h="64" frames="4" interval="500"/>
     <cloud x="64" y="32" w="64" h="64"/>
     <cloud_tile x="128" y="0" w="32" h="32"/>
     <cloudbush1 x="160" y="0" w="32" h="32"/>
