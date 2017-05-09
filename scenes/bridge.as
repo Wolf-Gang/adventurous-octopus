@@ -13,8 +13,12 @@ void start()
 [start]
 void create_unicorn()
 {
-	unicorn = add_entity("unicorn", "talk");
-	set_position(unicorn, vec(11,1));
+  if(!has_flag("bridge_unicorn")) {
+    unicorn = add_entity("unicorn", "talk");
+    set_position(unicorn, vec(11,1));
+  } else {
+    group::enable("talktounicorn", false);
+  }
 }
 
 
@@ -40,5 +44,25 @@ void talktounicorn()
 	focus::player();
 	player::lock(false);
 	
+  set_flag("bridge_unicorn");
 	group::enable("talktounicorn", false);
 }
+
+[group dont1]
+void no1() {
+  say("The unicorn's sultry tones\n echo through your head.");
+  say("\"Don't get lost and die\"");
+  move(get_player(), get_position(get_player()) + vec(0, .25), .1);
+  narrative::end();
+  player::lock(false);
+}
+
+[group dont2]
+void no2() {
+  say("The unicorn's sultry tones\n echo through your head.");
+  say("\"Don't get lost and die\"");
+  move(get_player(), get_position(get_player()) + vec(0, -.25), .1);
+  narrative::end();
+  player::lock(false);
+}
+
