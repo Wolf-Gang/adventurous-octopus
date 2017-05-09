@@ -14,7 +14,7 @@ void start()
 
 [group housedude]
 void goaway() {
-  set_direction(housedude, direction::right);
+  set_direction(housedude, get_position(get_player()));
   say("Just because I let you in my\nhouse doesn't mean I want to\ntalk.");
   set_direction(housedude, direction::left);
   narrative::end();
