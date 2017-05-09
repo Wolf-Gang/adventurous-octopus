@@ -30,5 +30,6 @@ void goaway() {
   nl("My pet rock... *Sob*");
   set_direction(housedude, direction::left);
   narrative::end();
+  player::lock(false);
 }
 
