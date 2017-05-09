@@ -19,7 +19,7 @@ void goaway() {
   set_direction(housedude, direction::left);
   say("...");
   say("Fine I'll tell you.");
-  nl("Have you every lost someone\nprecious to you?");
+  nl("Have you ever lost someone\nprecious to you?");
   say("It happened so fast...");
   nl("It fell and...");
   nl("Her head...");
