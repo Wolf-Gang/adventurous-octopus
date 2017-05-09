@@ -1,4 +1,5 @@
 <atlas>
+    <blueflower x="192" y="112" w="16" h="16" frames="4" interval="300" loop="1" default="1"/>
     <breakingbridge x="32" y="224" w="32" h="64" frames="4" interval="500"/>
     <cloud x="64" y="32" w="64" h="64"/>
     <cloud_tile x="128" y="0" w="32" h="32"/>
@@ -10,10 +11,13 @@
     <ground x="0" y="0" w="32" h="32"/>
     <hearts x="32" y="32" w="32" h="32"/>
     <house x="0" y="96" w="64" h="96"/>
+    <orangeflower x="192" y="128" w="16" h="16" frames="4" interval="300" loop="1" default="2"/>
     <path x="64" y="0" w="32" h="32"/>
     <path_corner x="96" y="0" w="32" h="32"/>
     <path_end x="32" y="0" w="32" h="32"/>
+    <purpleflower x="192" y="144" w="16" h="16" frames="4" interval="300" loop="1" default="3"/>
     <rainbowbridge x="0" y="192" w="32" h="64"/>
+    <redflower x="192" y="96" w="16" h="16" frames="4" interval="300" loop="1"/>
     <side_cloud_corner x="128" y="64" w="32" h="32"/>
     <side_clouds x="0" y="32" w="32" h="32"/>
     <side_clouds_edge x="128" y="32" w="32" h="32"/>

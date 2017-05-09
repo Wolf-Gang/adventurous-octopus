@@ -99,6 +99,52 @@ void create_cloud_bushes()
 	create_bush(vec(9, 9.25), 1);
 }
 
+void create_flower(vec pPosition, int t)
+{
+	entity flower;
+    switch(t)
+	{
+		case 1:
+			flower = add_entity("dreamland", "redflower");
+			break;
+		case 2:
+			flower = add_entity("dreamland", "blueflower");
+			break;
+		case 3:
+			flower = add_entity("dreamland", "orangeflower");
+			break;
+		case 4:
+			flower = add_entity("dreamland", "purpleflower");
+			break;
+	}
+	set_position(flower, pPosition);
+	animation::start(flower);
+}
+
+//DO NOT LOOK AT THE METHOD BELOW
+
+[start]
+void create_meadow()
+{
+	for(int i = 8; i <= 13; i++)
+	{
+		for(int j = 1; j <= 4; j++)
+		{
+			create_flower(vec(j, i), j);
+			create_flower(vec(j + 0.5, i + 0.5), j);
+		}
+	}
+	
+	for(int i = 11; i <= 13; i++)
+	{
+		for(int j = 5; j <= 8; j++)
+		{
+			create_flower(vec(j, i), j-5);
+			create_flower(vec(j+0.5, i+0.5), j-5);
+		}
+	}
+}
+
 [group meetunicorn]
 void meetunicorn()
 {
