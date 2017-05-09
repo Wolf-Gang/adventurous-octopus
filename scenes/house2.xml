@@ -8,6 +8,7 @@
         </layer>
         <layer id="1">
             <stairs_down x="2" y="-3"/>
+            <petrock x="1" y="-1"/>
             <vase x="3" y="0"/>
         </layer>
     </map>

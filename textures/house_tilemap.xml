@@ -1,5 +1,6 @@
 <atlas>
     <floor x="0" y="0" w="32" h="32"/>
+    <petrock x="160" y="0" w="32" h="32"/>
     <rug x="96" y="0" w="64" h="32"/>
     <stairs x="32" y="0" w="32" h="32"/>
     <stairs_down x="64" y="0" w="32" h="32"/>
