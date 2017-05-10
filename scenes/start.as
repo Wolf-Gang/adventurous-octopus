@@ -2,13 +2,24 @@
 
 entity unicorn;
 
-int house_count = 0;
+entity key;
+
 
 [group lockedhouse]
 void lockedhouse()
 {
 	say("Nobody\'s home, unfortunately.");
 	narrative::end();
+}
+
+[start]
+void make_key() {
+  key = add_entity("dreamland", "key");
+  set_visible(key, false);
+  set_depth(key, 100);
+  set_position(key, vec(2.5, 5));
+  animation::start(key);
+  group::enable("key", false);
 }
 
 [start]
@@ -26,15 +37,16 @@ void unlock_house() {
 [group lockedhouse?]
 void lockedhouse_()
 {
-  if(house_count < 9) {
+  if(!has_flag("keese")) {
     say("\"Nobody\'s home, unfortunately.\"");
     narrative::end();
-    house_count++;
+    set_visible(key, true);
+    move(key, vec(2.5, 7), 1.3444);
+    group::enable("key", true);
   } else {
-    say("Oh all right, come in.");
+    say("\"click\"");
     set_flag("house_unlocked");
-    narrative::end();
-    load_scene("house");
+    load_scene("house", vec(0, 2));
   }
 }
 
@@ -54,7 +66,7 @@ void start()
 {
 	music::open("doodle104_2");
 	music::volume(70);
-	set_position(get_player(), vec(5, 13));
+	set_position(get_player(), vec(5.5, 13));
 	set_direction(get_player(), direction::up);
 }
 
@@ -68,8 +80,8 @@ void create_tree(vec pPosition)
 [start]
 void create_cloud_trees()
 {
-	create_tree(vec(7, 6));
-	create_tree(vec(3, 8));
+	create_tree(vec(7.5, 6));
+	create_tree(vec(3, 7.6));
 }
 
 void create_bush(vec pPosition, int t)
@@ -85,35 +97,45 @@ void create_bush(vec pPosition, int t)
 [start]
 void create_cloud_bushes()
 {
-	create_bush(vec(6, 5), 1);
+  //top-right
+	//create_bush(vec(6, 5), 1);
 	create_bush(vec(6.5, 5.25), 2);
 	create_bush(vec(7.5, 5), 2);
 	create_bush(vec(9, 5.15), 1);
 	
+  //left
 	create_bush(vec(1, 7.5), 1);
 	create_bush(vec(2, 7), 1);
 	
+  //bottom-right
 	create_bush(vec(7, 9), 1);
 	create_bush(vec(6.5, 9.25), 1);
-	create_bush(vec(6, 9), 1);
+	//create_bush(vec(6, 9), 1);
 	create_bush(vec(9, 9.25), 1);
 }
 
-void create_flower(vec pPosition, int t)
+enum flower_type {
+  red = 1,
+  blue,
+  orange,
+  purple,
+}
+
+void create_flower(vec pPosition, flower_type t)
 {
 	entity flower;
     switch(t)
 	{
-		case 1:
+		case flower_type::red:
 			flower = add_entity("dreamland", "redflower");
 			break;
-		case 2:
+		case flower_type::blue:
 			flower = add_entity("dreamland", "blueflower");
 			break;
-		case 3:
+		case flower_type::orange:
 			flower = add_entity("dreamland", "orangeflower");
 			break;
-		case 4:
+		case flower_type::purple:
 			flower = add_entity("dreamland", "purpleflower");
 			break;
 	}
@@ -121,28 +143,35 @@ void create_flower(vec pPosition, int t)
 	animation::start(flower);
 }
 
-//DO NOT LOOK AT THE METHOD BELOW
-
 [start]
 void create_meadow()
 {
-	for(int i = 8; i <= 14; i++)
+  //left
+	for(float i = 8; i <= 14; i++)
 	{
 		for(int j = 1; j <= 4; j++)
 		{
-			create_flower(vec(j, i), j);
-			create_flower(vec(j + 0.5, i + 0.5), j);
+			create_flower(vec(j, i), flower_type(j));
+			create_flower(vec(j + 0.5, i + 0.5), flower_type(j));
 		}
 	}
 	
-	for(int i = 11; i <= 14; i++)
+  //right
+	for(float i = 11; i <= 14; i++)
 	{
-		for(int j = 5; j <= 8; j++)
+		for(int j = 1; j <= 3; j++)
 		{
-			create_flower(vec(j, i), j-5);
-			create_flower(vec(j+0.5, i+0.5), j-5);
+			create_flower(vec(j + 5.5, i), flower_type(j));
+			create_flower(vec(j + 6, i + 0.5), flower_type(j));
 		}
 	}
+}
+
+[group key]
+void find_key() {
+  remove_entity(key);
+  set_flag("keese");
+  group::enable("key", false);
 }
 
 [group meetunicorn]

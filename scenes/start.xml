@@ -3,37 +3,38 @@
     <map>
         <texture>dreamland</texture>
         <layer id="0">
-            <ground x="0" y="0" w="10" h="11" r="1"/>
+            <ground x="0" y="0" w="10" h="7" r="1"/>
+            <ground x="0" y="7" r="1"/>
+            <ground x="1" y="7"/>
+            <ground x="2" y="7" w="8" r="1"/>
+            <ground x="0" y="8" w="10" r="1"/>
+            <ground x="0" y="9" w="4" r="1"/>
+            <ground x="4" y="9" w="2"/>
+            <ground x="6" y="9" w="4" r="1"/>
+            <ground x="0" y="10" w="10" r="1"/>
             <ground x="0" y="11" w="10" h="2"/>
             <ground x="0" y="13" w="10"/>
         </layer>
         <layer id="1">
-            <hearts x="4.5" y="0" h="13"/>
-            <house x="7" y="0"/>
-            <house x="1" y="2"/>
-            <flowers x="5.5" y="2"/>
-            <flowers x="6.5" y="2" r="3"/>
-            <hearts x="5.5" y="3" w="3"/>
-            <flowers x="8.5" y="3" r="2"/>
-            <flowers x="0.5" y="4" h="2"/>
-            <flowers x="3.5" y="4"/>
-            <flowers x="5.5" y="4" r="3"/>
-            <flowers x="6.5" y="4" w="2"/>
-            <flowers x="8.5" y="4" r="1"/>
-            <hearts x="1.5" y="5" w="3"/>
-            <flowers x="0.5" y="6" r="2"/>
-            <flowers x="1.5" y="6"/>
-            <flowers x="2.5" y="6" r="1"/>
-            <flowers x="3.5" y="6" r="2"/>
-            <house x="7" y="6"/>
-            <flowers x="5.5" y="8" r="2"/>
-            <flowers x="6.5" y="8" r="1"/>
-            <hearts x="5.5" y="9" w="3"/>
-            <flowers x="8.5" y="9" r="2"/>
-            <flowers x="5.5" y="10" w="4" r="3"/>
-            <hearts x="4.5" y="13"/>
+            <flowers x="6" y="2" w="3" h="3"/>
+            <flowers x="1" y="4" w="4" h="3"/>
+            <flowers x="6" y="8" w="3" h="2"/>
+            <flowers x="6" y="10" w="3"/>
         </layer>
         <layer id="2">
+            <hearts x="5" y="0" h="3"/>
+            <house x="7" y="0"/>
+            <house x="1" y="2"/>
+            <hearts x="5" y="3" w="4"/>
+            <hearts x="5" y="4"/>
+            <hearts x="2" y="5" w="4"/>
+            <hearts x="5" y="6" h="3"/>
+            <house x="7" y="6"/>
+            <hearts x="5" y="9" w="4"/>
+            <hearts x="5" y="10" h="3"/>
+            <hearts x="5" y="13"/>
+        </layer>
+        <layer id="3">
             <side_clouds x="0" y="0" h="14"/>
             <side_clouds x="9" y="0" h="13" r="2"/>
             <side_clouds x="9" y="13" r="2"/>
@@ -41,8 +42,8 @@
     </map>
     <collisionboxes>
         <trigger x="3" y="5" w="4" h="1" group="meetunicorn"/>
-        <wall x="9" y="0" w="1" h="14"/>
-        <wall x="0" y="0" w="1" h="14"/>
+        <wall x="9.3000002" y="0" w="0.69999999" h="14"/>
+        <wall x="0" y="0" w="0.69999999" h="14"/>
         <wall x="1" y="2" w="2" h="3"/>
         <wall x="7" y="6.5" w="2" h="2.5"/>
         <button x="1" y="4" w="2" h="1" group="lockedhouse"/>
@@ -55,12 +56,8 @@
         <wall x="8.8999996" y="2" w="0.1" h="1"/>
         <wall x="7" y="0" w="2" h="2"/>
         <door x="7" y="2" w="2" h="1" name="house" destination="front_door" scene="house" offsetx="0" offsety="1"/>
-        <wall x="7" y="5.5" w="1" h="0.25"/>
-        <wall x="5.5" y="5.5" w="1.5" h="0.25"/>
-        <wall x="8" y="5.5" w="1" h="0.25"/>
-        <wall x="2" y="7.5" w="1" h="0.25"/>
-        <wall x="3" y="7.5" w="1" h="0.25"/>
-        <wall x="4" y="7.5" w="0.5" h="0.25"/>
-        <wall x="1.75" y="7.5" w="0.25" h="0.25"/>
+        <wall x="6" y="5.5" w="3" h="0.25"/>
+        <wall x="1.5" y="6.9000001" w="3.5" h="0.25"/>
+        <button x="2" y="6" w="1" h="1" group="key"/>
     </collisionboxes>
 </scene>

@@ -1,4 +1,5 @@
 <atlas>
     <blink x="0" y="0" w="100" h="100" frames="5" interval="200" pingpong="1"/>
+    <open x="0" y="0" w="100" h="100" frames="5" interval="5700" pingpong="1" default="4"/>
     <twitch x="0" y="100" w="100" h="100" frames="2" interval="1200" loop="1"/>
 </atlas>
