@@ -1,4 +1,6 @@
 <scene>
-	<map><texture/></map>
-	<collisionboxes/>
+    <map>
+        <texture/>
+    </map>
+    <collisionboxes/>
 </scene>
