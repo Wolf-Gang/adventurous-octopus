@@ -2,6 +2,76 @@
 
 entity unicorn;
 
+[start]
+void create_unicorn()
+{
+	if (!has_flag("uncorn_hmmmmlocked"))
+	{
+		unicorn = add_entity("unicorn", "talk");
+		set_position(unicorn, vec(5.5,0));
+		return;
+	}
+	if(!has_flag("bridge_unicorn") && has_flag("unlockedgate"))
+	{
+		unicorn = add_entity("unicorn", "talk");
+		set_position(unicorn, vec(11,1));
+	}
+	else
+	{
+		group::enable("talktounicorn", false);
+	}
+}
+
+[start]
+void create_gate()
+{
+	// Unlock
+	if (has_flag("unlockedgate"))
+	{
+		group::enable("gate", false);
+		return;
+	}
+	
+	// Lock it up
+	for (uint i = 0; i < 8; i++)
+	{
+		entity gate = add_entity("dreamland", "bars");
+		set_anchor(gate, anchor::topleft);
+		set_position(gate, vec(9, -3 + float(i)));
+		if (i == 3)
+		{
+			set_atlas(gate, "lock");
+		}
+	}
+}
+
+[group hmmmmlocked]
+void hmmmmlocked()
+{
+	once_flag("uncorn_hmmmmlocked");
+	music::fade_volume(40, 1);
+	player::lock(true);
+	narrative::show();
+	narrative::set_speaker(unicorn);
+	say("This is the bridge of y..\nHmmmm...");
+	say("It seems to be locked.");
+	
+	
+	set_atlas(unicorn, "talk_headup");
+	say("Welp");
+	set_atlas(unicorn, "talk");
+	nl("I guess we'll need\nto ask Mr Phlooph");
+	say("Come.");
+	narrative::end();
+	
+	unicorn_disappear(unicorn);
+	
+	music::fade_volume(70, 1);
+	focus::move(get_position(get_player()), 0.5);
+	focus::player();
+	player::lock(false);
+}
+
 [group crushingyourhopesanddreams]
 void crushingyourhopesanddreams()
 {
@@ -54,7 +124,7 @@ void crushingyourhopesanddreams()
 	fx::sound("wind1");
 	
 	// Fade out slowly
-	create_thread(function(args){fx::fade_out(4);});
+	create_thread(function(args){fx::fade_out(3);});
 	
 	float timer = 0;
 	do
@@ -73,20 +143,8 @@ void start()
 {
 	music::open("doodle104_2");
 	music::volume(70);
-	set_position(get_player(), vec(3, 0));
+	set_position(get_player(), vec(5, 3));
 }
-
-[start]
-void create_unicorn()
-{
-  if(!has_flag("bridge_unicorn")) {
-    unicorn = add_entity("unicorn", "talk");
-    set_position(unicorn, vec(11,1));
-  } else {
-    group::enable("talktounicorn", false);
-  }
-}
-
 
 [group talktounicorn]
 void talktounicorn()
@@ -110,7 +168,7 @@ void talktounicorn()
 	focus::player();
 	player::lock(false);
 	
-  set_flag("bridge_unicorn");
+	set_flag("bridge_unicorn");
 	group::enable("talktounicorn", false);
 }
 

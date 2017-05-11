@@ -1,42 +1,50 @@
 <scene>
-    <boundary x="0" y="-3" w="35" h="8"/>
+    <boundary x="2.5" y="-3" w="35" h="8"/>
     <map>
         <texture>dreamland</texture>
         <layer id="-1">
             <fade x="12" y="-2" w="23"/>
         </layer>
         <layer id="0">
-            <ground x="0" y="-3" w="12" h="7"/>
-            <ground x="12" y="-3" w="23"/>
+            <ground x="2" y="-3" w="33"/>
+            <ground x="2" y="-2" w="10" h="6"/>
             <rainbowbridge x="12" y="0" w="23"/>
-            <ground x="0" y="4" w="35"/>
+            <ground x="2" y="4" w="33"/>
         </layer>
         <layer id="1">
-            <side_cloud_corner x="0" y="-3" r="1"/>
-            <side_clouds x="1" y="-3" w="34" r="1"/>
-            <side_clouds x="0" y="-2" h="6"/>
-            <sparkles x="12" y="0" w="15" h="2"/>
-            <sparkles x="27" y="0" w="8" h="2"/>
-            <side_cloud_corner x="0" y="4"/>
-            <side_clouds x="1" y="4" w="2" r="3"/>
-            <side_clouds x="2.5" y="4" r="3"/>
-            <side_clouds_edge x="3.5" y="4"/>
+            <side_cloud_corner x="2.5" y="-3" r="1"/>
+            <side_clouds x="3" y="-3" r="1"/>
+            <side_clouds_edge x="4" y="-3" r="1"/>
+            <hearts x="5" y="-3" h="8"/>
+            <side_clouds_edge x="6" y="-3" r="2"/>
+            <side_clouds x="7" y="-3" w="28" r="1"/>
+            <side_clouds x="2.5" y="-2" h="6"/>
+            <sparkles x="12" y="0" w="23" h="2"/>
+            <hearts x="6" y="0.5" w="6" r="1"/>
+            <side_cloud_corner x="2.5" y="4"/>
+            <side_clouds x="3" y="4" r="3"/>
+            <side_clouds_edge x="4" y="4"/>
             <side_clouds_edge x="6" y="4" r="3"/>
             <side_clouds x="7" y="4" w="28" r="3"/>
         </layer>
     </map>
     <collisionboxes>
-        <wall x="1" y="-3" w="11" h="1"/>
-        <wall x="0" y="-3" w="1" h="7"/>
         <wall x="10" y="4" w="2" h="1"/>
-        <wall x="0" y="4" w="4.5" h="1"/>
-        <wall x="6" y="4" w="4" h="1"/>
-        <door x="4.5" y="5" w="1.5" h="1" name="south" destination="left" scene="fork" offsetx="0" offsety="-1"/>
+        <wall x="6.3000002" y="4" w="4" h="1"/>
+        <door x="4.6999998" y="5" w="1.6" h="1" name="south" destination="left" scene="fork" offsetx="0" offsety="-1"/>
         <trigger x="9" y="-2" w="1" h="6" group="talktounicorn"/>
         <trigger x="12" y="2" w="18" h="3" group="dont2"/>
         <trigger x="12" y="-3" w="18" h="2.8" group="dont1"/>
         <wall x="12" y="2" w="0.0099999998" h="2"/>
         <wall x="12" y="-2" w="0.0099999998" h="2"/>
         <trigger x="30" y="0" w="1" h="2" group="crushingyourhopesanddreams"/>
+        <wall x="9" y="-2" w="1" h="6" group="gate"/>
+        <wall x="6.3000002" y="-3" w="6" h="1"/>
+        <door x="4" y="-4" w="3" h="1" name="north" destination="south" scene="mrphlooph" offsetx="0" offsety="1"/>
+        <wall x="3" y="4" w="1.7" h="1"/>
+        <wall x="2.2" y="-3" w="1" h="8"/>
+        <wall x="3" y="-3" w="1.7" h="1"/>
+        <trigger x="3" y="1" w="6" h="1" group="hmmmmlocked"/>
+        <trigger x="8" y="2" w="1" h="1" group="hmmmmlocked"/>
     </collisionboxes>
 </scene>

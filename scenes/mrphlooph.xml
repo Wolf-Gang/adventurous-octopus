@@ -1,0 +1,38 @@
+<scene>
+    <boundary x="0" y="-2" w="10" h="12"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="-1">
+            <ground x="0" y="-2" w="10" h="2" r="2"/>
+            <ground x="0" y="0" w="10" h="9"/>
+            <ground x="0" y="9" r="3"/>
+            <ground x="1" y="9" w="9"/>
+        </layer>
+        <layer id="0">
+            <side_cloud_corner x="0" y="-2" r="1"/>
+            <side_clouds x="1" y="-2" w="8" r="1"/>
+            <side_cloud_corner x="9" y="-2" r="2"/>
+            <side_clouds x="0" y="-1" h="10"/>
+            <side_clouds x="9" y="-1" h="10" r="2"/>
+            <hearts x="4.5" y="4" h="6"/>
+            <side_cloud_corner x="0" y="9"/>
+            <side_clouds x="1" y="9" w="2" r="3"/>
+            <side_clouds_edge x="3" y="9"/>
+            <side_clouds_edge x="6" y="9" r="3"/>
+            <side_clouds x="7" y="9" w="2" r="3"/>
+            <side_cloud_corner x="9" y="9" r="3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="9" y="1" w="1" h="9"/>
+        <wall x="6" y="9" w="3" h="1"/>
+        <wall x="0" y="9" w="4" h="1"/>
+        <wall x="0" y="1" w="1" h="8"/>
+        <trigger x="1" y="4" w="8" h="1" group="mrphlooph"/>
+        <wall x="3" y="3" w="4" h="1"/>
+        <wall x="0" y="-1" w="1" h="2"/>
+        <wall x="0" y="-2" w="10" h="1"/>
+        <wall x="9" y="-1" w="1" h="2"/>
+        <door x="4" y="10" w="2" h="1" name="south" destination="north" scene="bridge" offsetx="0" offsety="-1"/>
+    </collisionboxes>
+</scene>

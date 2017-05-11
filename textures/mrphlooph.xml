@@ -1,0 +1,4 @@
+<atlas>
+    <default:default x="41" y="0" w="41" h="29" frames="2" interval="120" loop="1"/>
+    <justphlooph x="0" y="0" w="41" h="29"/>
+</atlas>
