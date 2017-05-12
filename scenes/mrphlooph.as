@@ -71,8 +71,10 @@ void mrphlooph()
 	fx::sound("heh");
 	wait(1);
 	
-	set_atlas(phlooph, "default:default");
+	set_atlas(phlooph, "awakening");
+	animation::start(phlooph);
 	wait(1);
+	set_atlas(phlooph, "talk");
 	
 	narrative::set_speaker(phlooph);
 	say("Haah?");
@@ -113,6 +115,9 @@ void mrphlooph()
   nl("Find them...I don't know where they are.");
   
 	narrative::end();
+	
+	set_atlas(phlooph, "default:default");
+	animation::start(phlooph);
 	
 	music::fade_volume(70, 1);
 	focus::move(get_position(get_player()), 0.5);

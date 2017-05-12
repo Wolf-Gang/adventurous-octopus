@@ -1,0 +1,3 @@
+<atlas>
+    <default:default x="0" y="0" w="27" h="21" frames="2" interval="300" loop="1"/>
+</atlas>
