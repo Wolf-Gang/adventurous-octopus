@@ -1,4 +1,6 @@
 <atlas>
-    <default:default x="41" y="0" w="41" h="29" frames="2" interval="120" loop="1"/>
-    <justphlooph x="0" y="0" w="41" h="29"/>
+    <awakening x="0" y="0" w="41" h="34" frames="3" interval="300"/>
+    <default:default x="0" y="34" w="41" h="34" frames="4" interval="400" pingpong="1"/>
+    <justphlooph x="0" y="0" w="41" h="34"/>
+    <talk x="82" y="0" w="41" h="34" frames="2" interval="150" loop="1"/>
 </atlas>
