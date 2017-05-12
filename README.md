@@ -1,6 +1,6 @@
-# Cuddly-Waddle
+# Advjam thing
 
-A practice game using the Wolf-Gang Engine.
+An Advjam thing.
 
 ### Installation
 
