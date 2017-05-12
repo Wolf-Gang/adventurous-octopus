@@ -6,13 +6,21 @@ entity unicorn;
 entity phlooph;
 
 [start]
+void create_phlooph()
+{
+	if (has_flag("phloophgate"))
+	{
+		phlooph = add_entity("mrphlooph", "default:default");
+		set_position(phlooph, vec(5, 4.5));
+	}
+}
+
+[start]
 void create_unicorn()
 {
   if(!has_flag("bridge_unlocked")) {
     unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(7.5, 5));
-    phlooph = add_entity("mrphlooph", "default:default");
-    set_position(phlooph, vec(5, 4.5));
     if(!has_flag("phloophgate")) {
       group::enable("unicorn", false);
     }
@@ -47,6 +55,7 @@ void event_check() {
 [group mrphlooph]
 void mrphlooph()
 {
+	once_flag("phloophgate");
 	music::fade_volume(40, 1);
 	player::lock(true);
 	focus::move(vec(5, 4), 1);
@@ -120,7 +129,6 @@ void mrphlooph()
 	focus::move(get_position(get_player()), 0.5);
 	focus::player();
 	player::lock(false);
-	set_flag("phloophgate");
 	group::enable("mrphlooph", false);
 }
 

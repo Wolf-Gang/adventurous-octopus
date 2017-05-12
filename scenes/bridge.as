@@ -39,9 +39,7 @@ void create_gate()
 		set_anchor(gate, anchor::topleft);
 		set_position(gate, vec(9, -3 + float(i)));
 		if (i == 3)
-		{
 			set_atlas(gate, "lock");
-		}
 	}
 }
 
@@ -55,7 +53,6 @@ void hmmmmlocked()
 	narrative::set_speaker(unicorn);
 	say("This is the bridge of y..\nHmmmm...");
 	say("It seems to be locked.");
-	
 	
 	set_atlas(unicorn, "talk_headup");
 	say("Welp");
@@ -149,10 +146,10 @@ void start()
 
 [group talktounicorn]
 void talktounicorn()
-{	
+{
+	once_flag("asdfasdffa");
 	music::fade_volume(40, 1);
 	player::lock(true);
-	//focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
 	narrative::show();
 	narrative::set_speaker(unicorn);
 	say("Ok, let's try this again.");
@@ -160,7 +157,6 @@ void talktounicorn()
 	say("I have some place to be at the\nmoment so I won\'t see you for\na while.");
 	say("Don't get lost and die.");
 	narrative::end();
-	
 	
 	unicorn_disappear(unicorn);
 	
