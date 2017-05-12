@@ -137,8 +137,6 @@ void has_dialogue() {
   
   if(has_flag("very_dialogue")) {
     
-    say("Ah yes, very good.");
-    
     narrative::set_speaker(phlooph);
     emote phlooph_surprise (phlooph, emote_type::surprise);
     say("HEY");
@@ -148,8 +146,9 @@ void has_dialogue() {
     say("Gimme");
     move(phlooph, get_position(get_player()), .5);
     say("*Sniff* *Sniff*");
-    say("Yes, this will do");
-    say("Go, your bridge is open");
+    say("Yes, this will do.");
+    move(phlooph, vec(5, 4.5), 2);
+    say("Go, your bridge is open.");
     append("I have...matters to attend to.");
     
     narrative::end();
@@ -161,8 +160,9 @@ void has_dialogue() {
     set_atlas(unicorn, "talk_headup");
     say("No?");
     set_atlas(unicorn, "talk");
-    say("Well you really should get on that,\n then.");
+    say("Well you really should get on\nthat, then.");
     narrative::end();
+    player::lock(false);
     
   }
   

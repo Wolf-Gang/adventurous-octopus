@@ -155,7 +155,7 @@ void talktounicorn()
 	//focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
 	narrative::show();
 	narrative::set_speaker(unicorn);
-	say("Hello again.");
+	say("Ok, let's try this again.");
 	say("This is the bridge of your\nhopes and dreams.");
 	say("I have some place to be at the\nmoment so I won\'t see you for\na while.");
 	say("Don't get lost and die.");
