@@ -46,7 +46,7 @@ void lockedhouse_()
   } else {
     say("\"click\"");
     set_flag("house_unlocked");
-    load_scene("house", vec(0, 2));
+    load_scene("house", "front_door");
   }
 }
 
