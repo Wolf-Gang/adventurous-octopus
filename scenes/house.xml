@@ -23,7 +23,7 @@
         <wall x="-4" y="1" w="1" h="1"/>
         <wall x="-3" y="2" w="2" h="1"/>
         <wall x="1" y="2" w="2" h="1"/>
-        <door x="-1" y="2" w="2" h="1" name="front_door" destination="house" scene="start" offsetx="0" offsety="-1"/>
+        <door x="-1" y="2" w="2" h="1" name="front_door" destination="house" scene="start" offsetx="0" offsety="-0.75"/>
         <door x="2" y="-3" w="1" h="1" name="up_stairs" destination="down_stairs" scene="house2" offsetx="-1" offsety="0.40000001"/>
         <wall x="-4" y="-2" w="1" h="1"/>
         <wall x="3" y="-1" w="1" h="2"/>
