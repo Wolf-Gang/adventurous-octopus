@@ -76,6 +76,7 @@ void hmmmmlocked()
 void crushingyourhopesanddreams()
 {
 	// Need to disable this because it pops up the narrative
+  //lol
 	group::enable("dont2", false);
 	
 	player::lock(true);

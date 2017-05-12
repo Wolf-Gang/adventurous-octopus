@@ -1,13 +1,24 @@
 
 #include "backend/dreamland_effects.as"
+#include "backend/emote.as"
 
 entity unicorn;
+entity phlooph;
 
 [start]
 void create_unicorn()
 {
-	unicorn = add_entity("unicorn", "talk");
+  if(!has_flag("bridge_unlocked")) {
+    unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(7.5, 5));
+    phlooph = add_entity("mrphlooph", "justphlooph");
+    set_position(phlooph, vec(7.5, 1));
+    if(!has_flag("phloophgate")) {
+      group::enable("unicorn", false);
+    }
+  } else {
+    group::enable("unicorn", false);
+  }
 }
 
 [start]
@@ -26,6 +37,13 @@ void create_tree()
 	animation::start(tree);
 }
 
+[start]
+void event_check() {
+  if(has_flag("phloophgate")) {
+    group::enable("mrphlooph", false);
+  }
+}
+
 [group mrphlooph]
 void mrphlooph()
 {
@@ -42,7 +60,7 @@ void mrphlooph()
 	narrative::hide();
 	
 	// Creat the phlooph of POWER
-	entity phlooph = add_entity("mrphlooph", "justphlooph");
+	phlooph = add_entity("mrphlooph", "justphlooph");
 	set_position(phlooph, vec(5, 1));
 	set_depth(phlooph, fixed_depth::overlay); // Visible above the tree
 	
@@ -83,11 +101,64 @@ void mrphlooph()
 	narrative::set_speaker(phlooph);
 	say("Only the finest\ncomplete dialogue.");
 	
+  focus::move(get_position(get_player()), .5);
+  focus::player();
+  
+  narrative::set_speaker(unicorn);
+  say("Hmmm, where to find such\n a thing?");
+  set_atlas(unicorn, "talk_headup");
+  say("Oh, I know!");
+  set_atlas(unicorn, "talk");
+  say("Try his kids.");
+  nl("Find them...I don't know where they are.");
+  
 	narrative::end();
 	
 	music::fade_volume(70, 1);
 	focus::move(get_position(get_player()), 0.5);
 	focus::player();
 	player::lock(false);
+  set_flag("phloophgate");
 	group::enable("mrphlooph", false);
 }
+
+[group unicorn]
+void has_dialogue() {
+  
+  
+  narrative::show();
+  narrative::set_speaker(unicorn);
+  say("Have you returned with the dialogue\nthis miscreant desires?");
+  
+  if(has_flag("very_dialogue")) {
+    
+    say("Ah yes, very good.");
+    
+    narrative::set_speaker(phlooph);
+    emote phlooph_surprise (phlooph, emote_type::surprise);
+    say("HEY");
+    say("Is that a dialogue?");
+    append("Of only the finest variety?");
+    say("Gimme");
+    move(phlooph, get_position(get_player()), .5);
+    say("*Sniff* *Sniff*");
+    say("Yes, this will do");
+    say("Go, your bridge is open");
+    append("I have...matters to attend to.");
+    
+    narrative::end();
+    player::lock(false);
+    set_flag("unlockedgate");
+    
+  } else {
+   
+    set_atlas(unicorn, "talk_headup");
+    say("No?");
+    set_atlas(unicorn, "talk");
+    say("Well you really should get on that,\n then.");
+    narrative::end();
+    
+  }
+  
+}
+

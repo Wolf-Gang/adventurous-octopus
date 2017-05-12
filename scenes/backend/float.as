@@ -21,7 +21,7 @@ void float_entity(entity floater, float height, float period, float cycles = 1) 
       do {
         
         //The derivative of the sine function (the cosine function) is used here and below so that it doesn't
-        //mess up other things that would affect z value
+        //mess up other things that would affect z value, however it can be less accurate at low framerates
         set_z(floater, get_z(floater) + (height * cos((t * 2 * math::pi) / period) * get_delta()));
         
         t += get_delta();
