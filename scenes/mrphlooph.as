@@ -11,8 +11,8 @@ void create_unicorn()
   if(!has_flag("bridge_unlocked")) {
     unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(7.5, 5));
-    phlooph = add_entity("mrphlooph", "justphlooph");
-    set_position(phlooph, vec(7.5, 1));
+    phlooph = add_entity("mrphlooph", "default:default");
+    set_position(phlooph, vec(5, 4.5));
     if(!has_flag("phloophgate")) {
       group::enable("unicorn", false);
     }
@@ -105,7 +105,7 @@ void mrphlooph()
   focus::player();
   
   narrative::set_speaker(unicorn);
-  say("Hmmm, where to find such\n a thing?");
+  say("Hmmm, where to find such\na thing?");
   set_atlas(unicorn, "talk_headup");
   say("Oh, I know!");
   set_atlas(unicorn, "talk");
@@ -128,7 +128,7 @@ void has_dialogue() {
   
   narrative::show();
   narrative::set_speaker(unicorn);
-  say("Have you returned with the dialogue\nthis miscreant desires?");
+  say("Have you returned with the\ndialogue this miscreant desires?");
   
   if(has_flag("very_dialogue")) {
     
@@ -137,6 +137,7 @@ void has_dialogue() {
     narrative::set_speaker(phlooph);
     emote phlooph_surprise (phlooph, emote_type::surprise);
     say("HEY");
+    phlooph_surprise.remove_emote();
     say("Is that a dialogue?");
     append("Of only the finest variety?");
     say("Gimme");
