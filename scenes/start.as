@@ -72,7 +72,7 @@ void start()
 
 void create_tree(vec pPosition)
 {
-	entity tree1 = add_entity("cloud tree", "rustle");
+	entity tree1 = add_entity("small cloud tree", "rustle");
 	set_position(tree1, pPosition);
 	animation::start(tree1);
 }

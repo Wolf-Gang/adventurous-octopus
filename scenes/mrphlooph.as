@@ -59,7 +59,7 @@ void mrphlooph()
 	
 	narrative::hide();
 	
-	// Creat the phlooph of POWER
+	// Create the phlooph of POWER
 	phlooph = add_entity("mrphlooph", "justphlooph");
 	set_position(phlooph, vec(5, 1));
 	set_depth(phlooph, fixed_depth::overlay); // Visible above the tree
@@ -101,19 +101,16 @@ void mrphlooph()
 	nl("What do you want?");
 	
 	narrative::set_speaker(phlooph);
-	say("Only the finest\ncomplete dialogue.");
+	say("Silence, druggy.\nLet me talk to your friend.\n");
+	say("You.\nYes you.");
+	nl("The one with the mask.");
+	say("I have a task for you.");
+	say("Find all my beautiful\nlittle phloophs and\nI will open the gate.");
+	say("The only problem is...");
+	nl("They are Veeerry persistent.");
+	nl("And might just KILL you.");
+	say("Off you go, now.");
 	
-  focus::move(get_position(get_player()), .5);
-  focus::player();
-  
-  narrative::set_speaker(unicorn);
-  say("Hmmm, where to find such\na thing?");
-  set_atlas(unicorn, "talk_headup");
-  say("Oh, I know!");
-  set_atlas(unicorn, "talk");
-  say("Try his kids.");
-  nl("Find them...I don't know where they are.");
-  
 	narrative::end();
 	
 	set_atlas(phlooph, "default:default");
@@ -123,7 +120,7 @@ void mrphlooph()
 	focus::move(get_position(get_player()), 0.5);
 	focus::player();
 	player::lock(false);
-  set_flag("phloophgate");
+	set_flag("phloophgate");
 	group::enable("mrphlooph", false);
 }
 

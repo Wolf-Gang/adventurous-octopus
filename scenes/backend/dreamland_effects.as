@@ -36,8 +36,9 @@ void dreamland_clouds()
 void unicorn_disappear(entity pUnicorn)
 {
 	scoped_entity hearts = add_entity("heartsburst");
-	set_position(hearts , get_position(pUnicorn));
+	set_position(hearts, get_position(pUnicorn));
 	
+	fx::sound("FX_away");
 	remove_entity(pUnicorn);
 	animation::start(hearts);
 	animation::play_wait(hearts);
