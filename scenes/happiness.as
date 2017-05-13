@@ -20,6 +20,74 @@ void fork_dance() {
   
   fork_ring.set_speed(40);
   
+  wait(2);
+  
+  for(float t = 0; t < 10; t += get_delta()) {
+    
+    fork_ring.set_radius(3 + sin(math::pi * t));
+    yield();
+    
+  }
+  
+  wait(10);
+  
+  narrative::show();
+  narrative::set_skip(false);
+  
+  oneofus();
+  
+  wait(7);
+  
+  oneofus();
+  
+  wait(6);
+  
+  oneofus();
+  
+  wait(4);
+  
+  oneofus();
+  
+  wait(2);
+  
+  oneofus();
+  oneofus();
+  
+  wait(1);
+  
+  create_thread(function(args) {
+    
+    entity_ring@ ring = cast<entity_ring>(args["ring"]);
+    
+    for(float t = 0; t < 6; t += get_delta()) {
+      
+      ring.set_radius(3 - t * .25);
+      ring.set_speed(40 + t * 5);
+      yield();
+      
+    }
+    
+  }, dictionary = {{"ring", fork_ring}});
+  
+  for(int i = 0; i < 12; i ++) {
+    
+    fsay("ONEOFUS");
+    wait(.5);
+    
+  }
+  
+  narrative::hide();
+  player::lock(false);
+  
+}
+
+void oneofus() {
+  
+  fsay("ONEOFUS");
+  wait(.5);
+  narrative::hide();
+  player::lock(false);
+  
 }
 
 [start]
