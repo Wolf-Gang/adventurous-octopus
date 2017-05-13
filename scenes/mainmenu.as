@@ -43,7 +43,19 @@ void mainmenu()
 	
 	entity selexit = add_menu_text("Exit", base_position + separation*2);
 	
+  int current_selection = 0;
+  
 	do {
+    
+    if(is_triggered(control::select_up) && current_selection != 0)
+      --current_selection;
+    if(is_triggered(control::select_down) && current_selection != 2)
+      ++current_selection;
+      
+      
+      
+    set_position(cursor, base_position + separation * current_selection);
+    
 	} while(yield());
 }
 
