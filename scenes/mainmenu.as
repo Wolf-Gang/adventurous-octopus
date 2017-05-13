@@ -61,11 +61,13 @@ void mainmenu()
       
       switch(current_selection) {
         
+        //'Start'
         case 0:
           
           load_scene("start");
           break;
         
+        //'Continue'
         case 1:
           
           if(true/*are_there_saves()*/) {
@@ -81,7 +83,8 @@ void mainmenu()
           }
           
           break;
-          
+        
+        //'Exit'
         case 2:
           
           //load_scene("intro"); <--?
@@ -135,6 +138,7 @@ void saves_menu() {
     if(is_triggered(control::back))
       go_back = true;
     
+    //TODO?: display some info about the hovered save, like progress or something
     
     set_position(cursor, base_position + column + row * current_selection);
     

@@ -8,6 +8,7 @@
         <layer id="0">
             <ground x="2" y="-3" w="33"/>
             <ground x="2" y="-2" w="10" h="6"/>
+            < x="0" y="0"/>
             <rainbowbridge x="12" y="0" w="23"/>
             <ground x="2" y="4" w="33"/>
         </layer>
@@ -18,9 +19,10 @@
             <hearts x="5" y="-3" h="8"/>
             <side_clouds_edge x="6" y="-3" r="2"/>
             <side_clouds x="7" y="-3" w="28" r="1"/>
-            <side_clouds x="2.5" y="-2" h="6"/>
+            <side_clouds x="2.5" y="-2" h="2"/>
             <sparkles x="12" y="0" w="23" h="2"/>
             <hearts x="6" y="0.5" w="6" r="1"/>
+            <side_clouds x="2.5" y="2" h="2"/>
             <side_cloud_corner x="2.5" y="4"/>
             <side_clouds x="3" y="4" r="3"/>
             <side_clouds_edge x="4" y="4"/>

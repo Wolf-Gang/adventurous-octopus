@@ -42,9 +42,10 @@
         <trigger x="1" y="7" w="8" h="1" group="talktounicorn"/>
         <door x="2" y="-1" w="1.5" h="1" name="left" destination="south" scene="bridge" offsetx="0" offsety="1"/>
         <door x="6.5" y="-1" w="1.5" h="1" name="right" destination="south" scene="therightway" offsetx="0" offsety="1"/>
-        <wall x="3.8" y="0" w="2.4000001" h="3"/>
         <wall x="9.3000002" y="2.7" w="0.69999999" h="7.3000002"/>
         <wall x="8.3000002" y="0" w="1.7" h="2.7"/>
         <wall x="0" y="2.7" w="0.69999999" h="7.3000002"/>
+        <wall x="3.8" y="0" w="2.4000001" h="2.7"/>
+        <wall x="4.5999999" y="2.7" w="0.80000001" h="0.30000001"/>
     </collisionboxes>
 </scene>
