@@ -8,7 +8,6 @@
         <layer id="0">
             <ground x="2" y="-3" w="33"/>
             <ground x="2" y="-2" w="10" h="6"/>
-            < x="0" y="0"/>
             <rainbowbridge x="12" y="0" w="23"/>
             <ground x="2" y="4" w="33"/>
         </layer>
