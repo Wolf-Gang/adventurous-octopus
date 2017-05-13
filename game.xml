@@ -1,5 +1,5 @@
 <game>
-	<scene  name="start"/>
+	<scene  name="mainmenu"/>
 	
 	<player texture="mc"/>
 	
