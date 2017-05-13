@@ -49,11 +49,39 @@ void mainmenu()
     
     if(is_triggered(control::select_up) && current_selection != 0)
       --current_selection;
+    
     if(is_triggered(control::select_down) && current_selection != 2)
       ++current_selection;
+    
+    if(is_triggered(control::activate)) {
       
+      switch(current_selection) {
+        
+        case 0:
+          
+          load_scene("start");
+          break;
+        
+        case 1:
+          
+          if(are_there_saves()) {
+            
+            //TODO: saves menu
+            
+          }
+          
+          break;
+          
+        case 2:
+          
+          //load_scene("intro"); <--?
+          break;
+        
+      }
       
-      
+    }
+    
+    
     set_position(cursor, base_position + separation * current_selection);
     
 	} while(yield());
