@@ -71,7 +71,7 @@ void mainmenu()
         //'Continue'
         case 1:
           
-          if(true/*are_there_saves()*/) {
+          if(are_there_saves()) {
             
             set_color(selstart, 100, 100, 100, 255);
             set_color(selexit, 100, 100, 100, 255);
@@ -107,7 +107,8 @@ void saves_menu() {
   
   for(int i = 0; i < 3; i++) {
     
-    save_slots[i] = add_menu_text( "Slot " + (i + 1), base_position + column + row * i);
+    save_slots[i] = add_menu_text( (is_slot_used(i) ? "Slot " + (i + 1) : "Empty"), base_position + column + row * i);
+    
     if(!is_slot_used(i))
       set_color(save_slots[i], 200, 200, 200, 255);
     
@@ -115,21 +116,21 @@ void saves_menu() {
   
   bool go_back = false;
   
-  int current_selection = 0;
+  int selection = 0;
   
   do {
     
-    if (is_triggered(control::select_up) && current_selection != 0)
-			--current_selection;
+    if (is_triggered(control::select_up) && selection != 0)
+			--selection;
       
-		if (is_triggered(control::select_down) && current_selection != 2)
-			++current_selection;
+		if (is_triggered(control::select_down) && selection != 2)
+			++selection;
     
     if(is_triggered(control::activate)) {
       
-      if(is_slot_used(current_selection)) {
+      if(is_slot_used(selection)) {
       
-        set_slot(current_selection);
+        set_slot(selection);
         open_game();
         
       }
@@ -141,7 +142,7 @@ void saves_menu() {
     
     //TODO?: display some info about the hovered save, like progress or something
     
-    set_position(cursor, base_position + column + row * current_selection);
+    set_position(cursor, base_position + column + row * selection);
     
   } while(yield() && !go_back);
   

@@ -1,4 +1,5 @@
 #include "backend/dreamland_effects.as"
+#include "backend/savepoint.as"
 
 [start]
 void start()
@@ -65,3 +66,24 @@ void talktounicorn()
 	group::enable("talktounicorn", false);
   set_flag("unicorn_fork");
 }
+
+[start]
+void make_savepoint() {
+  
+  entity save_point = add_entity("save");
+  set_anchor(save_point, anchor::center);
+  set_position(save_point, vec(5, 3));
+  
+}
+
+[group save]
+void save() {
+  
+  group::enable("save", false);
+  remove_dreamland_effects();
+  open_savepoint();
+  dreamland_clouds();
+  group::enable("save", true);
+  
+}
+
