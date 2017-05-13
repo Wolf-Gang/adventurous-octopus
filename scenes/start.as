@@ -55,7 +55,7 @@ void create_unicorn()
 {
   if (!has_flag("meet_unicorn")) {
     unicorn = add_entity("unicorn", "talk");
-    set_position(unicorn, vec(5,14));
+    set_position(unicorn, vec(5.5, 14));
   }
 }
 	
