@@ -53,11 +53,9 @@ void lockedhouse_()
 [start]
 void create_unicorn()
 {
-  if(has_flag("start_unicorn")) {
-    group::enable("meetunicorn", false);
-  } else {
+  if (!has_flag("meet_unicorn")) {
     unicorn = add_entity("unicorn", "talk");
-    set_position(unicorn, vec(5,4));
+    set_position(unicorn, vec(5,14));
   }
 }
 	
@@ -66,7 +64,7 @@ void start()
 {
 	music::open("doodle104_2");
 	music::volume(70);
-	set_position(get_player(), vec(5.5, 13));
+	set_position(get_player(), vec(5.5, 20));
 	set_direction(get_player(), direction::up);
 }
 
@@ -115,7 +113,7 @@ void create_cloud_bushes()
 }
 
 enum flower_type {
-  red = 1,
+  red,
   blue,
   orange,
   purple,
@@ -143,28 +141,30 @@ void create_flower(vec pPosition, flower_type t)
 	animation::start(flower);
 }
 
+void create_flower_patch(vec pPosition, vec pSize, int color_width = 1, flower_type start_color = flower_type::red)
+{
+	for (float x = 0; x < pSize.x; x += 1)
+	{
+		for (float y = 0; y < pSize.y; y += 1)
+		{
+			if ((x + y)%2 == 0)
+			{
+				const vec position(vec(x, y)/2 + pPosition);
+				const flower_type type = flower_type((floor(x/color_width) + float(start_color))%4);
+				create_flower(position, type);
+			}
+		}
+	}
+}
+
 [start]
 void create_meadow()
 {
-  //left
-	for(float i = 8; i <= 14; i++)
-	{
-		for(int j = 1; j <= 4; j++)
-		{
-			create_flower(vec(j, i), flower_type(j));
-			create_flower(vec(j + 0.5, i + 0.5), flower_type(j));
-		}
-	}
+	// Left
+	create_flower_patch(vec(1, 8), vec(8, 20), 2);
 	
-  //right
-	for(float i = 11; i <= 14; i++)
-	{
-		for(int j = 1; j <= 3; j++)
-		{
-			create_flower(vec(j + 5.5, i), flower_type(j));
-			create_flower(vec(j + 6, i + 0.5), flower_type(j));
-		}
-	}
+	// Right
+	create_flower_patch(vec(6.5, 11), vec(6, 14), 2);
 }
 
 [group key]
@@ -177,6 +177,7 @@ void find_key() {
 [group meetunicorn]
 void meetunicorn()
 {
+	once_flag("meet_unicorn");
 	music::fade_volume(40, 1);
 	player::lock(true);
 	focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
