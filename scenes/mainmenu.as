@@ -11,6 +11,8 @@ bool are_there_saves()
 [start]
 void start()
 {
+	music::open("doodle110_theme");
+	music::volume(70);
 	set_visible(get_player(), false);
 }
 
@@ -32,7 +34,6 @@ entity cursor;
 [start]
 void mainmenu()
 {
-	
 	// Create the little cursor thing
 	cursor = add_entity("NarrativeBox", "SelectCursor");
 	make_gui(cursor, 1);

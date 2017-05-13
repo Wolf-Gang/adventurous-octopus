@@ -1,5 +1,5 @@
 <game>
-	<scene  name="mainmenu"/>
+	<scene  name="overture"/>
 	
 	<player texture="mc"/>
 	
