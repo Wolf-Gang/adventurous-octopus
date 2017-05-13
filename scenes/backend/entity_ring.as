@@ -14,24 +14,16 @@ class entity_ring {
   
   entity_ring(array<entity> pEntities, float pRadius, vec pCenter, float pAngle = 0, float pRot_speed = 0) {
     
-    mEntities = pEntities;
+    this.mEntities = pEntities;
     
-    mRadius = pRadius;
+    this.mRadius = pRadius;
     
-    mCenter = pCenter;
+    this.mCenter = pCenter;
     
-    mAngle = pAngle;
+    this.mAngle = pAngle;
     
-    mRot_speed = pRot_speed;
+    this.mRot_speed = pRot_speed;
     
-    if(mRot_speed != 0)
-      create_thread(function(args) {
-        
-        entity_ring ring = entity_ring(args["this"]);
-        
-        ring.spin();
-        
-      }, dictionary = {{"this", this}});
   }
   
   entity_ring() {
@@ -41,9 +33,9 @@ class entity_ring {
   void insert_entity(entity pEntity, int index = -1) {
     
     if(index < 0)
-      mEntities.insertLast(pEntity);
+      this.mEntities.insertLast(pEntity);
     else
-      mEntities.insertAt(uint(index), pEntity);
+      this.mEntities.insertAt(uint(index), pEntity);
       
     this.update_positions();
     
@@ -51,34 +43,34 @@ class entity_ring {
   
   void delete_entity(uint index) {
     
-    mEntities.removeAt(index);
+    this.mEntities.removeAt(index);
     this.update_positions();
     
   }
   
   void set_radius(float pRadius) {
     
-    mRadius = pRadius;
+    this.mRadius = pRadius;
     this.update_positions();
     
   }
   
   void set_angle(float pDegrees) {
     
-    mAngle = pDegrees;
+    this.mAngle = pDegrees;
     this.update_positions();
     
   }
   
   void set_speed(float pSpeed) {
     
-    mRot_speed  = pSpeed;
+    this.mRot_speed  = pSpeed;
     
   }
   
   void set_center(vec pCenter) {
     
-    mCenter = pCenter;
+    this.mCenter = pCenter;
     this.update_positions();
     
   }
@@ -92,9 +84,7 @@ class entity_ring {
       
       do {
         
-        this.set_angle(mRot_speed * get_delta());
-        
-        this.update_positions();
+        this.set_angle(this.mAngle + this.mRot_speed * get_delta());
         
       } while(yield());
       
@@ -102,9 +92,7 @@ class entity_ring {
       
       do {
         
-        this.set_angle(mRot_speed * get_delta());
-        
-        this.update_positions();
+        this.set_angle(this.mAngle + this.mRot_speed * get_delta());
         
         t += get_delta();
         
@@ -116,9 +104,9 @@ class entity_ring {
   
   private void update_positions() {
     
-    for(int i = 0; i < int(mEntities.length()); i++) {
+    for(int i = 0; i < int(this.mEntities.length()); i++) {
       
-      set_position(mEntities[i], (mCenter + vec(mRadius, 0)).rotate(((360 / mEntities.length()) * i) + mAngle));
+      set_position(this.mEntities[i], (this.mCenter + vec(this.mRadius, 0)).rotate(mCenter, ((360 / this.mEntities.length()) * i) + this.mAngle));
       
     }
     

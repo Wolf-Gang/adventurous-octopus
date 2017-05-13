@@ -1,4 +1,6 @@
 <scene>
-	<map><texture/></map>
-	<collisionboxes/>
+    <map>
+        <texture>fork</texture>
+    </map>
+    <collisionboxes/>
 </scene>
