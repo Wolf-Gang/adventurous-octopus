@@ -14,94 +14,73 @@ void start()
 	music::open("doodle110_theme");
 	music::volume(70);
 	set_visible(get_player(), false);
-  focus::set(vec(0, 0));
+	focus::set(vec(0, 0));
 }
 
-entity awrt;
-entity mc;
-entity flowers;
+void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
+{
+	do {
+		set_position(pCloud, vec(-9, random(int(pMin_y*10), int(pMax_y*10)) / 10));
+		move(pCloud, direction::right, 17, speed(pSpeed));
+		wait(random(9300, 15000) / 10000);
+	} while(yield());
+}
 
 [start]
-void awrts() {
-  
-  awrt = add_entity("menu");
-  set_anchor(awrt, anchor::center);
-  set_position(awrt, vec(0, 0));
-  set_depth(awrt, fixed_depth::background);
-  animation::start(awrt);
-  
-  mc = add_entity("MC_menu");
-  set_position(mc, pixel(67, 41));
-  set_depth(mc, fixed_depth::below);
-  animation::start(mc);
-  
-  flowers = add_entity("menu flowers");
-  set_position(flowers, pixel(67, 110));
-  set_depth(flowers, fixed_depth::below);
-  animation::start(flowers);
-  
-  create_thread(function(args) {
-    
-    entity cloud = add_entity("yet another cloud");
-    
+void create_bg()
+{
+	entity awrt = add_entity("menu");
+	set_anchor(awrt, anchor::center);
+	set_position(awrt, vec(0, 0));
+	set_depth(awrt, fixed_depth::background);
+	animation::start(awrt);
+}
+
+[start]
+void create_mc()
+{
+	entity mc = add_entity("MC_menu");
+	set_position(mc, pixel(67, 41));
+	set_depth(mc, fixed_depth::below);
+	animation::start(mc);
+	
+	// Go in and out of existence
+	while(yield())
+	{
+		wait(random(35000, 48300)/ 1000);
+		
+		// On my first go, I immediately thought
+		// the engine was having rendering issues
+		// so I replaced it with something a little
+		// more... subtle (Hope ya dont mind).
+		fx::fade_out(mc, 0.2);
+		fx::fade_in(mc, 0.2);
+	};
+}
+
+[start]
+void create_flowers()
+{
+	entity flowers = add_entity("menu flowers");
+	set_position(flowers, pixel(67, 110));
+	set_depth(flowers, fixed_depth::below);
+	animation::start(flowers);
+}
+
+[start]
+void create_cloud()
+{  
+	entity cloud = add_entity("yet another cloud");
     set_depth(cloud, fixed_depth::background);
-    
-    const speed fastness (.374); 
-    
-    do {
-      
-      set_position(cloud, vec(-9, random(-20, -30) / 10));
-      
-      move(cloud, direction::right, 17, fastness);
-      
-      wait(random(11100, 17800) / 1000);
-      
-    } while(yield());
-    
-  });
-  
-  create_thread(function(args) {
-    
-    entity cloud = add_entity("yet again a cloud");
-    
-    set_position(cloud, vec(-9, random(10, 15) / 10));
-    
-    const speed slowness (.513);
-    
-    wait(random(19400, 26700) / 1000);
-    
-    do {
-      
-      set_position(cloud, vec(-9, random(10, 15) / 10));
-      
-      move(cloud, direction::right, 17, slowness);
-      
-      wait(random(9300, 15000) / 10000);
-      
-    } while(yield());
-    
-  });
-  
-  create_thread(function(args) {
-    
-    entity mc = entity(args["mc"]);
-    
-    wait(random(25800, 34700) / 1000);
-    
-    do {
-      
-      set_visible(mc, false);
-      
-      wait(.02);
-      
-      set_visible(mc, true);
-      
-      wait(random(35000, 48300)/ 1000);
-      
-    } while(yield());
-    
-  }, dictionary = {{"mc", mc}});
-  
+	cloud_movement(cloud, .374, -2, -3);
+}
+
+[start]
+void create_cloud_2()
+{  
+    wait(random(19400, 26700) / 1000); // Lag it behind the other one
+	entity cloud = add_entity("yet again a cloud");
+	cloud_movement(cloud, .513, 1, 1.5);
 }
 
 entity add_menu_text(const string&in pText, const vec&in pPosition)
