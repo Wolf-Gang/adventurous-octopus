@@ -14,6 +14,88 @@ void start()
 	music::open("doodle110_theme");
 	music::volume(70);
 	set_visible(get_player(), false);
+  focus::set(vec(0, 0));
+}
+
+entity awrt;
+entity mc;
+
+[start]
+void awrts() {
+  
+  awrt = add_entity("menu");
+  set_anchor(awrt, anchor::center);
+  set_position(awrt, vec(0, 0));
+  set_depth(awrt, fixed_depth::background);
+  animation::start(awrt);
+  
+  mc = add_entity("MC_menu");
+  set_position(mc, pixel(67, 41));
+  set_depth(mc, fixed_depth::below);
+  animation::start(mc);
+  
+  create_thread(function(args) {
+    
+    entity cloud = add_entity("yet another cloud");
+    
+    set_depth(cloud, fixed_depth::background);
+    
+    const speed fastness (.374); 
+    
+    do {
+      
+      set_position(cloud, vec(-9, random(-20, -30) / 10));
+      
+      move(cloud, direction::right, 17, fastness);
+      
+      wait(random(11100, 17800) / 1000);
+      
+    } while(yield());
+    
+  });
+  
+  create_thread(function(args) {
+    
+    entity cloud = add_entity("yet again a cloud");
+    
+    set_position(cloud, vec(-9, random(10, 15) / 10));
+    
+    const speed slowness (.513);
+    
+    wait(random(19400, 26700) / 1000);
+    
+    do {
+      
+      set_position(cloud, vec(-9, random(10, 15) / 10));
+      
+      move(cloud, direction::right, 17, slowness);
+      
+      wait(random(9300, 15000) / 10000);
+      
+    } while(yield());
+    
+  });
+  
+  create_thread(function(args) {
+    
+    entity mc = entity(args["mc"]);
+    
+    wait(random(25800, 34700) / 1000);
+    
+    do {
+      
+      set_visible(mc, false);
+      
+      wait(.02);
+      
+      set_visible(mc, true);
+      
+      wait(random(35000, 48300)/ 1000);
+      
+    } while(yield());
+    
+  }, dictionary = {{"mc", mc}});
+  
 }
 
 entity add_menu_text(const string&in pText, const vec&in pPosition)
@@ -25,7 +107,7 @@ entity add_menu_text(const string&in pText, const vec&in pPosition)
 	return text;
 }
 
-const vec base_position(pixel(20, 150));
+const vec base_position(pixel(10, 200));
 const vec row(pixel(0, 20));
 const vec column(pixel(100, 0));
 
@@ -44,7 +126,7 @@ void mainmenu()
 	entity selstart = add_menu_text("Start", base_position);
 	entity selcontinue = add_menu_text("Continue", base_position + row);
 	if (!are_there_saves())
-		set_color(selcontinue, 100, 100, 100, 255);
+		set_color(selcontinue, 255, 255, 255, 50);
 	
 	entity selexit = add_menu_text("Exit", base_position + row*2);
 	
@@ -79,8 +161,8 @@ void mainmenu()
           
           if(are_there_saves()) {
             
-            set_color(selstart, 50, 50, 50, 255);
-            set_color(selexit, 50, 50, 50, 255);
+            set_color(selstart, 255, 255, 255, 50);
+            set_color(selexit, 255, 255, 255, 50);
             
             saves_menu();
             
@@ -122,7 +204,9 @@ void saves_menu() {
     save_slots[i] = add_menu_text( (is_slot_used(i) ? "Slot " + (i + 1) : "Empty"), base_position + column + row * i);
     
     if(!is_slot_used(i))
-      set_color(save_slots[i], 150, 150, 150, 255);
+      set_color(save_slots[i], 255, 200, 200, 250);
+    /*else
+      set_color(save_slots[i], 200, 200, 200, 255);*/
     
   }
   
