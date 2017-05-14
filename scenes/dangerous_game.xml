@@ -1,26 +1,27 @@
 <scene>
+    <boundary x="4" w="15" h="8"/>
     <map>
         <texture>dreamland</texture>
         <layer id="-1">
-            <ground x="0" y="0" w="10" h="5" r="2"/>
-            <ground x="0" y="5" w="15" h="3" r="2"/>
+            <ground x="4" y="0" w="6" h="5" r="2"/>
+            <ground x="4" y="5" w="11" h="3" r="2"/>
             <ground x="15" y="5" w="4" h="2" r="3"/>
             <ground x="15" y="7" w="4" r="3"/>
         </layer>
         <layer id="0">
-            <side_cloud_corner x="0" y="0" r="1"/>
-            <side_clouds x="1" y="0" w="8" r="1"/>
+            <side_cloud_corner x="4" y="0" r="1"/>
+            <side_clouds x="5" y="0" w="4" r="1"/>
             <side_cloud_corner x="9" y="0" r="2"/>
             <cloud_tile x="10" y="0" w="5" h="5" r="2"/>
             <cloud_tile x="15" y="0" w="4" h="5" r="3"/>
-            <side_clouds x="0" y="1" h="6"/>
+            <side_clouds x="4" y="1" h="6"/>
             <side_clouds x="9" y="1" h="4" r="2"/>
             <side_clouds_edge x="9" y="5" r="2"/>
             <side_clouds x="10" y="5" w="8" r="1"/>
             <side_cloud_corner x="18" y="5" r="2"/>
             <side_clouds x="18" y="6" r="2"/>
-            <side_cloud_corner x="0" y="7"/>
-            <side_clouds x="1" y="7" w="17" r="3"/>
+            <side_cloud_corner x="4" y="7"/>
+            <side_clouds x="5" y="7" w="13" r="3"/>
             <side_cloud_corner x="18" y="7" r="3"/>
         </layer>
         <layer id="1">
@@ -31,8 +32,13 @@
         <wall x="9" y="0" w="1" h="5"/>
         <wall x="9" y="5" w="10" h="1"/>
         <wall x="18" y="6" w="1" h="2"/>
-        <wall x="0" y="7" w="18" h="1"/>
-        <wall x="0" y="0" w="1" h="7"/>
-        <wall x="1" y="0" w="8" h="1"/>
+        <wall x="4" y="1" w="1" h="6"/>
+        <trigger x="5" y="4" w="4" h="1" group="phloophs"/>
+        <wall x="4" y="7" w="15" h="1"/>
+        <wall x="4" y="0" w="5" h="1"/>
+        <wall x="-11" y="-10" w="1" h="8"/>
+        <wall x="-10" y="-2" w="10" h="1"/>
+        <wall x="0" y="-10" w="1" h="8"/>
+        <wall x="-10" y="-11" w="10" h="1"/>
     </collisionboxes>
 </scene>

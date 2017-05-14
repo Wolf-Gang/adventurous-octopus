@@ -122,9 +122,13 @@ void mrphlooph()
 	nl("The one with the mask.");
 	say("I have a task for you.");
 	say("Find all my beautiful little phloophs and I will open the gate.");
+	narrative::set_expression("mrphlooph icon", "sleepy");
 	say("The only problem is...");
+	narrative::set_expression("mrphlooph icon", "default:default");
 	nl("They are Veeerry persistent.");
+	narrative::set_expression("mrphlooph icon", "sinister");
 	nl("And might just kill you.");
+	narrative::set_expression("mrphlooph icon", "default:default");
 	say("Off you go, now.");
 	
 	narrative::end();
