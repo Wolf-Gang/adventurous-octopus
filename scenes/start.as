@@ -56,6 +56,10 @@ void create_unicorn()
   if (!has_flag("meet_unicorn")) {
     unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(5.5, 14));
+  } else {
+    
+    group::enable("meetunicorn", false);
+    
   }
 }
 	
@@ -177,7 +181,6 @@ void find_key() {
 [group meetunicorn]
 void meetunicorn()
 {
-	once_flag("meet_unicorn");
 	music::fade_volume(40, 1);
 	player::lock(true);
 	focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
@@ -185,16 +188,16 @@ void meetunicorn()
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
 	say("AH Hello here!");
-	say("I'm the majestic unicorn of DEATH");
-	nl("A fighter against world hunger.");
+  say("I'm the majestic unicorn of DEATH");
+	append(", a fighter against world hunger.");
 	say("This is the magical dreamland of, well, I don't know...");
 	
 	set_atlas(unicorn, "talk_headup");
 	nl("DREAMS?");
 	set_atlas(unicorn, "talk");
 	
-	say("I will be your guide. It's too easy to get lost here.");
-	nl("And drown in your own sorrow.");
+	fsay("I will be your guide. It's too easy to get lost here");
+	append(" and drown in your own sorrow.");
 	narrative::end();
 	
 	
@@ -205,5 +208,5 @@ void meetunicorn()
 	focus::player();
 	player::lock(false);
 	group::enable("meetunicorn", false);
-  set_flag("start_unicorn");
+  set_flag("meet_unicorn");
 }

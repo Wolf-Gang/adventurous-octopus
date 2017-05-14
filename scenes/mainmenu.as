@@ -53,8 +53,9 @@ void create_mc()
 		// the engine was having rendering issues
 		// so I replaced it with something a little
 		// more... subtle (Hope ya dont mind).
-		fx::fade_out(mc, 0.2);
-		fx::fade_in(mc, 0.2);
+		fx::fade_out(mc, 0.1);
+    wait(random(1500, 4880) / 1000);
+		fx::fade_in(mc, 0.1);
 	};
 }
 
