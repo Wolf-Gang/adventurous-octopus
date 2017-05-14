@@ -1,9 +1,8 @@
 [start]
 void start()
 {
-	music::open("doodle110_start", false);
 	music::volume(0);
-	music::play();
+	music::open("doodle110_start");
 	music::fade_volume(70, 5);
 	set_visible(get_player(), false);
 }
@@ -17,11 +16,11 @@ void stuff()
 	
 	say("Broken, lost, and nothing left.");
 	
-	say("You are just a fading glimpse\nof your past.");
+	say("You are just a fading glimpse of your past.");
 	
 	say("Ugly, soulless, and disgraceful.");
 	
-	say("Wear this mask\nand lose yourself.");
+	say("Wear this mask and lose yourself.");
 	
 	say("For your adventure starts here.");
 	music::fade_volume(0, 3);

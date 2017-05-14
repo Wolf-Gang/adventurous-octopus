@@ -183,16 +183,17 @@ void meetunicorn()
 	focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
 	narrative::show();
 	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
 	say("AH Hello here!");
-	say("I'm the majestic unicorn\nof DEATH");
+	say("I'm the majestic unicorn of DEATH");
 	nl("A fighter against world hunger.");
-	say("This is the magical dreamland\nof, well, I don't know...");
+	say("This is the magical dreamland of, well, I don't know...");
 	
 	set_atlas(unicorn, "talk_headup");
 	nl("DREAMS?");
 	set_atlas(unicorn, "talk");
 	
-	say("I will be your guide.\nIt's too easy to get lost here.");
+	say("I will be your guide. It's too easy to get lost here.");
 	nl("And drown in your own sorrow.");
 	narrative::end();
 	
