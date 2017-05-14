@@ -83,6 +83,10 @@ void create_cloud_2()
 	cloud_movement(cloud, .513, 1, 1.5);
 }
 
+const vec base_position(pixel(10, 200));
+const vec row(pixel(0, 20));
+const vec column(pixel(100, 0));
+
 entity add_menu_text(const string&in pText, const vec&in pPosition)
 {
 	entity text = add_text();
@@ -92,9 +96,6 @@ entity add_menu_text(const string&in pText, const vec&in pPosition)
 	return text;
 }
 
-const vec base_position(pixel(10, 200));
-const vec row(pixel(0, 20));
-const vec column(pixel(100, 0));
 
 entity cursor;
 
@@ -199,7 +200,10 @@ void saves_menu() {
   
   int selection = 0;
   
-  do {
+  // Pressing enter for the "Continue" bypasses the
+  // next triggers causing it to load slot 1.
+  // Having a normal while loop fixes this.
+  while(yield() && !go_back) {
     
     if (is_triggered(control::select_up) && selection != 0)
 			--selection;
@@ -225,7 +229,7 @@ void saves_menu() {
     
     set_position(cursor, base_position + column + row * selection);
     
-  } while(yield() && !go_back);
+  }
   
   for(int i = 0; i < 3; i++) {
     
