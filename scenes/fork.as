@@ -72,6 +72,7 @@ void talktounicorn()
 void make_savepoint() {
   
   entity save_point = add_entity("save");
+  animation::start(save_point);
   set_anchor(save_point, anchor::center);
   set_position(save_point, vec(6.5, 5.5));
   
