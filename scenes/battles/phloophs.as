@@ -34,6 +34,8 @@ void phlooph_game()
 	say("YOU WILL NEVER BRING US TO DADDY.");
 	narrative::end();
 	player::lock(false);
+	
+	// Randomize background color
 	create_thread(function(args)
 	{
 		entity bg = entity(args["bg"]);

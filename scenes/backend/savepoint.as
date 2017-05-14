@@ -1,6 +1,6 @@
 
-vec origin = pixel(50, 30);
-vec separation = pixel(80, 0);
+const vec origin = pixel(50, 30);
+const vec separation = pixel(80, 0);
 
 // TODO
 void open_savepoint()
