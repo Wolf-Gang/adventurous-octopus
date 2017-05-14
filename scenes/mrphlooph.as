@@ -124,7 +124,7 @@ void mrphlooph()
 	say("Find all my beautiful little phloophs and I will open the gate.");
 	say("The only problem is...");
 	nl("They are Veeerry persistent.");
-	nl("And might just KILL you.");
+	nl("And might just kill you.");
 	say("Off you go, now.");
 	
 	narrative::end();
@@ -137,6 +137,7 @@ void mrphlooph()
 	focus::player();
 	player::lock(false);
 	group::enable("mrphlooph", false);
+  set_flag("phlooph");
 }
 
 [group unicorn]

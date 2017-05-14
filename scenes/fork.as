@@ -52,8 +52,8 @@ void talktounicorn()
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
 	say("OH NO! It's a fork!");
-	nl("Watch out for these.\nThey'll eat you right up!");
-	say("In this case, veer left\nand you might make it.");
+	nl("Watch out for these. They'll eat you right up!");
+	say("In this case, veer left and you might make it.");
 	narrative::end();
 	
 	
@@ -78,7 +78,7 @@ void make_savepoint() {
 }
 
 [group save]
-void save() {
+void savepoint() {
   
   group::enable("save", false);
   remove_dreamland_effects();

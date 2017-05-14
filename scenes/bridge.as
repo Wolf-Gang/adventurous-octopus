@@ -2,6 +2,8 @@
 
 entity unicorn;
 
+entity smol_phlooph;
+
 [start]
 void create_unicorn()
 {
@@ -43,6 +45,59 @@ void create_gate()
 	}
 }
 
+[start]
+void smol_phloophphlooph() {
+  
+  if(has_flag("phlooph") && !has_flag("unlockedgate")) {
+    
+    smol_phlooph = add_entity("little phlooph");
+    set_position(smol_phlooph, vec(3.5, 1));
+    animation::start(smol_phlooph);
+    
+  } else {
+    
+    group::enable("littlephlooph", false);
+    
+  }
+  
+  group::enable("followphlooph", false);
+  
+}
+
+[group littlephlooph]
+void little_phlooph() {
+  
+  say("So my dad wants you to find us, huh?");
+  nl("This way.");
+  narrative::end();
+  
+  for(float t = 0; t < 2; t += get_delta()) {
+    
+    set_position(smol_phlooph, vec(3.5, 1) + vec( -1 * t, .25 * ((t - 1)**2 - 1))); //so many parentheses
+    
+    yield();
+    
+  }
+  
+  player::lock(false);
+  
+  group::enable("followphlooph", true);
+  
+}
+
+[group followphlooph]
+void follow() {
+  
+  fsay("Follow the phlooph?");
+  
+  if(select("Yes", "No") == option::first)
+    load_scene("dangerous_game");
+  
+  narrative::end();
+  player::lock(false);
+  
+}
+
 [group hmmmmlocked]
 void hmmmmlocked()
 {
@@ -52,7 +107,7 @@ void hmmmmlocked()
 	narrative::show();
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
-	say("This is the bridge of y..\nHmmmm...");
+	say("This is the bridge of y.. Hmmmm...");
 	say("It seems to be locked.");
 	
 	set_atlas(unicorn, "talk_headup");
@@ -130,7 +185,7 @@ void crushingyourhopesanddreams()
 	{
 		const float delta = get_delta();
 		timer += delta;
-		set_position(get_player(), get_position(get_player()) + vec(0, 1)*delta); // Move player down
+		set_z(get_player(), timer); // Move player down
 		set_rotation(get_player(), 90*(timer/4)); // Rotate clockwise
 	} while(timer <= 4 && yield());
 	
@@ -154,8 +209,8 @@ void talktounicorn()
 	narrative::show();
 	narrative::set_speaker(unicorn);
 	say("Ok, let's try this again.");
-	say("This is the bridge of your\nhopes and dreams.");
-	say("I have some place to be at the\nmoment so I won\'t see you for\na while.");
+	say("This is the bridge of your hopes and dreams.");
+	say("I have some place to be at the moment so I won\'t see you for a while.");
 	say("Don't get lost and die.");
 	narrative::end();
 	
@@ -172,7 +227,7 @@ void talktounicorn()
 
 [group dont1]
 void no1() {
-  say("The unicorn's sultry tones\n echo through your head.");
+  say("The unicorn's sultry tones  echo through your head.");
   say("\"Don't get lost and die\"");
   move(get_player(), get_position(get_player()) + vec(0, .25), .1);
   narrative::end();
@@ -181,7 +236,7 @@ void no1() {
 
 [group dont2]
 void no2() {
-  say("The unicorn's sultry tones\n echo through your head.");
+  say("The unicorn's sultry tones  echo through your head.");
   say("\"Don't get lost and die\"");
   move(get_player(), get_position(get_player()) + vec(0, -.25), .1);
   narrative::end();

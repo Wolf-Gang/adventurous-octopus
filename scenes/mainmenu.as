@@ -44,11 +44,17 @@ void mainmenu()
 	entity selstart = add_menu_text("Start", base_position);
 	entity selcontinue = add_menu_text("Continue", base_position + row);
 	if (!are_there_saves())
-		set_color(selcontinue, 200, 200, 200, 255); // TODO: Fix engine not supporting this for some reason
+		set_color(selcontinue, 100, 100, 100, 255);
 	
 	entity selexit = add_menu_text("Exit", base_position + row*2);
 	
+  //needs 2 yields for some reason to prevent input leakage from terminal
+  yield();
+  yield();
+  
   int current_selection = 0;
+  
+  bool exit = false;
   
 	do {
     
@@ -73,8 +79,8 @@ void mainmenu()
           
           if(are_there_saves()) {
             
-            set_color(selstart, 100, 100, 100, 255);
-            set_color(selexit, 100, 100, 100, 255);
+            set_color(selstart, 50, 50, 50, 255);
+            set_color(selexit, 50, 50, 50, 255);
             
             saves_menu();
             
@@ -88,17 +94,23 @@ void mainmenu()
         //'Exit'
         case 2:
           
-          //load_scene("intro"); <--?
+          exit = true;
           break;
         
       }
+      
+      if(is_triggered(control::back))
+        exit = true;
       
     }
     
     
     set_position(cursor, base_position + row * current_selection);
     
-	} while(yield());
+	} while(yield() && !exit);
+  
+  load_scene("overture");
+  
 }
 
 void saves_menu() {
@@ -110,7 +122,7 @@ void saves_menu() {
     save_slots[i] = add_menu_text( (is_slot_used(i) ? "Slot " + (i + 1) : "Empty"), base_position + column + row * i);
     
     if(!is_slot_used(i))
-      set_color(save_slots[i], 200, 200, 200, 255);
+      set_color(save_slots[i], 150, 150, 150, 255);
     
   }
   

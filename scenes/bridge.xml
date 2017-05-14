@@ -18,10 +18,9 @@
             <hearts x="5" y="-3" h="8"/>
             <side_clouds_edge x="6" y="-3" r="2"/>
             <side_clouds x="7" y="-3" w="28" r="1"/>
-            <side_clouds x="2.5" y="-2" h="2"/>
+            <side_clouds x="2.5" y="-2" h="6"/>
             <sparkles x="12" y="0" w="23" h="2"/>
             <hearts x="6" y="0.5" w="6" r="1"/>
-            <side_clouds x="2.5" y="2" h="2"/>
             <side_cloud_corner x="2.5" y="4"/>
             <side_clouds x="3" y="4" r="3"/>
             <side_clouds_edge x="4" y="4"/>
@@ -47,5 +46,7 @@
         <wall x="3" y="-3" w="1.7" h="1"/>
         <trigger x="3" y="1" w="6" h="1" group="hmmmmlocked"/>
         <trigger x="8" y="2" w="1" h="1" group="hmmmmlocked"/>
+        <button x="3" y="0.5" w="1" h="1" group="littlephlooph"/>
+        <button x="2.2" y="0" w="1" h="2" group="followphlooph"/>
     </collisionboxes>
 </scene>

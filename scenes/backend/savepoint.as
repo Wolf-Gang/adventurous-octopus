@@ -8,7 +8,7 @@ void open_savepoint()
   
   player::lock(true);
   
-	entity bg = add_entity("pixel");
+	scoped_entity bg = add_entity("pixel");
 	make_gui(bg, 0);
 	set_scale(bg, vec(10, 10)*32);
 	set_color(bg, 0, 0, 0, 255);
@@ -33,7 +33,7 @@ void open_savepoint()
     
   }
   
-  entity cursor = add_entity("NarrativeBox", "SelectCursor");
+  scoped_entity cursor = add_entity("NarrativeBox", "SelectCursor");
   set_anchor(cursor, anchor::topright);
   set_depth(cursor, fixed_depth::overlay);
   
@@ -68,14 +68,12 @@ void open_savepoint()
     set_position(cursor, origin + separation * currect_selection);
     
 	} while(yield() && !exit);
-	
+  
   for(int i = 0; i < 3; i++) {
     
     remove_entity(slots[i]);
     
   }
-  
-  remove_entity(bg);
   
   set_depth_fixed(get_player(), false);
   
@@ -85,7 +83,7 @@ void open_savepoint()
 
 bool confirm_save() {
   
-  fsay("Save on this file?\n");
+  fsay("Save on this file? ");
   return (select("Yes", "No") == option::first ? true : false);
   
 }

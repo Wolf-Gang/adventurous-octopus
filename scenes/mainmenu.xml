@@ -1,6 +1,6 @@
 <scene>
     <map>
-        <texture/>
+        <texture>dreamland</texture>
     </map>
     <collisionboxes/>
 </scene>
