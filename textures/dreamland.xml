@@ -18,6 +18,7 @@
     <path x="64" y="0" w="32" h="32"/>
     <path_corner x="96" y="0" w="32" h="32"/>
     <path_end x="32" y="0" w="32" h="32"/>
+    <phlooph_hideout x="192" y="192" w="64" h="64"/>
     <purpleflower x="192" y="144" w="16" h="16" frames="4" interval="300" loop="1" default="3"/>
     <rainbowbridge x="0" y="192" w="32" h="64"/>
     <redflower x="192" y="96" w="16" h="16" frames="4" interval="300" loop="1"/>
