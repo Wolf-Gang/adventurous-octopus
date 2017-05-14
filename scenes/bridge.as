@@ -51,13 +51,14 @@ void hmmmmlocked()
 	player::lock(true);
 	narrative::show();
 	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
 	say("This is the bridge of y..\nHmmmm...");
 	say("It seems to be locked.");
 	
 	set_atlas(unicorn, "talk_headup");
 	say("Welp");
 	set_atlas(unicorn, "talk");
-	nl("I guess we'll need\nto ask Mr Phlooph");
+	nl("I guess we'll need to ask Mr Phlooph");
 	say("Come.");
 	narrative::end();
 	

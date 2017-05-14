@@ -85,36 +85,43 @@ void mrphlooph()
 	wait(1);
 	set_atlas(phlooph, "talk");
 	
+	narrative::set_expression("mrphlooph icon", "default:default");
 	narrative::set_speaker(phlooph);
 	say("Haah?");
 	music::play();
-	say("What did you wake me for?\nDruggy.");
+	say("What did you wake me for? Druggy.");
 	
+	narrative::set_expression("unicorn icon", "default:default");
 	narrative::set_speaker(unicorn);
 	say("You left your gate closed again.");
 	
+	narrative::set_expression("mrphlooph icon", "default:default");
 	narrative::set_speaker(phlooph);
-	say("Can a phlooph not have his\nprivacy?");
+	say("Can a phlooph not have his privacy?");
 	
+	narrative::set_expression("unicorn icon", "default:default");
 	narrative::set_speaker(unicorn);
 	say("Not that. The bridge!");
 	
+	narrative::set_expression("mrphlooph icon", "default:default");
 	narrative::set_speaker(phlooph);
 	say("Let's make this clear.");
-	nl("I only open my gate when\nI want to.");
+	nl("I only open my gate when I want to.");
 	
 	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
 	set_atlas(unicorn, "talk_headup");
 	say("Ugh!");
 	set_atlas(unicorn, "talk");
 	nl("What do you want?");
 	
 	narrative::set_speaker(phlooph);
-	say("Silence, druggy.\nLet me talk to your friend.\n");
+	narrative::set_expression("mrphlooph icon", "default:default");
+	say("Silence, druggy. Let me talk to your friend.");
 	say("You.\nYes you.");
 	nl("The one with the mask.");
 	say("I have a task for you.");
-	say("Find all my beautiful\nlittle phloophs and\nI will open the gate.");
+	say("Find all my beautiful little phloophs and I will open the gate.");
 	say("The only problem is...");
 	nl("They are Veeerry persistent.");
 	nl("And might just KILL you.");

@@ -50,6 +50,7 @@ void talktounicorn()
 	//focus::move(midpoint(get_position(unicorn), get_position(get_player())), 1);
 	narrative::show();
 	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
 	say("OH NO! It's a fork!");
 	nl("Watch out for these.\nThey'll eat you right up!");
 	say("In this case, veer left\nand you might make it.");
