@@ -19,6 +19,7 @@ void start()
 
 entity awrt;
 entity mc;
+entity flowers;
 
 [start]
 void awrts() {
@@ -33,6 +34,11 @@ void awrts() {
   set_position(mc, pixel(67, 41));
   set_depth(mc, fixed_depth::below);
   animation::start(mc);
+  
+  flowers = add_entity("menu flowers");
+  set_position(flowers, pixel(67, 110));
+  set_depth(flowers, fixed_depth::below);
+  animation::start(flowers);
   
   create_thread(function(args) {
     
