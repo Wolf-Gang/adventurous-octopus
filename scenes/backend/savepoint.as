@@ -12,9 +12,8 @@ void open_savepoint()
 	make_gui(bg, 0);
 	set_scale(bg, vec(10, 10)*32);
 	set_color(bg, 0, 0, 0, 255);
-  set_anchor(bg, anchor::center);
+  set_anchor(bg, anchor::topleft);
   set_depth(bg, 2);
-  set_position(bg, get_position(get_player()));
   
   //keep the player visible
   set_depth(get_player(), fixed_depth::overlay);
@@ -34,6 +33,7 @@ void open_savepoint()
   }
   
   scoped_entity cursor = add_entity("NarrativeBox", "SelectCursor");
+  make_gui(cursor, 3);
   set_anchor(cursor, anchor::topright);
   set_depth(cursor, fixed_depth::overlay);
   
