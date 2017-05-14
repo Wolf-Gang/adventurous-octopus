@@ -87,10 +87,10 @@ void phlooph_game()
 	narrative::end();
 	player::lock(false);
 	
-	phlooph_attack(3);
+	phlooph_attack(3, true);
 	phlooph_drop_attack(10, 5);
 	
-	phlooph_attack(4);
+	phlooph_attack(4, true);
 	phlooph_drop_attack(20, 7);
 	
 	say("Daddy is always saying we would be the next leaders of the dreamland.");
@@ -99,10 +99,10 @@ void phlooph_game()
 	player::lock(false);
 	
 	phlooph_attack(4);
-	phlooph_attack(3);
+	phlooph_attack(3, true);
 	
 	phlooph_drop_attack(40, 7);
-	phlooph_attack(4);
+	phlooph_attack(4, true);
 	phlooph_drop_attack(20, 8);
 	
 }
