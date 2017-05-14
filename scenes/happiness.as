@@ -22,6 +22,8 @@ void fork_dance() {
   
   wait(2);
   
+  if(!has_flag("noforks")) {
+  
   for(float t = 0; t < 10; t += get_delta()) {
     
     fork_ring.set_radius(3 + sin(math::pi * t));
@@ -55,29 +57,54 @@ void fork_dance() {
   
   wait(1);
   
+  }
+  
   create_thread(function(args) {
     
-    entity_ring@ ring = cast<entity_ring>(args["ring"]);
-    
-    for(float t = 0; t < 6; t += get_delta()) {
+    for(int i = 0; i < 12; i ++) {
       
-      ring.set_radius(3 - t * .25);
-      ring.set_speed(40 + t * 5);
-      yield();
+      fsay("ONEOFUS");
+      wait(.5);
       
     }
     
-  }, dictionary = {{"ring", fork_ring}});
+  });
   
-  for(int i = 0; i < 12; i ++) {
+  for(float t = 0; t < 6; t += get_delta()) {
     
-    fsay("ONEOFUS");
-    wait(.5);
+    fork_ring.set_radius(3 - t * .25);
+    fork_ring.set_speed(40 + t * 5);
+    yield();
     
   }
   
+  wait(3);
+  
   narrative::hide();
-  player::lock(false);
+  
+  wait(1);
+  
+  say("You have been gifted to us.");
+  
+  say("By you, we will be freed.");
+  
+  create_thread(function(args) {
+    fx::fade_out(10);
+  });
+  
+  for(float t = 0; t < 10; t += get_delta()) {
+    
+    fork_ring.set_radius(1.5 - t * .15);
+    fork_ring.set_speed(70 + t * 20);
+    yield();
+    
+  }
+  
+  set_flag("savior");
+  
+  wait(2);
+  
+  load_scene("therightway");
   
 }
 
