@@ -1,5 +1,6 @@
 #include "backend/float.as"
 #include "backend/shadows.as"
+#include "backend/save_system.as"
 
 #include "battles/phloophs.as"
 
@@ -15,6 +16,7 @@ void start()
 [start]
 void running_phlooph()
 {
+  once_flag("phloophran");
 	scoped_entity phlooph = add_entity("little phlooph");
 	set_position(phlooph, vec(16.5, 6.5));
 	move(phlooph, direction::left, 14, 2);
@@ -41,6 +43,17 @@ void create_phloophs()
 		animation::start(phloophs[i]);
 	}
 	
+}
+
+[group boss_save]
+void quick_save() {
+  
+  once_flag("phlooph_boss_save");
+  
+  if(!are_there_saves())
+    set_slot(0);
+  save_game();
+  
 }
 
 [group phloophs]

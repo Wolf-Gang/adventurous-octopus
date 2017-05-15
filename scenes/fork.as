@@ -1,5 +1,5 @@
 #include "backend/dreamland_effects.as"
-#include "backend/savepoint.as"
+#include "backend/save_system.as"
 
 [start]
 void start()
@@ -84,8 +84,8 @@ void savepoint() {
   group::enable("save", false);
   remove_dreamland_effects();
   open_savepoint();
-  dreamland_clouds();
   group::enable("save", true);
+  dreamland_clouds();
   
 }
 

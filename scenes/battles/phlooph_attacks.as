@@ -46,7 +46,7 @@ void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 				
 				// Check hit
 				if (check_hit(things[i].object, 0.5))
-					ded("dangerous_game");
+					ded();
 			}
 	}while(yield() && timer < duration);
 	
@@ -100,7 +100,7 @@ void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
 				{
 					// Check hit
 					if (check_hit(things[i], 0.5))
-						ded("dangerous_game");
+						ded();
 					
 					light_sparkles(get_position(things[i]));
 					remove_entity(things[i]);

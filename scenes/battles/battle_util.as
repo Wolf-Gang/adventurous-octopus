@@ -1,6 +1,6 @@
 
 
-void ded(string pRestart_scene)
+void ded()
 {
 	player::lock(true);
 	entity bg = add_entity("pixel");
@@ -17,7 +17,7 @@ void ded(string pRestart_scene)
 	narrative::set_interval(80);
 	say("You ded");
 	
-	load_scene(pRestart_scene);
+	open_game();
 }
 
 bool check_hit(entity pHitter, float pRadius) {

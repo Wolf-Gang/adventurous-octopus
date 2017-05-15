@@ -1,12 +1,5 @@
 
-bool are_there_saves()
-{
-	if (is_slot_used(0)
-	||  is_slot_used(1)
-	||  is_slot_used(2))
-		return true;
-	return false;
-}
+#include "backend/save_system.as"
 
 [start]
 void start()
@@ -216,8 +209,7 @@ void saves_menu() {
       
       if(is_slot_used(selection)) {
       
-        set_slot(selection);
-        open_game();
+        load_slot(selection);
         
       }
       
