@@ -3,21 +3,20 @@
 void ded()
 {
 	player::lock(true);
-	entity bg = add_entity("pixel");
+	entity bg = add_entity("ded");
 	make_gui(bg, 0);
-	set_scale(bg, vec(10, 10)*32);
 	set_anchor(bg, anchor::topleft);
-	set_color(bg, 0, 0, 0, 255);
 	
 	fx::sound("heh");
 	
 	music::stop();
 	
-	narrative::show();
-	narrative::set_interval(80);
-	say("You ded");
-	
+  wait(1);
+  
+  keywait();
+  
 	open_game();
+  
 }
 
 bool check_hit(entity pHitter, float pRadius) {
