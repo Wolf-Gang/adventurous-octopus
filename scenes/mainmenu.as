@@ -133,7 +133,10 @@ void mainmenu()
         //'Start'
         case 0:
           
-          load_scene("start");
+		  
+		  music::fade_volume(0, 2);
+		  fx::fade_out(2);
+          load_scene("dreamland_town");
           break;
         
         //'Continue'
