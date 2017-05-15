@@ -1,4 +1,6 @@
 
+#include "dreamland_effects.as"
+
 bool are_there_saves()
 {
 	if (is_slot_used(0)
@@ -31,6 +33,28 @@ void load_slot(int pSlot) {
 }
 
 
+
+void make_savepoint(vec pPos) {
+  
+  entity save_point = add_entity("save");
+  animation::start(save_point);
+  set_anchor(save_point, anchor::center);
+  set_position(save_point, pPos);
+  
+}
+
+[group save]
+void savepoint() {
+  
+  group::enable("save", false);
+  remove_dreamland_effects();
+  open_savepoint();
+  dprint("before");
+  group::enable("save", true);
+  dprint("after");
+  dreamland_clouds();
+  
+}
 
 const vec origin = pixel(50, 30);
 const vec separation = pixel(80, 0);
@@ -117,6 +141,15 @@ bool confirm_save() {
 
   fsay("Save on this file? ");
   return (select("Yes", "No") == option::first ? true : false);
+  
+}
+
+[group quicksave]
+void quicksave() {
+  
+  if(!are_there_saves())
+    set_slot(0);
+  save_game();
   
 }
 

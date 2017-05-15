@@ -2,6 +2,13 @@
 #include "backend/save_system.as"
 
 [start]
+void save_thing() {
+  
+  make_savepoint(vec(6.5, 5.5));
+  
+}
+
+[start]
 void start()
 {
 	music::open("doodle104_2");
@@ -66,26 +73,5 @@ void talktounicorn()
 	
 	group::enable("talktounicorn", false);
   set_flag("unicorn_fork");
-}
-
-[start]
-void make_savepoint() {
-  
-  entity save_point = add_entity("save");
-  animation::start(save_point);
-  set_anchor(save_point, anchor::center);
-  set_position(save_point, vec(6.5, 5.5));
-  
-}
-
-[group save]
-void savepoint() {
-  
-  group::enable("save", false);
-  remove_dreamland_effects();
-  open_savepoint();
-  group::enable("save", true);
-  dreamland_clouds();
-  
 }
 

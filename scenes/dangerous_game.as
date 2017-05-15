@@ -45,17 +45,6 @@ void create_phloophs()
 	
 }
 
-[group boss_save]
-void quick_save() {
-  
-  once_flag("phlooph_boss_save");
-  
-  if(!are_there_saves())
-    set_slot(0);
-  save_game();
-  
-}
-
 [group phloophs]
 void phloophs_talk()
 {
