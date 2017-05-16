@@ -139,7 +139,7 @@ void phlooph_game()
 	}, dictionary = {{"bg", bg.get()}});
 	
 	
-	/*phlooph_attack(2);
+	phlooph_attack(2);
 	say("YOU WILL NEVER GET AWAY.");
 	narrative::end();
 	player::lock(false);
@@ -227,7 +227,7 @@ void phlooph_game()
 	phlooph_drop_attack(60, 8);
 	phlooph_attack(9, true);
 	
-	phlooph_drop_attack(70, 10);*/
+	phlooph_drop_attack(70, 10);
 	
 	bros.show();
 	
@@ -283,7 +283,7 @@ void phlooph_game()
 	narrative::set_speaker(phlooph);
 	narrative::set_expression("mrphlooph icon", "sinister");
 	say("Found ya.");
-	nl("I can here you a mile away.");
+	nl("I can hear you a mile away.");
 	narrative::hide();
 	
 	bros.all_talk("*Silence*");
