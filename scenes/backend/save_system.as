@@ -1,5 +1,6 @@
 
-#include "dreamland_effects.as"
+// This kinda causes effects to appear on every scene.....
+//#include "dreamland_effects.as"
 
 bool are_there_saves()
 {
@@ -47,12 +48,12 @@ void make_savepoint(vec pPos) {
 void savepoint() {
   
   group::enable("save", false);
-  remove_dreamland_effects();
+  //remove_dreamland_effects();
   open_savepoint();
   dprint("before");
   group::enable("save", true);
   dprint("after");
-  dreamland_clouds();
+  //dreamland_clouds();
   
 }
 
@@ -150,6 +151,6 @@ void quicksave() {
   if(!are_there_saves())
     set_slot(0);
   save_game();
-  
+  group::enable("quicksave", false);
 }
 

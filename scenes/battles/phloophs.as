@@ -79,10 +79,10 @@ class little_bros
 
 void phlooph_game()
 {
-
+	remove_dreamland_effects();
+	
+	
 	say("WE KNOW DADDY SENT YOU");
-	
-	
 	entity bg = add_entity("pixel");
 	set_position(bg, game_position);
 	set_scale(bg, vec(10, 10)*32);
@@ -178,7 +178,7 @@ void phlooph_game()
 	phlooph_attack(5, true);
 	
 	bros.show();
-	say("Daddy is always saying we would be the next leaders of the dreamland.");
+	fsay("Daddy is always saying we would be the next leaders of the dreamland.");
 	bros.talk("Its terrible", 2);
 	bros.talk("I want mommy", 3);
 	bros.talk("gimmi", 5);
@@ -216,7 +216,6 @@ void phlooph_game()
 	phlooph_attack(8, true);
 	phlooph_drop_attack(60, 8);
 	phlooph_attack(9, true);
-	phlooph_attack(10, true);
 	
 	phlooph_drop_attack(70, 10);
 	
