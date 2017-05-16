@@ -4,6 +4,14 @@ entity unicorn;
 
 entity smol_phlooph;
 
+[group thisisagate]
+void thisisagate()
+{
+	say("It's a locked gate to a majestic rainbow bridge.");
+	narrative::end();
+	player::lock(false);
+}
+
 [start]
 void create_unicorn()
 {
@@ -31,6 +39,7 @@ void create_gate()
 	if (has_flag("unlockedgate"))
 	{
 		group::enable("gate", false);
+		group::enable("thisisagate", false);
 		return;
 	}
 	
@@ -111,9 +120,9 @@ void hmmmmlocked()
 	say("It seems to be locked.");
 	
 	set_atlas(unicorn, "talk_headup");
-	say("Welp");
+	say("Welp.");
 	set_atlas(unicorn, "talk");
-	nl("I guess we'll need to ask Mr Phlooph");
+	nl("I guess we'll need to ask Mr Phlooph.");
 	say("Come.");
 	narrative::end();
 	
@@ -210,7 +219,7 @@ void talktounicorn()
 	narrative::set_speaker(unicorn);
 	say("Ok, let's try this again.");
 	say("This is the bridge of your hopes and dreams.");
-	say("I have some place to be at the moment so I won\'t see you for a while.");
+	say("I have some place to be at the moment so I won't see you for a while.");
 	say("Don't get lost and die.");
 	narrative::end();
 	

@@ -31,7 +31,7 @@ void float_entity(entity floater, float height, float period, float cycles = 1) 
           t -= period;
           
         }
-      } while(yield());
+      } while(yield() && floater.is_valid());
       
     } else {
     

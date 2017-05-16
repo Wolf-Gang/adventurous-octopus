@@ -6,6 +6,16 @@ entity unicorn;
 entity phlooph;
 
 [start]
+void create_meadow()
+{
+	// Top
+	create_flower_patch(vec(1, -1), vec(17, 9), 2);
+	
+	// Left
+	create_flower_patch(vec(1, 3), vec(5, 13), 2);
+}
+
+[start]
 void create_phlooph()
 {
 	if (has_flag("phloophgate"))
@@ -118,10 +128,11 @@ void mrphlooph()
 	narrative::set_speaker(phlooph);
 	narrative::set_expression("mrphlooph icon", "default:default");
 	say("Silence, druggy. Let me talk to your friend.");
-	say("You.\nYes you.");
-	nl("The one with the mask.");
+	say("You. Yes you.");
+	nl("Hood'n mask.");
 	say("I have a task for you.");
-	say("Find all my beautiful little phloophs and I will open the gate.");
+	say("Find all my beautiful little phloophs");
+	nl("and I will open the gate.");
 	narrative::set_expression("mrphlooph icon", "sleepy");
 	say("The only problem is...");
 	narrative::set_expression("mrphlooph icon", "default:default");
@@ -131,6 +142,26 @@ void mrphlooph()
 	narrative::set_expression("mrphlooph icon", "default:default");
 	say("Off you go, now.");
 	
+	narrative::set_expression("unicorn icon", "default:default");
+	narrative::set_speaker(unicorn);
+	set_atlas(unicorn, "talk_headup");
+	say("HOLD IT!");
+	set_atlas(unicorn, "talk");
+	nl("This our special guest.");
+	nl("Why would you send h...umm out to an errand?");
+	
+	narrative::set_expression("mrphlooph icon", "sleepy");
+	narrative::set_speaker(phlooph);
+	say("You see... They are around that age now.");
+	nl("And they don't like me for some reason...");
+	narrative::set_expression("mrphlooph icon", "default:default");
+	nl("As a father, I would be very thankful.");
+	
+	narrative::set_expression("unicorn icon", "default:default");
+	narrative::set_speaker(unicorn);
+	fsay("Hmmm...");
+	wait(0.2);
+	append(" fine.");
 	narrative::end();
 	
 	set_atlas(phlooph, "default:default");
@@ -144,44 +175,15 @@ void mrphlooph()
   set_flag("phlooph");
 }
 
-[group unicorn]
-void has_dialogue() {
-  
-  
-  narrative::show();
-  narrative::set_speaker(unicorn);
-  say("Have you returned with the\ndialogue this miscreant desires?");
-  
-  if(has_flag("very_dialogue")) {
-    
-    narrative::set_speaker(phlooph);
-    emote phlooph_surprise (phlooph, emote_type::surprise);
-    say("HEY");
-    phlooph_surprise.remove_emote();
-    say("Is that a dialogue?");
-    append("Of only the finest variety?");
-    say("Gimme");
-    move(phlooph, get_position(get_player()), .5);
-    say("*Sniff* *Sniff*");
-    say("Yes, this will do.");
-    move(phlooph, vec(5, 4.5), 2);
-    say("Go, your bridge is open.");
-    append("I have...matters to attend to.");
-    
-    narrative::end();
-    player::lock(false);
-    set_flag("unlockedgate");
-    
-  } else {
-   
-    set_atlas(unicorn, "talk_headup");
-    say("No?");
-    set_atlas(unicorn, "talk");
-    say("Well you really should get on\nthat, then.");
-    narrative::end();
-    player::lock(false);
-    
-  }
-  
+[group unicornbehere]
+void ajsdfh()
+{
+	narrative::show();
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	say("I'll stay here.");
+	nl("Go find his little phloophs and come back.");
+	narrative::end();
+	player::lock(false);
 }
 

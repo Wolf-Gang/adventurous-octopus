@@ -68,6 +68,8 @@ void phloophs_talk()
 		fx::sound("bad");
 		goto_area();
 		
+		remove_dreamland_effects();
+		
 		wait(1);
 		phlooph_game();
 	}else{

@@ -9,7 +9,7 @@ void goto_area()
 {
 	get_boundary_position(game_position); // TODO: Fix these names in the engine
 	get_boundary_size(vec(10, 8));
-	set_position(get_player(), (game_position + vec(10, 8)/2) + vec(0, 2));
+	set_position(get_player(), (game_position + vec(10, 8)/2));
 }
 
 void quick_text(vec pPosition, string pText)
@@ -32,14 +32,17 @@ void quick_text(vec pPosition, string pText)
 	}, dictionary = {{"pPosition", pPosition}, {"pText", pText}});
 }
 
-void random_quick_text(string pText)
-{
-	quick_text(game_position + vec(float(random(1, 4)*2), float(random(1, 4)*2)), pText);
-}
-
 class little_bros
 {
 	array<entity> mLittle_bros(6);
+	
+	~little_bros()
+	{
+		for(uint i = 0; i < mLittle_bros.length(); i++)
+		{
+			remove_entity(mLittle_bros[i]);
+		}
+	}
 	
 	void talk(string pText, uint pIndex)
 	{
@@ -74,23 +77,29 @@ class little_bros
 			remove_entity(mLittle_bros[i]);
 		}
 	}
+	
+	void surprise()
+	{
+		for(uint i = 0; i < mLittle_bros.length(); i++)
+		{
+			set_atlas(mLittle_bros[i], "surprised");
+		}
+	}
 }
 
 
 void phlooph_game()
 {
-	remove_dreamland_effects();
-	
 	
 	say("WE KNOW DADDY SENT YOU");
-	entity bg = add_entity("pixel");
+	scoped_entity bg = add_entity("pixel");
 	set_position(bg, game_position);
 	set_scale(bg, vec(10, 10)*32);
 	set_anchor(bg, anchor::topleft);
 	set_color(bg, 100, 50, 50, 255);
 	set_depth(bg, fixed_depth::background);
 	
-	entity scary_phlooph = add_entity("little phlooph");
+	scoped_entity scary_phlooph = add_entity("little phlooph");
 	set_atlas(scary_phlooph, "scary");
 	set_position(scary_phlooph, vec(-5, -7));
 	shadows::add(scary_phlooph);
@@ -120,17 +129,17 @@ void phlooph_game()
 	create_thread(function(args)
 	{
 		entity bg = entity(args["bg"]);
-		while(yield())
+		while(yield() && bg.is_valid())
 		{
 			wait(1);
 			set_color(bg, random(50, 150)
 				,  random(50, 150)
 				, random(50, 150), 255);
 		}
-	}, dictionary = {{"bg", bg}});
+	}, dictionary = {{"bg", bg.get()}});
 	
 	
-	phlooph_attack(2);
+	/*phlooph_attack(2);
 	say("YOU WILL NEVER GET AWAY.");
 	narrative::end();
 	player::lock(false);
@@ -182,6 +191,7 @@ void phlooph_game()
 	bros.talk("Its terrible", 2);
 	bros.talk("I want mommy", 3);
 	bros.talk("gimmi", 5);
+	keywait();
 	
 	fnl("But we don't want to!");
 	bros.all_talk("YAH");
@@ -217,10 +227,14 @@ void phlooph_game()
 	phlooph_drop_attack(60, 8);
 	phlooph_attack(9, true);
 	
-	phlooph_drop_attack(70, 10);
+	phlooph_drop_attack(70, 10);*/
 	
 	bros.show();
+	
 	say("I've always wanted to be a technician.");
+	narrative::hide();
+	wait(0.1);
+	bros.talk("Body builder", 0);
 	wait(0.1);
 	bros.talk("Pyromaniac", 1);
 	wait(0.1);
@@ -231,7 +245,51 @@ void phlooph_game()
 	bros.talk("Astronaut", 4);
 	wait(0.1);
 	bros.talk("a turtle", 5);
+	wait(1);
+	
+	say("We've never wanted to be successors to a boring job.");
+	nl("Where we will never achieve anything.");
+	nl("We will never let you take us back to it.");
+	
+	fsay("NEVER!");
+	bros.all_talk("NEVER!");
 	keywait();
-	nl("");
+	narrative::end();
+	
+	narrative::show();
+	narrative::set_expression("question_expr", "default:default");
+	say("Ah. I see now.");
+	narrative::hide();
+	
+	scoped_entity phlooph = add_entity("mrphlooph", "justphlooph");
+	set_position(phlooph, vec(-5, -6));
+	set_z(phlooph, 4);
+	shadows::add(phlooph, shadows::shadow_size::big);
+	
+	music::fade_volume(30, 2);
+	set_atlas(scary_phlooph, "surprised");
+	bros.surprise();
+	move_z(phlooph, 0, 1);
+	fx::sound("heh");
+	music::stop();
+	shadows::remove(phlooph);
+	
+	wait(0.5);
+	set_atlas(phlooph, "awakening");
+	animation::start(phlooph);
+	wait(1);
+	set_atlas(phlooph, "talk");
+	
+	narrative::set_speaker(phlooph);
+	narrative::set_expression("mrphlooph icon", "sinister");
+	say("Found ya.");
+	nl("I can here you a mile away.");
+	narrative::hide();
+	
+	bros.all_talk("*Silence*");
+	wait(2);
+	fx::fade_out(2);
+	set_flag("caughtthephloophs");
+	load_scene("mrphlooph");
 }
 

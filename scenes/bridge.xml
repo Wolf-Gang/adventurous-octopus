@@ -48,5 +48,6 @@
         <trigger x="8" y="2" w="1" h="1" group="hmmmmlocked"/>
         <button x="3" y="0.5" w="1" h="1" group="littlephlooph"/>
         <button x="2.2" y="0" w="1" h="2" group="followphlooph"/>
+        <button x="9" y="-2" w="1" h="6" group="thisisagate"/>
     </collisionboxes>
 </scene>
