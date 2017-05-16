@@ -1,3 +1,6 @@
+
+const float collision_radius = 0.6;
+
 class phlooph_attack_info
 {
 	entity object;
@@ -45,7 +48,7 @@ void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 					*(things[i].bottom ? -1 : 1)); // Move up if bottom phlooph
 				
 				// Check hit
-				if (check_hit(things[i].object, 0.5))
+				if (check_hit(things[i].object, collision_radius))
 					ded();
 			}
 	}while(yield() && timer < duration);
@@ -99,7 +102,7 @@ void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
 				if (get_z(things[i]) <= 0)
 				{
 					// Check hit
-					if (check_hit(things[i], 0.5))
+					if (check_hit(things[i], collision_radius))
 						ded();
 					
 					light_sparkles(get_position(things[i]));
