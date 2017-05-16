@@ -48,12 +48,8 @@ void make_savepoint(vec pPos) {
 void savepoint() {
   
   group::enable("save", false);
-  //remove_dreamland_effects();
   open_savepoint();
-  dprint("before");
   group::enable("save", true);
-  dprint("after");
-  //dreamland_clouds();
   
 }
 

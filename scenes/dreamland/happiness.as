@@ -1,5 +1,5 @@
 
-#include "backend/entity_ring.as"
+#include "../backend/entity_ring.as"
 
 entity_ring fork_ring;
 
@@ -104,7 +104,7 @@ void fork_dance() {
   
   wait(2);
   
-  load_scene("therightway");
+  load_scene("dreamland/therightway");
   
 }
 

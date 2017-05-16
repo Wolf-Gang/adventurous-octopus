@@ -290,6 +290,6 @@ void phlooph_game()
 	wait(2);
 	fx::fade_out(2);
 	set_flag("caughtthephloophs");
-	load_scene("mrphlooph");
+	load_scene("dreamland/mrphlooph");
 }
 

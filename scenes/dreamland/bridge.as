@@ -1,4 +1,4 @@
-#include "backend/dreamland_effects.as"
+#include "../backend/dreamland_effects.as"
 
 entity unicorn;
 
@@ -100,7 +100,7 @@ void follow() {
   fsay("Follow the phlooph?");
   
   if(select("Yes", "No") == option::first)
-    load_scene("dangerous_game");
+    load_scene("dreamland/dangerous_game");
   
   narrative::end();
   player::lock(false);

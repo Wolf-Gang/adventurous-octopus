@@ -66,7 +66,7 @@ void staretoolong() {
   
   do_flash();
   
-  load_scene("happiness");
+  load_scene("dreamland/happiness");
 }
 
 void do_flash() {

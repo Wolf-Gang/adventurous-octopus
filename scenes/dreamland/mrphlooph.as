@@ -1,6 +1,6 @@
 
-#include "backend/dreamland_effects.as"
-#include "backend/emote.as"
+#include "../backend/dreamland_effects.as"
+#include "../backend/emote.as"
 
 entity unicorn;
 entity phlooph;

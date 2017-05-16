@@ -37,7 +37,7 @@
         <trigger x="12" y="-3" w="18" h="2.8" group="dont1"/>
         <wall x="12" y="2" w="0.0099999998" h="2"/>
         <wall x="12" y="-2" w="0.0099999998" h="2"/>
-        <trigger x="30" y="0" w="1" h="2" group="crushingyourhopesanddreams"/>
+        <trigger x="30" y="-0.2" w="1" h="2.2" group="crushingyourhopesanddreams"/>
         <wall x="9" y="-2" w="1" h="6" group="gate"/>
         <wall x="6.3000002" y="-3" w="6" h="1"/>
         <door x="4" y="-4" w="3" h="1" name="north" destination="south" scene="mrphlooph" offsetx="0" offsety="1"/>

@@ -1,4 +1,4 @@
-#include "backend/dreamland_effects.as"
+#include "../backend/dreamland_effects.as"
 
 entity unicorn;
 
@@ -46,7 +46,7 @@ void lockedhouse_()
   } else {
     say("\"click\"");
     set_flag("house_unlocked");
-    load_scene("house", "front_door");
+    load_scene("dreamland/house", "front_door");
   }
 }
 
