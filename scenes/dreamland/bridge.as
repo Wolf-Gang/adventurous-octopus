@@ -40,18 +40,21 @@ void create_gate()
 	{
 		group::enable("gate", false);
 		group::enable("thisisagate", false);
-		return;
+    
+
 	}
-	
-	// Lock it up
-	for (uint i = 0; i < 8; i++)
-	{
-		entity gate = add_entity("dreamland", "bars");
-		set_anchor(gate, anchor::topleft);
-		set_position(gate, vec(9, -3 + float(i)));
-		if (i == 3)
-			set_atlas(gate, "lock");
-	}
+  else
+  {
+	    // Lock it up
+    for (uint i = 0; i < 8; i++)
+    {
+      entity gate = add_entity("dreamland", "bars");
+      set_anchor(gate, anchor::topleft);
+      set_position(gate, vec(9, -3 + float(i)));
+      if (i == 3)
+        set_atlas(gate, "lock");
+    }
+  }
 }
 
 [start]

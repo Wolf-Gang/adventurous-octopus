@@ -136,8 +136,8 @@ void mainmenu()
 		  
 		  music::fade_volume(0, 2);
 		  fx::fade_out(2);
-          load_scene("dreamland_town");
-          break;
+      load_scene("dreamland/dreamland_town");
+      break;
         
         //'Continue'
         case 1:

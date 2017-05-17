@@ -10,7 +10,7 @@ class phlooph_attack_info
 void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 {
 	const uint count = 10; // Fills the screen
-	
+	const uint randomize_count = 5;
 	const uint safe_one = random(0, 10);
 	
 	// Create the things that go at you
@@ -23,8 +23,8 @@ void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 			things[i].object = add_entity("little phlooph");
 			set_atlas(things[i].object, "scary");
 			
-			// Randomly choose if it is a bottom phlooph (If pHas_bottom is true)
-			things[i].bottom = rand()%2 == 0 && pHas_bottom;
+			// Choose if it is a bottom phlooph (If pHas_bottom is true)
+			things[i].bottom = i%2 == 0 && pHas_bottom;
 			
 			if (things[i].bottom)
 				set_position(things[i].object, game_position + vec(0.5 + i, 8));
@@ -32,6 +32,27 @@ void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 				set_position(things[i].object, game_position + vec(0.5 + i, 1));
 		}
 	}
+  
+  // Randomize
+  if (pHas_bottom)
+  {
+    for (uint i = 0; i < randomize_count; i++)
+    {
+      uint index_1 = random(0, count);
+      uint index_2 = random(0, count);
+      
+      // Swap stuffs
+      const vec temp_1 = get_position(things[index_1].object);
+      const vec temp_2 = get_position(things[index_2].object);
+      const bool is_bottom = things[index_1].bottom;
+      
+      set_position(things[index_1].object, vec(temp_1.x, temp_2.y));
+      things[index_1].bottom = things[index_2].bottom;
+      
+      set_position(things[index_2].object, vec(temp_2.x, temp_1.y));
+      things[index_2].bottom = is_bottom;
+    }
+  }
 	
 	wait(1);
 	
@@ -54,7 +75,8 @@ void phlooph_attack(float pSpeed, bool pHas_bottom = false)
 	}while(yield() && timer < duration);
 	
 	for (uint i = 0; i < things.length(); i++)
-		remove_entity(things[i].object);
+    if (things[i].object.is_valid())
+      remove_entity(things[i].object);
 }
 
 void light_sparkles(vec pPosition)

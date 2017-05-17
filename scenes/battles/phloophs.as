@@ -128,13 +128,17 @@ void phlooph_game()
 	
 	little_bros bros;
 	bros.show();
+  
+  narrative::show();
+	narrative::set_expression("smol phlooph icon", "angry");
+  
 	say("HEHEHEHEHE.");
 	say("YOU WILL NEVER BRING US TO DADDY.");
 	bros.talk("You jerk!", 0);
 	bros.talk("AHHHH", 3);
 	bros.talk("Gimmi turtles", 5);
 	say("Little bros.\nSQUISH IT!");
-	narrative::end();
+	narrative::hide();
 	
 	
 	music::volume(70);
@@ -159,33 +163,33 @@ void phlooph_game()
 	}, dictionary = {{"bg", bg.get()}});
 	
 	
-	/*phlooph_attack(2);
+	phlooph_attack(2);
 	say("YOU WILL NEVER GET AWAY.");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_attack(3);
 	say("UGH!");
 	nl("We'll have to get a little more serious!");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_drop_attack(5, 4);
 	say("We will never be caught!");
 	nl("We don't like daddy!");
 	say("AGAIN!");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_drop_attack(10, 7);
 	say("AGAIN!");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_drop_attack(20, 7);
 	say("AAAAAHHHHH");
 	nl("ONCE AGAIN!");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_drop_attack(40, 7);
@@ -194,7 +198,7 @@ void phlooph_game()
 	nl("...Or are we just tooooo easy for you?");
 	say("We see how it is.");
 	nl("PREPARE FOR MORE.");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_attack(3, true);
@@ -220,12 +224,12 @@ void phlooph_game()
 	fnl("We want to be something else!");
 	bros.all_talk("YAAAASS");
 	keywait();
+	narrative::hide();
 	
 	wait(1);
 	bros.hide();
-	wait(0.5);
-	
-	narrative::end();
+  
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_attack(5, true);
@@ -238,7 +242,7 @@ void phlooph_game()
 	
 	say("Lets see how much you can handle.");
 	nl("Try this!");
-	narrative::end();
+	narrative::hide();
 	player::lock(false);
 	
 	phlooph_attack(6, true);
@@ -247,7 +251,14 @@ void phlooph_game()
 	phlooph_drop_attack(60, 8);
 	phlooph_attack(9, true);
 	
-	phlooph_drop_attack(70, 10);*/
+	phlooph_drop_attack(70, 10);
+	phlooph_drop_attack(70, 10);
+	phlooph_attack(9, true);
+	phlooph_attack(9, true);
+	phlooph_attack(9, true);
+	phlooph_drop_attack(50, 20);
+	phlooph_attack(9, true);
+	phlooph_attack(9, true);
 	
 	bros.show();
 	
@@ -288,7 +299,7 @@ void phlooph_game()
 	
 	music::fade_volume(30, 2);
 	set_atlas(scary_phlooph, "surprised");
-	bros.set_atlas("surprise");
+	bros.set_atlas("surprised");
 	move_z(phlooph, 0, 1);
 	fx::sound("heh");
 	music::stop();
@@ -325,10 +336,45 @@ void phlooph_game()
   music::open("doodle111");
   music::fade_volume(70, 6);
   
-  
   nl("I see.");
   nl("No wonder why you all avoid me.");
-  nl("");
-	narrative::hide();
+  
+	narrative::set_expression("mrphlooph icon", "default:default");
+  say("I'll tell you this.");
+  nl("There are a lot of you and only one position.");
+  say("I won't force you.");
+  nl("But I hope one of you will.");
+  
+  
+  set_atlas(scary_phlooph, "default:default");
+	bros.set_atlas("default:default");
+	narrative::set_expression("smol phlooph icon", "surprised");
+  say("Daddy...");
+  fnl("You..");
+  wait(0.2);
+  append("You mean...");
+  
+  narrative::set_expression("mrphlooph icon", "default:default");
+  say("Follow your dreams my little ones.");
+  
+	narrative::set_expression("smol phlooph icon", "happy");
+  fsay("DADDY!");
+	bros.talk("Daddy!", 0);
+	bros.talk("Yay", 1);
+	bros.talk("Is happs", 2);
+	bros.talk("Pops!", 3);
+	bros.talk("Love you", 4);
+	bros.talk("gimmmi turtle", 5);
+  keywait();
+  
+  narrative::set_interval(70);
+  say("Thank you.");
+  
+  music::fade_volume(0, 3);
+  fx::fade_out(3);
+	narrative::end();
+  
+  set_flag("caughtthephloophs");
+  load_scene("dreamland/mrphlooph");
 }
 

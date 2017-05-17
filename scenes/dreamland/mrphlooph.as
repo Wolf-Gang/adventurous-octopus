@@ -4,15 +4,13 @@
 
 entity unicorn;
 entity phlooph;
+entity little_phlooph;
 
 [start]
 void create_meadow()
 {
 	// Top
 	create_flower_patch(vec(1, -1), vec(17, 9), 2);
-	
-	// Left
-	create_flower_patch(vec(1, 3), vec(5, 13), 2);
 }
 
 [start]
@@ -23,6 +21,45 @@ void create_phlooph()
 		phlooph = add_entity("mrphlooph", "default:default");
 		set_position(phlooph, vec(5, 4.5));
 	}
+  
+  // The little phlooph
+  if (has_flag("caughtthephloophs"))
+  {
+    little_phlooph = add_entity("little phlooph");
+    set_position(little_phlooph, vec(2, 6));
+    animation::start(little_phlooph);
+    
+    if (!has_flag("unlockedgate"))
+    {
+      narrative::show();
+      narrative::set_expression("mrphlooph icon", "default:default");
+      say("My little friend. Thank you.");
+      say("My little phloophs were such a hassle.");
+      nl("I'll pay you back by opening the gate.");
+      
+      narrative::set_expression("mrphlooph icon", "sleepy");
+      say("MMMMMMMMMMMM.");
+      narrative::set_expression("mrphlooph icon", "default:default");
+      nl("BAM!");
+      set_flag("unlockedgate");
+      nl("It's open now.");
+      say("Good luck on your journey.");
+      nl("Your friendly little venture.");
+    }
+  }
+  else
+    group::enable("littlephlooph_talk", false);
+}
+
+[group littlephlooph]
+void littlephlooph_talk()
+{
+  narrative::show();
+	narrative::set_expression("smol phlooph icon", "default:default");
+  say("I was really mean to daddy...");
+  nl("Sowwy daddy.");
+  narrative::end();
+	player::lock(false);
 }
 
 [start]
