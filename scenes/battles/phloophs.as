@@ -5,8 +5,22 @@
 
 const vec game_position(-10, -10);
 
+namespace priv
+{
+  vec last_boundery_position;
+  vec last_boundary_size;
+}
+
+void return_boundary()
+{
+  get_boundary_position(priv::last_boundery_position);
+  get_boundary_size(priv::last_boundary_size);
+}
+
 void goto_area()
 {
+  priv::last_boundery_position = get_boundary_position();
+  priv::last_boundary_size = get_boundary_size();
 	get_boundary_position(game_position); // TODO: Fix these names in the engine
 	get_boundary_size(vec(10, 8));
 	set_position(get_player(), (game_position + vec(10, 8)/2));
@@ -60,7 +74,7 @@ class little_bros
 		for (uint i = 0; i < mLittle_bros.length(); i++)
 		{
 			entity bro = add_entity("little phlooph");
-			set_atlas(bro, "scary");
+			::set_atlas(bro, "scary");
 			if (i%2 == 0)
 				set_position(bro, game_position + vec(1, i + 1));
 			else
@@ -78,26 +92,32 @@ class little_bros
 		}
 	}
 	
-	void surprise()
+	void set_atlas(string pName)
 	{
 		for(uint i = 0; i < mLittle_bros.length(); i++)
 		{
-			set_atlas(mLittle_bros[i], "surprised");
+			::set_atlas(mLittle_bros[i], pName);
 		}
 	}
 }
 
+entity create_backgound()
+{
+  entity e = add_entity("pixel");
+	set_position(e, game_position);
+	set_scale(e, vec(10, 10)*32);
+	set_anchor(e, anchor::topleft);
+	set_depth(e, fixed_depth::background);
+  return e;
+}
 
 void phlooph_game()
 {
 	
 	say("WE KNOW DADDY SENT YOU");
-	scoped_entity bg = add_entity("pixel");
-	set_position(bg, game_position);
-	set_scale(bg, vec(10, 10)*32);
-	set_anchor(bg, anchor::topleft);
+  
+  scoped_entity bg = create_backgound();
 	set_color(bg, 100, 50, 50, 255);
-	set_depth(bg, fixed_depth::background);
 	
 	scoped_entity scary_phlooph = add_entity("little phlooph");
 	set_atlas(scary_phlooph, "scary");
@@ -139,7 +159,7 @@ void phlooph_game()
 	}, dictionary = {{"bg", bg.get()}});
 	
 	
-	phlooph_attack(2);
+	/*phlooph_attack(2);
 	say("YOU WILL NEVER GET AWAY.");
 	narrative::end();
 	player::lock(false);
@@ -227,7 +247,7 @@ void phlooph_game()
 	phlooph_drop_attack(60, 8);
 	phlooph_attack(9, true);
 	
-	phlooph_drop_attack(70, 10);
+	phlooph_drop_attack(70, 10);*/
 	
 	bros.show();
 	
@@ -268,12 +288,15 @@ void phlooph_game()
 	
 	music::fade_volume(30, 2);
 	set_atlas(scary_phlooph, "surprised");
-	bros.surprise();
+	bros.set_atlas("surprise");
 	move_z(phlooph, 0, 1);
 	fx::sound("heh");
 	music::stop();
 	shadows::remove(phlooph);
 	
+  bg = create_backgound();
+	set_color(bg, 100, 100, 50, 255);
+  
 	wait(0.5);
 	set_atlas(phlooph, "awakening");
 	animation::start(phlooph);
@@ -283,13 +306,29 @@ void phlooph_game()
 	narrative::set_speaker(phlooph);
 	narrative::set_expression("mrphlooph icon", "sinister");
 	say("Found ya.");
-	nl("I can hear you a mile away.");
+  nl("I can hear you a mile away.");
 	narrative::hide();
 	
 	bros.all_talk("*Silence*");
 	wait(2);
-	fx::fade_out(2);
-	set_flag("caughtthephloophs");
-	load_scene("dreamland/mrphlooph");
+	narrative::set_expression("mrphlooph icon", "default:default");
+  say("So none of you want to be my successor.");
+	narrative::hide();
+  
+  bros.all_talk("*Silence*");
+	wait(2);
+  
+  narrative::set_expression("mrphlooph icon", "sleepy");
+  say("...");
+  
+  music::volume(0);
+  music::open("doodle111");
+  music::fade_volume(70, 6);
+  
+  
+  nl("I see.");
+  nl("No wonder why you all avoid me.");
+  nl("");
+	narrative::hide();
 }
 

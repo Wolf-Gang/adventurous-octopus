@@ -72,6 +72,8 @@ void phloophs_talk()
 		
 		wait(1);
 		phlooph_game();
+
+    
 	}else{
 		say("I hope we will be the bestest of friends.");
 		narrative::end();
