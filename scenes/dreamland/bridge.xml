@@ -40,7 +40,7 @@
         <trigger x="30" y="-0.2" w="1" h="2.2" group="crushingyourhopesanddreams"/>
         <wall x="9" y="-2" w="1" h="6" group="gate"/>
         <wall x="6.3000002" y="-3" w="6" h="1"/>
-        <door x="4" y="-4" w="3" h="1" name="north" destination="south" scene="mrphlooph" offsetx="0" offsety="1"/>
+        <door x="4" y="-4" w="3" h="1" name="north" destination="south" scene="dreamland/mrphlooph" offsetx="0" offsety="1"/>
         <wall x="3" y="4" w="1.7" h="1"/>
         <wall x="2.2" y="-3" w="1" h="8"/>
         <wall x="3" y="-3" w="1.7" h="1"/>

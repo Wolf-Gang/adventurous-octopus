@@ -23,7 +23,7 @@
         </layer>
     </map>
     <collisionboxes>
-        <door x="4" y="8" w="2" h="1" name="south" destination="right" scene="fork" offsetx="0" offsety="-1"/>
+        <door x="4" y="8" w="2" h="1" name="south" destination="right" scene="dreamland/fork" offsetx="0" offsety="-1"/>
         <wall x="4" y="5" w="2" h="1"/>
         <wall x="5.8000002" y="6" w="1" h="2"/>
         <wall x="3.2" y="6" w="1" h="2"/>

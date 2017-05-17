@@ -4,4 +4,5 @@
     <default:left x="0" y="30" w="16" h="30" frames="3" interval="150" pingpong="1" default="1"/>
     <default:right x="0" y="90" w="16" h="30" frames="3" interval="150" pingpong="1" default="1"/>
     <default:up x="0" y="60" w="16" h="30" frames="3" interval="150" pingpong="1" default="1"/>
+    <oof x="0" y="120" w="32" h="16"/>
 </atlas>

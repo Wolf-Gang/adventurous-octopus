@@ -139,7 +139,7 @@ void crushingyourhopesanddreams()
 {
 	// Need to disable this because it pops up the narrative
   //lol
-	group::enable("dont2", false);
+	//group::enable("dont2", false);
 	
 	player::lock(true);
 	
@@ -194,11 +194,14 @@ void crushingyourhopesanddreams()
 	{
 		const float delta = get_delta();
 		timer += delta;
-		set_z(get_player(), timer); // Move player down
+		set_z(get_player(), -timer); // Move player down
 		set_rotation(get_player(), 90*(timer/4)); // Rotate clockwise
 	} while(timer <= 4 && yield());
 	
 	group::enable("crushingyourhopesanddreams", false);
+  
+  load_scene("lost/fallen");
+  
 }
 
 [start]
