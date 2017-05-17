@@ -12,7 +12,7 @@
     <ground x="0" y="0" w="32" h="32"/>
     <hearts x="32" y="32" w="32" h="32"/>
     <house x="0" y="96" w="64" h="96"/>
-    <key x="192" y="160" w="32" h="32" frames="2" interval="50" loop="1"/>
+    <key x="192" y="160" w="32" h="32" frames="2" interval="200" loop="1"/>
     <lock x="96" y="160" w="32" h="32"/>
     <orangeflower x="192" y="128" w="16" h="16" frames="4" interval="300" loop="1" default="2"/>
     <path x="64" y="0" w="32" h="32"/>
