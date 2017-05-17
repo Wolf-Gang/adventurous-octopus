@@ -1,8 +1,9 @@
 <scene>
+    <boundary x="-2" y="-4" w="13" h="9"/>
     <map>
         <texture>lost</texture>
         <layer id="0">
-            <wall x="-2" y="-3" w="13"/>
+            <wall x="-2" y="-4" w="13" h="2"/>
             <floor x="-2" y="-2" w="13" h="5"/>
             <floor x="-2" y="3" w="13" r="2"/>
             <floor x="-2" y="4" w="13" r="2"/>

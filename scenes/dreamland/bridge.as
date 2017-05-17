@@ -40,12 +40,10 @@ void create_gate()
 	{
 		group::enable("gate", false);
 		group::enable("thisisagate", false);
-    
-
 	}
   else
   {
-	    // Lock it up
+	  // Lock it up
     for (uint i = 0; i < 8; i++)
     {
       entity gate = add_entity("dreamland", "bars");
@@ -78,7 +76,7 @@ void smol_phloophphlooph() {
 
 [group littlephlooph]
 void little_phlooph() {
-  
+
   say("So my dad wants you to find us, huh?");
   nl("This way.");
   narrative::end();
@@ -93,6 +91,7 @@ void little_phlooph() {
   
   player::lock(false);
   
+  group::enable("littlephlooph", false);
   group::enable("followphlooph", true);
   
 }
@@ -107,7 +106,6 @@ void follow() {
   
   narrative::end();
   player::lock(false);
-  
 }
 
 [group hmmmmlocked]

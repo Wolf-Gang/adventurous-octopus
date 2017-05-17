@@ -43,8 +43,9 @@ void create_phlooph()
       nl("BAM!");
       set_flag("unlockedgate");
       nl("It's open now.");
-      say("Good luck on your journey.");
-      nl("Your friendly little venture.");
+      say("Good luck on your friendly little venture.");
+      narrative::end();
+      player::lock(false);
     }
   }
   else
@@ -65,7 +66,7 @@ void littlephlooph_talk()
 [start]
 void create_unicorn()
 {
-  if(!has_flag("bridge_unlocked")) {
+  if(!has_flag("bridge_unlocked") && !has_flag("caughtthephloophs"))) {
     unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(7.5, 5));
     if(!has_flag("phloophgate")) {

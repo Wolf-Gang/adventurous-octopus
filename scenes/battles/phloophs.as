@@ -174,25 +174,20 @@ void phlooph_game()
 	narrative::hide();
 	player::lock(false);
 	
-	phlooph_drop_attack(5, 4);
+	phlooph_drop_attack(5, 5);
 	say("We will never be caught!");
 	nl("We don't like daddy!");
 	say("AGAIN!");
 	narrative::hide();
 	player::lock(false);
 	
-	phlooph_drop_attack(10, 7);
-	say("AGAIN!");
-	narrative::hide();
-	player::lock(false);
-	
-	phlooph_drop_attack(20, 7);
+	phlooph_drop_attack(20, 8);
 	say("AAAAAHHHHH");
 	nl("ONCE AGAIN!");
 	narrative::hide();
 	player::lock(false);
 	
-	phlooph_drop_attack(40, 7);
+	phlooph_drop_attack(30, 9);
 	
 	say("Hmmmmm... Quite persistent you are.");
 	nl("...Or are we just tooooo easy for you?");
@@ -201,14 +196,13 @@ void phlooph_game()
 	narrative::hide();
 	player::lock(false);
 	
-	phlooph_attack(3, true);
-	phlooph_drop_attack(10, 5);
-	
 	phlooph_attack(4, true);
-	phlooph_drop_attack(20, 7);
+	phlooph_drop_attack(10, 5);
+  
+	phlooph_attack(5, true);
 	phlooph_drop_attack(20, 8);
-	phlooph_attack(5, true);
-	phlooph_attack(5, true);
+  
+	phlooph_attack(6, true);
 	
 	bros.show();
 	fsay("Daddy is always saying we would be the next leaders of the dreamland.");
@@ -232,12 +226,11 @@ void phlooph_game()
 	narrative::hide();
 	player::lock(false);
 	
-	phlooph_attack(5, true);
 	phlooph_attack(6, true);
+	phlooph_attack(7, true);
 	phlooph_attack(7, true);
 	
 	phlooph_drop_attack(40, 7);
-	phlooph_drop_attack(60, 8);
 	
 	
 	say("Lets see how much you can handle.");
@@ -248,17 +241,15 @@ void phlooph_game()
 	phlooph_attack(6, true);
 	phlooph_attack(7, true);
 	phlooph_attack(8, true);
-	phlooph_drop_attack(60, 8);
+	phlooph_drop_attack(40, 10);
 	phlooph_attack(9, true);
 	
-	phlooph_drop_attack(70, 10);
-	phlooph_drop_attack(70, 10);
 	phlooph_attack(9, true);
 	phlooph_attack(9, true);
+	phlooph_drop_attack(40, 15);
 	phlooph_attack(9, true);
-	phlooph_drop_attack(50, 20);
 	phlooph_attack(9, true);
-	phlooph_attack(9, true);
+	phlooph_drop_attack(40, 20);
 	
 	bros.show();
 	
@@ -358,17 +349,15 @@ void phlooph_game()
   say("Follow your dreams my little ones.");
   
 	narrative::set_expression("smol phlooph icon", "happy");
+  narrative::set_interval(70);
   fsay("DADDY!");
 	bros.talk("Daddy!", 0);
 	bros.talk("Yay", 1);
 	bros.talk("Is happs", 2);
 	bros.talk("Pops!", 3);
-	bros.talk("Love you", 4);
+	bros.talk("Love ye", 4);
 	bros.talk("gimmmi turtle", 5);
   keywait();
-  
-  narrative::set_interval(70);
-  say("Thank you.");
   
   music::fade_volume(0, 3);
   fx::fade_out(3);
