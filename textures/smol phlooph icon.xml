@@ -2,5 +2,5 @@
     <angry x="138" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
     <default:default x="0" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
     <happy x="276" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
-    <surprised x="414" y="0" w="69" h="69"/>
+    <surprised x="414" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
 </atlas>
