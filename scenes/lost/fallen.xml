@@ -1,16 +1,14 @@
 <scene>
-    <boundary x="-2" y="-4" w="13" h="9"/>
+    <boundary x="-2" y="-3" w="13" h="8"/>
     <map>
         <texture>lost</texture>
         <layer id="0">
-            <wall x="-2" y="-4" w="13" h="2"/>
-            <floor x="-2" y="-2" w="13" h="5"/>
+            <wall x="-2" y="-3" w="13" h="2"/>
+            <floor x="-2" y="-1" w="13" h="4"/>
             <floor x="-2" y="3" w="13" r="2"/>
             <floor x="-2" y="4" w="13" r="2"/>
         </layer>
         <layer id="1">
-            <barrel x="-2" y="-2" r="2"/>
-            <crate x="-1" y="-2" r="2"/>
             <crate x="-1.5" y="-1.5" h="2"/>
             <crate x="-2" y="-1" w="3" r="2"/>
             <barrel x="-1" y="-0.5"/>
@@ -42,7 +40,6 @@
     <collisionboxes>
         <wall x="-3" y="-2" w="1" h="7"/>
         <wall x="-2" y="5" w="13" h="1"/>
-        <wall x="-2" y="-3" w="13" h="1"/>
         <wall x="0" y="-1" w="1" h="1"/>
         <wall x="1.2" y="0.1" w="0.55000001" h="0.80000001"/>
         <wall x="-2" y="-2" w="2" h="7"/>
@@ -51,5 +48,7 @@
         <wall x="1" y="4" w="0.30000001" h="1"/>
         <wall x="0" y="0" w="0.30000001" h="1"/>
         <wall x="1" y="2" w="0.30000001" h="1"/>
+        <door x="11" y="-2" w="1" h="7" name="east" destination="west" scene="lost/sivora" offsetx="-1" offsety="0"/>
+        <wall x="0" y="-2" w="11" h="1"/>
     </collisionboxes>
 </scene>
