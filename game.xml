@@ -1,9 +1,0 @@
-<game>
-	<scene  name="overture"/>
-	
-	<player texture="mc"/>
-	
-	<tile_size pixels="32"/>
-	
-	<!-- Left to the defaults -->
-</game>
