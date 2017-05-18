@@ -1,5 +1,0 @@
-<atlas>
-    <default:default x="0" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
-    <sinister x="276" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
-    <sleepy x="138" y="0" w="69" h="69" frames="2" interval="150" loop="1"/>
-</atlas>

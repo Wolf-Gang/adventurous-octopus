@@ -1,8 +1,0 @@
-blacklist
-.git
-internal/.git
-README.md
-log.txt
-.gitmodules
-.gitignore
-.gitattributes

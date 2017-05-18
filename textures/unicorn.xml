@@ -1,5 +1,0 @@
-<atlas>
-    <default:default x="0" y="0" w="48" h="50"/>
-    <talk x="0" y="0" w="48" h="50" frames="2" interval="150" loop="1"/>
-    <talk_headup x="96" y="0" w="48" h="50" frames="2" interval="150" loop="1"/>
-</atlas>
