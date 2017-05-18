@@ -1,0 +1,111 @@
+<scene>
+    <boundary x="-1" y="-1" w="23" h="23"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="0">
+            <ground x="-1" y="-1" w="23" h="22"/>
+            <ground x="-1" y="21" w="23"/>
+        </layer>
+        <layer id="1">
+            <redflower x="0" y="0" h="10"/>
+            <blueflower x="1" y="0" h="10"/>
+            <orangeflower x="2" y="0" h="10"/>
+            <redflower x="3" y="0" h="10"/>
+            <blueflower x="4" y="0" h="10"/>
+            <orangeflower x="5" y="0" h="10"/>
+            <redflower x="6" y="0" h="10"/>
+            <blueflower x="7" y="0" h="10"/>
+            <orangeflower x="8" y="0" h="10"/>
+            <redflower x="9" y="0" h="9"/>
+            <orangeflower x="11" y="0" h="9"/>
+            <redflower x="12" y="0" h="10"/>
+            <blueflower x="13" y="0" h="10"/>
+            <orangeflower x="14" y="0" h="10"/>
+            <redflower x="15" y="0" h="10"/>
+            <blueflower x="16" y="0" h="10"/>
+            <orangeflower x="17" y="0" h="10"/>
+            <redflower x="18" y="0" h="10"/>
+            <blueflower x="19" y="0" h="10"/>
+            <orangeflower x="20" y="0" h="10"/>
+            <redflower x="0.5" y="0.5" h="10"/>
+            <blueflower x="1.5" y="0.5" h="10"/>
+            <orangeflower x="2.5" y="0.5" h="10"/>
+            <redflower x="3.5" y="0.5" h="10"/>
+            <blueflower x="4.5" y="0.5" h="10"/>
+            <orangeflower x="5.5" y="0.5" h="10"/>
+            <redflower x="6.5" y="0.5" h="10"/>
+            <blueflower x="7.5" y="0.5" h="10"/>
+            <orangeflower x="8.5" y="0.5" h="10"/>
+            <redflower x="9.5" y="0.5" h="9"/>
+            <orangeflower x="11.5" y="0.5" h="10"/>
+            <redflower x="12.5" y="0.5" h="10"/>
+            <blueflower x="13.5" y="0.5" h="10"/>
+            <orangeflower x="14.5" y="0.5" h="10"/>
+            <redflower x="15.5" y="0.5" h="10"/>
+            <blueflower x="16.5" y="0.5" h="10"/>
+            <orangeflower x="17.5" y="0.5" h="10"/>
+            <redflower x="18.5" y="0.5" h="10"/>
+            <blueflower x="19.5" y="0.5" h="10"/>
+            <orangeflower x="20.5" y="0.5" h="10"/>
+            <redflower x="0" y="11" h="10"/>
+            <blueflower x="1" y="11" h="10"/>
+            <orangeflower x="2" y="11" h="10"/>
+            <redflower x="3" y="11" h="10"/>
+            <blueflower x="4" y="11" h="10"/>
+            <orangeflower x="5" y="11" h="10"/>
+            <redflower x="6" y="11" h="10"/>
+            <blueflower x="7" y="11" h="10"/>
+            <orangeflower x="8" y="11" h="10"/>
+            <redflower x="12" y="11" h="10"/>
+            <blueflower x="13" y="11" h="10"/>
+            <orangeflower x="14" y="11" h="10"/>
+            <redflower x="15" y="11" h="10"/>
+            <blueflower x="16" y="11" h="10"/>
+            <orangeflower x="17" y="11" h="10"/>
+            <redflower x="18" y="11" h="10"/>
+            <blueflower x="19" y="11" h="10"/>
+            <orangeflower x="20" y="11" h="10"/>
+            <redflower x="0.5" y="11.5" h="10"/>
+            <blueflower x="1.5" y="11.5" h="10"/>
+            <orangeflower x="2.5" y="11.5" h="10"/>
+            <redflower x="3.5" y="11.5" h="10"/>
+            <blueflower x="4.5" y="11.5" h="10"/>
+            <orangeflower x="5.5" y="11.5" h="10"/>
+            <redflower x="6.5" y="11.5" h="10"/>
+            <blueflower x="7.5" y="11.5" h="10"/>
+            <orangeflower x="8.5" y="11.5" h="10"/>
+            <redflower x="12.5" y="11.5" h="10"/>
+            <blueflower x="13.5" y="11.5" h="10"/>
+            <orangeflower x="14.5" y="11.5" h="10"/>
+            <redflower x="15.5" y="11.5" h="10"/>
+            <blueflower x="16.5" y="11.5" h="10"/>
+            <orangeflower x="17.5" y="11.5" h="10"/>
+            <redflower x="18.5" y="11.5" h="10"/>
+            <blueflower x="19.5" y="11.5" h="10"/>
+            <orangeflower x="20.5" y="11.5" h="9"/>
+            <redflower x="9" y="12" h="9"/>
+            <orangeflower x="11" y="12" h="9"/>
+            <redflower x="9.5" y="12.5" h="9"/>
+            <orangeflower x="11.5" y="12.5" h="9"/>
+            <orangeflower x="20.5" y="20.5"/>
+        </layer>
+        <layer id="2">
+            <side_cloud_corner x="-1" y="-1" r="1"/>
+            <side_clouds x="0" y="-1" w="21" r="1"/>
+            <side_cloud_corner x="21" y="-1" r="2"/>
+            <side_clouds x="-1" y="0" h="21"/>
+            <side_clouds x="21" y="0" h="21" r="2"/>
+            <side_cloud_corner x="-1" y="21"/>
+            <side_clouds x="0" y="21" w="21" r="3"/>
+            <side_cloud_corner x="21" y="21" r="3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="-1" y="-1" w="0.69999999" h="23"/>
+        <wall x="-0.30000001" y="-1" w="21.6" h="0.69999999"/>
+        <wall x="21.299999" y="-1" w="0.69999999" h="23"/>
+        <wall x="-0.30000001" y="21.299999" w="21.6" h="0.69999999"/>
+        <trigger x="9" y="9" w="3" h="3" group="itlikesthem"/>
+        <button x="10" y="10" w="1" h="1" group="goflowers"/>
+    </collisionboxes>
+</scene>

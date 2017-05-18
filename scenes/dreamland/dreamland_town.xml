@@ -62,9 +62,10 @@
         <wall x="6.5" y="5.5" w="2" h="0.25"/>
         <wall x="2" y="6.9000001" w="2" h="0.25"/>
         <button x="2" y="6" w="1" h="1" group="key"/>
-        <wall x="0" y="22.299999" w="10" h="1"/>
-        <wall x="9.3000002" y="14" w="1" h="8"/>
-        <wall x="-0.30000001" y="14" w="1" h="8"/>
-        <trigger x="1" y="14" w="8" h="1" group="meetunicorn"/>
+        <wall x="0" y="22.299999" w="10" h="0.69999999"/>
+        <wall x="9.3000002" y="14" w="0.69999999" h="8.3000002"/>
+        <wall x="0" y="14" w="0.69999999" h="8.3000002"/>
+        <trigger x="0.69999999" y="14" w="8.6000004" h="1" group="meetunicorn"/>
+        <trigger x="0.69999999" y="7.5" w="4" h="10" group="lefrow"/>
     </collisionboxes>
 </scene>

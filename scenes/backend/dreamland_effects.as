@@ -90,3 +90,17 @@ void unicorn_disappear(entity pUnicorn)
 	animation::play_wait(hearts);
 }
 
+[start]
+void flower_hat() {
+  
+  if(has_flag("Itlikesflowers")) {
+    
+    entity mc_hat = add_entity("dreamland", "purpleflower");
+    set_position(mc_hat, get_position(get_player()));
+    set_z(mc_hat, .9);
+    add_child(get_player(), mc_hat);
+    
+  }
+  
+}
+

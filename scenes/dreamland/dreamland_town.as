@@ -168,3 +168,26 @@ void meetunicorn()
 	group::enable("meetunicorn", false);
   set_flag("meet_unicorn");
 }
+
+float flower_timer = 0;
+
+[group lefrow]
+void flower() {
+  
+  if(has_flag("meet_unicorn"))
+    flower_timer += get_delta();
+  
+  if(flower_timer >= 15)
+    worfel();
+  
+}
+
+void worfel() {
+  
+  say("It likes flowers, yes it does!");
+  nl("It wants the flowers indeed!");
+  
+  load_scene("dreamland/worfel");
+  
+}
+

@@ -66,7 +66,7 @@ void littlephlooph_talk()
 [start]
 void create_unicorn()
 {
-  if(!has_flag("bridge_unlocked") && !has_flag("caughtthephloophs"))) {
+  if(!has_flag("bridge_unlocked") && !has_flag("caughtthephloophs")) {
     unicorn = add_entity("unicorn", "talk");
     set_position(unicorn, vec(7.5, 5));
     if(!has_flag("phloophgate")) {
