@@ -4,6 +4,12 @@ entity unicorn;
 
 entity key;
 
+[start]
+void create_welcome_sign()
+{
+  entity sign = add_entity("dreamland", "welcome");
+  set_position(sign, vec(3, 19));
+}
 
 [group lockedhouse]
 void lockedhouse()

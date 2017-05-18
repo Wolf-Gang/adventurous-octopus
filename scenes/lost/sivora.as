@@ -15,7 +15,7 @@ void meetsivora()
 {
   player::lock(true);
 
-  scoped_entity sivora = add_character("voidian");
+  scoped_entity sivora = add_character("sivora");
   set_direction(sivora, direction::down);
   set_position(sivora, vec(4.3, 3.7));
   set_color(sivora, 0, 0, 0, 255);
@@ -45,7 +45,7 @@ void meetsivora()
   }
   
   say("Did you perhaps fall? That is a rather long fall.");
-  
+  nl("Come this way.");
 }
 
 [start]

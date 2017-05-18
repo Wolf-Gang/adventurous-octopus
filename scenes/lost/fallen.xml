@@ -10,15 +10,16 @@
         </layer>
         <layer id="1">
             <crate x="-1.5" y="-1.5" h="2"/>
-            <crate x="-2" y="-1" w="3" r="2"/>
+            <crate x="-2" y="-1" w="3"/>
             <barrel x="-1" y="-0.5"/>
-            <barrel x="-2" y="0" r="2"/>
+            <barrel x="-2" y="0"/>
             <barrel x="-1.5" y="0" h="2"/>
             <crate x="-0.5" y="0"/>
             <barrel x="1" y="0"/>
             <path x="3" y="1" w="8"/>
             <crate x="-1.5" y="1.5" h="2"/>
             <barrel x="-2" y="2"/>
+            <barrel x="-0.5" y="2" r="1"/>
             <crate x="0.5" y="2"/>
             <barrel x="-1" y="2.5" w="2"/>
             <crate x="-2" y="3"/>
@@ -32,9 +33,6 @@
             <barrel x="-1" y="4"/>
             <barrel x="0.5" y="4"/>
             <crushed_crate x="1.5" y="4"/>
-        </layer>
-        <layer id="2">
-            <barrel x="-1" y="1.5"/>
         </layer>
     </map>
     <collisionboxes>
