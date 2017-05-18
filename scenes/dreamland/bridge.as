@@ -221,6 +221,7 @@ void talktounicorn()
 	player::lock(true);
 	narrative::show();
 	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
 	say("Ok, let's try this again.");
 	say("This is the bridge of your hopes and dreams.");
 	say("I have some place to be at the moment so I won't see you for a while.");

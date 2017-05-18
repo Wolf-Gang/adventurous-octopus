@@ -31,6 +31,9 @@ void create_phlooph()
     
     if (!has_flag("unlockedgate"))
     {
+    
+      set_position(get_player(), vec(5, 6));
+      set_direction(get_player(), direction::up);
       narrative::show();
       narrative::set_expression("mrphlooph icon", "default:default");
       say("My little friend. Thank you.");
@@ -43,7 +46,8 @@ void create_phlooph()
       nl("BAM!");
       set_flag("unlockedgate");
       nl("It's open now.");
-      say("Good luck on your friendly little venture.");
+      say("You'll meet druggy by the bridge.");
+      nl("Good luck on your friendly little venture.");
       narrative::end();
       player::lock(false);
     }
@@ -82,7 +86,9 @@ void start()
 {
 	music::open("doodle104_2");
 	music::volume(70);
-	set_position(get_player(), vec(5, 9));
+  
+  if (!has_flag("caughtthephloophs") || has_flag("unlockedgate"))
+    set_position(get_player(), vec(5, 9));
 }
 
 [start]

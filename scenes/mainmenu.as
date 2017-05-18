@@ -136,7 +136,7 @@ void mainmenu()
 		  
 		  music::fade_volume(0, 2);
 		  fx::fade_out(2);
-      load_scene("dreamland/dreamland_town");
+      load_scene("dreamland/entrance");
       break;
         
         //'Continue'
