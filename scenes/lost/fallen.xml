@@ -18,7 +18,7 @@
             <barrel x="-1.5" y="0" h="2"/>
             <crate x="-0.5" y="0"/>
             <barrel x="1" y="0"/>
-            <path x="3" y="1" w="8" r="2"/>
+            <path x="3" y="1" w="8"/>
             <crate x="-1.5" y="1.5" h="2"/>
             <barrel x="-2" y="2"/>
             <crate x="0.5" y="2"/>
