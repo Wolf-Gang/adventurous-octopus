@@ -1,5 +1,7 @@
 <atlas>
     <bars x="64" y="160" w="32" h="32"/>
+    <bench1 x="64" y="96" w="64" h="32"/>
+    <bench2 x="128" y="128" w="32" h="64"/>
     <blueflower x="192" y="112" w="16" h="16" frames="4" interval="300" loop="1" default="1"/>
     <breakingbridge x="32" y="224" w="32" h="64" frames="4" interval="500"/>
     <cloud x="64" y="32" w="64" h="64"/>

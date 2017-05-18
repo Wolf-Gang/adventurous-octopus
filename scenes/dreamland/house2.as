@@ -46,7 +46,8 @@ void goaway() {
       nl("Her head...");
       set_direction(housedude, direction::right);
       say("See her over there?");
-      focus::move(vec(1.5, -.5), 2);
+      narrative::hide();
+      focus::move(midpoint(vec(1.5, -.5), get_position(get_player())), 2);
       wait(.5);
       fsay("*Sob*...");
       wait(.5);
@@ -57,6 +58,7 @@ void goaway() {
       nl("My pet rock... *Sob*");
       set_flag("memories");
       talk_count++;
+      narrative::hide();
       focus::move(get_position(get_player()), 1);
       focus::player();
       break;

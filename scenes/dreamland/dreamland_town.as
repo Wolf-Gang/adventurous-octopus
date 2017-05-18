@@ -16,8 +16,8 @@ void lockedhouse()
 void make_key() {
   key = add_entity("dreamland", "key");
   set_visible(key, false);
-  set_depth(key, 100);
-  set_position(key, vec(2.5, 5));
+  set_position(key, vec(2.5, 12.1));
+  set_z(key, 2.1);
   animation::start(key);
   group::enable("key", false);
 }
@@ -41,7 +41,8 @@ void lockedhouse_()
     say("\"Nobody\'s home, unfortunately.\"");
     narrative::end();
     set_visible(key, true);
-    move(key, vec(2.5, 7), 1.3444);
+    
+    move_z(key, 0, 1.3444);
     group::enable("key", true);
   } else {
     say("\"click\"");
@@ -82,8 +83,8 @@ void create_tree(vec pPosition)
 [start]
 void create_cloud_trees()
 {
-	create_tree(vec(7.5, 6));
-	create_tree(vec(3, 7.6));
+	create_tree(vec(3, 12.4));
+	create_tree(vec(8, 14.9));
 }
 
 void create_bush(vec pPosition, int t)
@@ -107,13 +108,23 @@ void create_cloud_bushes()
 	
   //left
 	create_bush(vec(1, 7.5), 1);
-	create_bush(vec(2, 7), 1);
+	create_bush(vec(2, 6.9), 1);
+	create_bush(vec(3, 7.1), 1);
+	create_bush(vec(4, 6.9), 1);
+	create_bush(vec(4.5, 7.5), 1);
 	
   //bottom-right
 	create_bush(vec(7, 9), 1);
-	create_bush(vec(6.5, 9.25), 1);
+	//create_bush(vec(6.5, 9.25), 1);
 	//create_bush(vec(6, 9), 1);
 	create_bush(vec(9, 9.25), 1);
+  
+	create_bush(vec(6.5, 6), 2);
+	create_bush(vec(6.5, 6.7), 1);
+	create_bush(vec(6.5, 7.4), 2);
+	create_bush(vec(6.5, 7.9), 1);
+	create_bush(vec(6.5, 8.5), 1);
+  
 }
 
 
@@ -122,6 +133,9 @@ void create_meadow()
 {
 	// Left
 	create_flower_patch(vec(1, 8), vec(8, 20), 2);
+  
+	// Left
+	//create_flower_patch(vec(1, 12), vec(8, 12), 2);
 	
 	// Right
 	create_flower_patch(vec(6.5, 11), vec(6, 14), 2);
