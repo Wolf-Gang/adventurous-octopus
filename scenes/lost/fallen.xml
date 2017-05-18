@@ -3,7 +3,7 @@
     <map>
         <texture>lost</texture>
         <layer id="0">
-            <wall x="-2" y="-3" w="13" h="2"/>
+            <wall x="-2" y="-3" w="13"/>
             <floor x="-2" y="-1" w="13" h="4"/>
             <floor x="-2" y="3" w="13" r="2"/>
             <floor x="-2" y="4" w="13" r="2"/>
