@@ -5,6 +5,7 @@ void enter()
   fsay("Enter?");
   if (select("Yes", "No") == option::first)
   {
+    narrative::end();
     fx::fade_out(1);
     load_scene("dreamland/dreamland_town");
   }

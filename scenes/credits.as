@@ -29,8 +29,8 @@ void credits()
   credit_text("To be Continued....");
   credit_text("A Game by the\nWolf-Gang Team");
   credit_text("Art:\nNisnow");
-  credit_text("Story, Programming:\nWarlordofWaffles\nChocolate Jesus");
-  credit_text("Music:\nChocolate Jesus");
+  credit_text("Story, Programming:\nWarlordofWaffles\nTurtleMaster");
+  credit_text("Music:\nTurtleMaster");
   credit_text("I hope you enjoyed this crazyfest.");
   credit_text("Bye-bye.");
   
