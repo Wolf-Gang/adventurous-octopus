@@ -1,7 +1,9 @@
 <atlas>
+    <bow x="0" y="196" w="30" h="39" frames="2" interval="500"/>
     <default:default x="0" y="0" w="30" h="39"/>
     <default:down x="0" y="0" w="30" h="39" frames="2" interval="200" loop="1"/>
     <default:left x="0" y="78" w="30" h="39" frames="2" interval="200" loop="1"/>
     <default:right x="0" y="117" w="30" h="39" frames="2" interval="200" loop="1"/>
     <default:up x="0" y="39" w="30" h="39" frames="2" interval="200" loop="1"/>
+    <talk x="0" y="156" w="30" h="39" frames="2" interval="150" loop="1"/>
 </atlas>
