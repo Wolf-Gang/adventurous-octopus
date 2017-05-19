@@ -11,6 +11,12 @@ void start() {
   crate = add_entity("lost", (has_flag("fall") ? "crushed_crate" : "crate"));
   set_position(crate, vec(2.5, 1.7));
   set_depth(crate, fixed_depth::below);
+  
+  if(has_flag("fall"))
+  {
+    music::volume(70);
+    music::open("scribbles86");
+  }
 }
 
 [start]
@@ -51,6 +57,10 @@ void fall()
   player::lock(false);
   
   fx::fade_in(3);
+  
+  music::volume(0);
+  music::fade_volume(70, 2);
+  music::open("scribbles86");
   
   set_flag("fall");
   

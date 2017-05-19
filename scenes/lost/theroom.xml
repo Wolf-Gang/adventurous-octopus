@@ -1,0 +1,53 @@
+<scene>
+    <boundary w="10" h="8"/>
+    <map>
+        <texture>lost</texture>
+        <layer id="0">
+            <wall x="0" y="0" w="10"/>
+            <floor x="0" y="2" w="10" h="5"/>
+            <floor x="0" y="7" w="10"/>
+        </layer>
+        <layer id="1">
+            <barrel x="0" y="1.5"/>
+            <crate x="1" y="1.5"/>
+            <barrel x="2" y="1.5"/>
+            <barrel x="7" y="1.5"/>
+            <barrel x="0" y="2"/>
+            <barrel x="1" y="2" r="1"/>
+            <barrel x="7.5" y="2"/>
+            <crate x="8" y="2" w="2"/>
+            <crate x="0.5" y="2.5"/>
+            <crate x="7.5" y="2.5" w="2"/>
+            <crate x="0" y="5.5"/>
+            <crate x="9" y="5.5"/>
+            <crate x="0" y="6" w="2"/>
+            <barrel x="0.5" y="6.5" w="2"/>
+            <barrel x="8" y="6.5" r="1"/>
+            <barrel x="8.5" y="6.5"/>
+            <barrel x="9" y="6.5"/>
+            <barrel x="0" y="7"/>
+            <crate x="1" y="7"/>
+            <barrel x="2" y="7" r="1"/>
+            <crate x="7" y="7"/>
+            <barrel x="8" y="7"/>
+            <crate x="9" y="7"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="-1" y="2" w="1" h="6"/>
+        <wall x="10" y="2" w="1" h="6"/>
+        <wall x="0" y="1" w="10" h="1"/>
+        <wall x="0" y="2" w="2" h="1"/>
+        <wall x="0" y="7" w="2" h="1"/>
+        <wall x="0" y="6" w="2" h="1"/>
+        <wall x="2" y="7" w="1" h="1"/>
+        <wall x="7" y="7" w="3" h="1"/>
+        <wall x="8" y="6" w="2" h="1"/>
+        <wall x="9" y="5" w="1" h="1"/>
+        <wall x="7" y="2" w="3" h="1"/>
+        <wall x="7" y="8" w="3" h="1"/>
+        <wall x="-1" y="8" w="4" h="1"/>
+        <door x="3" y="8" w="4" h="1" name="south" destination="north" scene="lost/theentrance" offsetx="0" offsety="-1"/>
+        <trigger x="2" y="3" w="6" h="1" group="sivoraintro"/>
+    </collisionboxes>
+</scene>

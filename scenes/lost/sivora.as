@@ -13,6 +13,8 @@ void create_boxes()
 [group meetsivora]
 void meetsivora()
 {
+  if (has_flag("meetsivora"))
+    return;
   player::lock(true);
 
   scoped_entity sivora = add_character("sivora");
@@ -37,19 +39,27 @@ void meetsivora()
   move(sivora, vec(5, 4.5), speed(1));
   set_direction(sivora, direction::left);
   
-  for(float timer = 0; timer < 1; timer += get_delta())
+  /*for(float timer = 0; timer < 1; timer += get_delta())
   {
     int c = int(255*timer);
     set_color(sivora, c, c, c, 255);
     yield();
-  }
+  }*/
   
   say("Did you perhaps fall? That is a rather long fall.");
   nl("Come this way.");
+  nl("I can help you.");
+  narrative::hide();
+  player::lock(false);
+  
+  move(sivora, direction::right, 10, speed(3));
+  set_flag("meetsivora");
 }
 
 [start]
 void start()
 {
+  music::volume(70);
+  music::open("scribbles86");
 	set_position(get_player(), vec(1, 4.5));
 }

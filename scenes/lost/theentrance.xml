@@ -1,0 +1,27 @@
+<scene>
+    <boundary y="-2" w="10" h="8"/>
+    <map>
+        <texture>lost</texture>
+        <layer id="0">
+            <wall x="0" y="-2" w="10"/>
+            <wall x="0" y="0" w="10"/>
+            <floor x="0" y="2" w="10" h="3"/>
+            <floor x="0" y="5" w="10"/>
+        </layer>
+        <layer id="1">
+            <largehole x="4" y="0"/>
+            <path x="0" y="2" w="10"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="0" y="6" w="10" h="1"/>
+        <wall x="-1" y="3" w="1" h="3"/>
+        <door x="-1" y="2" w="1" h="1" name="west" destination="east" scene="lost/sivora" offsetx="1" offsety="0"/>
+        <wall x="10" y="3" w="1" h="3"/>
+        <wall x="10" y="2" w="1" h="1"/>
+        <trigger x="9.8000002" y="2" w="1" h="1" group="whereareyougoing?"/>
+        <wall x="0" y="1" w="4" h="1"/>
+        <wall x="6" y="1" w="4" h="1"/>
+        <door x="4" y="1" w="2" h="1" name="north" destination="south" scene="lost/theroom" offsetx="0" offsety="1"/>
+    </collisionboxes>
+</scene>
