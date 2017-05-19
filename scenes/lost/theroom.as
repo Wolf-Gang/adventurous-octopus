@@ -12,7 +12,7 @@ void sivoraintro()
   player::lock(true);
   scoped_entity sivora = add_character("sivora");
   set_direction(sivora, direction::down);
-  set_position(sivora, vec(5, 2));
+  set_position(sivora, vec(5, 3));
   
   // Had to use separate for statements
   // because color functions are a bit limited

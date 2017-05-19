@@ -9,23 +9,27 @@
         </layer>
         <layer id="1">
             <cloud_tile x="0" y="0" r="1"/>
-            <side_clouds x="1" y="0" h="2"/>
+            <cloud_tile x="0.5" y="0" h="2" r="1"/>
+            <side_clouds x="1.5" y="0" h="2"/>
             <side_clouds x="3.5" y="0" h="2" r="2"/>
             <cloud_tile x="4.5" y="0" h="2"/>
             <side_clouds x="5.5" y="0" h="2"/>
-            <side_clouds x="8" y="0" h="2" r="2"/>
+            <side_clouds x="7.5" y="0" h="2" r="2"/>
+            <cloud_tile x="8.5" y="0" h="2" r="1"/>
             <cloud_tile x="9" y="0" h="2"/>
             <cloud_tile x="0" y="1"/>
-            <side_cloud_corner x="0" y="2" r="1"/>
-            <side_clouds_edge x="1" y="2" r="1"/>
+            <cloud_tile x="0" y="2" h="8" r="1"/>
+            <side_cloud_corner x="1" y="2" r="1"/>
+            <side_clouds_edge x="1.5" y="2" r="1"/>
             <side_clouds_edge x="3.5" y="2" r="2"/>
             <side_clouds x="4.5" y="2" r="1"/>
             <side_clouds_edge x="5.5" y="2" r="1"/>
-            <side_clouds_edge x="8" y="2" r="2"/>
-            <side_cloud_corner x="9" y="2" r="2"/>
-            <side_clouds x="0" y="3" h="7"/>
-            <side_clouds x="9" y="3" h="6" r="2"/>
-            <side_clouds x="9" y="9" r="2"/>
+            <side_clouds_edge x="7.5" y="2" r="2"/>
+            <side_cloud_corner x="8" y="2" r="2"/>
+            <cloud_tile x="9" y="2" h="7" r="1"/>
+            <side_clouds x="1" y="3" h="7"/>
+            <side_clouds x="8" y="3" h="7" r="2"/>
+            <cloud_tile x="9" y="9" r="1"/>
         </layer>
         <layer id="2">
             <hearts x="2.5" y="-0.5" h="4"/>
@@ -38,16 +42,16 @@
     </map>
     <collisionboxes>
         <door x="1" y="10" w="8" h="1" name="south" destination="north" scene="dreamland/dreamland_town" offsetx="0" offsety="-1"/>
-        <wall x="0" y="0" w="1.7" h="2.7"/>
+        <wall x="0.5" y="0" w="1.7" h="2.7"/>
         <trigger x="1" y="7" w="8" h="1" group="talktounicorn"/>
-        <door x="2" y="-1" w="1.5" h="1" name="left" destination="south" scene="dreamland/bridge" offsetx="0" offsety="1"/>
-        <door x="6.5" y="-1" w="1.5" h="1" name="right" destination="south" scene="dreamland/therightway" offsetx="0" offsety="1"/>
         <wall x="9.3000002" y="2.7" w="0.69999999" h="7.3000002"/>
-        <wall x="8.3000002" y="0" w="1.7" h="2.7"/>
+        <wall x="7.8000002" y="0" w="1.7" h="2.7"/>
         <wall x="0" y="2.7" w="0.69999999" h="7.3000002"/>
         <wall x="3.8" y="0" w="2.4000001" h="2.7"/>
         <wall x="6.3000002" y="5.3000002" w="0.40000001" h="0.40000001"/>
         <button x="6" y="5" w="1" h="1" group="save"/>
         <wall x="4.5999999" y="2.7" w="0.80000001" h="0.30000001"/>
+        <door x="6" y="-1" w="2" h="1" name="right" destination="south" scene="dreamland/therightway" offsetx="0" offsety="1"/>
+        <door x="2" y="-1" w="2" h="1" name="left" destination="south" scene="dreamland/bridge" offsetx="0" offsety="1"/>
     </collisionboxes>
 </scene>

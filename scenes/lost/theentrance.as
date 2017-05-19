@@ -1,3 +1,5 @@
+#include "../backend/save_system.as"
+
 [start]
 void start()
 {
@@ -6,10 +8,16 @@ void start()
 	set_position(get_player(), vec(0.5, 2.5));
 }
 
+[start]
+void save_thing()
+{
+  make_savepoint(vec(8.5, 4.5));
+}
+
 [group whereareyougoing?]
 void whereareyougoing()
 {
-  fx:sound("bells");
+  fx::sound("bells");
   player::lock(true);
   scoped_entity sivora = add_character("sivora");
   set_direction(sivora, direction::down);

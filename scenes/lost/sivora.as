@@ -39,13 +39,6 @@ void meetsivora()
   move(sivora, vec(5, 4.5), speed(1));
   set_direction(sivora, direction::left);
   
-  /*for(float timer = 0; timer < 1; timer += get_delta())
-  {
-    int c = int(255*timer);
-    set_color(sivora, c, c, c, 255);
-    yield();
-  }*/
-  
   say("Did you perhaps fall? That is a rather long fall.");
   nl("Come this way.");
   nl("I can help you.");

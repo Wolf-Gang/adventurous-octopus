@@ -23,5 +23,7 @@
         <wall x="0" y="1" w="4" h="1"/>
         <wall x="6" y="1" w="4" h="1"/>
         <door x="4" y="1" w="2" h="1" name="north" destination="south" scene="lost/theroom" offsetx="0" offsety="1"/>
+        <button x="8" y="4" w="1" h="1" group="save"/>
+        <wall x="8.1999998" y="4.1999998" w="0.60000002" h="0.60000002"/>
     </collisionboxes>
 </scene>
