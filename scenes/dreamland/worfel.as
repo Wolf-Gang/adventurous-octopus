@@ -36,6 +36,7 @@ void itlikesflowers() {
   
   worfel = add_character("worfel");
   set_position(worfel, vec(10.5, 11));
+  narrative::set_speaker(worfel);
   
   hat = add_entity("dreamland", "purpleflower");
   set_position(hat, get_position(worfel));
@@ -71,6 +72,7 @@ void itlikesflowers() {
 void spreadthelove() {
   
   set_direction(worfel, vector_direction(get_position(get_player()) - get_position(worfel)));
+  narrative::set_speaker(worfel);
   
   say("It is having much prettiness!");
   fsay("Is it wishing to be sharing the flowers?");
