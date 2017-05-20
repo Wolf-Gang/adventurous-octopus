@@ -205,7 +205,7 @@ void flower() {
 void worfel() {
   
   say("It likes flowers, yes it does!");
-  nl("It wants the flowers indeed!");
+  nl("It wants the flowers!");
   
   load_scene("dreamland/worfel");
   

@@ -106,6 +106,6 @@
         <wall x="21.299999" y="-1" w="0.69999999" h="23"/>
         <wall x="-0.30000001" y="21.299999" w="21.6" h="0.69999999"/>
         <trigger x="9" y="9" w="3" h="3" group="itlikesthem"/>
-        <button x="10" y="10" w="1" h="1" group="goflowers"/>
+        <button x="10" y="10" w="1" h="1" group="talk"/>
     </collisionboxes>
 </scene>
