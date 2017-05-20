@@ -93,22 +93,24 @@ void light_sparkles(vec pPosition)
 void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
 {
 	array<entity> things(amount);
-	
+	array<vec> movement(amount);
+  
 	// Create the phloophs
-	for (uint i = 0; i < things.length(); i++)
+	for (uint i = 0; i < amount; i++)
 	{
 		things[i] = add_entity("little phlooph");
 		set_atlas(things[i], "scary");
 		set_z(things[i], 8 + random(0, 10));
 		shadows::add(things[i]);
 		set_position(things[i], game_position + vec(random(1, 10), random(1, 8)));
+    movement[i] = vec(random(-10, 10), random(-10, 10))/10;
 	}
 	
 	wait(1);
 	
 	uint alive = amount;
 	do{
-		for (uint i = 0; i < things.length(); i++)
+		for (uint i = 0; i < amount; i++)
 		{
 			if (things[i].is_valid())
 			{
@@ -118,8 +120,7 @@ void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
 				// Random jittery movement
 				if (pRandom_move)
 					set_position(things[i]
-						, get_position(things[i]) + vec(random(-10, 11)
-						, random(-10, 11))*get_delta());
+						, get_position(things[i]) + movement[i]*get_delta());
 				
 				if (get_z(things[i]) <= 0)
 				{

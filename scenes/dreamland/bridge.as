@@ -124,6 +124,7 @@ void hmmmmlocked()
 	say("Welp.");
 	set_atlas(unicorn, "talk");
 	nl("I guess we'll need to ask Mr Phlooph.");
+  nl("He is the great leader of Dreamland.");
 	say("Come.");
 	narrative::end();
 	

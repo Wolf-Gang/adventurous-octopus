@@ -159,7 +159,7 @@ void mainmenu()
         //'Exit'
         case 2:
           
-          exit = true;
+          abort_game();
           break;
         
       }

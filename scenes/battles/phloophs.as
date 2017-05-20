@@ -42,7 +42,7 @@ void quick_text(vec pPosition, string pText)
 		fx::fade_in(text, 0.5);
 		wait(0.5);
 		fx::fade_out(text, 0.5);
-		
+		remove_entity(text);
 	}, dictionary = {{"pPosition", pPosition}, {"pText", pText}});
 }
 
