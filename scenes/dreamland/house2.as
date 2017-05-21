@@ -39,8 +39,8 @@ void happylittleflower() {
     return;
   
   entity dude_hat = add_entity("dreamland", "purpleflower");
-  set_position(dude_hat, get_position(housedude) + vec(0, -.9));
-  //set_z(dude_hat, .9);
+  set_position(dude_hat, get_position(housedude) + vec(0, .001));
+  set_z(dude_hat, .8);
   add_child(housedude, dude_hat);
   
 }
@@ -99,8 +99,9 @@ void goaway() {
       nl("You have a...flower for me?");
       narrative::hide();
       
-      move(mc_hat, get_position(housedude), .75);
       detach_parent(mc_hat);
+      move(mc_hat, get_position(housedude), .75);
+      
       add_child(housedude, mc_hat);
       unset_flag("Flower");
       set_flag("housedudehappy");

@@ -21,9 +21,8 @@ void worfel_is_here() {
   set_position(worfel, vec(10.5, 11));
 
   hat = add_entity("dreamland", "purpleflower");
-  set_depth(hat, fixed_depth::overlay);
-  set_position(hat, get_position(worfel) + vec(0, -.8));
-  //set_z(hat, .8);
+  set_position(hat, get_position(worfel) + vec(0, .01));
+  set_z(hat, .8);
   add_child(worfel, hat);
   
 }
@@ -92,8 +91,6 @@ void spreadthelove() {
       flower_hat();
       
       nl("It is having much happiness!");
-      narrative::end();
-      player::lock(false);
       
       talk_count++;
       
@@ -108,6 +105,7 @@ void spreadthelove() {
         
         say("It is wanting to giving cheeriness, isn't it?");
         
+        fx::fade_out(.5);
         load_scene("dreamland/dreamland_town");
         
       }

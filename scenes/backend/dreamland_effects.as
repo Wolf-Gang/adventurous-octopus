@@ -98,8 +98,8 @@ void flower_hat() {
   if(has_flag("Flower")) {
     
     mc_hat = add_entity("dreamland", "purpleflower");
-    set_position(mc_hat, get_position(get_player()) + vec(0, -.9));
-    //set_z(mc_hat, .9);
+    set_position(mc_hat, get_position(get_player()) + vec(0, .01));
+    set_z(mc_hat, .8);
     add_child(get_player(), mc_hat);
     
   }
