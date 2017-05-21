@@ -41,7 +41,6 @@
         <door x="-1" y="2" w="1" h="5" name="west" destination="east" scene="lost/fallen" offsetx="1" offsety="0"/>
         <wall x="3.5" y="3.5" w="1" h="0.5"/>
         <wall x="13" y="2" w="1" h="2"/>
-        <door x="13" y="4" w="1" h="4" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
         <wall x="6.5999999" y="7" w="2.2" h="1"/>
         <wall x="6.6999998" y="6.5999999" w="1" h="0.40000001"/>
         <wall x="7.6999998" y="6.0999999" w="0.60000002" h="0.89999998"/>
@@ -49,5 +48,7 @@
         <wall x="2" y="2.5999999" w="0.80000001" h="0.80000001"/>
         <wall x="0" y="3" w="2.4000001" h="1"/>
         <wall x="0" y="6.5999999" w="2.8" h="1.4"/>
+        <door x="13" y="4" w="1" h="1" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
+        <wall x="13" y="5" w="1" h="3"/>
     </collisionboxes>
 </scene>

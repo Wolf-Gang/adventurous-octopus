@@ -1,6 +1,8 @@
 [start]
 void start()
 {
+  music::volume(70);
+  music::open("scribbles86");
 	set_position(get_player(), vec(5, 7));
 }
 
@@ -17,6 +19,7 @@ entity create_blackout()
 [group sivoraintro]
 void sivoraintro()
 {
+  music::stop();
   fx::sound("bells");
   
   player::lock(true);
