@@ -16,7 +16,7 @@ entity create_blackout()
   return e;
 }
 
-[group sivoraintro]
+//[group sivoraintro]
 void sivoraintro()
 {
   music::stop();
@@ -49,14 +49,15 @@ void sivoraintro()
   narrative::show();
   narrative::set_expression("sivora icon", "normal");
   say("Hello!");
-  narrative::end();
+  narrative::hide();
   
+  /*
   fx::sound("transition");
   wait(2);
   create_blackout();
   wait(2);
   load_scene("credits");
-  
+  */
   
   
   music::volume(100);

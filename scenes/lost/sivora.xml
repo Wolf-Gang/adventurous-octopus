@@ -34,7 +34,7 @@
         </layer>
     </map>
     <collisionboxes>
-        <wall x="1.72" y="6" w="0.55000001" h="1"/>
+        <wall x="1.72" y="6.0999999" w="0.55000001" h="1"/>
         <wall x="2" y="1" w="11" h="1"/>
         <wall x="2.8" y="8" w="10.2" h="1"/>
         <trigger x="2" y="4" w="1" h="3" group="meetsivora"/>
@@ -46,9 +46,8 @@
         <wall x="7.6999998" y="6.0999999" w="0.60000002" h="0.89999998"/>
         <wall x="2" y="2" w="0.40000001" h="1"/>
         <wall x="2" y="2.5999999" w="0.80000001" h="0.80000001"/>
-        <wall x="0" y="3" w="2.4000001" h="1"/>
+        <wall x="0" y="3" w="2.45" h="1"/>
         <wall x="0" y="6.5999999" w="2.8" h="1.4"/>
-        <door x="13" y="4" w="1" h="1" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
-        <wall x="13" y="5" w="1" h="3"/>
+        <door x="13" y="4" w="1" h="4" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
     </collisionboxes>
 </scene>
