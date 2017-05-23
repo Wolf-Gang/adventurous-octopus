@@ -32,11 +32,17 @@
             <cloud_tile x="9" y="9" r="1"/>
         </layer>
         <layer id="2">
-            <hearts x="2.5" y="-0.5" h="4"/>
+            <hearts x="2.5" y="-0.5" h="5"/>
             <hearts x="6.5" y="-0.5" h="4"/>
+            <hearts x="3" y="0" h="4"/>
+            <hearts x="7" y="0" h="5"/>
             <fork_sign x="4.5" y="1"/>
-            <hearts x="2.5" y="3.5" w="5"/>
-            <hearts x="4.5" y="4.5" h="5"/>
+            <hearts x="3.5" y="3.5" r="3"/>
+            <hearts x="4.5" y="3.5" h="6"/>
+            <hearts x="5.5" y="3.5" w="2" r="1"/>
+            <hearts x="3" y="4" w="2" r="3"/>
+            <hearts x="5" y="4" h="6"/>
+            <hearts x="6" y="4" r="1"/>
             <hearts x="4.5" y="9.5"/>
         </layer>
     </map>

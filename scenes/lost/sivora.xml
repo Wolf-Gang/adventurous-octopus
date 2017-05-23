@@ -48,6 +48,7 @@
         <wall x="2" y="2.5999999" w="0.80000001" h="0.80000001"/>
         <wall x="0" y="3" w="2.45" h="1"/>
         <wall x="0" y="6.5999999" w="2.8" h="1.4"/>
-        <door x="13" y="4" w="1" h="4" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
+        <door x="13" y="4" w="1" h="1" name="east" destination="west" scene="lost/theentrance" offsetx="-1" offsety="0"/>
+        <wall x="13" y="5" w="1" h="3"/>
     </collisionboxes>
 </scene>

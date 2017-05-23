@@ -22,6 +22,7 @@
         <door x="4" y="1" w="2" h="1" name="north" destination="south" scene="lost/theroom" offsetx="0" offsety="1"/>
         <button x="8" y="4" w="1" h="1" group="save"/>
         <wall x="8.3500004" y="4.3499999" w="0.30000001" h="0.30000001"/>
-        <door x="-1" y="2" w="1" h="4" name="west" destination="east" scene="lost/sivora" offsetx="1" offsety="0"/>
+        <door x="-1" y="2" w="1" h="1" name="west" destination="east" scene="lost/sivora" offsetx="1" offsety="0"/>
+        <wall x="-1" y="3" w="1" h="3"/>
     </collisionboxes>
 </scene>

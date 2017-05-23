@@ -24,14 +24,21 @@
         <layer id="2">
             <hearts x="5" y="0" h="3"/>
             <house x="7" y="0"/>
+            <hearts x="5.5" y="0.5" h="3"/>
             <house x="1" y="2"/>
             <hearts x="5" y="3" w="4"/>
+            <hearts x="5.5" y="3.5" w="3"/>
             <hearts x="5" y="4"/>
+            <hearts x="5.5" y="4.5"/>
             <hearts x="2" y="5" w="4"/>
+            <hearts x="1.5" y="5.5" w="5"/>
             <hearts x="5" y="6" h="3"/>
             <house x="7" y="6"/>
+            <hearts x="5.5" y="6.5" h="3"/>
             <hearts x="5" y="9" w="4"/>
+            <hearts x="5.5" y="9.5" w="3"/>
             <hearts x="5" y="10" h="12"/>
+            <hearts x="5.5" y="10.5" h="12"/>
             <hearts x="5" y="22"/>
         </layer>
         <layer id="3">

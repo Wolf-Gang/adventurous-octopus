@@ -15,12 +15,14 @@
             <side_clouds x="0" y="-1" h="10"/>
             <side_clouds x="9" y="-1" h="10" r="2"/>
             <hearts x="4.5" y="4" h="6"/>
+            <hearts x="5" y="4.5" h="5"/>
             <side_cloud_corner x="0" y="9"/>
             <side_clouds x="1" y="9" w="2" r="3"/>
             <side_clouds_edge x="3" y="9"/>
             <side_clouds_edge x="6" y="9" r="3"/>
             <side_clouds x="7" y="9" w="2" r="3"/>
             <side_cloud_corner x="9" y="9" r="3"/>
+            <hearts x="5" y="9.5"/>
         </layer>
     </map>
     <collisionboxes>
