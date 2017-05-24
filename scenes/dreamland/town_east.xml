@@ -9,6 +9,8 @@
             <ground x="0" y="12" w="24"/>
         </layer>
         <layer id="1">
+            <hearts x="16.5" y="2.5" h="2"/>
+            <hearts x="17" y="3" h="2"/>
             <hearts x="4" y="4" h="2"/>
             <hearts x="8" y="4" h="2"/>
             <hearts x="3.5" y="4.5" h="2"/>
@@ -34,17 +36,11 @@
             <hearts x="18.5" y="7.5"/>
             <hearts x="17" y="8" h="2" r="2"/>
             <hearts x="16.5" y="8.5" h="2" r="2"/>
-            <house x="3" y="9" r="2"/>
-            <house x="7" y="9" r="2"/>
             <hearts x="17" y="10" r="2"/>
         </layer>
         <layer id="2">
-            <house x="3" y="1"/>
             <house x="7" y="1"/>
             <bench1 x="16" y="1.5"/>
-            <hearts x="16.5" y="2.5" h="2"/>
-            <hearts x="17" y="3" h="2"/>
-            <fountain x="16" y="5"/>
             <bench1 x="16" y="10.5"/>
         </layer>
     </map>
@@ -52,9 +48,38 @@
         <wall x="0" y="-1" w="32" h="1"/>
         <wall x="32" y="0" w="1" h="13"/>
         <wall x="0" y="13" w="32" h="1"/>
-        <door x="-1" y="0" w="1" h="13" name="" destination="" scene="" offsetx="0" offsety="0"/>
-        <door x="-7" y="19" w="1" h="1" name="east" destination="east" scene="dreamland/dreamland_town" offsetx="0.5" offsety="0"/>
         <button x="27" y="6" w="1" h="1" group="statue"/>
-        <wall x="27" y="6.5" w="1" h="0.40000001"/>
+        <wall x="27" y="6.5" w="1" h="0.2"/>
+        <door x="-1" y="5" w="1" h="3" name="east" destination="east" scene="dreamland/dreamland_town" offsetx="0.5" offsety="0"/>
+        <button x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_talk"/>
+        <wall x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_no"/>
+        <door x="3.575" y="3.0999999" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <wall x="4.79" y="3" w="0.0099999998" h="1"/>
+        <wall x="3.55" y="3" w="0.0099999998" h="1"/>
+        <wall x="3.55" y="3" w="1.25" h="0.1"/>
+        <button x="7.5749998" y="3.0999999" w="1.2" h="0.89999998" group="house1_talk"/>
+        <wall x="7.5749998" y="3.0999999" w="1.2" h="0.89999998" group="house1_no"/>
+        <door x="7.5749998" y="3.0999999" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <wall x="8.79" y="3" w="0.0099999998" h="1"/>
+        <wall x="7.5500002" y="3" w="0.0099999998" h="1"/>
+        <wall x="7.5500002" y="3" w="1.25" h="0.1"/>
+        <wall x="-1" y="0" w="1" h="5"/>
+        <wall x="-1" y="8" w="1" h="5"/>
+        <wall x="4.4400001" y="9" w="0.0099999998" h="1"/>
+        <wall x="3.2" y="9" w="0.0099999998" h="1"/>
+        <wall x="3.2" y="9.8999996" w="1.25" h="0.1"/>
+        <wall x="3.2249999" y="9" w="1.2" h="0.89999998" group="house3_no"/>
+        <door x="3.2249999" y="9" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <button x="3.2249999" y="9" w="1.2" h="0.89999998" group="house3_talk"/>
+        <wall x="8.4400005" y="9" w="0.0099999998" h="1"/>
+        <wall x="7.1999998" y="9" w="0.0099999998" h="1"/>
+        <wall x="7.1999998" y="9.8999996" w="1.25" h="0.1"/>
+        <wall x="7.2249999" y="9" w="1.2" h="0.89999998" group="house4_no"/>
+        <door x="7.2249999" y="9" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <button x="7.2249999" y="9" w="1.2" h="0.89999998" group="house4_talk"/>
+        <wall x="16.23" y="6.1999998" w="1.48" h="0.56999999"/>
+        <wall x="16.1" y="10.7" w="1.8" h="0.5"/>
+        <wall x="16.1" y="1.7" w="1.8" h="0.5"/>
+        <button x="16.23" y="6.4000001" w="1.48" h="0.76999998" group="foontan"/>
     </collisionboxes>
 </scene>

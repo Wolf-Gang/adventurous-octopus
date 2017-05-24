@@ -6,6 +6,45 @@ shared enum item_type
 	weapon,
 };
 
+shared class item 
+{
+  
+  item(string pName = "Error item", item_type pType = item_type::useless, bool pStackable = true, int pValue = 0)
+  {
+    
+    mName = pName;
+    mType = pType;
+    mValue = pValue;
+    mStackable = pStackable;
+    
+  }
+  
+  string get_name()
+	{
+		return mName;
+	}
+	
+	item_type get_type()
+	{
+		return mType;
+	}
+	
+	// This is HP restore points if food and ATK if weapon
+	int get_value()
+	{
+		return mValue;
+	}
+	
+	bool is_stackable()
+	{
+		return mStackable;
+	}
+  
+  private string mName;
+  private item_type mType;
+  private int mValue;
+  private bool mStackable;
+};
 
 shared class inventory_item
 {
@@ -14,26 +53,10 @@ shared class inventory_item
 		mCount = 1;
 	}
 	
-	string get_name()
-	{
-		return "Error Item";
-	}
-	
-	item_type get_type()
-	{
-		return item_type::useless;
-	}
-	
-	// This is HP restore points if food and DP if weapon
-	int get_value()
-	{
-		return 0;
-	}
-	
-	bool is_stackable()
-	{
-		return true;
-	}
+	item@ get_item() final
+  {
+    return mItem;
+  }
 	
 	int get_count() final
 	{
@@ -51,42 +74,7 @@ shared class inventory_item
 	}
   
 	private int mCount;
-};
-
-shared class crusty_bread_item : inventory_item
-{
-	string get_name() override
-	{
-		return "Crusty Bread";
-	}
-	
-	item_type get_type() override
-	{
-		return item_type::food;
-	}
-	
-	int get_value()
-	{
-		return 2;
-	}
-};
-
-shared class crusty_knife_item : inventory_item
-{
-	string get_name() override
-	{
-		return "Crusty Knife";
-	}
-	
-	item_type get_type() override
-	{
-		return item_type::weapon;
-	}
-	
-	int get_value()
-	{
-		return 1;
-	}
+  private item mItem;
 };
 
 shared class player_data
@@ -96,9 +84,6 @@ shared class player_data
 		mHP = 10;
 		mHP_max = 10;
 		mAtk = 2;
-		add_inventory_item(crusty_bread_item());
-		add_inventory_item(crusty_bread_item());
-		add_inventory_item(crusty_knife_item());
 	}
 
 	int get_hp()
@@ -131,12 +116,12 @@ shared class player_data
 		mAtk = pAtk;
 	}
 	
-	void add_inventory_item(inventory_item@ mItem)
+	void add_inventory_item(item@ mItem)
 	{
 		inventory_item@ find = find_item(mItem.get_name());
 		
 		if (find !is null &&
-			find.is_stackable())
+			find.get_item().is_stackable())
 			find.add_count(mItem.get_count());
 		else
 			mInventory.insertLast(mItem);
@@ -154,7 +139,7 @@ shared class player_data
 	{
 		for (uint i = 0; i < mInventory.length(); i++)
 		{
-			if (mInventory[i].get_name() == pName)
+			if (mInventory[i].get_item().get_name() == pName)
 				return @mInventory[i];
 		}
 		return null;
