@@ -90,13 +90,13 @@ void light_sparkles(vec pPosition)
 	}, dictionary = {{"pPosition", pPosition}});
 }
 
-void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
+void phlooph_drop_attack(uint pAmount, float pSpeed, bool pRandom_move = true)
 {
-	array<entity> things(amount);
-	array<vec> movement(amount);
+	array<entity> things(pAmount);
+	array<vec> movement(pAmount);
   
 	// Create the phloophs
-	for (uint i = 0; i < amount; i++)
+	for (uint i = 0; i < pAmount; i++)
 	{
 		things[i] = add_entity("little phlooph");
 		set_atlas(things[i], "scary");
@@ -108,9 +108,9 @@ void phlooph_drop_attack(uint amount, float pSpeed, bool pRandom_move = true)
 	
 	wait(1);
 	
-	uint alive = amount;
+	uint alive = pAmount;
 	do{
-		for (uint i = 0; i < amount; i++)
+		for (uint i = 0; i < pAmount; i++)
 		{
 			if (things[i].is_valid())
 			{
