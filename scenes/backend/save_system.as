@@ -15,6 +15,7 @@ void save_slot(int pSlot) {
 
   set_slot(pSlot);
   save_game();
+  say("Saved to slot " + (pSlot + 1) + "!");
   
 }
 

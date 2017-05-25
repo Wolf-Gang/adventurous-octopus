@@ -58,3 +58,21 @@ void talk_to_statue()
 	player::lock(false);
 }
 
+/*
+box b;
+
+[group foontan]
+void bawks() {
+  
+  if(b.is_valid())
+    b.show();
+  else
+    b = box("bawks", pixel(20, 20), pixel(80, 100));
+  
+  keywait();
+  
+  b.hide();
+  
+}
+*/
+
