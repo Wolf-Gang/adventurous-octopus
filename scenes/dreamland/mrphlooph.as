@@ -222,6 +222,9 @@ void mrphlooph()
 [group unicornbehere]
 void ajsdfh()
 {
+  if (!has_flag("phlooph") || has_flag("caughtthephloophs"))
+    return;
+  
 	narrative::show();
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
