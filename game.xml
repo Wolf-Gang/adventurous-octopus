@@ -5,5 +5,7 @@
 	
 	<tile_size pixels="32"/>
 	
+  <screen_size x="320" y="256"/>
+  
 	<!-- Left to the defaults -->
 </game>
