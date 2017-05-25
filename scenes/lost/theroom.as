@@ -16,7 +16,7 @@ entity create_blackout()
   return e;
 }
 
-//[group sivoraintro]
+[group sivoraintro]
 void sivoraintro()
 {
   music::stop();
@@ -46,12 +46,12 @@ void sivoraintro()
     yield();
   }
   
+  /* demo end
   narrative::show();
   narrative::set_expression("sivora icon", "normal");
   say("Hello!");
   narrative::hide();
   
-  /*
   fx::sound("transition");
   wait(2);
   create_blackout();
@@ -64,15 +64,16 @@ void sivoraintro()
   music::open("doodle113");
   
   narrative::show();
-  narrative::set_expression("sivora icon", "normal");
-  say("AH HA! I'll save you from this dangerous place!");
+  narrative::set_expression("sivora icon", "default:default");
+  fsay("AH HA!");
+  wait(0.2);
+  append(" I'll save you from this dangerous place!");
   nl("I am the hero of lost souls.");
   say("I'm Sivora!");
   say("I've been waiting for you for so long.");
-  nl("You seem fine, so far...");
-  nl("So let's play!");
+  fnl("You seem fine");
+  wait(0.2);
+  append(", so far...");
+  nl("So let me help you get out!");
   narrative::end();
-  
-  
-  
 }

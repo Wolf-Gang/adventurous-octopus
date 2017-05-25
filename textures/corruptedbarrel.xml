@@ -1,0 +1,6 @@
+<atlas>
+    <Crush x="320" y="0" w="32" h="32" frames="4" interval="120"/>
+    <corrupt x="0" y="0" w="32" h="32" frames="7" interval="200"/>
+    <corrupted x="224" y="0" w="32" h="32" frames="3" interval="200" loop="1"/>
+    <default:default x="0" y="0" w="32" h="32"/>
+</atlas>
