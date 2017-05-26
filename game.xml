@@ -19,10 +19,10 @@
     <left key0="left"/>
     <right key0="right"/>
     
-    <select_up key="up" press="true"/>
-    <select_down key="down" press="true"/>
-    <select_left key="left" press="true"/>
-    <select_right key="right" press="true"/>
+    <select_up key0="up" press="true"/>
+    <select_down key0="down" press="true"/>
+    <select_left key0="left" press="true"/>
+    <select_right key0="right" press="true"/>
     
     <back key0="rshift" alt0="x"/>
   </controls>
