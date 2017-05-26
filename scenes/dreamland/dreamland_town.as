@@ -3,12 +3,42 @@
 entity unicorn;
 
 entity key;
+	
+[start]
+void start()
+{
+	music::open("doodle104_2");
+	music::volume(70);
+	set_position(get_player(), vec(5.5, 22));
+	set_direction(get_player(), direction::up);
+}
 
 [start]
 void create_welcome_sign()
 {
   entity sign = add_entity("dreamland", "welcome");
   set_position(sign, vec(3, 19));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//Houses
+
+/*
+  2
+1
+  0
+*/
+array<entity> houses(3);
+
+[start]
+void make_houses() {
+  
+  houses[0] = add_entity("dreamland", "house");
+  set_position(houses[0], vec(8, 9));
+  houses[1] = add_entity("dreamland", "house");
+  set_position(houses[1], vec(2, 5));
+  houses[2] = add_entity("dreamland", "house");
+  set_position(houses[2], vec(8, 3));
 }
 
 [group lockedhouse]
@@ -57,27 +87,15 @@ void lockedhouse_()
   }
 }
 
-[start]
-void create_unicorn()
-{
-  if (!has_flag("meet_unicorn")) {
-    unicorn = add_entity("unicorn", "talk");
-    set_position(unicorn, vec(5.5, 14));
-  } else {
-    
-    group::enable("meetunicorn", false);
-    
-  }
+[group key]
+void find_key() {
+  remove_entity(key);
+  set_flag("keese");
+  group::enable("key", false);
 }
-	
-[start]
-void start()
-{
-	music::open("doodle104_2");
-	music::volume(70);
-	set_position(get_player(), vec(5.5, 22));
-	set_direction(get_player(), direction::up);
-}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//Foliage
 
 void create_tree(vec pPosition)
 {
@@ -133,7 +151,6 @@ void create_cloud_bushes()
   
 }
 
-
 [start]
 void create_meadow()
 {
@@ -147,11 +164,20 @@ void create_meadow()
 	create_flower_patch(vec(6.5, 11), vec(6, 14), 2);
 }
 
-[group key]
-void find_key() {
-  remove_entity(key);
-  set_flag("keese");
-  group::enable("key", false);
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Unicorn things
+
+[start]
+void create_unicorn()
+{
+  if (!has_flag("meet_unicorn")) {
+    unicorn = add_entity("unicorn", "talk");
+    set_position(unicorn, vec(5.5, 14));
+  } else {
+    
+    group::enable("meetunicorn", false);
+    
+  }
 }
 
 [group meetunicorn]
@@ -188,6 +214,9 @@ void meetunicorn()
 	group::enable("meetunicorn", false);
   set_flag("meet_unicorn");
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
+//Worfel
 
 float flower_timer = 0;
 

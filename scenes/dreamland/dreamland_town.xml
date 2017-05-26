@@ -23,9 +23,7 @@
         </layer>
         <layer id="2">
             <hearts x="5" y="0" h="3"/>
-            <house x="7" y="0"/>
             <hearts x="5.5" y="0.5" h="3"/>
-            <house x="1" y="2"/>
             <hearts x="5" y="3" w="4"/>
             <hearts x="5.5" y="3.5" w="3"/>
             <hearts x="5" y="4"/>
@@ -33,7 +31,6 @@
             <hearts x="2" y="5" w="4"/>
             <hearts x="1.5" y="5.5" w="5"/>
             <hearts x="5" y="6" h="3"/>
-            <house x="7" y="6"/>
             <hearts x="5.5" y="6.5" h="3"/>
             <hearts x="5" y="9" w="4"/>
             <hearts x="5.5" y="9.5" w="3"/>
@@ -59,17 +56,15 @@
     <collisionboxes>
         <wall x="9.3000002" y="0" w="0.69999999" h="14"/>
         <wall x="0" y="0" w="0.69999999" h="14"/>
-        <wall x="1.3" y="2.25" w="1.7" h="2.75"/>
-        <wall x="7.3000002" y="6.25" w="1.7" h="2.75"/>
-        <button x="1.3" y="4" w="1.7" h="1" group="lockedhouse"/>
-        <button x="7.3000002" y="8" w="1.7" h="1" group="lockedhouse"/>
+        <button x="1.55" y="4" w="1.25" h="1" group="lockedhouse"/>
+        <button x="7.5999999" y="8" w="1.2" h="1" group="lockedhouse"/>
         <door x="1" y="-1" w="8" h="1" name="north" destination="south" scene="dreamland/fork" offsetx="0" offsety="1"/>
-        <button x="7.3000002" y="2" w="1.7" h="1" group="lockedhouse?"/>
-        <wall x="7.3000002" y="2" w="1.7" h="1" group="lockeddoor"/>
-        <wall x="7.3000002" y="2" w="0.1" h="1"/>
-        <wall x="8.8999996" y="2" w="0.1" h="1"/>
-        <wall x="7.3000002" y="0.25" w="1.7" h="1.75"/>
-        <door x="7.3000002" y="2" w="1.7" h="1" name="house" destination="front_door" scene="dreamland/house" offsetx="0" offsety="1"/>
+        <button x="7.5749998" y="2" w="1.2" h="1" group="lockedhouse?"/>
+        <wall x="7.5749998" y="2" w="1.2" h="1" group="lockeddoor"/>
+        <wall x="7.5500002" y="2" w="0.0099999998" h="1"/>
+        <wall x="8.79" y="2" w="0.0099999998" h="1"/>
+        <wall x="7.5500002" y="2" w="1.25" h="0.1"/>
+        <door x="7.5749998" y="2" w="1.2" h="1" name="house" destination="front_door" scene="dreamland/house" offsetx="0" offsety="1"/>
         <wall x="0" y="22.299999" w="10" h="0.69999999"/>
         <wall x="9.3000002" y="14" w="0.69999999" h="8.3000002"/>
         <wall x="0" y="14" w="0.69999999" h="8.3000002"/>
@@ -82,5 +77,9 @@
         <wall x="4.1999998" y="1.1" w="0.60000002" h="1.55"/>
         <wall x="2" y="18.6" w="2" h="0.1"/>
         <trigger x="0.69999999" y="7.5" w="4" h="10" group="lefrow"/>
+        <wall x="7.5500002" y="8" w="0.0099999998" h="1"/>
+        <wall x="8.8000002" y="8" w="0.0099999998" h="1"/>
+        <wall x="7.5500002" y="8" w="1.25" h="1"/>
+        <wall x="1.55" y="4" w="1.25" h="1"/>
     </collisionboxes>
 </scene>
