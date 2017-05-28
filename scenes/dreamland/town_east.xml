@@ -3,8 +3,7 @@
         <texture>dreamland</texture>
         <layer id="0">
             <ground x="0" y="0" w="24" h="6"/>
-            <ground x="0" y="6" r="1"/>
-            <ground x="1" y="6" w="23"/>
+            <ground x="0" y="6" w="24"/>
             <ground x="0" y="7" w="24" h="5"/>
             <ground x="0" y="12" w="24"/>
         </layer>
