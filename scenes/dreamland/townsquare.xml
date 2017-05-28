@@ -1,0 +1,143 @@
+<scene>
+    <boundary x="1" w="18" h="18"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="0">
+            <ground x="1" y="0" w="5" h="3"/>
+            <ground x="6" y="0" w="8" h="5"/>
+            <ground x="14" y="0" w="5" h="3"/>
+            <ground x="1" y="3" w="4"/>
+            <ground x="5" y="3" r="1"/>
+            <ground x="14" y="3" r="1"/>
+            <ground x="15" y="3" w="4"/>
+            <ground x="1" y="4" w="3"/>
+            <ground x="4" y="4" w="2" r="1"/>
+            <ground x="14" y="4" w="2" r="1"/>
+            <ground x="16" y="4" w="3"/>
+            <ground x="1" y="5" w="18" h="8"/>
+            <ground x="1" y="13" w="3"/>
+            <ground x="4" y="13" w="2" r="1"/>
+            <ground x="6" y="13" w="8" h="4"/>
+            <ground x="14" y="13" w="2" r="1"/>
+            <ground x="16" y="13" w="3"/>
+            <ground x="1" y="14" w="4"/>
+            <ground x="5" y="14" r="1"/>
+            <ground x="14" y="14" r="1"/>
+            <ground x="15" y="14" w="4"/>
+            <ground x="1" y="15" w="5" h="2"/>
+            <ground x="14" y="15" w="5" h="2"/>
+            <ground x="1" y="17" w="18"/>
+        </layer>
+        <layer id="1">
+            <orangeflower x="1" y="0" h="5"/>
+            <blueflower x="2" y="0" h="5"/>
+            <redflower x="3" y="0" h="5"/>
+            <purpleflower x="4" y="0" h="4"/>
+            <orangeflower x="5" y="0" h="3"/>
+            <hearts x="9" y="0" h="9" r="2"/>
+            <blueflower x="14" y="0" h="3"/>
+            <redflower x="15" y="0" h="4"/>
+            <purpleflower x="16" y="0" h="5"/>
+            <orangeflower x="17" y="0" h="5"/>
+            <blueflower x="18" y="0" h="5"/>
+            <orangeflower x="1.5" y="0.5" h="5"/>
+            <blueflower x="2.5" y="0.5" h="5"/>
+            <redflower x="3.5" y="0.5" h="5"/>
+            <purpleflower x="4.5" y="0.5" h="4"/>
+            <orangeflower x="5.5" y="0.5" h="3"/>
+            <hearts x="9.5" y="0.5" h="9" r="2"/>
+            <blueflower x="14.5" y="0.5" h="3"/>
+            <redflower x="15.5" y="0.5" h="4"/>
+            <purpleflower x="16.5" y="0.5" h="5"/>
+            <orangeflower x="17.5" y="0.5" h="5"/>
+            <blueflower x="18.5" y="0.5" h="5"/>
+            <hearts x="10" y="8" w="9" r="3"/>
+            <hearts x="8.5" y="8.5" r="1"/>
+            <hearts x="10.5" y="8.5" w="9" r="3"/>
+            <hearts x="1" y="9" w="9" r="1"/>
+            <hearts x="10" y="9" h="9"/>
+            <hearts x="11" y="9" r="3"/>
+            <hearts x="1.5" y="9.5" w="9" r="1"/>
+            <hearts x="10.5" y="9.5" h="9"/>
+            <orangeflower x="1" y="13" h="5"/>
+            <blueflower x="2" y="13" h="5"/>
+            <redflower x="3" y="13" h="5"/>
+            <purpleflower x="16" y="13" h="5"/>
+            <orangeflower x="17" y="13" h="5"/>
+            <blueflower x="18" y="13" h="5"/>
+            <orangeflower x="1.5" y="13.5" h="5"/>
+            <blueflower x="2.5" y="13.5" h="5"/>
+            <redflower x="3.5" y="13.5" h="5"/>
+            <purpleflower x="16.5" y="13.5" h="5"/>
+            <orangeflower x="17.5" y="13.5" h="5"/>
+            <blueflower x="18.5" y="13.5" h="4"/>
+            <purpleflower x="4" y="14" h="4"/>
+            <redflower x="15" y="14" h="4"/>
+            <purpleflower x="4.5" y="14.5" h="4"/>
+            <redflower x="15.5" y="14.5" h="4"/>
+            <orangeflower x="5" y="15" h="3"/>
+            <blueflower x="14" y="15" h="3"/>
+            <orangeflower x="5.5" y="15.5" h="3"/>
+            <blueflower x="14.5" y="15.5" h="3"/>
+            <blueflower x="18.5" y="17.5"/>
+        </layer>
+        <layer id="2">
+            <wall x="6" y="0" w="2"/>
+            <wall x="12" y="0" w="2"/>
+            <wall x="6" y="1" h="2"/>
+            <wall x="13" y="1" h="2"/>
+            <wall x="5" y="3"/>
+            <wall x="14" y="3"/>
+            <wall x="4" y="4"/>
+            <wall x="15" y="4"/>
+            <wall x="1" y="5" w="3"/>
+            <wall x="16" y="5" w="3"/>
+            <wall x="1" y="6"/>
+            <wall x="18" y="6"/>
+            <wall x="1" y="11"/>
+            <wall x="18" y="11"/>
+            <wall x="1" y="12" w="3"/>
+            <wall x="16" y="12" w="3"/>
+            <wall x="4" y="13"/>
+            <wall x="15" y="13"/>
+            <wall x="5" y="14"/>
+            <wall x="14" y="14"/>
+            <wall x="6" y="15" h="2"/>
+            <wall x="13" y="15" h="2"/>
+            <wall x="6" y="17" w="2"/>
+            <wall x="12" y="17" w="2"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <door x="8" y="18" w="4" h="1" name="south" destination="north" scene="dreamland/dreamland_town" offsetx="0" offsety="-0.5"/>
+        <wall x="9.1999998" y="8.8000002" w="1.5" h="0.34999999"/>
+        <door x="19" y="7" w="1" h="4" name="east" destination="east" scene="dreamland/town_east" offsetx="-1" offsety="0"/>
+        <door x="0" y="7" w="1" h="4" name="west" destination="west" scene="dreamland/town_west" offsetx="1" offsety="0"/>
+        <door x="8" y="-1" w="4" h="1" name="north" destination="south" scene="dreamland/fork" offsetx="0" offsety="1.5"/>
+        <wall x="6" y="15" w="1" h="2"/>
+        <wall x="6" y="17" w="2" h="1"/>
+        <wall x="4" y="13" w="1" h="1"/>
+        <wall x="5" y="14" w="1" h="1"/>
+        <wall x="2" y="12" w="2" h="1"/>
+        <wall x="1" y="11" w="1" h="2"/>
+        <wall x="1" y="5" w="1" h="2"/>
+        <wall x="2" y="5" w="2" h="1"/>
+        <wall x="4" y="4" w="1" h="1"/>
+        <wall x="5" y="3" w="1" h="1"/>
+        <wall x="6" y="1" w="1" h="2"/>
+        <wall x="6" y="0" w="2" h="1"/>
+        <wall x="12" y="0" w="2" h="1"/>
+        <wall x="13" y="1" w="1" h="2"/>
+        <wall x="14" y="3" w="1" h="1"/>
+        <wall x="15" y="4" w="1" h="1"/>
+        <wall x="16" y="5" w="2" h="1"/>
+        <wall x="18" y="5" w="1" h="2"/>
+        <wall x="18" y="11" w="1" h="2"/>
+        <wall x="16" y="12" w="2" h="1"/>
+        <wall x="15" y="13" w="1" h="1"/>
+        <wall x="14" y="14" w="1" h="1"/>
+        <wall x="13" y="15" w="1" h="2"/>
+        <wall x="12" y="17" w="2" h="1"/>
+        <trigger x="1" y="7" w="1" h="4" group="iamthesenate"/>
+    </collisionboxes>
+</scene>
