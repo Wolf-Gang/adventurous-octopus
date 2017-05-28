@@ -1,10 +1,16 @@
 <scene>
+    <boundary w="33" h="13"/>
     <map>
         <texture>dreamland</texture>
         <layer id="0">
-            <ground x="0" y="0" w="24" h="6"/>
-            <ground x="0" y="6" w="24"/>
-            <ground x="0" y="7" w="24" h="5"/>
+            <ground x="0" y="0" w="23"/>
+            <ground x="23" y="0" r="1"/>
+            <ground x="0" y="1" w="24" h="11"/>
+            <ground x="26" y="5" w="3"/>
+            <ground x="24" y="6" w="5"/>
+            <fade x="24" y="7" w="2"/>
+            <ground x="26" y="7" w="3"/>
+            <fade x="26" y="8" w="3"/>
             <ground x="0" y="12" w="24"/>
         </layer>
         <layer id="1">
@@ -21,9 +27,9 @@
             <hearts x="18" y="5" r="2"/>
             <hearts x="15.5" y="5.5"/>
             <hearts x="0" y="6" w="16" r="1"/>
-            <hearts x="18" y="6" w="9" r="1"/>
+            <hearts x="18" y="6" w="8" r="1"/>
             <hearts x="0.5" y="6.5" w="16" r="1"/>
-            <hearts x="18.5" y="6.5" w="9" r="1"/>
+            <hearts x="18.5" y="6.5" w="8" r="1"/>
             <hearts x="4" y="7" h="2" r="2"/>
             <hearts x="8" y="7" h="2" r="2"/>
             <hearts x="15" y="7" r="2"/>
@@ -38,18 +44,29 @@
             <hearts x="17" y="10" r="2"/>
         </layer>
         <layer id="2">
-            <house x="7" y="1"/>
             <bench1 x="16" y="1.5"/>
             <bench1 x="16" y="10.5"/>
         </layer>
+        <layer id="3">
+            <side_cloud_corner x="0" y="0" r="1"/>
+            <side_clouds x="1" y="0" w="31" r="1"/>
+            <side_cloud_corner x="32" y="0" r="2"/>
+            <side_clouds x="0" y="1" h="3"/>
+            <side_clouds x="32" y="1" h="11" r="2"/>
+            <side_clouds_edge x="0" y="4" r="1"/>
+            <side_clouds_edge x="0" y="9"/>
+            <side_clouds x="0" y="10" h="2"/>
+            <side_cloud_corner x="0" y="12"/>
+            <side_clouds x="1" y="12" w="31" r="3"/>
+            <side_cloud_corner x="32" y="12" r="3"/>
+        </layer>
     </map>
     <collisionboxes>
-        <wall x="0" y="-1" w="32" h="1"/>
-        <wall x="32" y="0" w="1" h="13"/>
-        <wall x="0" y="13" w="32" h="1"/>
+        <wall x="32.299999" y="0" w="0.69999999" h="13"/>
+        <wall x="0.69999999" y="12.3" w="31.6" h="0.69999999"/>
         <button x="27" y="6" w="1" h="1" group="statue"/>
-        <wall x="27" y="6.5" w="1" h="0.2"/>
-        <door x="-1" y="5" w="1" h="4" name="east" destination="east" scene="dreamland/townsquare" offsetx="1" offsety="0"/>
+        <wall x="27" y="6.5" w="1" h="0.15000001"/>
+        <door x="-1" y="4.6999998" w="1" h="4.5999999" name="east" destination="east" scene="dreamland/townsquare" offsetx="1" offsety="0"/>
         <button x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_talk"/>
         <wall x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_no"/>
         <door x="3.575" y="3.0999999" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
@@ -62,8 +79,7 @@
         <wall x="8.79" y="3" w="0.0099999998" h="1"/>
         <wall x="7.5500002" y="3" w="0.0099999998" h="1"/>
         <wall x="7.5500002" y="3" w="1.25" h="0.1"/>
-        <wall x="-1" y="0" w="1" h="5"/>
-        <wall x="-1" y="9" w="1" h="4"/>
+        <wall x="0" y="9.3000002" w="0.69999999" h="3.7"/>
         <wall x="4.4400001" y="9" w="0.0099999998" h="1"/>
         <wall x="3.2" y="9" w="0.0099999998" h="1"/>
         <wall x="3.2" y="9.8999996" w="1.25" h="0.1"/>
@@ -76,9 +92,16 @@
         <wall x="7.2249999" y="9" w="1.2" h="0.89999998" group="house4_no"/>
         <door x="7.2249999" y="9" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
         <button x="7.2249999" y="9" w="1.2" h="0.89999998" group="house4_talk"/>
-        <wall x="16.23" y="6.1999998" w="1.48" h="0.56999999"/>
+        <wall x="16.23" y="6.1999998" w="1.48" h="0.5"/>
         <wall x="16.1" y="10.7" w="1.8" h="0.5"/>
         <wall x="16.1" y="1.7" w="1.8" h="0.5"/>
         <button x="16.23" y="6.4000001" w="1.48" h="0.76999998" group="foontan"/>
+        <wall x="0" y="0" w="0.69999999" h="4.6999998"/>
+        <wall x="0.69999999" y="0" w="31.6" h="0.69999999"/>
+        <wall x="24" y="7" w="2" h="5.3000002"/>
+        <wall x="26" y="8" w="3" h="1"/>
+        <wall x="29" y="4.6999998" w="1" h="3.3"/>
+        <wall x="24" y="0.69999999" w="2" h="5"/>
+        <wall x="26" y="4" w="3" h="0.69999999"/>
     </collisionboxes>
 </scene>

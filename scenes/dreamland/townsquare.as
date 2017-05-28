@@ -18,7 +18,7 @@ void foontan()
 [group iamthesenate]
 void notyet()
 {
-  say("Under Construction.");
+  say("<b>Under Construction.</b>");
   move(get_player(), direction::right, .5, .5);
   
   narrative::end();

@@ -29,10 +29,10 @@ void city_stuff() {
   
   entity house3 = create(vec(4, 9), "house");
   set_rotation(house3, 180);
-  set_depth(house3, fixed_depth::overlay);
+  set_depth(house3, -9000);
   entity house4 = create(vec(8, 9), "house");
   set_rotation(house4, 180);
-  set_depth(house4, fixed_depth::overlay);
+  set_depth(house4, -9000);
   
   entity fountain = create(vec(17, 7), "fountain");
   
