@@ -101,13 +101,13 @@ void open_savepoint()
   
   do{
     
-    if (is_triggered(control::select_previous) && currect_selection != 0)
+    if (is_triggered("select_left") && currect_selection != 0)
       --currect_selection;
     
-    if (is_triggered(control::select_next) && currect_selection != 2)
+    if (is_triggered("select_right") && currect_selection != 2)
       ++currect_selection;
     
-    if(is_triggered(control::activate)) {
+    if(is_triggered("activate")) {
       
       if(confirm_save())
         save_slot(currect_selection);
@@ -116,7 +116,7 @@ void open_savepoint()
       
     }
     
-    if(is_triggered(control::back))
+    if(is_triggered("back"))
       exit = true;
     
     set_position(cursor, origin + separation * currect_selection);

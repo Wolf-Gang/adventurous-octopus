@@ -24,7 +24,7 @@
     <select_left key0="left" press="true"/>
     <select_right key0="right" press="true"/>
     
-    <back key0="rshift" alt0="x"/>
+    <back key0="rshift" alt0="x" press="true"/>
   </controls>
   
   <!-- 12x10 -->
