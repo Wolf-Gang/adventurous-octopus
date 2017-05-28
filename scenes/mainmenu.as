@@ -120,13 +120,13 @@ void mainmenu()
   
 	do {
     
-    if(is_triggered(control::select_up) && current_selection != 0)
+    if(is_triggered("select_up") && current_selection != 0)
       --current_selection;
     
-    if(is_triggered(control::select_down) && current_selection != 2)
+    if(is_triggered("select_down") && current_selection != 2)
       ++current_selection;
     
-    if(is_triggered(control::activate)) {
+    if(is_triggered("activate")) {
       
       switch(current_selection) {
         
@@ -164,7 +164,7 @@ void mainmenu()
         
       }
       
-      if(is_triggered(control::back))
+      if(is_triggered("back"))
         exit = true;
       
     }
@@ -202,13 +202,13 @@ void saves_menu() {
   // Having a normal while loop fixes this.
   while(yield() && !go_back) {
     
-    if (is_triggered(control::select_up) && selection != 0)
+    if (is_triggered("select_up") && selection != 0)
 			--selection;
       
-		if (is_triggered(control::select_down) && selection != 2)
+		if (is_triggered("select_down") && selection != 2)
 			++selection;
     
-    if(is_triggered(control::activate)) {
+    if(is_triggered("activate")) {
       
       if(is_slot_used(selection)) {
       
@@ -218,7 +218,7 @@ void saves_menu() {
       
     }
     
-    if(is_triggered(control::back))
+    if(is_triggered("back"))
       go_back = true;
     
     //TODO?: display some info about the hovered save, like progress or something

@@ -193,12 +193,12 @@ void meetunicorn()
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
 	say("AH Hello here!");
-	say("I'm the majestic unicorn of DEATH.");
+	say("I'm the majestic unicorn of <b>DEATH</b>.");
 	nl("A fighter against world hunger.");
 	say("This is the magical dreamland of, well, I don't know...");
 	
 	set_atlas(unicorn, "talk_headup");
-	nl("DREAMS?");
+	nl("<wave>DREAMS?</wave>");
 	set_atlas(unicorn, "talk");
 	
 	say("I will be your guide. It's too easy to get lost here...");

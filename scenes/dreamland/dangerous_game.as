@@ -62,7 +62,7 @@ void phloophs_talk()
 		wait(0.5);
 		
 		say("We see.");
-		nl("PREPARE TO BE ERASED.");
+		nl('<c r="255" g="0" b="0"><shake>PREPARE TO BE ERASED.</shake></c>');
 		
 		narrative::hide();
 		fx::sound("bad");
