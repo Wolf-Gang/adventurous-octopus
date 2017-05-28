@@ -60,20 +60,22 @@ void sivoraintro()
   */
   
   
-  music::volume(100);
+  music::volume(70);
   music::open("doodle113");
   
   narrative::show();
-  narrative::set_expression("sivora icon", "default:default");
+  narrative::set_dialog_sound("softdialog");
+  narrative::set_expression("sivora icon", "smirk");
   fsay("AH HA!");
   wait(0.2);
   append(" I'll save you from this dangerous place!");
   nl("I am the hero of lost souls.");
-  say("I'm Sivora!");
+  say("<b>I'm Sivora!</b>");
+  narrative::set_expression("sivora icon", "default:default");
   say("I've been waiting for you for so long.");
   fnl("You seem fine");
   wait(0.2);
   append(", so far...");
-  nl("So let me help you get out!");
+  nl("So let me help you out!");
   narrative::end();
 }

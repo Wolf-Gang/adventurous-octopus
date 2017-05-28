@@ -23,6 +23,8 @@ void meetsivora()
   set_color(sivora, 0, 0, 0, 255);
   
   wait(0.5);
+  narrative::show();
+  narrative::set_expression("question_expr", "default:default");
   say("Hello?");
   fnl("Is that a person?");
   

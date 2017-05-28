@@ -61,10 +61,11 @@ void phloophs_talk()
 		fx::sound("heh");
 		wait(0.5);
 		
-		say("We see.");
+    narrative::set_dialog_sound("roughdialog");
+		say('<c r="255" g="0" b="0">We see.</c>');
 		nl('<c r="255" g="0" b="0"><shake>PREPARE TO BE ERASED.</shake></c>');
-		
-		narrative::hide();
+		narrative::end();
+    
 		fx::sound("bad");
 		goto_area();
 		
