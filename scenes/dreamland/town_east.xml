@@ -49,7 +49,7 @@
         <wall x="0" y="13" w="32" h="1"/>
         <button x="27" y="6" w="1" h="1" group="statue"/>
         <wall x="27" y="6.5" w="1" h="0.2"/>
-        <door x="-1" y="5" w="1" h="3" name="east" destination="east" scene="dreamland/dreamland_town" offsetx="0.5" offsety="0"/>
+        <door x="-1" y="5" w="1" h="4" name="east" destination="east" scene="dreamland/townsquare" offsetx="1" offsety="0"/>
         <button x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_talk"/>
         <wall x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_no"/>
         <door x="3.575" y="3.0999999" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
@@ -63,7 +63,7 @@
         <wall x="7.5500002" y="3" w="0.0099999998" h="1"/>
         <wall x="7.5500002" y="3" w="1.25" h="0.1"/>
         <wall x="-1" y="0" w="1" h="5"/>
-        <wall x="-1" y="8" w="1" h="5"/>
+        <wall x="-1" y="9" w="1" h="4"/>
         <wall x="4.4400001" y="9" w="0.0099999998" h="1"/>
         <wall x="3.2" y="9" w="0.0099999998" h="1"/>
         <wall x="3.2" y="9.8999996" w="1.25" h="0.1"/>

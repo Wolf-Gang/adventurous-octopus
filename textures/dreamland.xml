@@ -29,5 +29,6 @@
     <side_clouds x="0" y="32" w="32" h="32"/>
     <side_clouds_edge x="128" y="32" w="32" h="32"/>
     <sparkles x="32" y="192" w="32" h="32" frames="4" interval="200" loop="1"/>
+    <wall x="224" y="256" w="32" h="32"/>
     <welcome x="0" y="288" w="102" h="80"/>
 </atlas>
