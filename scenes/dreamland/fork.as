@@ -1,5 +1,5 @@
 #include "../backend/dreamland_effects.as"
-#include "../backend/save_system.as"
+#include "../backend/savepoint.as"
 
 [start]
 void save_thing() {
