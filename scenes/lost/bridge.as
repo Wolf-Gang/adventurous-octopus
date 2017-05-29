@@ -18,7 +18,7 @@ void create_boxes()
       entity box = add_entity("lost", "crate");
       set_depth(box, fixed_depth::background);
       set_position(box, vec(-9 + float(x), -3 + float(y)));
-      set_parallax(box, -0.5); //the parallax motion of the boxes is backwards
+      set_parallax(box, -2);
     }
   }
   
