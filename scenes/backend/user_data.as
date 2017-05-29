@@ -1,170 +1,83 @@
 
-shared enum item_type
-{
-	useless,
-	food,
-	weapon,
-};
+// This is mostly for example.
+// It can be changed up to what is needed.
 
-shared class item 
+namespace user_data
 {
-  
-  item(string pName = "Error item", item_type pType = item_type::useless, bool pStackable = true, int pValue = 0)
+  enum item_type
   {
-    
-    mName = pName;
-    mType = pType;
-    mValue = pValue;
-    mStackable = pStackable;
-    
+    misc = 0,
+    food,
   }
   
-  string get_name()
-	{
-		return mName;
-	}
-	
-	item_type get_type()
-	{
-		return mType;
-	}
-	
-	// This is HP restore points if food and ATK if weapon
-	int get_value()
-	{
-		return mValue;
-	}
-	
-	bool is_stackable()
-	{
-		return mStackable;
-	}
-  
-  private string mName;
-  private item_type mType;
-  private int mValue;
-  private bool mStackable;
-};
-
-shared class inventory_item
-{
-	inventory_item()
-	{
-		mCount = 1;
-	}
-	
-	item@ get_item() final
+  namespace priv
   {
-    return mItem;
+    const string root_player_directory = "player";
+    
+    const int default_hp = 100;
+    const string player_hp = root_player_directory + "/hp";  // "player/hp"
+    
+    const string player_inventory = root_player_directory + "/inventory"; // "player/inventory"
+    
+    // Ensure that all user data exists
+    // and setup defaults if they don't.
+    [start]
+    void setup()
+    {
+       if (!values::exists(player_hp))
+         user_data::set_hp(default_hp);
+    }
   }
-	
-	int get_count() final
-	{
-		return mCount;
-	}
-  
-	void set_count(int pCount) final
-	{
-		mCount = pCount;
-	}
-  
-	void add_count(int pAmount = 1) final
-	{
-		mCount += pAmount;
-	}
-  
-	private int mCount;
-  private item mItem;
-};
 
-shared class player_data
-{
-	player_data()
-	{
-		mHP = 10;
-		mHP_max = 10;
-		mAtk = 2;
-	}
-
-	int get_hp()
-	{
-		return mHP;
-	}
+  void set_hp(int pValue)
+  {
+    values::set(user_data::priv::player_hp, pValue);
+  }
   
-	void set_hp(int pHP)
-	{
-		mHP = pHP;
-	}
-	
-	int get_hp_max()
-	{
-		return mHP_max;
-	}
-	
-	void set_hp_max(int pMax)
-	{
-		mHP_max = pMax;
-	}
-	
-	int get_atk()
-	{
-		return mAtk;
-	}
-	
-	void set_atk(int pAtk)
-	{
-		mAtk = pAtk;
-	}
-	
-	void add_inventory_item(item@ mItem)
-	{
-		inventory_item@ find = find_item(mItem.get_name());
-		
-		if (find !is null &&
-			find.get_item().is_stackable())
-			find.add_count(mItem.get_count());
-		else
-			mInventory.insertLast(mItem);
-	}
-	
-	void remove_item(uint pIndex)
-	{
-		if (mInventory[pIndex].get_count() > 1)
-			mInventory[pIndex].add_count(-1);
-		else
-			mInventory.removeAt(pIndex);
-	}
-	
-	inventory_item@ find_item(const string&in pName)
-	{
-		for (uint i = 0; i < mInventory.length(); i++)
-		{
-			if (mInventory[i].get_item().get_name() == pName)
-				return @mInventory[i];
-		}
-		return null;
-	}
-	
-	array<inventory_item@>@ get_inventory()
-	{
-		return @mInventory;
-	}
-	
-	private int mHP;
-	private int mHP_max;
-	private int mAtk;
-	private array<inventory_item@> mInventory;
-};
-
-shared player_data@ get_player_data()
-{
-	ref@ s_data = get_shared("player_data");
-	if (s_data is null) // Create new data if none exists
-	{
-		player_data new_data();
-		make_shared(@new_data, "player_data");
-		return @new_data;
-	}
-	
-	return cast<player_data>(s_data);
+  int get_hp()
+  {
+     return values::get_int(user_data::priv::player_hp);
+  }
+  
+  array<string> get_inventory_items()
+  {
+    return values::get_entries(user_data::priv::player_inventory);
+  }
+  
+  item_type get_item_type(const string&in pName)
+  {
+    const string path = user_data::priv::player_inventory + "/" + pName + "/type";
+    if (!values::exists(path))
+    {
+      eprint("Invalid inventory item");
+      return item_type::misc;
+    }
+    return item_type(values::get_int(path));
+  }
+  
+  void add_inventory(const string&in pName, item_type pType)
+  {
+    // Each inventory item is an entry in the inventory directory
+    const string path = user_data::priv::player_inventory + "/" + pName;
+    
+    // In this example each inventory item has a value
+    // specifying how much you have of this item.
+    // Increment this value when inserting the same thing.
+    if (values::exists(path))
+    {
+      int item_count = values::get_int(path);
+      ++item_count;
+      values::set(path, item_count);
+    }
+    else
+    {
+      // Create the new inventory entry
+      // with the value "1" for 1 item.
+      values::set(path, 1);
+      
+       // Entries can actually double as folders
+       // because of the way paths work.
+      values::set(path + "/type", int(pType));
+    }
+  }
 }

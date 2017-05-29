@@ -192,7 +192,7 @@ void meetunicorn()
 	narrative::show();
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
-	say("AH Hello here!");
+	say("AH Hello there!");
 	say("I'm the majestic unicorn of <b>DEATH</b>.");
 	nl("A fighter against world hunger.");
 	say("This is the magical dreamland of, well, I don't know...");
