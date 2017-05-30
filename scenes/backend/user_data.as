@@ -2,13 +2,14 @@
 // This is mostly for example.
 // It can be changed up to what is needed.
 
+enum item_type
+{
+  misc = 0,
+  food,
+}
+
 namespace user_data
 {
-  enum item_type
-  {
-    misc = 0,
-    food,
-  }
   
   namespace priv
   {
@@ -44,6 +45,11 @@ namespace user_data
     return values::get_entries(user_data::priv::player_inventory);
   }
   
+  bool has_item(const string&in pName)
+  {
+    return values::exists(user_data::priv::player_inventory + "/" + pName);
+  }
+  
   item_type get_item_type(const string&in pName)
   {
     const string path = user_data::priv::player_inventory + "/" + pName + "/type";
@@ -55,7 +61,7 @@ namespace user_data
     return item_type(values::get_int(path));
   }
   
-  void add_inventory(const string&in pName, item_type pType)
+  void add_inventory(const string&in pName, item_type pType, const string&in pTexture = "", const string&in pAtlas = "")
   {
     // Each inventory item is an entry in the inventory directory
     const string path = user_data::priv::player_inventory + "/" + pName;
@@ -78,6 +84,13 @@ namespace user_data
        // Entries can actually double as folders
        // because of the way paths work.
       values::set(path + "/type", int(pType));
+      
+      if(pTexture != "")
+        values::set(path + "/texture", pTexture);
+      
+      if(pAtlas != "")
+        values::set(path + "/atlas", pAtlas);
     }
   }
 }
+
