@@ -1,9 +1,15 @@
+#include "town.as"
+#include "../backend/clone.as"
+
 entity statue_vill;
+
+const float y_origin = 6.7;
 
 [start]
 void start()
 {
 	set_position(get_player(), vec(15.5, 6.5));
+  make_clone((get_position(get_player()) + vec(0, -y_origin))*vec(1, -1) + vec(0, y_origin), vec(1, -1), add_character("mc"));
 }
 
 [start]
@@ -36,6 +42,24 @@ void city_stuff() {
   
   entity fountain = create(vec(17, 7), "fountain");
   
+}
+
+/*[start]
+void rotate_player()
+{
+  
+  do{
+    
+    set_rotation(get_player(), 
+    
+  } while(yield());
+}*/
+
+[start]
+void make_benches()
+{
+  create_bench(vec(16, 1.5));
+  create_bench(vec(16, 10.5));
 }
 
 [group foontan]
