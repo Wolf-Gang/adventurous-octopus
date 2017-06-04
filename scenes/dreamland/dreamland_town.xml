@@ -3,7 +3,9 @@
     <map>
         <texture>dreamland</texture>
         <layer id="0">
+            <cloud_tile x="-1" y="0" h="23"/>
             <ground x="0" y="0" w="10" h="7"/>
+            <cloud_tile x="10" y="0" h="22"/>
             <ground x="0" y="7" r="1"/>
             <ground x="1" y="7"/>
             <ground x="2" y="7" w="8" r="1"/>
@@ -12,8 +14,8 @@
             <ground x="4" y="9" w="2"/>
             <ground x="6" y="9" w="4" r="1"/>
             <ground x="0" y="10" w="10" r="1"/>
-            <ground x="0" y="11" w="10" h="11"/>
-            <ground x="0" y="22" w="10"/>
+            <ground x="0" y="11" w="10" h="12"/>
+            <cloud_tile x="10" y="22"/>
         </layer>
         <layer id="1">
             <flowers x="6" y="2" w="3" h="3"/>

@@ -1,11 +1,22 @@
 <atlas>
     <barrel x="0" y="32" w="32" h="32"/>
+    <cage_back x="192" y="80" w="64" h="64"/>
+    <cage_front x="192" y="0" w="64" h="80"/>
     <corner x="96" y="0" w="32" h="32"/>
     <crate x="32" y="32" w="32" h="32"/>
     <crushed_crate x="64" y="32" w="32" h="32"/>
+    <edge x="32" y="64" w="32" h="32"/>
+    <edge_c x="0" y="64" w="16" h="16"/>
+    <edge_ce x="16" y="64" w="16" h="16"/>
+    <edge_half x="32" y="80" w="16" h="16"/>
     <floor x="32" y="0" w="32" h="32"/>
+    <hole x="80" y="96" w="48" h="32" frames="2" interval="4000" loop="1"/>
     <largehole x="128" y="32" w="64" h="64"/>
+    <narrowhole x="176" y="96" w="16" h="48"/>
+    <narrowhole2 x="112" y="128" w="32" h="32" frames="2" interval="3000" loop="1"/>
     <path x="64" y="0" w="32" h="32"/>
+    <path_end x="160" y="0" w="32" h="32"/>
+    <scratches x="48" y="96" w="32" h="32"/>
     <tint x="128" y="0" w="32" h="32"/>
     <wall x="96" y="32" w="32" h="64"/>
 </atlas>

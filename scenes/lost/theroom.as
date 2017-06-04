@@ -78,4 +78,6 @@ void sivoraintro()
   append(", so far...");
   nl("So let me help you out!");
   narrative::end();
+  
+  
 }

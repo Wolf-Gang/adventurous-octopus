@@ -29,7 +29,7 @@ void open_savepoint()
   
   scoped_entity bg = add_entity("pixel");
   make_gui(bg, 0);
-  set_scale(bg, vec(10, 10)*32);
+  set_scale(bg, get_display_size());
   set_color(bg, 0, 0, 0, 255);
   set_anchor(bg, anchor::topleft);
   set_depth(bg, 2);

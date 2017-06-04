@@ -5,8 +5,6 @@
 	
 	<tile_size pixels="32"/>
   
-  
-  
   <controls>
     
     <!-- Player uses these but they are multi-purpose -->

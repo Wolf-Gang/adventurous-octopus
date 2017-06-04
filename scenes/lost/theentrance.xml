@@ -10,7 +10,7 @@
         </layer>
         <layer id="1">
             <largehole x="4" y="0"/>
-            <path x="0" y="2" w="10"/>
+            <path x="0" y="2" w="6"/>
         </layer>
     </map>
     <collisionboxes>
