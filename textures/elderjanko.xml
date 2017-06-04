@@ -1,0 +1,5 @@
+<atlas>
+    <default:default x="0" y="0" w="32" h="32"/>
+    <default:down x="64" y="0" w="32" h="32" frames="2" interval="200" loop="1"/>
+    <talk x="0" y="0" w="32" h="32" frames="2" interval="150" loop="1"/>
+</atlas>
