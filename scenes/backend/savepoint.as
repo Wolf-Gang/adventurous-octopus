@@ -19,8 +19,8 @@ void savepoint() {
   
 }
 
-const vec origin = pixel(50, 30);
-const vec separation = pixel(80, 0);
+const vec origin = pixel(70, 30);
+const vec separation = pixel(80, 10);
 
 void open_savepoint()
 {
@@ -39,60 +39,40 @@ void open_savepoint()
   
   set_direction(get_player(), direction::up);
   
-  array<entity> slots(3);
+  array<string> menu_items = {"Slot 1", "Slot 2", "Slot 3"};
   
-  for(int i = 0; i < 3; i++) {
-    
-    slots[i] = add_text();
-    set_text(slots[i], "Slot " + (i + 1));
-    make_gui(slots[i], 1);
-    //set_anchor(slots[i], anchor::center);
-    set_position(slots[i], origin + separation * i);
-    
-  }
-  
-  scoped_entity cursor = add_entity("NarrativeBox", "SelectCursor");
-  make_gui(cursor, 3);
-  set_anchor(cursor, anchor::topright);
-  set_depth(cursor, fixed_depth::overlay);
-  
-  set_position(cursor, origin);
-  
-  int currect_selection = 0;
+  menu save_menu (menu_items, origin, 3, separation);
   
   yield();
   
   bool exit = false;
   
-  do{
+  do
+  {
     
-    if (is_triggered("select_left") && currect_selection != 0)
-      --currect_selection;
+    int sel = save_menu.tick();
     
-    if (is_triggered("select_right") && currect_selection != 2)
-      ++currect_selection;
+    switch(sel)
+    {
+      case -2:
+        exit = true;
+        break;
+      
+      case -1:
+        break;
+      
+      default:
+        if(confirm_save())
+          save_slot(sel);
+        
+        narrative::end();
+        break;
     
-    if(is_triggered("activate")) {
-      
-      if(confirm_save())
-        save_slot(currect_selection);
-      
-      narrative::end();
-      
     }
-    
-    if(is_triggered("back"))
-      exit = true;
-    
-    set_position(cursor, origin + separation * currect_selection);
     
   } while(yield() && !exit);
   
-  for(int i = 0; i < 3; i++) {
-    
-    remove_entity(slots[i]);
-    
-  }
+  save_menu.set_visible(false);
   
   set_depth_fixed(get_player(), false);
   

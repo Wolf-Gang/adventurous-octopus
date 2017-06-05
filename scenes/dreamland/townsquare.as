@@ -18,6 +18,7 @@ void foontan()
 [group iamthesenate]
 void notyet()
 {
+  //It's treason then
   say("<b>Under Construction.</b>");
   move(get_player(), direction::right, .5, .5);
   

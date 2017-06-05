@@ -65,5 +65,10 @@ void tutorial()
   
   set_direction(get_player(), direction::up);
   say("You did well.");
-  say("");
+  
+  
+  say("That is all you need to know for now.");
+  nl("Good luck out there.");
+  goto_entrance();
+  
 }
