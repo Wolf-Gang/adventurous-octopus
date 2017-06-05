@@ -180,7 +180,7 @@ void saves_menu() {
   {
     int selection = saves.tick();
     
-    switch(saves.tick())
+    switch(selection)
     {
       case -2:
         go_back = true;

@@ -41,7 +41,7 @@ void tutorial()
   
   set_atlas(janko, "talk");
   say("You must be new to these lands.");
-  nl("A land were only darkness and despair await.");
+  nl("Lands were only darkness and despair await you.");
   say("There are special skills you will need to survive.");
   
   fsay("Do you want to learn these skills?");
