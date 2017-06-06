@@ -16,7 +16,9 @@ namespace user_data
     const string root_player_directory = "player";
     
     const int default_hp = 100;
-    const string player_hp = root_player_directory + "/hp";  // "player/hp"
+    const string player_hp  = root_player_directory + "/hp";  // "player/hp"
+    const string player_atk = root_player_directory + "/atk";
+    const string player_def = root_player_directory + "/def";
     
     const string player_inventory = root_player_directory + "/inventory"; // "player/inventory"
     
@@ -37,7 +39,27 @@ namespace user_data
   
   int get_hp()
   {
-     return values::get_int(user_data::priv::player_hp);
+    return values::get_int(user_data::priv::player_hp);
+  }
+  
+  void set_atk(int pValue)
+  {
+    values::set(user_data::priv::player_atk, pValue);
+  }
+  
+  int get_atk()
+  {
+    return values::get_int(user_data::priv::player_atk);
+  }
+  
+  void set_def(int pValue)
+  {
+    values::set(user_data::priv::player_def, pValue);
+  }
+  
+  int get_def()
+  {
+    return values::get_int(user_data::priv::player_def);
   }
   
   array<string> get_inventory_items()
@@ -48,6 +70,13 @@ namespace user_data
   bool has_item(const string&in pName)
   {
     return values::exists(user_data::priv::player_inventory + "/" + pName);
+  }
+  
+  array<string> get_item_sprite(string pName)
+  {
+    return array<string> = {
+    values::get_string(user_data::priv::player_inventory + pName + "/atlas"),
+    values::get_string(user_data::priv::player_inventory + pName + "/texture"};
   }
   
   item_type get_item_type(const string&in pName)
