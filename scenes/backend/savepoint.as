@@ -41,7 +41,7 @@ void open_savepoint()
   
   array<string> menu_items = {"Slot 1", "Slot 2", "Slot 3"};
   
-  menu save_menu (menu_items, origin, 3, separation);
+  list_menu save_menu (menu_items, origin, 3, separation);
   
   yield();
   

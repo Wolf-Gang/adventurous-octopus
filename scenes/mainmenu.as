@@ -80,15 +80,13 @@ void create_cloud_2()
 const vec base_position(pixel(10, 200));
 const vec item_size(pixel(100, 20));
 
-entity cursor;
-
 [start]
 void mainmenu()
 {
   
   array<string> meun_items = {"Start", "Continue", "Exit"};
   
-  menu main (meun_items, base_position, 1, item_size, false);
+  list_menu main (meun_items, base_position, 1, item_size, false);
   
 	if (!are_there_saves())
 		set_color(main.get_options()[1], 255, 255, 255, 50);
@@ -164,7 +162,7 @@ void saves_menu() {
   for(int i = 0; i < 3; i++)
     save_slots[i] = is_slot_used(i) ? "Slot " + (i + 1) : "Empty";
   
-  menu saves (save_slots, base_position + vec(item_size.x, 0), 1, item_size, false);
+  list_menu saves (save_slots, base_position + vec(item_size.x, 0), 1, item_size, false);
   
   //this doesn't work
   for(int i = 0; i < 3; i++)

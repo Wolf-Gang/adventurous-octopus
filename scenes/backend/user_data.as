@@ -14,11 +14,12 @@ namespace user_data
   namespace priv
   {
     const string root_player_directory = "player";
+    const string stats_dir = root_player_directory + "/stats";
     
     const int default_hp = 100;
-    const string player_hp  = root_player_directory + "/hp";  // "player/hp"
-    const string player_atk = root_player_directory + "/atk";
-    const string player_def = root_player_directory + "/def";
+    const string player_hp  = stats_dir + "/hp";  // "player/hp"
+    const string player_atk = stats_dir + "/atk";
+    const string player_def = stats_dir + "/def";
     
     const string player_inventory = root_player_directory + "/inventory"; // "player/inventory"
     
@@ -76,7 +77,7 @@ namespace user_data
   {
     return array<string> = {
     values::get_string(user_data::priv::player_inventory + pName + "/atlas"),
-    values::get_string(user_data::priv::player_inventory + pName + "/texture"};
+    values::get_string(user_data::priv::player_inventory + pName + "/texture")};
   }
   
   item_type get_item_type(const string&in pName)
