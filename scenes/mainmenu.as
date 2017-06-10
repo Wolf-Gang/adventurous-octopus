@@ -8,6 +8,7 @@ void start()
 	music::volume(70);
 	set_visible(get_player(), false);
 	focus::set(vec(0, 0));
+  pause::lock(true);
 }
 
 void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
@@ -77,7 +78,7 @@ void create_cloud_2()
 	cloud_movement(cloud, .513, 1, 1.5);
 }
 
-const vec base_position(pixel(10, 200));
+const vec base_position(pixel(10, 260));
 const vec item_size(pixel(100, 20));
 
 [start]
@@ -105,11 +106,11 @@ void mainmenu()
     
     switch(main.tick())
     {
-      case -2:
+      case menu_command::back:
         exit = true;
         break;
       
-      case -1:
+      case menu_command::nothing:
         break;
       
       //'Start'
@@ -180,11 +181,11 @@ void saves_menu() {
     
     switch(selection)
     {
-      case -2:
+      case menu_command::back:
         go_back = true;
         break;
         
-      case -1:
+      case menu_command::nothing:
         break;
       
       default:
@@ -198,7 +199,7 @@ void saves_menu() {
 
 bool confirm_load()
 {
-  say("Load this file?");
+  fsay("Load this file?");
   return(select("Yes", "No") == option::first);
 }
 

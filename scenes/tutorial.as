@@ -4,6 +4,7 @@ void start()
 {
 	set_position(get_player(), vec(.5, 0));
   player::lock(true);
+  //pause::lock(true):
 }
 
 void goto_entrance()

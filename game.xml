@@ -1,7 +1,7 @@
 <game>
 	<scene  name="overture"/>
 	
-	<player texture="elderjanko"/>
+	<player texture="mc"/>
 	
 	<tile_size pixels="32"/>
   
@@ -21,7 +21,8 @@
     
     <back key0="rshift" alt0="x" press="true"/>
     
-    <menu key0="m" alt0="c" press="true"/>
+    <!-- <menu key0="m" alt0="c" press="true"/> -->
+    <menu key0="m" alt0="c" alt1="lctrl" press="true"/>
   </controls>
   
   <!-- 10x8 -->

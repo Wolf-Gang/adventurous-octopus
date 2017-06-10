@@ -41,7 +41,7 @@ void open_savepoint()
   
   array<string> menu_items = {"Slot 1", "Slot 2", "Slot 3"};
   
-  list_menu save_menu (menu_items, origin, 3, separation);
+  list_menu save_menu (menu_items, origin, 3, separation, false);
   
   yield();
   
@@ -54,11 +54,11 @@ void open_savepoint()
     
     switch(sel)
     {
-      case -2:
+      case menu_command::back:
         exit = true;
         break;
       
-      case -1:
+      case menu_command::nothing:
         break;
       
       default:

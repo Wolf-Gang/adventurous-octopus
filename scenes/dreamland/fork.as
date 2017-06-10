@@ -2,10 +2,9 @@
 #include "../backend/savepoint.as"
 
 [start]
-void save_thing() {
-  
+void save_thing()
+{
   make_savepoint(vec(6.5, 5.5));
-  
 }
 
 [start]

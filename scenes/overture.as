@@ -7,6 +7,7 @@ void start()
 	music::open("doodle110_start");
 	music::fade_volume(70, 5);
 	set_visible(get_player(), false);
+  pause::lock(true);
 }
 
 /* some testing
