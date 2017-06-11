@@ -165,7 +165,6 @@ void saves_menu() {
   
   list_menu saves (save_slots, base_position + vec(item_size.x, 0), 1, item_size, false);
   
-  //this doesn't work
   for(int i = 0; i < 3; i++)
     if(!is_slot_used(i))
       set_color(saves.get_options()[i], 255, 200, 200, 250);

@@ -28,7 +28,7 @@
     </map>
     <collisionboxes>
         <door x="1.7" y="10" w="1.6" h="1" name="south" destination="left" scene="dreamland/fork" offsetx="0" offsety="-0.5"/>
-        <door x="1.7" y="-1" w="1.6" h="1" name="top" destination="south" scene="dreamland/bridge" offsetx="0" offsety="0"/>
+        <door x="1.7" y="-1" w="1.6" h="1" name="top" destination="south" scene="dreamland/bridge" offsetx="0" offsety="1"/>
         <wall x="3.3" y="0" w="0.69999999" h="10"/>
         <wall x="1" y="0" w="0.69999999" h="10"/>
         <button x="1" y="4" w="0.69999999" h="2" group="littlephlooph"/>

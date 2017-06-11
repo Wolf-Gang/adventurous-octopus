@@ -40,10 +40,21 @@ void create_phloophs()
 	for (uint i = 0; i < phloophs.length(); i++)
 	{
 		phloophs[i] = add_entity("little phlooph");
-		set_position(phloophs[i], vec(0, 1).rotate((360/phloophs.length())*i) + center_of_phloophs);
+		set_position(phloophs[i], vec(0, 1).rotate((360*i/phloophs.length())) + center_of_phloophs);
 		animation::start(phloophs[i]);
+    //create collision boxes to talk to them after the battle
 	}
-	
+	if(has_flag("caughtthephloophs"))
+  {
+    remove_entity(phloophs[0]);
+    group::enable("phloophs", false);
+    group::enable("quicksave", false);
+  }
+  else
+  {
+    group::enable("postphloophs", false);
+    group::enable("goback", false);
+  }
 }
 
 [group phloophs]
@@ -81,5 +92,25 @@ void phloophs_talk()
 		move(get_player(), direction::down, 0.5, 0.5);
 		player::lock(false);
 	}
+}
+
+[group postphloophs]
+void post()
+{
+  narrative::show();
+  narrative::set_expression("smol phlooph icon", "default:default");
+  say("We hope we can be better friends next time.");
+  narrative::end();
+  player::lock(false);
+}
+
+[group goback]
+void back()
+{
+  fsay("Leave the hideout?");
+  if(select("Yes", "No") == option::first)
+    load_scene("dreamland/hall");
+  narrative::end();
+  player::lock(false);
 }
 
