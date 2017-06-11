@@ -99,28 +99,11 @@ void find_key() {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //Foliage
 
-void create_tree(vec pPosition)
-{
-	entity tree1 = add_entity("small cloud tree", "rustle");
-	set_position(tree1, pPosition);
-	animation::start(tree1);
-}
-
 [start]
 void create_cloud_trees()
 {
 	create_tree(vec(3, 12.4));
 	create_tree(vec(8, 14.9));
-}
-
-void create_bush(vec pPosition, int t)
-{
-	entity bush;
-	if(t == 1)
-		bush = add_entity("dreamland", "cloudbush1");
-	if(t == 2)
-		bush = add_entity("dreamland", "cloudbush2");
-	set_position(bush, pPosition);
 }
 
 [start]

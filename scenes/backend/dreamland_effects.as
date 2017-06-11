@@ -44,6 +44,23 @@ void create_flower_patch(vec pPosition, vec pSize, int color_width = 1, flower_t
 	}
 }
 
+void create_tree(vec pPosition)
+{
+	entity tree1 = add_entity("small cloud tree", "rustle");
+	set_position(tree1, pPosition);
+	animation::start(tree1);
+}
+
+void create_bush(vec pPosition, int t)
+{
+	entity bush;
+	if(t == 1)
+		bush = add_entity("dreamland", "cloudbush1");
+	if(t == 2)
+		bush = add_entity("dreamland", "cloudbush2");
+	set_position(bush, pPosition);
+}
+
 
 namespace priv
 {

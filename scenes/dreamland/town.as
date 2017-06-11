@@ -1,14 +1,14 @@
 
 //ALL POSITIONS ARE FROM TOP-LEFT!?
 
-//collision+entity when thing
+//collision+entity
 void create_bench(vec pPos, bool pVert = false)
 {
   const vec offset = pixel(4, 13);
   const vec size = pixel(56, 8);
   
-  const vec v_offset = pixel(4, 13);
-  const vec v_size = pixel(56, 8);
+  const vec v_offset = pixel(7.5, 12);
+  const vec v_size = pixel(18, 48);
   
   entity bench = add_entity("dreamland", "bench" + (pVert ? "2" : "1"));
   set_anchor(bench, anchor::bottomleft);
