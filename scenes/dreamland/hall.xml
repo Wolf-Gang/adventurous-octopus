@@ -1,0 +1,36 @@
+<scene>
+    <boundary w="5" h="10"/>
+    <map>
+        <texture>dreamland</texture>
+        <layer id="0">
+            <ground x="-4" y="0" w="12" h="10" r="1"/>
+        </layer>
+        <layer id="1">
+            <cloud_tile x="0" y="0" h="4" r="2"/>
+            <side_clouds x="1" y="0" h="4"/>
+            <side_clouds x="3" y="0" h="10" r="2"/>
+            <cloud_tile x="4" y="0" h="9" r="2"/>
+            <side_cloud_corner x="-1" y="4" r="1"/>
+            <side_clouds x="0" y="4" r="1"/>
+            <side_clouds_edge x="1" y="4" r="1"/>
+            <side_cloud_corner x="-1" y="5"/>
+            <side_clouds x="0" y="5" r="3"/>
+            <side_clouds_edge x="1" y="5"/>
+            <cloud_tile x="0" y="6" h="4" r="2"/>
+            <side_clouds x="1" y="6" h="4"/>
+            <cloud_tile x="4" y="9" r="2"/>
+        </layer>
+        <layer id="2">
+            <hearts x="2" y="0" h="10"/>
+            <hearts x="2.5" y="0.5" h="9"/>
+            <hearts x="2.5" y="9.5"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <door x="1.7" y="10" w="1.6" h="1" name="south" destination="left" scene="dreamland/fork" offsetx="0" offsety="-0.5"/>
+        <door x="1.7" y="-1" w="1.6" h="1" name="top" destination="south" scene="dreamland/bridge" offsetx="0" offsety="0"/>
+        <wall x="3.3" y="0" w="0.69999999" h="10"/>
+        <wall x="1" y="0" w="0.69999999" h="10"/>
+        <button x="1" y="4" w="0.69999999" h="2" group="littlephlooph"/>
+    </collisionboxes>
+</scene>

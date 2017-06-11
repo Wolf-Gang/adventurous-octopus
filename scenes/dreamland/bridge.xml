@@ -33,7 +33,7 @@
     </map>
     <collisionboxes>
         <wall x="6.3000002" y="4.3000002" w="5.6999998" h="0.69999999"/>
-        <door x="4.6999998" y="5" w="1.6" h="1" name="south" destination="left" scene="dreamland/fork" offsetx="0" offsety="-1"/>
+        <door x="4.6999998" y="5" w="1.6" h="1" name="south" destination="left" scene="dreamland/hall" offsetx="0" offsety="-1"/>
         <trigger x="9" y="-2.3" w="1" h="6.5999999" group="talktounicorn"/>
         <trigger x="12" y="2" w="18" h="3" group="dont2"/>
         <trigger x="12" y="-3" w="18" h="2.8" group="dont1"/>

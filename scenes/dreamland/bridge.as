@@ -55,59 +55,6 @@ void create_gate()
   }
 }
 
-[start]
-void smol_phloophphlooph() {
-  
-  if(has_flag("phlooph") && !has_flag("unlockedgate")) {
-    
-    smol_phlooph = add_entity("little phlooph");
-    set_position(smol_phlooph, vec(3.5, 1));
-    animation::start(smol_phlooph);
-    
-  } else {
-    
-    group::enable("littlephlooph", false);
-    
-  }
-  
-  group::enable("followphlooph", false);
-  
-}
-
-[group littlephlooph]
-void little_phlooph() {
-
-  say("So my dad wants you to find us, huh?");
-  nl("This way.");
-  narrative::end();
-  
-  for(float t = 0; t < 2; t += get_delta()) {
-    
-    set_position(smol_phlooph, vec(3.5, 1) + vec( -1 * t, .25 * ((t - 1)**2 - 1))); //so many parentheses
-    
-    yield();
-    
-  }
-  
-  player::lock(false);
-  
-  group::enable("littlephlooph", false);
-  group::enable("followphlooph", true);
-  
-}
-
-[group followphlooph]
-void follow() {
-  
-  fsay("Follow the phlooph?");
-  
-  if(select("Yes", "No") == option::first)
-    load_scene("dreamland/dangerous_game");
-  
-  narrative::end();
-  player::lock(false);
-}
-
 [group hmmmmlocked]
 void hmmmmlocked()
 {

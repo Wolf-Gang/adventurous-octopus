@@ -32,10 +32,10 @@
             <cloud_tile x="9" y="9" r="1"/>
         </layer>
         <layer id="2">
-            <hearts x="2.5" y="-0.5" h="5"/>
-            <hearts x="6.5" y="-0.5" h="4"/>
             <hearts x="3" y="0" h="4"/>
             <hearts x="7" y="0" h="5"/>
+            <hearts x="2.5" y="0.5" h="4"/>
+            <hearts x="6.5" y="0.5" h="3"/>
             <fork_sign x="4.5" y="1"/>
             <hearts x="3.5" y="3.5" r="3"/>
             <hearts x="4.5" y="3.5" h="6"/>
@@ -58,6 +58,6 @@
         <button x="6" y="5" w="1" h="1" group="save"/>
         <wall x="4.5999999" y="2.7" w="0.80000001" h="0.30000001"/>
         <door x="6" y="-1" w="2" h="1" name="right" destination="south" scene="dreamland/therightway" offsetx="0" offsety="1"/>
-        <door x="2" y="-1" w="2" h="1" name="left" destination="south" scene="dreamland/bridge" offsetx="0" offsety="1"/>
+        <door x="2" y="-1" w="2" h="1" name="left" destination="south" scene="dreamland/hall" offsetx="0" offsety="1"/>
     </collisionboxes>
 </scene>
