@@ -22,8 +22,8 @@ void check_events()
   if(!has_flag("phlooph"))
   {
     entity cover1 = add_entity("dreamland", "ground");
-    set_position(cover1, vec(.5, 6));
-    set_scale(cover1, vec(1, 2));
+    set_position(cover1, vec(0, 6));
+    set_scale(cover1, vec(2, 2));
     
     entity cover2 = add_entity("dreamland", "side_clouds");
     set_position(cover2, vec(1.5, 5));
