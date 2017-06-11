@@ -22,6 +22,7 @@ namespace user_data
     const string player_def = stats_dir + "/def";
     
     const string player_inventory = root_player_directory + "/inventory"; // "player/inventory"
+    const string player_gifts = root_player_directory + "/gifts";
     
     // Ensure that all user data exists
     // and setup defaults if they don't.
@@ -122,5 +123,20 @@ namespace user_data
         values::set(path + "/atlas", pAtlas);
     }
   }
+  
+  /*void add_gift(const string&n pName, const string&in pTexture = "", const string&in pAtlas = "")
+  {
+    const string path = user_data::priv::player_gifts + "/" + pName;
+    
+    if(pTexture != "")
+      values::set(path + "/texture", pTexture);
+    if(pAtlas != "")
+      values::set(path + "/atlas", pAtlas);
+  }*/
+  
+  /*bool has_gift(const string&in pName)
+  {
+    return values::exists(user_data::priv::player_gifts + "/" + pName);
+  }*/
 }
 
