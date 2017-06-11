@@ -1,9 +1,10 @@
 #include "town.as"
 #include "../backend/clone.as"
+#include "../backend/dreamland_effects.as"
 
 entity statue_vill;
 
-const float y_origin = 6.7;
+const float y_origin = 6.6;
 
 [start]
 void start()
@@ -12,12 +13,9 @@ void start()
   make_clone((get_position(get_player()) + vec(0, -y_origin))*vec(1, -1) + vec(0, y_origin), vec(1, -1), add_character("mc"));
 }
 
-[start]
-void create_vill()
-{
-	statue_vill = add_entity("statue vill", "default:default");
-	set_position(statue_vill, vec(27.5, 6.75));
-}
+/// Start
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Aesthetics
 
 entity create(vec pPos, string &in pAtlas) {
   
@@ -25,6 +23,13 @@ entity create(vec pPos, string &in pAtlas) {
   set_position(thing, pPos);
   return thing;
   
+}
+
+[start]
+void create_vill()
+{
+	statue_vill = add_entity("statue vill", "default:default");
+	set_position(statue_vill, vec(27.5, 6.75));
 }
 
 [start]
@@ -44,22 +49,49 @@ void city_stuff() {
   
 }
 
-/*[start]
-void rotate_player()
-{
-  
-  do{
-    
-    set_rotation(get_player(), 
-    
-  } while(yield());
-}*/
-
 [start]
 void make_benches()
 {
+  //by foontan
   create_bench(vec(16, 1.5));
   create_bench(vec(16, 10.5));
+}
+
+[start]
+void make_bushes()
+{
+  //top houses
+  create_bush(vec(5.3, 4.2), 1);
+  create_bush(vec(5.8, 3.9), 2);
+  create_bush(vec(6.5, 4.1), 2);
+  create_bush(vec(6.8, 4.3), 1);
+  create_bush(vec(7.1, 3.7), 1);
+  
+  //bottom houses
+  create_bush(vec(4.8, 9.9), 1);
+  create_bush(vec(5.4, 10.1), 2);
+  create_bush(vec(5.8, 9.6), 2);
+  create_bush(vec(6.4, 9.4), 1);
+  create_bush(vec(6.7, 9.9), 1);
+  
+  //circles
+  const vec top_left_center (13, 3.5);
+  const vec offsets (8, 7);
+  const float radius = 1.3;
+  const int bush_count = 12;
+  
+  for(int x_off = 0; x_off < 2; x_off++)
+  for(int y_off = 0; y_off < 2; y_off++)
+  {
+    const vec center = top_left_center + vec(x_off, y_off) * offsets;
+    create_bush(center, (x_off + y_off) % 2 + 1);
+    for(int i = 0; i < bush_count; i++)
+    {
+      const vec position = center
+        + vec(0, radius).rotate(360 / bush_count * i);
+      create_bush(position,  (i + x_off + y_off) % 2 == 1 ? 1 : 2);
+    }
+  }
 }
 
 [group foontan]
@@ -81,22 +113,6 @@ void talk_to_statue()
 	
 	player::lock(false);
 }
-
-/*
-box b;
-
-[group foontan]
-void bawks() {
-  
-  if(b.is_valid())
-    b.show();
-  else
-    b = box("bawks", pixel(20, 20), pixel(80, 100));
-  
-  keywait();
-  
-  b.hide();
-  
-}
-*/
+/// Aesthetics
+////////////////////////////////////////////////////////////////////////////////////////////////
 
