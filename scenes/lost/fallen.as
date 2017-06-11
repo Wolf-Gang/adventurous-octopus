@@ -19,6 +19,28 @@ void start() {
   }
 }
 
+void create_corruptable_barrel(vec pPosition)
+{
+  entity barrel = add_entity("corruptedbarrel", "corrupt");
+  set_position(barrel, pPosition);
+  create_thread(function(args){
+    entity barrel = entity(args["e"]);
+    while(get_position(get_player()).distance(get_position(barrel)) >= 7){ yield(); }
+    animation::play_wait(barrel);
+    set_atlas(barrel, "Crush");
+    animation::start(barrel);
+    set_depth(barrel, fixed_depth::below);
+  }, dictionary = {{"e", barrel}});
+}
+
+[start]
+void create_barrels()
+{
+  create_corruptable_barrel(vec(15, 1));
+  create_corruptable_barrel(vec(16, 1));
+  create_corruptable_barrel(vec(10, 2));
+}
+
 [start]
 void fall()
 {

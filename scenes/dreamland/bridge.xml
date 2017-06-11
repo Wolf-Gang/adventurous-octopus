@@ -3,22 +3,28 @@
     <map>
         <texture>dreamland</texture>
         <layer id="-1">
-            <fade x="12" y="-2" w="23"/>
+            <fade x="12" y="-3" w="23"/>
         </layer>
         <layer id="0">
-            <ground x="2" y="-3" w="33"/>
-            <ground x="2" y="-2" w="10" h="6"/>
+            <cloud_tile x="2" y="-4" w="2"/>
+            <ground x="4" y="-4" w="3" r="2"/>
+            <cloud_tile x="7" y="-4" w="28"/>
+            <ground x="2" y="-3" w="10" h="8"/>
             <rainbowbridge x="12" y="0" w="23"/>
-            <ground x="2" y="4" w="33"/>
+            <cloud_tile x="2" y="5" w="2"/>
+            <ground x="4" y="5" w="3"/>
+            <cloud_tile x="7" y="5" w="28"/>
         </layer>
         <layer id="1">
+            <side_clouds x="4" y="-4"/>
+            <hearts x="5" y="-4" h="10"/>
+            <side_clouds x="6" y="-4" r="2"/>
+            <hearts x="5.5" y="-3.5" h="9"/>
             <side_cloud_corner x="2.5" y="-3" r="1"/>
             <side_clouds x="3" y="-3" r="1"/>
             <side_clouds_edge x="4" y="-3" r="1"/>
-            <hearts x="5" y="-3" h="8"/>
             <side_clouds_edge x="6" y="-3" r="2"/>
             <side_clouds x="7" y="-3" w="28" r="1"/>
-            <hearts x="5.5" y="-2.5" h="7"/>
             <side_clouds x="2.5" y="-2" h="6"/>
             <sparkles x="12" y="0" w="23" h="2"/>
             <hearts x="6.5" y="0.5" w="6" r="1"/>
@@ -28,7 +34,9 @@
             <side_clouds_edge x="4" y="4"/>
             <side_clouds_edge x="6" y="4" r="3"/>
             <side_clouds x="7" y="4" w="28" r="3"/>
-            <hearts x="5.5" y="4.5"/>
+            <side_clouds x="4" y="5"/>
+            <side_clouds x="6" y="5" r="2"/>
+            <hearts x="5.5" y="5.5"/>
         </layer>
     </map>
     <collisionboxes>
