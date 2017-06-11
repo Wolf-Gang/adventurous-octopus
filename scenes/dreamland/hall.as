@@ -30,7 +30,15 @@ void check_events()
     
     entity cover3 = add_entity("dreamland", "side_clouds");
     set_position(cover3, vec(1.5, 6));
+    
+    group::enable("littlephloph", false);
   }
+  
+  if(has_flag("phlooph") && !has_flag("unlockedgate"))
+    event_count = 0;
+  else
+  if(has_flag("unlockedgate"))
+    event_count = 2;
 }
 
 uint event_count;
