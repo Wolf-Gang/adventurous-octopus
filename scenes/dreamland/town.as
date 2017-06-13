@@ -21,7 +21,7 @@ void create_bench(vec pPos, bool pVert = false)
 }
 
 //On hold until script doors
-void create_house(vec pPos)
+void create_house(vec pPos, string pScene)
 {
   //oh boy
   const vec base_offset = pixel(18, 73);

@@ -23,7 +23,7 @@ void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
 [start]
 void create_bg()
 {
-	entity awrt = add_entity("menu");
+	entity awrt = add_entity("newmenu");
 	set_anchor(awrt, anchor::center);
 	set_position(awrt, vec(0, 0));
 	set_depth(awrt, fixed_depth::background);
@@ -78,7 +78,7 @@ void create_cloud_2()
 	cloud_movement(cloud, .513, 1, 1.5);
 }
 
-const vec base_position(pixel(10, 260));
+const vec base_position(pixel(10, 250));
 const vec item_size(pixel(100, 20));
 
 [start]
