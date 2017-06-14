@@ -1,4 +1,5 @@
 #include "../backend/dreamland_effects.as"
+#include "town.as"
 
 entity unicorn;
 
@@ -18,6 +19,13 @@ void create_welcome_sign()
 {
   entity sign = add_entity("dreamland", "welcome");
   set_position(sign, vec(3, 19));
+}
+
+[start]
+void doyouevenbench()
+{
+  create_bench(vec(4, 1), true);
+  create_bench(vec(6.5, 17.5));
 }
 
 //Start

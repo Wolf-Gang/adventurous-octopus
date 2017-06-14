@@ -49,6 +49,16 @@ void buches()
   create_bush(vec(12, 11.3), 1);
 }
 
+[start]
+void triis()
+{
+  create_tree(vec(6, 6));
+  create_tree(vec(14, 6));
+  
+  create_tree(vec(6, 13));
+  create_tree(vec(14, 13));
+}
+
 //The senate will decide your fate
 [group iamthesenate]
 void notyet()

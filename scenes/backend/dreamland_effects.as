@@ -49,6 +49,10 @@ void create_tree(vec pPosition)
 	entity tree1 = add_entity("small cloud tree", "rustle");
 	set_position(tree1, pPosition);
 	animation::start(tree1);
+  
+  const vec offset = pixel(-29, -16);
+  const vec size = offset * vec(-2, -.6);
+  collision::create(pPosition + offset, size);
 }
 
 void create_bush(vec pPosition, int t)

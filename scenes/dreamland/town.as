@@ -5,7 +5,7 @@
 void create_bench(vec pPos, bool pVert = false)
 {
   const vec offset = pixel(4, 13);
-  const vec size = pixel(56, 8);
+  const vec size = pixel(56, 10);
   
   const vec v_offset = pixel(7.5, 12);
   const vec v_size = pixel(18, 48);
