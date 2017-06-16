@@ -34,7 +34,7 @@
             <redflower x="3" y="0" h="5"/>
             <purpleflower x="4" y="0" h="4"/>
             <orangeflower x="5" y="0" h="3"/>
-            <hearts x="10" y="0" h="8" r="2"/>
+            <hearts x="9.5" y="0" h="9" r="2"/>
             <blueflower x="14" y="0" h="3"/>
             <redflower x="15" y="0" h="4"/>
             <purpleflower x="16" y="0" h="5"/>
@@ -45,22 +45,18 @@
             <redflower x="3.5" y="0.5" h="5"/>
             <purpleflower x="4.5" y="0.5" h="4"/>
             <orangeflower x="5.5" y="0.5" h="3"/>
-            <hearts x="9.5" y="0.5" h="9" r="2"/>
+            <hearts x="10" y="0.5" h="8" r="2"/>
             <blueflower x="14.5" y="0.5" h="3"/>
             <redflower x="15.5" y="0.5" h="4"/>
             <purpleflower x="16.5" y="0.5" h="5"/>
             <orangeflower x="17.5" y="0.5" h="5"/>
             <blueflower x="18.5" y="0.5" h="5"/>
-            <hearts x="9" y="8" r="2"/>
-            <hearts x="10" y="8" r="3"/>
             <hearts x="1.5" y="8.5" w="8" r="1"/>
             <hearts x="10.5" y="8.5" w="9" r="3"/>
             <hearts x="2" y="9" w="8" r="1"/>
-            <hearts x="10" y="9" h="9"/>
             <hearts x="11" y="9" w="8" r="3"/>
-            <hearts x="9.5" y="9.5" r="1"/>
-            <hearts x="10.5" y="9.5"/>
-            <hearts x="9.5" y="10.5" h="8"/>
+            <hearts x="10" y="9.5" h="9"/>
+            <hearts x="9.5" y="10" h="8"/>
             <orangeflower x="1" y="13" h="5"/>
             <blueflower x="2" y="13" h="5"/>
             <redflower x="3" y="13" h="5"/>
