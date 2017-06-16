@@ -23,9 +23,9 @@ void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
 [start]
 void create_bg()
 {
-	entity awrt = add_entity("newmenu");
-	set_anchor(awrt, anchor::center);
-	set_position(awrt, vec(0, 0));
+	entity awrt = add_entity("menu");
+	set_anchor(awrt, anchor::topleft);
+	set_position(awrt, vec(-6, -5));
 	set_depth(awrt, fixed_depth::background);
 	animation::start(awrt);
 }
@@ -34,7 +34,7 @@ void create_bg()
 void create_mc()
 {
 	entity mc = add_entity("MC_menu");
-	set_position(mc, pixel(67, 41));
+	set_position(mc, pixel(67, 11));
 	set_depth(mc, fixed_depth::below);
 	animation::start(mc);
 	
