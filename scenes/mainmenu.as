@@ -66,7 +66,7 @@ void create_flowers()
 void create_cloud()
 {  
 	entity cloud = add_entity("yet another cloud");
-    set_depth(cloud, fixed_depth::background);
+  set_depth(cloud, fixed_depth::background);
 	cloud_movement(cloud, .374, -2, -3);
 }
 
