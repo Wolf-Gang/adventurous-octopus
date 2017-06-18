@@ -1,3 +1,4 @@
+#include "worfel_quest.as"
 
 enum flower_type {
   red,
@@ -88,21 +89,5 @@ void unicorn_disappear(entity pUnicorn)
 	remove_entity(pUnicorn);
 	animation::start(hearts);
 	animation::play_wait(hearts);
-}
-
-entity mc_hat;
-
-[start]
-void flower_hat() {
-  
-  if(has_flag("Flower")) {
-    
-    mc_hat = add_entity("dreamland", "purpleflower");
-    set_position(mc_hat, get_position(get_player()) + vec(0, .01));
-    set_z(mc_hat, .8);
-    add_child(get_player(), mc_hat);
-    
-  }
-  
 }
 
