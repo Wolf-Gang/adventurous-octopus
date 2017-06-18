@@ -2,13 +2,8 @@
     <map>
         <texture>lost</texture>
         <layer id="0">
-            <edge_half x="-2.5" y="-4.5" h="2" r="3"/>
-            <edge_half x="-2.5" y="-4" r="3"/>
-            <edge_ce x="-2.5" y="-3" r="2"/>
-            <edge_half x="-2" y="-3" r="2"/>
-            <edge_half x="-1.5" y="-3" r="2"/>
-            <edge_half x="-1" y="-3" r="2"/>
-            <edge_c x="-0.5" y="-3" r="1"/>
+            <edge_half x="-0.5" y="-6.5" h="4" r="3"/>
+            <edge_half x="-0.5" y="-6" h="4" r="3"/>
             <edge_half x="-7" y="-2.5"/>
             <edge_half x="-6.5" y="-2.5"/>
             <edge_half x="-6" y="-2.5"/>
@@ -24,73 +19,30 @@
             <edge_half x="-1" y="-2.5"/>
             <edge_c x="-0.5" y="-2.5" r="2"/>
             <wall x="-7" y="-2" w="7"/>
-            <floor x="-7" y="0" w="5" r="3"/>
-            <floor x="-2" y="0" w="6"/>
-            <edge_half x="-7" y="1" r="2"/>
-            <edge_half x="-6.5" y="1" r="2"/>
-            <edge_half x="-6" y="1" r="2"/>
-            <edge_half x="-5.5" y="1" r="2"/>
-            <edge_half x="-5" y="1" r="2"/>
-            <edge_half x="-4.5" y="1" r="2"/>
-            <edge_half x="-4" y="1" r="2"/>
-            <edge_half x="-3.5" y="1" r="2"/>
-            <edge_half x="-3" y="1" r="2"/>
-            <edge_half x="-2.5" y="1" r="2"/>
-            <edge_half x="-2" y="1" r="2"/>
-            <edge_half x="-1.5" y="1" r="2"/>
-            <edge_half x="-1" y="1" r="2"/>
-            <edge_c x="-0.5" y="1" r="1"/>
-            <small_wall x="0" y="1" w="3"/>
-            <floor x="3" y="1" h="3"/>
-            <edge_half x="-7" y="1.5"/>
-            <edge_half x="-6.5" y="1.5"/>
-            <edge_half x="-6" y="1.5"/>
-            <edge_half x="-5.5" y="1.5"/>
-            <edge_half x="-5" y="1.5"/>
-            <edge_half x="-4.5" y="1.5"/>
-            <edge_half x="-4" y="1.5"/>
-            <edge_half x="-3.5" y="1.5"/>
-            <edge_half x="-3" y="1.5"/>
-            <edge_half x="-2.5" y="1.5"/>
-            <edge_half x="-2" y="1.5"/>
-            <edge_half x="-1.5" y="1.5"/>
-            <edge_half x="-1" y="1.5"/>
-            <edge_c x="-0.5" y="1.5" r="2"/>
-            <wall x="-7" y="2" w="7"/>
-            <floor x="7" y="3" w="3"/>
-            <floor x="3" y="4" w="7"/>
-            <floor x="3" y="5" h="2"/>
+            <tiledfloor x="-7" y="0" w="10"/>
+            <platformcorner_topright x="3" y="0"/>
+            <small_wall x="-7" y="1" w="10"/>
+            <tiledfloor x="3" y="1" h="3"/>
+            <platformcorner_topleft x="7" y="3"/>
+            <tiledfloor x="8" y="3"/>
+            <platformcorner_topright x="9" y="3"/>
+            <tiledfloor x="3" y="4" w="7"/>
+            <tiledfloor x="3" y="5" h="2"/>
             <small_wall x="4" y="5" w="3"/>
-            <floor x="7" y="5" w="3"/>
-            <small_wall x="7" y="6" w="3"/>
-            <floor x="1" y="7" w="3" r="2"/>
-            <floor x="1" y="8" r="2"/>
-            <small_wall x="2" y="8" w="2"/>
-            <floor x="1" y="9"/>
-            <floor x="17" y="9"/>
-            <floor x="1" y="10" w="5"/>
-            <floor x="6" y="10" r="2"/>
-            <floor x="7" y="10" w="11"/>
-            <small_wall x="1" y="11" w="16"/>
-            <floor x="17" y="11" h="2"/>
-            <floor x="17" y="13" w="5"/>
-        </layer>
-        <layer id="1">
-            <path x="-7" y="0" w="10"/>
-            <corner x="3" y="0"/>
-            <path x="3" y="1" h="3" r="1"/>
-            <tint x="3" y="4" r="3"/>
-            <path x="4" y="4" w="5"/>
-            <path_end x="9" y="4" r="2"/>
-            <path x="3" y="5" h="2" r="1"/>
-            <corner x="1" y="7" r="3"/>
-            <path x="2" y="7" r="2"/>
-            <corner x="3" y="7" r="1"/>
-            <path x="1" y="8" h="2" r="1"/>
-            <path_end x="17" y="9" r="1"/>
-            <corner x="1" y="10" r="2"/>
-            <path x="2" y="10" w="15"/>
-            <corner x="17" y="10" r="1"/>
+            <platformcorner_bottomleft x="7" y="5"/>
+            <tiledfloor x="8" y="5"/>
+            <platformcorner_bottomright x="9" y="5"/>
+            <small_wall x="8" y="6"/>
+            <platformcorner_topleft x="1" y="7"/>
+            <tiledfloor x="2" y="7"/>
+            <platformcorner_bottomright x="3" y="7"/>
+            <tiledfloor x="1" y="8" h="2"/>
+            <small_wall x="2" y="8"/>
+            <tiledfloor x="17" y="9"/>
+            <platformcorner_bottomleft x="1" y="10"/>
+            <tiledfloor x="2" y="10" w="15"/>
+            <platformcorner_bottomright x="17" y="10"/>
+            <small_wall x="2" y="11" w="15"/>
         </layer>
         <layer id="2">
             <tent1 x="9" y="2.5"/>

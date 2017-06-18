@@ -17,10 +17,15 @@
     <narrowhole2 x="112" y="128" w="32" h="32" frames="2" interval="3000" loop="1"/>
     <path x="64" y="0" w="32" h="32"/>
     <path_end x="160" y="0" w="32" h="32"/>
+    <platformcorner_bottomleft x="160" y="208" w="32" h="64"/>
+    <platformcorner_bottomright x="128" y="208" w="32" h="64"/>
+    <platformcorner_topleft x="192" y="208" w="32" h="32"/>
+    <platformcorner_topright x="224" y="208" w="32" h="32"/>
     <scratches x="48" y="96" w="32" h="32"/>
     <small_wall x="64" y="64" w="32" h="32"/>
     <spikes x="0" y="96" w="48" h="128"/>
     <tent1 x="160" y="176" w="32" h="32" frames="2" interval="500" loop="1"/>
+    <tiledfloor x="96" y="208" w="32" h="32"/>
     <tint x="128" y="0" w="32" h="32"/>
     <wall x="96" y="32" w="32" h="64"/>
 </atlas>
