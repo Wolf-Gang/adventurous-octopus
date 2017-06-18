@@ -1,6 +1,6 @@
 #include "../backend/float.as"
 #include "../backend/shadows.as"
-#include "../backend/save_system.as"
+#include "../backend/quicksave.as"
 #include "../backend/dreamland_effects.as"
 
 #include "../battles/phloophs.as"
