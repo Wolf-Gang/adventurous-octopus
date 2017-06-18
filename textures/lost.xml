@@ -1,5 +1,6 @@
 <atlas>
     <barrel x="0" y="32" w="32" h="32"/>
+    <blob1 x="176" y="144" w="32" h="32" frames="2" interval="300" loop="1"/>
     <cage_back x="192" y="80" w="64" h="64"/>
     <cage_front x="192" y="0" w="64" h="80"/>
     <corner x="96" y="0" w="32" h="32"/>
@@ -17,6 +18,9 @@
     <path x="64" y="0" w="32" h="32"/>
     <path_end x="160" y="0" w="32" h="32"/>
     <scratches x="48" y="96" w="32" h="32"/>
+    <small_wall x="64" y="64" w="32" h="32"/>
+    <spikes x="0" y="96" w="48" h="128"/>
+    <tent1 x="160" y="176" w="32" h="32" frames="2" interval="500" loop="1"/>
     <tint x="128" y="0" w="32" h="32"/>
     <wall x="96" y="32" w="32" h="64"/>
 </atlas>

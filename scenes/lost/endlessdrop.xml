@@ -1,0 +1,125 @@
+<scene>
+    <map>
+        <texture>lost</texture>
+        <layer id="0">
+            <edge_half x="-2.5" y="-4.5" h="2" r="3"/>
+            <edge_half x="-2.5" y="-4" r="3"/>
+            <edge_ce x="-2.5" y="-3" r="2"/>
+            <edge_half x="-2" y="-3" r="2"/>
+            <edge_half x="-1.5" y="-3" r="2"/>
+            <edge_half x="-1" y="-3" r="2"/>
+            <edge_c x="-0.5" y="-3" r="1"/>
+            <edge_half x="-7" y="-2.5"/>
+            <edge_half x="-6.5" y="-2.5"/>
+            <edge_half x="-6" y="-2.5"/>
+            <edge_half x="-5.5" y="-2.5"/>
+            <edge_half x="-5" y="-2.5"/>
+            <edge_half x="-4.5" y="-2.5"/>
+            <edge_half x="-4" y="-2.5"/>
+            <edge_half x="-3.5" y="-2.5"/>
+            <edge_half x="-3" y="-2.5"/>
+            <edge_half x="-2.5" y="-2.5"/>
+            <edge_half x="-2" y="-2.5"/>
+            <edge_half x="-1.5" y="-2.5"/>
+            <edge_half x="-1" y="-2.5"/>
+            <edge_c x="-0.5" y="-2.5" r="2"/>
+            <wall x="-7" y="-2" w="7"/>
+            <floor x="-7" y="0" w="5" r="3"/>
+            <floor x="-2" y="0" w="6"/>
+            <edge_half x="-7" y="1" r="2"/>
+            <edge_half x="-6.5" y="1" r="2"/>
+            <edge_half x="-6" y="1" r="2"/>
+            <edge_half x="-5.5" y="1" r="2"/>
+            <edge_half x="-5" y="1" r="2"/>
+            <edge_half x="-4.5" y="1" r="2"/>
+            <edge_half x="-4" y="1" r="2"/>
+            <edge_half x="-3.5" y="1" r="2"/>
+            <edge_half x="-3" y="1" r="2"/>
+            <edge_half x="-2.5" y="1" r="2"/>
+            <edge_half x="-2" y="1" r="2"/>
+            <edge_half x="-1.5" y="1" r="2"/>
+            <edge_half x="-1" y="1" r="2"/>
+            <edge_c x="-0.5" y="1" r="1"/>
+            <small_wall x="0" y="1" w="3"/>
+            <floor x="3" y="1" h="3"/>
+            <edge_half x="-7" y="1.5"/>
+            <edge_half x="-6.5" y="1.5"/>
+            <edge_half x="-6" y="1.5"/>
+            <edge_half x="-5.5" y="1.5"/>
+            <edge_half x="-5" y="1.5"/>
+            <edge_half x="-4.5" y="1.5"/>
+            <edge_half x="-4" y="1.5"/>
+            <edge_half x="-3.5" y="1.5"/>
+            <edge_half x="-3" y="1.5"/>
+            <edge_half x="-2.5" y="1.5"/>
+            <edge_half x="-2" y="1.5"/>
+            <edge_half x="-1.5" y="1.5"/>
+            <edge_half x="-1" y="1.5"/>
+            <edge_c x="-0.5" y="1.5" r="2"/>
+            <wall x="-7" y="2" w="7"/>
+            <floor x="7" y="3" w="3"/>
+            <floor x="3" y="4" w="7"/>
+            <floor x="3" y="5" h="2"/>
+            <small_wall x="4" y="5" w="3"/>
+            <floor x="7" y="5" w="3"/>
+            <small_wall x="7" y="6" w="3"/>
+            <floor x="1" y="7" w="3" r="2"/>
+            <floor x="1" y="8" r="2"/>
+            <small_wall x="2" y="8" w="2"/>
+            <floor x="1" y="9"/>
+            <floor x="17" y="9"/>
+            <floor x="1" y="10" w="5"/>
+            <floor x="6" y="10" r="2"/>
+            <floor x="7" y="10" w="11"/>
+            <small_wall x="1" y="11" w="16"/>
+            <floor x="17" y="11" h="2"/>
+            <floor x="17" y="13" w="5"/>
+        </layer>
+        <layer id="1">
+            <path x="-7" y="0" w="10"/>
+            <corner x="3" y="0"/>
+            <path x="3" y="1" h="3" r="1"/>
+            <tint x="3" y="4" r="3"/>
+            <path x="4" y="4" w="5"/>
+            <path_end x="9" y="4" r="2"/>
+            <path x="3" y="5" h="2" r="1"/>
+            <corner x="1" y="7" r="3"/>
+            <path x="2" y="7" r="2"/>
+            <corner x="3" y="7" r="1"/>
+            <path x="1" y="8" h="2" r="1"/>
+            <path_end x="17" y="9" r="1"/>
+            <corner x="1" y="10" r="2"/>
+            <path x="2" y="10" w="15"/>
+            <corner x="17" y="10" r="1"/>
+        </layer>
+        <layer id="2">
+            <tent1 x="9" y="2.5"/>
+            <blob1 x="7" y="3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="-2" y="-1" w="6" h="1"/>
+        <wall x="-2" y="1" w="5" h="1"/>
+        <wall x="2" y="2" w="1" h="5"/>
+        <wall x="1" y="6" w="1" h="1"/>
+        <wall x="0" y="7" w="1" h="4"/>
+        <wall x="1" y="11" w="5" h="1"/>
+        <wall x="2" y="8" w="2" h="1"/>
+        <wall x="4" y="5" w="1" h="3"/>
+        <wall x="5" y="5" w="2" h="1"/>
+        <wall x="7" y="6" w="3" h="1"/>
+        <wall x="10" y="3" w="1" h="3"/>
+        <wall x="7" y="2" w="3" h="1"/>
+        <wall x="4" y="3" w="3" h="1"/>
+        <wall x="4" y="0" w="1" h="3"/>
+        <wall x="-7" y="-1" w="5" h="1"/>
+        <wall x="-7" y="1" w="5" h="1"/>
+        <door x="-7" y="0" w="1" h="1" name="west" destination="east" scene="lost/fallen" offsetx="1" offsety="0"/>
+        <wall x="7" y="3" w="1" h="1"/>
+        <wall x="9" y="3" w="1" h="0.5"/>
+        <button x="7" y="3" w="1" h="1" group="blobguy"/>
+        <wall x="2" y="9" w="15" h="1"/>
+        <wall x="17" y="8" w="1" h="1"/>
+        <wall x="6" y="11" w="11" h="1"/>
+    </collisionboxes>
+</scene>
