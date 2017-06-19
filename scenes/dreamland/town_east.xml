@@ -95,11 +95,11 @@
         <wall x="32.299999" y="0" w="0.69999999" h="13"/>
         <wall x="0.69999999" y="12.3" w="31.6" h="0.69999999"/>
         <button x="27" y="6" w="1" h="1.3" group="statue"/>
-        <wall x="27" y="6.5" w="1" h="0.15000001"/>
+        <wall x="27" y="6.4000001" w="1" h="0.25"/>
         <door x="-1" y="4.6999998" w="1" h="4.5999999" name="east" destination="east" scene="dreamland/townsquare" offsetx="1" offsety="0"/>
         <button x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_talk"/>
         <wall x="3.575" y="3.0999999" w="1.2" h="0.89999998" group="house1_no"/>
-        <door x="3.575" y="3.0999999" w="1.2" h="0.89999998" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <door x="3.575" y="3.0999999" w="1.2" h="0.89999998" name="house1" destination="door" scene="dreamland/east_houses" offsetx="0" offsety="1"/>
         <wall x="4.79" y="3" w="0.0099999998" h="1"/>
         <wall x="3.55" y="3" w="0.0099999998" h="1"/>
         <wall x="3.55" y="3" w="1.25" h="0.1"/>

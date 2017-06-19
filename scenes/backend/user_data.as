@@ -124,6 +124,21 @@ namespace user_data
     }
   }
   
+  void remove_inventory(const string&in pName, const uint pCount = 1)
+  {
+    const string path = user_data::priv::player_inventory + "/" + pName;
+    
+    if(values::exists(path))
+    {
+      int item_count = values::get_int(path);
+      item_count -= pCount;
+      if(pCount != 0)
+        values::set(path, item_count);
+      else
+        values::remove(path);
+    }
+  }
+  
   /*void add_gift(const string&n pName, const string&in pTexture = "", const string&in pAtlas = "")
   {
     const string path = user_data::priv::player_gifts + "/" + pName;

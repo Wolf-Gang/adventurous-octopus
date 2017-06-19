@@ -2,8 +2,6 @@
 #include "../backend/clone.as"
 #include "../backend/dreamland_effects.as"
 
-entity statue_vill;
-
 const float y_origin = 6.6;
 
 [start]
@@ -25,6 +23,8 @@ entity create(vec pPos, string &in pAtlas) {
   
 }
 
+entity statue_vill;
+
 [start]
 void create_vill()
 {
@@ -32,9 +32,20 @@ void create_vill()
 	set_position(statue_vill, vec(27.5, 6.75));
 }
 
+[group statue]
+void talk_to_statue()
+{
+	narrative::show();
+	say("Who's this nerd?");
+	nl("Seems like a nice guy.");
+	narrative::end();
+	
+	player::lock(false);
+}
+
 [start]
-void city_stuff() {
-  
+void make_houses()
+{  
   entity house1 = create(vec(4, 4), "house");
   entity house2 = create(vec(8, 4), "house");
   
@@ -44,8 +55,20 @@ void city_stuff() {
   entity house4 = create(vec(8, 9), "house");
   set_rotation(house4, 180);
   set_depth(house4, -9000);
-  
+}
+
+[start]
+void make_foontan()
+{
   entity fountain = create(vec(17, 7), "fountain");
+}
+
+[group foontan]
+void foontan() {
+  
+  say("It's a happy fountain.");
+  narrative::end();
+  player::lock(false);
   
 }
 
@@ -92,26 +115,6 @@ void make_bushes()
       create_bush(position,  (i + x_off + y_off) % 2 == 1 ? 1 : 2);
     }
   }
-}
-
-[group foontan]
-void foontan() {
-  
-  say("It's a happy fountain.");
-  narrative::end();
-  player::lock(false);
-  
-}
-
-[group statue]
-void talk_to_statue()
-{
-	narrative::show();
-	say("Who's this nerd?");
-	nl("Seems like a nice guy.");
-	narrative::end();
-	
-	player::lock(false);
 }
 /// Aesthetics
 ////////////////////////////////////////////////////////////////////////////////////////////////

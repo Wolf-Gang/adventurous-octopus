@@ -9,16 +9,15 @@ bool are_there_saves()
 	return false;
 }
 
-void save_slot(int pSlot) {
-
+void save_slot(int pSlot)
+{
   set_slot(pSlot);
   save_game();
   say("Saved to slot " + (pSlot + 1) + "!");
-  
 }
 
-void load_slot(int pSlot) {
-  
+void load_slot(int pSlot)
+{
   if(is_slot_used(pSlot)) {
   
     set_slot(pSlot);
@@ -29,6 +28,5 @@ void load_slot(int pSlot) {
     dprint("Warning: Attempt to load unused slot");
     
   }
-  
 }
 

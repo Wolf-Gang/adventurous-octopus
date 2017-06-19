@@ -33,8 +33,8 @@ void dialogue_check() {
 }
 
 [start]
-void happylittleflower() {
-  
+void happylittleflower()
+{  
   if(!has_flag("housedudehappy"))
     return;
   
@@ -42,7 +42,6 @@ void happylittleflower() {
   set_position(dude_hat, get_position(housedude) + vec(0, .001));
   set_z(dude_hat, .8);
   add_child(housedude, dude_hat);
-  
 }
 
 [group housedude]
@@ -88,7 +87,7 @@ void goaway() {
     
     case 2:
       say("*Sob*");
-      if(has_flag("Flower"))
+      if(has_flower())
         talk_count++;
       break;
       
@@ -99,11 +98,7 @@ void goaway() {
       nl("You have a...flower for me?");
       narrative::hide();
       
-      detach_parent(mc_hat);
-      move(mc_hat, get_position(housedude), .75);
-      
-      add_child(housedude, mc_hat);
-      unset_flag("Flower");
+      give_flower(housedude, .75);
       set_flag("housedudehappy");
       
       say("Oh!");
@@ -116,7 +111,7 @@ void goaway() {
       
     case 4:
       set_direction(housedude, direction::right);
-      say("Thanks for that");
+      say("Thanks for that.");
       break;
   }
   

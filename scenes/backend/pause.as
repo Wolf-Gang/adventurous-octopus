@@ -1,5 +1,3 @@
-
-//i kinda don't want to do this...but stats
 #include "user_data.as"
 
 

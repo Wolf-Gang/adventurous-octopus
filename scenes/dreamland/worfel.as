@@ -15,8 +15,8 @@ void start()
 }
 
 
-void worfel_is_here() {
-  
+void worfel_is_here()
+{
   worfel = add_character("worfel");
   set_position(worfel, vec(10.5, 11));
 
@@ -24,30 +24,27 @@ void worfel_is_here() {
   set_position(hat, get_position(worfel) + vec(0, .01));
   set_z(hat, .8);
   add_child(worfel, hat);
-  
 }
 
 [start]
-void events() {
-  
-  if(has_flag("Itlikesflowers")) {
-    
+void events()
+{
+  if(has_flag("Itlikesflowers"))
+  {
     group::enable("itlikesthem", false);
     worfel_is_here();
-    
   }
   
-  if(has_flag("Flower"))
+  if(has_flower())
     talk_count = 1;
   else
     talk_count = 0;
-  
 }
 
 [group itlikesthem]
 void itlikesflowers() {
   
-  say("It likes flowers!");
+  say("It is liking flowers!");
   narrative::hide();
   
   worfel_is_here();
@@ -55,17 +52,17 @@ void itlikesflowers() {
   set_direction(get_player(), vector_direction(get_position(worfel) - get_position(get_player())));
   focus::move(get_position(worfel) + vec(0, 1), 1.5);
   
-  say("Does it want to smell some flowers?");
+  say("Does it wanting to smell some flowers?");
   narrative::hide();
   
   move(worfel, get_position(get_player()) * .5 + get_position(worfel) * .5, speed(1));
   
   say("Hmmm.");
-  nl("Worfel thinks it needs more flowers.");
+  nl("Worfel thinks it is needing more flowers.");
   
   set_flag("Itlikesflowers");
-  set_flag("Flower");
-  flower_hat();
+  
+  get_flower();
   
   say("It has a very flower!");
   narrative::end();
@@ -87,8 +84,7 @@ void spreadthelove() {
       say("Worfel is seeing such things.");
       say("It is needing a very flower again.");
       
-      set_flag("Flower");
-      flower_hat();
+      get_flower();
       
       nl("It is having much happiness!");
       
@@ -101,13 +97,12 @@ void spreadthelove() {
       say("It is having much prettiness!");
       fsay("Is it wishing to be sharing the flowers?");
       
-      if(select("Yes", "No") == option::first) {
-        
+      if(select("Yes", "No") == option::first)
+      {  
         say("It is wanting to giving cheeriness, isn't it?");
         
         fx::fade_out(.5);
-        load_scene("dreamland/dreamland_town");
-        
+        load_scene("dreamland/dreamland_town"); 
       }
       
       set_direction(worfel, direction::down);
