@@ -65,6 +65,10 @@ void create_bush(vec pPosition, int t)
 	if(t == 2)
 		bush = add_entity("dreamland", "cloudbush2");
 	set_position(bush, pPosition);
+  
+  const vec offset = pixel(-7, -8);
+  const vec size = pixel(14, 2);
+  collision::create(pPosition + offset, size);
 }
 
 
