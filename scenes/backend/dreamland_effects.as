@@ -1,4 +1,3 @@
-#include "worfel_quest.as"
 
 enum flower_type {
   red,
@@ -45,6 +44,27 @@ void create_flower_patch(vec pPosition, vec pSize, int color_width = 1, flower_t
 	}
 }
 
+void create_tree(vec pPosition)
+{
+	entity tree1 = add_entity("small cloud tree", "rustle");
+	set_position(tree1, pPosition);
+	animation::start(tree1);
+  
+  const vec offset = pixel(-29, -16);
+  const vec size = offset * vec(-2, -.6);
+  collision::create(pPosition + offset, size);
+}
+
+void create_bush(vec pPosition, int t)
+{
+	entity bush;
+	if(t == 1)
+		bush = add_entity("dreamland", "cloudbush1");
+	if(t == 2)
+		bush = add_entity("dreamland", "cloudbush2");
+	set_position(bush, pPosition);
+}
+
 
 namespace priv
 {
@@ -89,5 +109,21 @@ void unicorn_disappear(entity pUnicorn)
 	remove_entity(pUnicorn);
 	animation::start(hearts);
 	animation::play_wait(hearts);
+}
+
+entity mc_hat;
+
+[start]
+void flower_hat() {
+  
+  if(has_flag("Flower")) {
+    
+    mc_hat = add_entity("dreamland", "purpleflower");
+    set_position(mc_hat, get_position(get_player()) + vec(0, .01));
+    set_z(mc_hat, .8);
+    add_child(get_player(), mc_hat);
+    
+  }
+  
 }
 

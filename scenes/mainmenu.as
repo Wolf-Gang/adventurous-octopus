@@ -9,7 +9,7 @@ void start()
 	set_visible(get_player(), false);
 	focus::set(vec(0, 0));
   
-  //pause::lock(true);
+  pause::lock(true);
 }
 
 void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
@@ -24,7 +24,7 @@ void cloud_movement(entity pCloud, float pSpeed, float pMin_y, float pMax_y)
 [start]
 void create_bg()
 {
-	entity awrt = add_entity("newmenu");
+	entity awrt = add_entity("menu");
 	set_anchor(awrt, anchor::center);
 	set_position(awrt, vec(0, 0));
 	set_depth(awrt, fixed_depth::background);

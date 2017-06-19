@@ -1,185 +1,142 @@
 
-shared enum item_type
+// This is mostly for example.
+// It can be changed up to what is needed.
+
+enum item_type
 {
-	useless,
-	food,
-	weapon,
-};
-
-
-shared class inventory_item
-{
-	inventory_item()
-	{
-		mCount = 1;
-	}
-	
-	string get_name()
-	{
-		return "Error Item";
-	}
-	
-	item_type get_type()
-	{
-		return item_type::useless;
-	}
-	
-	// This is HP restore points if food and DP if weapon
-	int get_value()
-	{
-		return 0;
-	}
-	
-	bool is_stackable()
-	{
-		return true;
-	}
-	
-	int get_count() final
-	{
-		return mCount;
-	}
-  
-	void set_count(int pCount) final
-	{
-		mCount = pCount;
-	}
-  
-	void add_count(int pAmount = 1) final
-	{
-		mCount += pAmount;
-	}
-  
-	private int mCount;
-};
-
-shared class crusty_bread_item : inventory_item
-{
-	string get_name() override
-	{
-		return "Crusty Bread";
-	}
-	
-	item_type get_type() override
-	{
-		return item_type::food;
-	}
-	
-	int get_value()
-	{
-		return 2;
-	}
-};
-
-shared class crusty_knife_item : inventory_item
-{
-	string get_name() override
-	{
-		return "Crusty Knife";
-	}
-	
-	item_type get_type() override
-	{
-		return item_type::weapon;
-	}
-	
-	int get_value()
-	{
-		return 1;
-	}
-};
-
-shared class player_data
-{
-	player_data()
-	{
-		mHP = 10;
-		mHP_max = 10;
-		mAtk = 2;
-		add_inventory_item(crusty_bread_item());
-		add_inventory_item(crusty_bread_item());
-		add_inventory_item(crusty_knife_item());
-	}
-
-	int get_hp()
-	{
-		return mHP;
-	}
-  
-	void set_hp(int pHP)
-	{
-		mHP = pHP;
-	}
-	
-	int get_hp_max()
-	{
-		return mHP_max;
-	}
-	
-	void set_hp_max(int pMax)
-	{
-		mHP_max = pMax;
-	}
-	
-	int get_atk()
-	{
-		return mAtk;
-	}
-	
-	void set_atk(int pAtk)
-	{
-		mAtk = pAtk;
-	}
-	
-	void add_inventory_item(inventory_item@ mItem)
-	{
-		inventory_item@ find = find_item(mItem.get_name());
-		
-		if (find !is null &&
-			find.is_stackable())
-			find.add_count(mItem.get_count());
-		else
-			mInventory.insertLast(mItem);
-	}
-	
-	void remove_item(uint pIndex)
-	{
-		if (mInventory[pIndex].get_count() > 1)
-			mInventory[pIndex].add_count(-1);
-		else
-			mInventory.removeAt(pIndex);
-	}
-	
-	inventory_item@ find_item(const string&in pName)
-	{
-		for (uint i = 0; i < mInventory.length(); i++)
-		{
-			if (mInventory[i].get_name() == pName)
-				return @mInventory[i];
-		}
-		return null;
-	}
-	
-	array<inventory_item@>@ get_inventory()
-	{
-		return @mInventory;
-	}
-	
-	private int mHP;
-	private int mHP_max;
-	private int mAtk;
-	private array<inventory_item@> mInventory;
-};
-
-shared player_data@ get_player_data()
-{
-	ref@ s_data = get_shared("player_data");
-	if (s_data is null) // Create new data if none exists
-	{
-		player_data new_data();
-		make_shared(@new_data, "player_data");
-		return @new_data;
-	}
-	
-	return cast<player_data>(s_data);
+  misc = 0,
+  food,
 }
+
+namespace user_data
+{
+  
+  namespace priv
+  {
+    const string root_player_directory = "player";
+    const string stats_dir = root_player_directory + "/stats";
+    
+    const int default_hp = 100;
+    const string player_hp  = stats_dir + "/hp";  // "player/hp"
+    const string player_atk = stats_dir + "/atk";
+    const string player_def = stats_dir + "/def";
+    
+    const string player_inventory = root_player_directory + "/inventory"; // "player/inventory"
+    const string player_gifts = root_player_directory + "/gifts";
+    
+    // Ensure that all user data exists
+    // and setup defaults if they don't.
+    [start]
+    void setup()
+    {
+       if (!values::exists(player_hp))
+         user_data::set_hp(default_hp);
+    }
+  }
+
+  void set_hp(int pValue)
+  {
+    values::set(user_data::priv::player_hp, pValue);
+  }
+  
+  int get_hp()
+  {
+    return values::get_int(user_data::priv::player_hp);
+  }
+  
+  void set_atk(int pValue)
+  {
+    values::set(user_data::priv::player_atk, pValue);
+  }
+  
+  int get_atk()
+  {
+    return values::get_int(user_data::priv::player_atk);
+  }
+  
+  void set_def(int pValue)
+  {
+    values::set(user_data::priv::player_def, pValue);
+  }
+  
+  int get_def()
+  {
+    return values::get_int(user_data::priv::player_def);
+  }
+  
+  array<string> get_inventory_items()
+  {
+    return values::get_entries(user_data::priv::player_inventory);
+  }
+  
+  bool has_item(const string&in pName)
+  {
+    return values::exists(user_data::priv::player_inventory + "/" + pName);
+  }
+  
+  array<string> get_item_sprite(string pName)
+  {
+    return array<string> = {
+    values::get_string(user_data::priv::player_inventory + pName + "/atlas"),
+    values::get_string(user_data::priv::player_inventory + pName + "/texture")};
+  }
+  
+  item_type get_item_type(const string&in pName)
+  {
+    const string path = user_data::priv::player_inventory + "/" + pName + "/type";
+    if (!values::exists(path))
+    {
+      eprint("Invalid inventory item");
+      return item_type::misc;
+    }
+    return item_type(values::get_int(path));
+  }
+  
+  void add_inventory(const string&in pName, item_type pType, const string&in pTexture = "", const string&in pAtlas = "")
+  {
+    // Each inventory item is an entry in the inventory directory
+    const string path = user_data::priv::player_inventory + "/" + pName;
+    
+    // In this example each inventory item has a value
+    // specifying how much you have of this item.
+    // Increment this value when inserting the same thing.
+    if (values::exists(path))
+    {
+      int item_count = values::get_int(path);
+      ++item_count;
+      values::set(path, item_count);
+    }
+    else
+    {
+      // Create the new inventory entry
+      // with the value "1" for 1 item.
+      values::set(path, 1);
+      
+       // Entries can actually double as folders
+       // because of the way paths work.
+      values::set(path + "/type", int(pType));
+      
+      if(pTexture != "")
+        values::set(path + "/texture", pTexture);
+      
+      if(pAtlas != "")
+        values::set(path + "/atlas", pAtlas);
+    }
+  }
+  
+  /*void add_gift(const string&n pName, const string&in pTexture = "", const string&in pAtlas = "")
+  {
+    const string path = user_data::priv::player_gifts + "/" + pName;
+    
+    if(pTexture != "")
+      values::set(path + "/texture", pTexture);
+    if(pAtlas != "")
+      values::set(path + "/atlas", pAtlas);
+  }*/
+  
+  /*bool has_gift(const string&in pName)
+  {
+    return values::exists(user_data::priv::player_gifts + "/" + pName);
+  }*/
+}
+
