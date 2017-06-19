@@ -78,7 +78,7 @@ void create_cloud_2()
 	cloud_movement(cloud, .513, 1, 1.5);
 }
 
-const vec base_position(pixel(10, 250));
+const vec base_position(pixel(0, 250));
 const vec item_size(pixel(100, 20));
 
 [start]
