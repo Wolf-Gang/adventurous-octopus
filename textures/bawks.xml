@@ -1,0 +1,11 @@
+<atlas>
+    <bottom_edge x="2" y="3" w="1" h="2"/>
+    <bottom_left_corner x="0" y="3" w="2" h="2"/>
+    <bottom_right_corner x="3" y="3" w="2" h="2"/>
+    <center x="2" y="2" w="1" h="1"/>
+    <left_edge x="0" y="2" w="2" h="1"/>
+    <right_edge x="3" y="2" w="2" h="1"/>
+    <top_edge x="2" y="0" w="1" h="2"/>
+    <top_left_corner x="0" y="0" w="2" h="2"/>
+    <top_right_corner x="3" y="0" w="2" h="2"/>
+</atlas>
