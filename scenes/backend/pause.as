@@ -94,7 +94,7 @@ void open_stats()
   
   bool exit = false;
   
-  do
+  while(yield() && !exit);
   {
     
     switch(stat_thing.tick())
@@ -107,7 +107,7 @@ void open_stats()
         break;
     }
     
-  } while(yield() && !exit);
+  }
 }
 
 void open_inv()
@@ -115,11 +115,13 @@ void open_inv()
   array<string> inv_list = user_data::get_inventory_items();
   array<entity> inv_sprites(inv_list.length());
   
+  /*
   for(uint i = 0; i < inv_sprites.length(); i++)
   {
     array<string> info = user_data::get_item_sprite(inv_list[i]);
     inv_sprites[i] = add_entity(info[0], info[1]);
   }
+  */
   
   list_menu inv ((inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, 1, pause_option_size);
   
@@ -128,10 +130,11 @@ void open_inv()
   
   bool exit = false;
   
-  do
+  while(yield() && !exit)
   {
+    int sel = inv.tick();
     
-    switch(inv.tick())
+    switch(sel)
     {
       case menu_command::back:
         exit = true;
@@ -141,15 +144,19 @@ void open_inv()
         break;
       
       default:
-        //say descrioption or something
+        if(inv_list.length() == 0)
+          break;
+        say(user_data::get_item_desc(inv_list[sel]));
+        narrative::end();
         break;
     }
     
-  } while(yield() && !exit);
+  }
 }
 
 void open_gifts()
 {
   //Similar to inventory list, but display a sprite next to each, and have more specialized functions (possibly not defined here)
+  
 }
 

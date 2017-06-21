@@ -1,7 +1,7 @@
 [start]
 void start()
 {
-	set_position(get_player(), vec(-1.5, 0.5));
+	set_position(get_player(), vec(-1.5, 0.8));
   music::open("scribbles100");
 }
 
@@ -29,7 +29,8 @@ void blobguy()
   fnl("Too bad."); // Possibly a store?
   wait(0.2);
   append(" I have no thingamajig.");
-  say("It's a harsh place down here, don't get lost and die.");
+  say("It's a harsh place down here.");
+  nl("Don't get lost and die.");
   narrative::end();
   player::lock(false);
 }

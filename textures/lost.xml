@@ -11,7 +11,9 @@
     <edge_ce x="16" y="64" w="16" h="16"/>
     <edge_half x="32" y="80" w="16" h="16"/>
     <floor x="32" y="0" w="32" h="32"/>
+    <floor_hole x="224" y="240" w="32" h="32"/>
     <hole x="80" y="96" w="48" h="32" frames="2" interval="4000" loop="1"/>
+    <hole_edge x="192" y="240" w="32" h="32"/>
     <largehole x="128" y="32" w="64" h="64"/>
     <narrowhole x="176" y="96" w="16" h="48"/>
     <narrowhole2 x="112" y="128" w="32" h="32" frames="2" interval="3000" loop="1"/>

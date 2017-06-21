@@ -77,8 +77,13 @@ namespace user_data
   array<string> get_item_sprite(string pName)
   {
     return array<string> = {
-    values::get_string(user_data::priv::player_inventory + pName + "/atlas"),
-    values::get_string(user_data::priv::player_inventory + pName + "/texture")};
+    values::get_string(user_data::priv::player_inventory + "/" + pName + "/atlas"),
+    values::get_string(user_data::priv::player_inventory + "/" + pName + "/texture")};
+  }
+  
+  string get_item_desc(string pName)
+  {
+    return values::get_string(user_data::priv::player_inventory + "/" + pName + "/description");
   }
   
   item_type get_item_type(const string&in pName)
@@ -92,7 +97,7 @@ namespace user_data
     return item_type(values::get_int(path));
   }
   
-  void add_inventory(const string&in pName, item_type pType, const string&in pTexture = "", const string&in pAtlas = "")
+  void add_inventory(const string&in pName, item_type pType, const string&in pDescription, const string&in pTexture = "", const string&in pAtlas = "")
   {
     // Each inventory item is an entry in the inventory directory
     const string path = user_data::priv::player_inventory + "/" + pName;
@@ -115,6 +120,8 @@ namespace user_data
        // Entries can actually double as folders
        // because of the way paths work.
       values::set(path + "/type", int(pType));
+      
+      values::set(path + "/description", pDescription);
       
       if(pTexture != "")
         values::set(path + "/texture", pTexture);
@@ -139,19 +146,24 @@ namespace user_data
     }
   }
   
-  /*void add_gift(const string&n pName, const string&in pTexture = "", const string&in pAtlas = "")
+  void add_gift(const string&in pName, const string&in pDescription, const string&in pTexture, const string&in pAtlas)
   {
     const string path = user_data::priv::player_gifts + "/" + pName;
     
-    if(pTexture != "")
-      values::set(path + "/texture", pTexture);
-    if(pAtlas != "")
-      values::set(path + "/atlas", pAtlas);
-  }*/
+    values::set(path, 0);
+    values::set(path + "/description", pDescription);
+    values::set(path + "/texture", pTexture);
+    values::set(path + "/atlas", pAtlas);
+  }
   
-  /*bool has_gift(const string&in pName)
+  bool has_gift(const string&in pName)
   {
     return values::exists(user_data::priv::player_gifts + "/" + pName);
-  }*/
+  }
+  
+  string gift_description(const string&in pName)
+  {
+    return values::get_string(user_data::priv::player_gifts + "/" + pName + "/description");
+  }
 }
 

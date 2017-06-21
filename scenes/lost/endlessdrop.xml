@@ -23,16 +23,17 @@
             <platformcorner_topright x="3" y="0"/>
             <small_wall x="-7" y="1" w="10"/>
             <tiledfloor x="3" y="1" h="3"/>
-            <platformcorner_topleft x="7" y="3"/>
-            <tiledfloor x="8" y="3"/>
+            <platformcorner_topleft x="6" y="3"/>
+            <tiledfloor x="7" y="3"/>
+            <floor_hole x="8" y="3"/>
             <platformcorner_topright x="9" y="3"/>
             <tiledfloor x="3" y="4" w="7"/>
             <tiledfloor x="3" y="5" h="2"/>
-            <small_wall x="4" y="5" w="3"/>
-            <platformcorner_bottomleft x="7" y="5"/>
-            <tiledfloor x="8" y="5"/>
+            <small_wall x="4" y="5" w="2"/>
+            <platformcorner_bottomleft x="6" y="5"/>
+            <tiledfloor x="7" y="5" w="2"/>
             <platformcorner_bottomright x="9" y="5"/>
-            <small_wall x="8" y="6"/>
+            <small_wall x="7" y="6" w="2"/>
             <platformcorner_topleft x="1" y="7"/>
             <tiledfloor x="2" y="7"/>
             <platformcorner_bottomright x="3" y="7"/>
@@ -50,28 +51,26 @@
         </layer>
     </map>
     <collisionboxes>
-        <wall x="-2" y="-1" w="6" h="1"/>
-        <wall x="-2" y="1" w="5" h="1"/>
-        <wall x="2" y="2" w="1" h="5"/>
-        <wall x="1" y="6" w="1" h="1"/>
+        <wall x="2" y="2" w="1" h="4.6999998"/>
+        <wall x="1" y="6" w="1" h="0.69999999"/>
         <wall x="0" y="7" w="1" h="4"/>
-        <wall x="1" y="11" w="5" h="1"/>
         <wall x="2" y="8" w="2" h="1"/>
         <wall x="4" y="5" w="1" h="3"/>
-        <wall x="5" y="5" w="2" h="1"/>
-        <wall x="7" y="6" w="3" h="1"/>
         <wall x="10" y="3" w="1" h="3"/>
-        <wall x="7" y="2" w="3" h="1"/>
-        <wall x="4" y="3" w="3" h="1"/>
         <wall x="4" y="0" w="1" h="3"/>
-        <wall x="-7" y="-1" w="5" h="1"/>
-        <wall x="-7" y="1" w="5" h="1"/>
         <door x="-7" y="0" w="1" h="1" name="west" destination="east" scene="lost/fallen" offsetx="1" offsety="0"/>
-        <wall x="7" y="3" w="1" h="1"/>
+        <wall x="7.0999999" y="3.3" w="0.85000002" h="0.5"/>
         <wall x="9" y="3" w="1" h="0.5"/>
-        <button x="7" y="3" w="1" h="1" group="blobguy"/>
-        <wall x="2" y="9" w="15" h="1"/>
+        <button x="7" y="3.2" w="1" h="1" group="blobguy"/>
+        <wall x="2" y="9" w="15" h="0.69999999"/>
         <wall x="17" y="8" w="1" h="1"/>
-        <wall x="6" y="11" w="11" h="1"/>
+        <wall x="5" y="5" w="1" h="1"/>
+        <wall x="6" y="6" w="4" h="1"/>
+        <wall x="8.1000004" y="3.0999999" w="0.80000001" h="0.60000002"/>
+        <wall x="4" y="3" w="2" h="0.69999999"/>
+        <wall x="6" y="2" w="4" h="0.69999999"/>
+        <wall x="-7" y="-1" w="11" h="0.69999999"/>
+        <wall x="-7" y="1" w="10" h="1"/>
+        <wall x="1" y="11" w="17" h="1"/>
     </collisionboxes>
 </scene>

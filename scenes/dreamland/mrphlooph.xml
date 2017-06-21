@@ -39,7 +39,7 @@
         <wall x="3.5" y="3.5" w="3.0999999" h="0.30000001"/>
         <wall x="-1" y="-1.3" w="0.69999999" h="2.3"/>
         <wall x="10.3" y="-1.3" w="0.69999999" h="2.3"/>
-        <door x="4" y="10" w="2" h="1" name="south" destination="north" scene="dreamland/bridge" offsetx="0" offsety="-1"/>
+        <door x="4" y="10" w="2" h="1" name="south" destination="north" scene="dreamland/bridge" offsetx="0" offsety="-0.5"/>
         <button x="6.5" y="3.5" w="2" h="2" group="unicornbehere"/>
         <button x="1.5" y="5.5" w="1" h="1" group="littlephlooph"/>
         <wall x="10.3" y="1" w="0.69999999" h="9"/>

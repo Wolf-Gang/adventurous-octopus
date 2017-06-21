@@ -19,11 +19,13 @@ bool has_flower()
   return user_data::has_item("Flower");
 }
 
+const string flower_desc = "A beautiful flower. It gives you joy just looking at it.";
+
 void get_flower()
 {
   if(!has_flower())
   {
-    user_data::add_inventory("Flower", item_type::misc);
+    user_data::add_inventory("Flower", item_type::misc, flower_desc);
     flower_hat();
   }
 }

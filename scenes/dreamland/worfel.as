@@ -64,7 +64,7 @@ void itlikesflowers() {
   
   get_flower();
   
-  say("It has a very flower!");
+  say("It hasing a very flower!");
   narrative::end();
   
   move(worfel, vec(10.5, 11), speed(1));

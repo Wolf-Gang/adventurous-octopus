@@ -10,7 +10,7 @@ entity little_phlooph;
 void create_meadow()
 {
 	// Top
-	create_flower_patch(vec(1, -1), vec(17, 9), 2);
+	create_flower_patch(vec(.75, -1), vec(18, 9), 2);
 }
 
 [start]

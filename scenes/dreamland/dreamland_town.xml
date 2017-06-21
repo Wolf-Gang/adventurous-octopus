@@ -56,7 +56,6 @@
         <wall x="0" y="0" w="0.69999999" h="14"/>
         <button x="1.55" y="4" w="1.25" h="1" group="lockedhouse"/>
         <button x="7.5999999" y="8" w="1.2" h="1" group="lockedhouse"/>
-        <door x="1" y="-1" w="8" h="1" name="north" destination="south" scene="dreamland/townsquare" offsetx="0" offsety="1.5"/>
         <button x="7.5749998" y="2" w="1.2" h="1" group="lockedhouse?"/>
         <wall x="7.5749998" y="2" w="1.2" h="1" group="lockeddoor"/>
         <wall x="7.5500002" y="2" w="0.0099999998" h="1"/>
@@ -75,5 +74,7 @@
         <wall x="8.8000002" y="8" w="0.0099999998" h="1"/>
         <wall x="7.5500002" y="8" w="1.25" h="1"/>
         <wall x="1.55" y="4" w="1.25" h="1"/>
+        <door x="2" y="-1" w="7" h="1" name="north" destination="south" scene="dreamland/townsquare" offsetx="0" offsety="1.5"/>
+        <door x="1" y="-1" w="1" h="1" name="north2" destination="south" scene="dreamland/townsquare" offsetx="0" offsety="1.5"/>
     </collisionboxes>
 </scene>

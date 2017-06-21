@@ -1,15 +1,16 @@
 #include "../backend/dreamland_effects.as"
+#include "../backend/user_data.as"
 
 entity unicorn;
 
 entity smol_phlooph;
 
-[group thisisagate]
-void thisisagate()
+[start]
+void start()
 {
-	say("It's a locked gate to a majestic rainbow bridge.");
-	narrative::end();
-	player::lock(false);
+	music::open("doodle104_2");
+	music::volume(70);
+	set_position(get_player(), vec(5, 3));
 }
 
 [start]
@@ -55,6 +56,51 @@ void create_gate()
   }
 }
 
+[group thisisagate]
+void thisisagate()
+{
+	say("It's a locked gate to a majestic rainbow bridge.");
+	narrative::end();
+	player::lock(false);
+}
+
+[group phloophgift]
+void takethis()
+{
+  if(user_data::has_gift("Cloud"))
+    return;
+  
+  say("Wait a sec!");
+  narrative::hide();
+  
+  set_direction(get_player(), direction::up);
+  
+  entity littleguy = add_entity("little phlooph");
+  set_position(littleguy, vec(5.5, -5));
+  animation::start(littleguy);
+  move(littleguy, direction::down, 2.5, .5);
+  
+	narrative::set_expression("smol phlooph icon", "default:default");
+  say("Here, uh, have this.");
+  nl("For helping us out.");
+  
+  narrative::clear_expression();
+  const string description = "It's you, but in cloud form.";
+  user_data::add_gift("Cloud", description, "gifts", "phlooph");
+  
+  say(description);
+  
+  narrative::set_expression("smol phlooph icon", "default:default");
+  say("Hope you like it.");
+  narrative::hide();
+  
+  move(littleguy, direction::up, 2.5, .5);
+  
+  group::enable("phloophgift", false);
+  narrative::end();
+  player::lock(false);
+}
+
 [group hmmmmlocked]
 void hmmmmlocked()
 {
@@ -81,6 +127,50 @@ void hmmmmlocked()
 	focus::move(get_position(get_player()), 0.5);
 	focus::player();
 	player::lock(false);
+}
+
+[group talktounicorn]
+void talktounicorn()
+{
+	once_flag("asdfasdffa");
+	music::fade_volume(40, 1);
+	player::lock(true);
+	narrative::show();
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	say("Ok, let's try this again.");
+	say("This is the bridge of your hopes and dreams.");
+	say("I have some place to be at the moment so I won't see you for a while.");
+	say("Don't get lost and die.");
+	narrative::end();
+	
+	unicorn_disappear(unicorn);
+	
+	music::fade_volume(70, 1);
+	focus::move(get_position(get_player()), 0.5);
+	focus::player();
+	player::lock(false);
+	
+	set_flag("bridge_unicorn");
+	group::enable("talktounicorn", false);
+}
+
+[group dont1]
+void no1() {
+  say("The unicorn's sultry tones  echo through your head.");
+  say("\"Don't get lost and die\"");
+  move(get_player(), get_position(get_player()) + vec(0, .25), .1);
+  narrative::end();
+  player::lock(false);
+}
+
+[group dont2]
+void no2() {
+  say("The unicorn's sultry tones  echo through your head.");
+  say("\"Don't get lost and die\"");
+  move(get_player(), get_position(get_player()) + vec(0, -.25), .1);
+  narrative::end();
+  player::lock(false);
 }
 
 [group crushingyourhopesanddreams]
@@ -151,57 +241,5 @@ void crushingyourhopesanddreams()
   
   load_scene("lost/fallen");
   
-}
-
-[start]
-void start()
-{
-	music::open("doodle104_2");
-	music::volume(70);
-	set_position(get_player(), vec(5, 3));
-}
-
-[group talktounicorn]
-void talktounicorn()
-{
-	once_flag("asdfasdffa");
-	music::fade_volume(40, 1);
-	player::lock(true);
-	narrative::show();
-	narrative::set_speaker(unicorn);
-	narrative::set_expression("unicorn icon", "default:default");
-	say("Ok, let's try this again.");
-	say("This is the bridge of your hopes and dreams.");
-	say("I have some place to be at the moment so I won't see you for a while.");
-	say("Don't get lost and die.");
-	narrative::end();
-	
-	unicorn_disappear(unicorn);
-	
-	music::fade_volume(70, 1);
-	focus::move(get_position(get_player()), 0.5);
-	focus::player();
-	player::lock(false);
-	
-	set_flag("bridge_unicorn");
-	group::enable("talktounicorn", false);
-}
-
-[group dont1]
-void no1() {
-  say("The unicorn's sultry tones  echo through your head.");
-  say("\"Don't get lost and die\"");
-  move(get_player(), get_position(get_player()) + vec(0, .25), .1);
-  narrative::end();
-  player::lock(false);
-}
-
-[group dont2]
-void no2() {
-  say("The unicorn's sultry tones  echo through your head.");
-  say("\"Don't get lost and die\"");
-  move(get_player(), get_position(get_player()) + vec(0, -.25), .1);
-  narrative::end();
-  player::lock(false);
 }
 
