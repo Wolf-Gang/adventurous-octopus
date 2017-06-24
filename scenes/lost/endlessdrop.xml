@@ -37,13 +37,13 @@
             <platformcorner_topleft x="1" y="7"/>
             <tiledfloor x="2" y="7"/>
             <platformcorner_bottomright x="3" y="7"/>
-            <tiledfloor x="0" y="8" h="2"/>
-            <small_wall x="1" y="8" w="2"/>
+            <tiledfloor x="1" y="8" h="2"/>
+            <small_wall x="2" y="8"/>
             <tiledfloor x="17" y="9"/>
-            <platformcorner_bottomleft x="0" y="10"/>
-            <tiledfloor x="1" y="10" w="16"/>
+            <platformcorner_bottomleft x="1" y="10"/>
+            <tiledfloor x="2" y="10" w="15"/>
             <platformcorner_bottomright x="17" y="10"/>
-            <small_wall x="1" y="11" w="16"/>
+            <small_wall x="2" y="11" w="15"/>
         </layer>
         <layer id="2">
             <tent1 x="9" y="2.5"/>
