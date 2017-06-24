@@ -77,5 +77,6 @@
         <wall x="8" y="3" w="1" h="2"/>
         <wall x="9" y="3" w="17" h="1"/>
         <door x="26" y="0" w="1" h="3" name="east" destination="west" scene="lost/endlessdrop" offsetx="-1" offsety="0"/>
+        <wall x="19" y="-2" w="1" h="1"/>
     </collisionboxes>
 </scene>
