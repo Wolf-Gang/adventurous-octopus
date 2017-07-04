@@ -79,30 +79,38 @@ void create_cloud_2()
 }
 
 const vec base_position(pixel(0, 250));
-const vec item_size(pixel(100, 20));
+const vec item_padding(pixel(3, 4));
 
 [start]
 void mainmenu()
 {
   
-  array<string> meun_items = {"Start", "Continue", "Exit"};
+  array<menu_item@> meun_items;
   
-  list_menu main (meun_items, base_position, 1, item_size, false);
+  meun_items.insertLast(text_entry("Start"));
+  meun_items.insertLast(text_entry("Continue"));
+  meun_items.insertLast(text_entry("Exit"));
+  
+  menu main (meun_items, base_position, item_padding, false);
   
 	if (!are_there_saves())
-		set_color(main.get_options()[1], 255, 255, 255, 50);
+		set_color(entity(main.get_option(1)), 255, 255, 255, 50);
 	
 	
   //needs 2 yields for some reason to prevent input leakage from terminal
   yield();
   yield();
   
+  array<entity> meun_text;
+  
+  for(uint i = 0; i < main.get_options().length(); i++)
+    meun_text.insertLast(entity(main.get_option(i)));
+  
   bool exit = false;
   
 	do
   {
     
-    array<entity>@ meun_text = main.get_options();
     
     switch(main.tick())
     {
@@ -158,16 +166,16 @@ void saves_menu() {
   
   //TODO?: display some info about the hovered save, like progress or somethin
   
-  array<string> save_slots(3);
+  array<menu_item@> save_slots;
   
   for(int i = 0; i < 3; i++)
-    save_slots[i] = is_slot_used(i) ? "Slot " + (i + 1) : "Empty";
+    save_slots.insertLast(text_entry(is_slot_used(i) ? "Slot " + (i + 1) : "Empty"));
   
-  list_menu saves (save_slots, base_position + vec(item_size.x, 0), 1, item_size, false);
+  menu saves (save_slots, base_position + pixel(100, 0), item_padding, false);
   
   for(int i = 0; i < 3; i++)
     if(!is_slot_used(i))
-      set_color(saves.get_options()[i], 255, 200, 200, 250);
+      set_color(entity(saves.get_option(i)), 255, 200, 200, 250);
   
   bool go_back = false;
   

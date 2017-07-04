@@ -20,7 +20,7 @@ void savepoint() {
 }
 
 const vec origin = pixel(70, 30);
-const vec separation = pixel(80, 10);
+const vec padding = pixel(15, 10);
 
 void open_savepoint()
 {
@@ -39,9 +39,13 @@ void open_savepoint()
   
   set_direction(get_player(), direction::up);
   
-  array<string> menu_items = {"Slot 1", "Slot 2", "Slot 3"};
+  array<string> menu_text = {"Slot 1", "Slot 2", "Slot 3"};
+  array<menu_item@> menu_items;
   
-  list_menu save_menu (menu_items, origin, 3, separation, false);
+  for(uint i = 0; i < menu_text.length(); i++)
+    menu_items.insertLast(text_entry(menu_text[i]));
+  
+  menu save_menu (menu_items, origin, padding, false, true, 3);
   
   yield();
   

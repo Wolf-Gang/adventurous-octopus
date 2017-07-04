@@ -77,8 +77,8 @@ namespace user_data
   array<string> get_item_sprite(string pName)
   {
     return array<string> = {
-    values::get_string(user_data::priv::player_inventory + "/" + pName + "/atlas"),
-    values::get_string(user_data::priv::player_inventory + "/" + pName + "/texture")};
+    values::get_string(user_data::priv::player_inventory + "/" + pName + "/texture"),
+    values::get_string(user_data::priv::player_inventory + "/" + pName + "/atlas")};
   }
   
   string get_item_desc(string pName)
@@ -150,10 +150,22 @@ namespace user_data
   {
     const string path = user_data::priv::player_gifts + "/" + pName;
     
-    values::set(path, 0);
+    values::set(path, pName);
     values::set(path + "/description", pDescription);
     values::set(path + "/texture", pTexture);
     values::set(path + "/atlas", pAtlas);
+  }
+  
+  array<string> get_gift_list()
+  {
+    return values::get_entries(user_data::priv::player_gifts);
+  }
+  
+  array<string> get_gift_sprite(const string&in pName)
+  {
+    return array<string> = {
+    values::get_string(user_data::priv::player_gifts + "/" + pName + "/texture"),
+    values::get_string(user_data::priv::player_gifts + "/" + pName + "/atlas")};
   }
   
   bool has_gift(const string&in pName)
@@ -161,7 +173,7 @@ namespace user_data
     return values::exists(user_data::priv::player_gifts + "/" + pName);
   }
   
-  string gift_description(const string&in pName)
+  string get_gift_description(const string&in pName)
   {
     return values::get_string(user_data::priv::player_gifts + "/" + pName + "/description");
   }

@@ -13,6 +13,30 @@ namespace pause
     {
       pause_locked = false;
     }
+    
+    array<menu_item@> make_text_items(array<string> pInputs)
+    {
+      array<menu_item@> ret;
+      
+      for(uint i = 0; i < pInputs.length(); i++)
+      {
+        ret.insertLast(text_entry(pInputs[i]));
+      }
+      
+      return ret;
+    }
+    
+    array<menu_item@> make_text_sprite_items(array<string> pInputs, array<array<string>> pSprites)
+    {
+      array<menu_item@> ret;
+      
+      for(uint i = 0; i < pInputs.length(); i++)
+      {
+        ret.insertLast(text_sprite_entry(pInputs[i], pSprites[i][0], pSprites[i][1]));
+      }
+      
+      return ret;
+    }
   }
   
   void lock(bool pLock)
@@ -35,13 +59,16 @@ void check_pause() {
   
 };
 
-const vec pause_menu_position = pixel(35, 27);
-const vec pause_option_size   = pixel(20, 20);
+const vec pause_menu_position  = pixel(35, 27);
+const vec pause_option_padding = pixel(7, 10);
 
 void open_menu()
 {
-  array<string> pause_options = {"Stats", "Items", "Gifts"};
-  list_menu pause_menu (pause_options, pause_menu_position, 1, pause_option_size);
+  array<string> pause_options = {"Items"};
+  if(user_data::get_gift_list().length() > 0)
+    pause_options.insertLast("Gifts");
+  
+  menu pause_menu (pause::priv::make_text_items(pause_options), pause_menu_position, pause_option_padding);
   
   player::lock(true);
   
@@ -59,55 +86,23 @@ void open_menu()
       case menu_command::nothing:
         break;
       
-      // Stats
-      case 0:
-        pause_menu.hide();
-        open_stats();
-        pause_menu.show();
-        break;
-      
       //inventory
-      case 1:
+      case 0:
         pause_menu.hide();
         open_inv();
         pause_menu.show();
         break;
+      
+      //gifts
+      case 1:
+        pause_menu.hide();
+        open_gifts();
+        pause_menu.show();
     }
     
   } while(yield() && !exit);
   
   player::lock(false);
-}
-
-
-void open_stats()
-{
-  array<string> stats;
-  
-  stats.insertLast("HP:"  + formatInt(user_data::get_hp()));
-  stats.insertLast("ATK:" + formatInt(user_data::get_atk()));
-  stats.insertLast("DEF:" + formatInt(user_data::get_def()));
-  
-  list_menu stat_thing (stats, pause_menu_position, 1, pause_option_size);
-  
-  stat_thing.hide_cursor();
-  
-  bool exit = false;
-  
-  while(yield() && !exit);
-  {
-    
-    switch(stat_thing.tick())
-    {
-      case menu_command::back:
-        exit = true;
-        break;
-      
-      case menu_command::nothing:
-        break;
-    }
-    
-  }
 }
 
 void open_inv()
@@ -123,7 +118,7 @@ void open_inv()
   }
   */
   
-  list_menu inv ((inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, 1, pause_option_size);
+  menu inv (pause::priv::make_text_items(inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, pause_option_padding);
   
   if(inv_list.length() == 0)
     inv.hide_cursor();
@@ -156,7 +151,39 @@ void open_inv()
 
 void open_gifts()
 {
-  //Similar to inventory list, but display a sprite next to each, and have more specialized functions (possibly not defined here)
+  array<string> gift_list = user_data::get_gift_list();
+  array<array<string>> gift_sprites;
   
+  for(uint i = 0; i < gift_list.length(); i++)
+    gift_sprites.insertLast(user_data::get_gift_sprite(gift_list[i]));
+  
+  menu gift_menu (pause::priv::make_text_sprite_items(gift_list, gift_sprites), pause_menu_position, pause_option_padding);
+  
+  bool exit = false;
+  
+  while(yield() && !exit)
+  {
+    int sel = gift_menu.tick();
+    
+    switch(sel)
+    {
+      case menu_command::back:
+        exit = true;
+        break;
+      
+      case menu_command::nothing:
+        break;
+        
+      case 0:
+        say(user_data::get_gift_description(gift_list[0]));
+        narrative::end();
+        break;
+      
+      case 1:
+        fx::sound("bells");
+        say(user_data::get_gift_description(gift_list[1]));
+        break;
+    }
+  }
 }
 
