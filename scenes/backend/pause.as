@@ -175,13 +175,14 @@ void open_gifts()
         break;
         
       case 0:
-        say(user_data::get_gift_description(gift_list[0]));
+        say(user_data::get_gift_description(gift_list[sel]));
         narrative::end();
         break;
       
       case 1:
         fx::sound("bells");
-        say(user_data::get_gift_description(gift_list[1]));
+        say(user_data::get_gift_description(gift_list[sel]));
+        narrative::end();
         break;
     }
   }

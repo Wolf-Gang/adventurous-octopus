@@ -93,7 +93,7 @@ void dreamland_clouds()
 	set_color(priv::cloud, 255, 255, 255, 100);
 	set_scale(priv::cloud, vec(4, 4));
 	set_depth(priv::cloud, -100);
-	
+  
 	// First set
 	set_position(priv::cloud, focus::get() - vec(random(-4, 4), 2));
 	
