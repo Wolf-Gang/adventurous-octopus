@@ -68,7 +68,7 @@ void open_menu()
   if(user_data::get_gift_list().length() > 0)
     pause_options.insertLast("Gifts");
   
-  menu pause_menu (pause::priv::make_text_items(pause_options), pause_menu_position, pause_option_padding);
+  menu pause_menu (pause::priv::make_text_items(pause_options), pause_menu_position, pause_option_padding, vec(1, 3));
   
   player::lock(true);
   
@@ -118,7 +118,7 @@ void open_inv()
   }
   */
   
-  menu inv (pause::priv::make_text_items(inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, pause_option_padding);
+  menu inv (pause::priv::make_text_items(inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, pause_option_padding, vec(1, (inv_list.length() ==0 ? 4 :inv_list.length())));
   
   if(inv_list.length() == 0)
     inv.hide_cursor();
@@ -157,7 +157,7 @@ void open_gifts()
   for(uint i = 0; i < gift_list.length(); i++)
     gift_sprites.insertLast(user_data::get_gift_sprite(gift_list[i]));
   
-  menu gift_menu (pause::priv::make_text_sprite_items(gift_list, gift_sprites), pause_menu_position, pause_option_padding);
+  menu gift_menu (pause::priv::make_text_sprite_items(gift_list, gift_sprites), pause_menu_position, pause_option_padding, vec(1, gift_list.length()));
   
   bool exit = false;
   
