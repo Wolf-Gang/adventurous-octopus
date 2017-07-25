@@ -45,7 +45,7 @@ void open_savepoint()
   for(uint i = 0; i < menu_text.length(); i++)
     menu_items.insertLast(text_entry(menu_text[i]));
   
-  menu save_menu (menu_items, origin, padding, false, true, 3);
+  menu save_menu (menu_items, origin, padding, vec(3, 1), false, true);
   
   yield();
   
