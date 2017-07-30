@@ -1,3 +1,5 @@
+#include "../backend/user_data.as"
+
 [start]
 void start()
 {
@@ -26,13 +28,74 @@ void blobguy()
 {
   say("Hey, fellow yummy ball of darkness.");
   say("Want a thingamajig?");
-  fnl("Too bad."); // Possibly a store?
+  /*fnl("Too bad."); // Possibly a store?
   wait(0.2);
-  append(" I have no thingamajig.");
+  append(" I have no thingamajig.");*/
+  if(select("What ya got?", "Nah") == option::first)
+    blob_shop();
+  else
+    say("Well, it's your loss.");
   say("It's a harsh place down here.");
   nl("Don't get lost and die.");
   narrative::end();
   player::lock(false);
+}
+
+const vec shop_position = pixel(10, 12);
+const vec padding = pixel(3, 10);
+
+array<string> blob_offerings = {"Thingamajig"};
+array<string> blob_offering_descriptions = {"A mysterious...thing. It is both warm and cold at the same time."};
+
+void blob_shop()
+{
+  
+  array<menu_item@> blob_entries;
+  
+  for(uint i = 0; i < blob_offerings.length(); i++)
+    blob_entries.insertLast(text_entry(blob_offerings[i]));
+  
+  blob_entries.insertLast(text_entry("Back"));
+  
+  menu blob_shop (blob_entries, shop_position, padding, vec(1, 2));
+  
+  bool exit = false;
+  
+  pause::lock(true);
+  
+  while(yield() && !exit)
+  {
+    int sel = blob_shop.tick();
+    
+    switch(sel)
+    {
+      case menu_command::back:
+        exit = true;
+        break;
+      
+      case menu_command::nothing:
+        break;
+      
+      case 0:
+        fsay("This thingamajig will cost you...");
+        wait(.5);
+        append(" One soul");
+        fsay("Hmm? you say you are unable to pay?");
+        wait(.25);
+        nl("...I see.");
+        say("Well, best of luck to you.");
+        narrative::end();
+        break;
+      case 1:
+        exit = true;
+        break;
+      default:
+        say("Ummm");
+        break;
+    }
+    
+    pause::lock(false);
+  }
 }
 
 namespace fuzz{

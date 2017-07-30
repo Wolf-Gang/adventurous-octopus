@@ -3,17 +3,19 @@
     <map>
         <texture>dreamland</texture>
         <layer id="-1">
-            <fade x="12" y="-3" w="23"/>
+            <fade x="12" y="-3" w="24"/>
         </layer>
         <layer id="0">
             <cloud_tile x="2" y="-4" w="2"/>
             <ground x="4" y="-4" w="3" r="2"/>
             <cloud_tile x="7" y="-4" w="28"/>
+            <cloud_tile x="35" y="-4" r="3"/>
             <ground x="2" y="-3" w="10" h="8"/>
-            <rainbowbridge x="12" y="0" w="23"/>
+            <rainbowbridge x="12" y="0" w="24"/>
             <cloud_tile x="2" y="5" w="2"/>
             <ground x="4" y="5" w="3"/>
             <cloud_tile x="7" y="5" w="28"/>
+            <cloud_tile x="35" y="5" r="3"/>
         </layer>
         <layer id="1">
             <side_clouds x="4" y="-4"/>
@@ -24,16 +26,16 @@
             <side_clouds x="3" y="-3" r="1"/>
             <side_clouds_edge x="4" y="-3" r="1"/>
             <side_clouds_edge x="6" y="-3" r="2"/>
-            <side_clouds x="7" y="-3" w="28" r="1"/>
+            <side_clouds x="7" y="-3" w="29" r="1"/>
             <side_clouds x="2.5" y="-2" h="6"/>
-            <sparkles x="12" y="0" w="23" h="2"/>
+            <sparkles x="12" y="0" w="24" h="2"/>
             <hearts x="6.5" y="0.5" w="6" r="1"/>
             <hearts x="6" y="1" w="6" r="1"/>
             <side_cloud_corner x="2.5" y="4"/>
             <side_clouds x="3" y="4" r="3"/>
             <side_clouds_edge x="4" y="4"/>
             <side_clouds_edge x="6" y="4" r="3"/>
-            <side_clouds x="7" y="4" w="28" r="3"/>
+            <side_clouds x="7" y="4" w="29" r="3"/>
             <side_clouds x="4" y="5"/>
             <side_clouds x="6" y="5" r="2"/>
             <hearts x="5.5" y="5.5"/>
@@ -43,8 +45,8 @@
         <wall x="6.3000002" y="4.3000002" w="5.6999998" h="0.69999999"/>
         <door x="4.6999998" y="5" w="1.6" h="1" name="south" destination="top" scene="dreamland/hall" offsetx="0" offsety="-1"/>
         <trigger x="9" y="-2.3" w="1" h="6.5999999" group="talktounicorn"/>
-        <trigger x="12" y="2" w="23" h="3" group="dont2"/>
-        <trigger x="12" y="-3" w="23" h="2.8" group="dont1"/>
+        <trigger x="12" y="2" w="24" h="3" group="dont2"/>
+        <trigger x="12" y="-3" w="24" h="2.8" group="dont1"/>
         <wall x="12" y="2" w="0.0099999998" h="2"/>
         <wall x="12" y="-2.3" w="0.0099999998" h="2.3"/>
         <trigger x="30" y="-0.2" w="1" h="2.2" group="crushingyourhopesanddreams"/>

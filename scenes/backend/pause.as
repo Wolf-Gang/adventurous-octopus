@@ -60,7 +60,7 @@ void check_pause() {
 };
 
 const vec pause_menu_position  = pixel(35, 27);
-const vec pause_option_padding = pixel(7, 10);
+const vec pause_option_padding = pixel(5, 7);
 
 void open_menu()
 {
@@ -174,12 +174,12 @@ void open_gifts()
       case menu_command::nothing:
         break;
         
-      case 0:
+      case 0: //Phloophs
         say(user_data::get_gift_description(gift_list[sel]));
         narrative::end();
         break;
       
-      case 1:
+      case 1: //Sivora
         fx::sound("bells");
         say(user_data::get_gift_description(gift_list[sel]));
         narrative::end();
