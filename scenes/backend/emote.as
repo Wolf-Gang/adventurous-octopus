@@ -1,4 +1,3 @@
-
 enum emote_type
 {
 	silence,
@@ -10,77 +9,83 @@ enum emote_type
 	embarrassed
 };
 
-[start]
-void follow_target()
-{
-	
-}
-
 class emote
 {
-	entity em;
-	entity target;
+	private entity mEmote;
+	private entity mTarget;
 	
 	emote()
 	{}
 	
-	emote(entity tEntity, emote_type eType)
+	emote(entity pTarget, emote_type pType)
 	{
-		add_emote(tEntity, eType);
+		add_emote(pTarget, pType);
 	}
 	
-	void add_emote(entity tEntity, emote_type eType)
+	void add_emote(entity pTarget, emote_type pType)
 	{
-	
-		target = tEntity;
-
-		switch(eType)
+		mTarget = pTarget;
+    
+    // Translate enum to an atlas name
+    string emote_atlas_name;
+		switch(pType)
 		{
-			case emote_type::silence:
-				em = add_entity("emotes", "silence");
-				break;
-			case emote_type::surprise:
-				em = add_entity("emotes", "surprise");
-				break;
-			case emote_type::question:
-				em = add_entity("emotes", "question");
-				break;
-			case emote_type::angry:
-				em = add_entity("emotes", "angry");
-				break;
-			case emote_type::idea:
-				em = add_entity("emotes", "idea");
-				break;	
-			case emote_type::frustrated:
-				em = add_entity("emotes", "frustrated");
-				break;	
-			case emote_type::embarrassed:
-				em = add_entity("emotes", "embarrassed");
-				break;	
+		case emote_type::silence:
+      emote_atlas_name = "silence";
+			break;
+		case emote_type::surprise:
+      emote_atlas_name = "surprise";
+      break;
+    case emote_type::question:
+      emote_atlas_name = "question";
+      break;
+    case emote_type::angry:
+      emote_atlas_name = "angry";
+      break;
+    case emote_type::idea:
+      emote_atlas_name = "idea";
+      break;
+    case emote_type::frustrated:
+      emote_atlas_name = "frustrated";
+      break;
+    case emote_type::embarrassed:
+      emote_atlas_name = "embarrassed";
+      break;
+    default:
+      eprint("wat u doin");
+      return;
 		}
+		mEmote = add_entity("emotes", emote_atlas_name);
 		
-		set_anchor(em, anchor::center);
-		set_depth(em, fixed_depth::overlay);
+		set_anchor(mEmote, anchor::center);
+		set_depth(mEmote, fixed_depth::overlay);
 		
-		animation::start(em);
+		animation::start(mEmote);
 		
 		create_thread(function(args)
 		{
-			entity em = entity(args["em"]);
-			entity t = entity(args["t"]);
+			entity mEmote = entity(args["mEmote"]);
+			entity mTarget = entity(args["mTarget"]);
 			
 			do{
-				if (!t.is_valid() || !em.is_valid())
+				if (!mTarget.is_valid() || !mEmote.is_valid())
 					return;
-				set_position(em, get_position(t));
-				set_z(em, pixel(get_size(t)).y + 0.25 + get_z(t));
+				set_position(mEmote, get_position(mTarget)));
+				set_z(mEmote, pixel(get_size(mTarget)).y + 0.25 + get_z(mTarget));
 			} while(yield());
 			
-		}, dictionary = {{"em", em}, {"t" , target}});
+		}, dictionary = {{"mEmote", mEmote}, {"mTarget" , mTarget}});
 	}
 
 	void remove_emote()
 	{
-		remove_entity(em);
-	}	
+		remove_entity(mEmote);
+	}
 };
+
+void quick_emote(entity pTarget, emote_type pType, float pTime)
+{
+  emote current_emote(pTarget, pType);
+  wait(pTime);
+  current_emote.remove_emote();
+}

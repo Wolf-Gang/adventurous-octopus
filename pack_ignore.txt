@@ -1,6 +1,7 @@
 blacklist
 .git
 internal/.git
+textures/ases
 README.md
 log.txt
 .gitmodules
