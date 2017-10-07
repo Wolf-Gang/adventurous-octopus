@@ -5,7 +5,7 @@
 void start()
 {
 	music::open("doodle110_theme");
-	music::volume(70);
+	music::volume(0.7);
 	set_visible(get_player(), false);
 	focus::set(vec(0, 0));
   pause::lock(true);

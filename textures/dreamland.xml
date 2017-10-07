@@ -10,6 +10,8 @@
     <cloudbush2 x="192" y="0" w="32" h="32"/>
     <constru x="192" y="288" w="96" h="80"/>
     <fade x="160" y="96" w="32" h="192"/>
+    <fence x="256" y="64" w="32" h="48"/>
+    <fence_connection x="288" y="80" w="32" h="32"/>
     <flowers x="32" y="64" w="32" h="32"/>
     <fork_sign x="160" y="32" w="32" h="64" frames="2" interval="600" loop="1"/>
     <fountain x="102" y="288" w="64" h="64"/>

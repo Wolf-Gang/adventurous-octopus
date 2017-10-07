@@ -70,7 +70,7 @@ class emote
 			do{
 				if (!mTarget.is_valid() || !mEmote.is_valid())
 					return;
-				set_position(mEmote, get_position(mTarget)));
+				set_position(mEmote, get_position(mTarget));
 				set_z(mEmote, pixel(get_size(mTarget)).y + 0.25 + get_z(mTarget));
 			} while(yield());
 			

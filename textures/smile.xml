@@ -1,0 +1,7 @@
+<atlas>
+    <appear x="256" y="0" w="64" h="64" frames="7" interval="120"/>
+    <default:default x="0" y="0" w="64" h="64" frames="2" interval="120" loop="1"/>
+    <door x="704" y="0" w="64" h="64" frames="4" interval="120" loop="1"/>
+    <doordisappear x="960" y="0" w="64" h="64" frames="7" interval="120"/>
+    <happy x="128" y="0" w="64" h="64" frames="2" interval="120" loop="1"/>
+</atlas>

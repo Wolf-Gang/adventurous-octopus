@@ -1,0 +1,6 @@
+<atlas>
+    <aura x="96" y="0" w="32" h="64" frames="5" interval="200" loop="1"/>
+    <auradisappear x="96" y="64" w="32" h="96" frames="7" interval="120"/>
+    <sideleft x="0" y="48" w="32" h="96"/>
+    <sideright x="32" y="48" w="32" h="96"/>
+</atlas>

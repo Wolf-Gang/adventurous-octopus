@@ -1,9 +1,0 @@
-<scene>
-    <map>
-        <texture>light</texture>
-        <layer id="0">
-            <cold_light x="-1" y="-1"/>
-        </layer>
-    </map>
-    <collisionboxes/>
-</scene>
