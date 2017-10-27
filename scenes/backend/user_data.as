@@ -150,6 +150,7 @@ namespace user_data
   {
     const string path = user_data::priv::player_gifts + "/" + pName;
     
+    // TODO: remove, change to hoard coded things
     values::set(path, pName);
     values::set(path + "/description", pDescription);
     values::set(path + "/texture", pTexture);

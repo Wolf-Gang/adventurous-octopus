@@ -39,6 +39,5 @@ void give_flower(entity pRecipient, float pTime)
   add_child(pRecipient, mc_hat);
   float r_height = pixel(get_size(pRecipient)).y;
   set_z(mc_hat, r_height * .9);
-  user_data::remove_inventory("Flower");
 }
 

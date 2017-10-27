@@ -66,7 +66,7 @@ void goaway() {
       say("It happened so fast...");
       nl("She fell and...");
       nl("Her head...");
-      set_direction(housedude, direction::right);
+      set_direction(housedude, get_position(get_player()));
       say("See her over there?");
       narrative::hide();
       focus::move(midpoint(vec(1.5, -.5), get_position(get_player())), 2);
@@ -94,7 +94,7 @@ void goaway() {
     case 3:
       say("*Sob*...");
       nl("What's that?");
-      set_direction(housedude, direction::right);
+      set_direction(housedude, get_position(get_player()));
       nl("You have a...flower for me?");
       narrative::hide();
       
@@ -110,7 +110,7 @@ void goaway() {
       break;
       
     case 4:
-      set_direction(housedude, direction::right);
+      set_direction(housedude, get_position(get_player()));
       say("Thanks for that.");
       break;
   }
