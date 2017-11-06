@@ -36,6 +36,8 @@ void create_eggswing()
 void eggswing_talks()
 {
   say("Don't judge me.");
+  nl("Eggs can swing, too.");
+  say("Just gotta wait for the wind to pick up...");
   narrative::end();
 }
 

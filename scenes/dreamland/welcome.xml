@@ -20,16 +20,25 @@
             <hearts x="6.5" y="-8.5" w="13" r="1"/>
             <hearts x="13" y="-8" r="2"/>
             <hearts x="13.5" y="-7.5" r="2"/>
+            <fountain x="9.5" y="-6"/>
+            <flowers x="12" y="-6" r="2"/>
             <path_end x="13" y="-6" r="1"/>
+            <flowers x="14" y="-6" h="3"/>
+            <flowers x="12" y="-5" r="3"/>
             <path x="13" y="-5" r="1"/>
+            <flowers x="11" y="-4" r="2"/>
             <path_corner x="12" y="-4" r="3"/>
             <path_corner x="13" y="-4" r="1"/>
+            <flowers x="9" y="-3" r="2"/>
+            <flowers x="10" y="-3" r="3"/>
             <path_corner x="11" y="-3" r="3"/>
             <path_corner x="12" y="-3" r="1"/>
+            <flowers x="13" y="-3" w="2" h="2" r="3"/>
             <hearts x="7" y="-2" r="1"/>
             <path_end x="9" y="-2"/>
             <path x="10" y="-2"/>
             <path_corner x="11" y="-2" r="1"/>
+            <flowers x="12" y="-2"/>
             <hearts x="6.5" y="-1.5" w="2" r="1"/>
             <hearts x="5.5" y="7.5"/>
         </layer>
@@ -131,5 +140,6 @@
         <wall x="8.3125" y="-1.15625" w="0.3125" h="0.46875"/>
         <wall x="5.5" y="-12.25" w="3" h="1.75"/>
         <button x="13" y="-2" w="1" h="0.5" group="eggswing"/>
+        <wall x="9.71875" y="-5.25" w="1.5" h="1.125"/>
     </collisionboxes>
 </scene>

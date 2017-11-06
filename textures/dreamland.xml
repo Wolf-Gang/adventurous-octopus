@@ -5,6 +5,7 @@
     <blueflower x="192" y="112" w="16" h="16" frames="4" interval="300" loop="1" default="1"/>
     <breakingbridge x="32" y="224" w="32" h="64" frames="4" interval="500"/>
     <building1 x="320" y="0" w="128" h="112"/>
+    <building2 x="336" y="112" w="97" h="145"/>
     <cloud x="64" y="32" w="64" h="64"/>
     <cloud_tile x="128" y="0" w="32" h="32"/>
     <cloudbush1 x="160" y="0" w="32" h="32"/>
