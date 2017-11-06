@@ -4,11 +4,13 @@
     <bench2 x="128" y="128" w="32" h="64"/>
     <blueflower x="192" y="112" w="16" h="16" frames="4" interval="300" loop="1" default="1"/>
     <breakingbridge x="32" y="224" w="32" h="64" frames="4" interval="500"/>
+    <building1 x="320" y="0" w="128" h="112"/>
     <cloud x="64" y="32" w="64" h="64"/>
     <cloud_tile x="128" y="0" w="32" h="32"/>
     <cloudbush1 x="160" y="0" w="32" h="32"/>
     <cloudbush2 x="192" y="0" w="32" h="32"/>
     <constru x="192" y="288" w="96" h="80"/>
+    <eggswing x="256" y="112" w="32" h="48"/>
     <fade x="160" y="96" w="32" h="192"/>
     <fence x="256" y="64" w="32" h="48"/>
     <fence_connection x="288" y="80" w="32" h="32"/>
@@ -32,6 +34,9 @@
     <side_clouds x="0" y="32" w="32" h="32"/>
     <side_clouds_edge x="128" y="32" w="32" h="32"/>
     <sparkles x="32" y="192" w="32" h="32" frames="4" interval="200" loop="1"/>
+    <stairs_d x="256" y="0" w="32" h="32"/>
+    <stairs_l x="224" y="32" w="32" h="32"/>
+    <stairs_r x="224" y="0" w="32" h="32"/>
     <wall x="224" y="256" w="32" h="32"/>
     <welcome x="0" y="288" w="102" h="80"/>
 </atlas>

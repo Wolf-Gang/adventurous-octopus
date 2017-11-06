@@ -8,7 +8,7 @@ characters::unicorn char_unicorn;
 void create_cloud_trees()
 {
 	create_tree(vec(1, 1));
-	create_tree(vec(6, 1));
+  create_tree(vec(6, 1));
 }
 
 [start]
