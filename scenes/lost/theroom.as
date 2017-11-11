@@ -61,7 +61,7 @@ void sivoraintro()
   
   
   music::volume(70);
-  music::open("doodle113");
+  music::open("doodle167-AFV-Sivora");
   
   narrative::show();
   narrative::set_dialog_sound("softdialog");

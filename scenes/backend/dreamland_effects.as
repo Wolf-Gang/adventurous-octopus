@@ -101,7 +101,7 @@ void dreamland_clouds()
 	{
 		set_position(priv::cloud, get_position(priv::cloud) + vec(0, get_delta()*speed));
 		
-		if (get_position(priv::cloud).y >= focus::get().y + 10)
+		if (get_position(priv::cloud).y >= focus::get().y + get_display_size().y)
 			set_position(priv::cloud, focus::get() - vec(random(-4, 4), 2));
 	} while(yield() && priv::cloud.is_valid());
 }

@@ -6,7 +6,8 @@ entity aura;
 [start]
 void start()
 {
-	set_position(get_player(), vec(-0.5, 0));
+  music::open("doodle171-AFV-First-Meet");
+	set_position(get_player(), vec(-0.5, 5));
 }
 
 
@@ -20,6 +21,18 @@ void create_field()
   set_position(aura, vec(0, -0.001));
 }
 
+
+[group say1]
+void say1()
+{
+  say("<shake>Happiness...</shake>");
+  say("<shake>Flowers...</shake>");
+  say("<shake>Peace...</shake>");
+  say("<shake>All I have to do is...</shake>");
+  narrative::end();
+  group::enable("say1", false);
+  player::lock(false);
+}
 
 [start]
 void create_door()
@@ -38,13 +51,20 @@ void throughthedoor()
   animation::start(aura);
   fx::fade_out(get_player(), 1);
   
+  music::stop();
   fx::sound("augmenting");
   set_atlas(smile_door, "doordisappear");
   animation::play_wait(smile_door);
   
   set_atlas(smile_door, "default:default");
   animation::start(smile_door);
+  wait(0.5);
+  
+  set_atlas(smile_door, "default:default");
+  fsay("... Smile ...");
+  
   wait(1);
+  narrative::end();
   fx::sound("dum");
   entity blackout = add_entity("pixel");
   make_gui(blackout, 1);

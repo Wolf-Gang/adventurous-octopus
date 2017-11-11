@@ -40,4 +40,7 @@
     <stairs_r x="224" y="0" w="32" h="32"/>
     <wall x="224" y="256" w="32" h="32"/>
     <welcome x="0" y="288" w="102" h="80"/>
+    <water x="256" y="160" w="32" h="32" frames="2" interval="300" loop="1"/>
+    <waterfall x="256" y="192" w="32" h="32" frames="2" interval="300" loop="1"/>
+    <waterfall_mist x="256" y="224" w="32" h="32" frames="2" interval="300" loop="1"/>
 </atlas>

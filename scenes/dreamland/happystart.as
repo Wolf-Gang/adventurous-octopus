@@ -2,7 +2,7 @@
 #include "../backend/emote.as"
 #include "../characters/unicorn.as"
 
-characters::unicorn char_unicorn;
+characters::unicorn unicorn;
 
 [start]
 void create_cloud_trees()
@@ -21,8 +21,8 @@ void create_flowers()
 [start]
 void create_unicorn()
 {
-  char_unicorn.create();
-  set_position(char_unicorn, vec(3.5, 2));
+  unicorn.create();
+  set_position(unicorn, vec(3.5, 2));
 }
 
 [start]
@@ -46,14 +46,65 @@ void things()
   nl("You awake?");
   narrative::hide();
   
-  music::open("doodle132");
+  music::open("doodle132-dreamland-start_2");
   fx::fade_out(blackout, 5);
   set_direction(get_player(), direction::up);
   wait(0.5);
-  quick_emote(char_unicorn, emote_type::surprise, 1);
-  say("Hello there!");
+  quick_emote(unicorn, emote_type::surprise, 1);
   
+  narrative::show();
+  
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+  
+  say("AH Hello there!");
+	say("I'm the majestic unicorn of <b>DEATH</b>.");
+	nl("A fighter against world hunger.");
+  say("I found you lying peacefully in these flowers.");
+  say("You must <b>really</b> like flowers.");
+  say("Don't worry...");
+  say("Your secret is safe with me.");
+  
+  narrative::clear_speakers();
+	narrative::set_expression("mc_expression", "default:default");
+  say("...");
+  
+  narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+  say("Anyway, where do you live? Are you new?");
+  
+  narrative::clear_speakers();
+	narrative::set_expression("mc_expression", "default:default");
+  say("...");
+  
+  narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+  say("Hello?");
+  
+  narrative::clear_speakers();
+	narrative::set_expression("mc_expression", "default:default");
+  say("...");
+  
+  narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+  say("Rather quiet, aren't you?");
+  say("How about you come with me to sort things out?");
+  narrative::hide();
+  
+  music::stop();
+  
+  fx::sound("rumble");
+  set_boundary_enable(false);
+  fx::shake(0.5, 2);
+  quick_emote(unicorn, emote_type::surprise, 1);
+  
+  wait(0.5);
+  say("Hmmm.... I will meet you again soon.");
+  nl("Some trouble has happened, again...");
   narrative::end();
+  
+  music::open("doodle132-dreamland-start_2");
+  unicorn.disappear();
   player::lock(false);
   
 }
