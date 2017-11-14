@@ -3,6 +3,28 @@
 #include "../characters/unicorn.as"
 
 
+entity hamster_police1;
+
+[start]
+void create_hamster()
+{
+  hamster_police1 = add_entity("Hamster");
+  set_position(hamster_police1, vec(2.5, -14.5));
+}
+
+[group talktohamster1]
+void talktohamster1()
+{
+  narrative::set_speaker(hamster_police1);
+  say("Can't go farther than this, buddy.");
+  say("This area is closed off for... \"Maintenance.\"");
+  narrative::end();
+  player::lock(false);
+}
+
+
+
+/*
 [group unicorn1]
 void unicorn1()
 {
@@ -17,7 +39,7 @@ void unicorn1()
   narrative::end();
   group::enable("unicorn1", false);
   player::lock(false);
-}
+}*/
 
 void create_forest(vec pPosition, vec pSize)
 {
@@ -37,7 +59,11 @@ void create_trees()
   create_tree(vec(14, -1.5));
   
   create_forest(vec(12, -15.5), vec(4, 3));
+  create_forest(vec(4, -15.5), vec(4, 2));
+  create_forest(vec(-1, -16.5), vec(1, 3));
+  create_tree(vec(1, -15.5));
 }
+
 
 [start]
 void create_flowers()

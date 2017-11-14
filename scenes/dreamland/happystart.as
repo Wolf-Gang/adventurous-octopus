@@ -46,6 +46,7 @@ void things()
   nl("You awake?");
   narrative::hide();
   
+  music::volume(1);
   music::open("doodle132-dreamland-start_2");
   fx::fade_out(blackout, 5);
   set_direction(get_player(), direction::up);
@@ -61,7 +62,7 @@ void things()
 	say("I'm the majestic unicorn of <b>DEATH</b>.");
 	nl("A fighter against world hunger.");
   say("I found you lying peacefully in these flowers.");
-  say("You must <b>really</b> like flowers.");
+  say("You must <b>REALLY</b> like flowers.");
   say("Don't worry...");
   say("Your secret is safe with me.");
   
@@ -99,8 +100,9 @@ void things()
   quick_emote(unicorn, emote_type::surprise, 1);
   
   wait(0.5);
-  say("Hmmm.... I will meet you again soon.");
+  say("Hmmm...");
   nl("Some trouble has happened, again...");
+  say("I will have to go. Don't get lost and die.");
   narrative::end();
   
   music::open("doodle132-dreamland-start_2");

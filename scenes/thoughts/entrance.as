@@ -10,8 +10,6 @@ void start()
 	set_position(get_player(), vec(-0.5, 5));
 }
 
-
-
 [start]
 void create_field()
 {
@@ -28,7 +26,7 @@ void say1()
   say("<shake>Happiness...</shake>");
   say("<shake>Flowers...</shake>");
   say("<shake>Peace...</shake>");
-  say("<shake>All I have to do is...</shake>");
+  say("<shake>There is only one thing I need to do...</shake>");
   narrative::end();
   group::enable("say1", false);
   player::lock(false);

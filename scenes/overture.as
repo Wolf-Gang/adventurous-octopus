@@ -4,8 +4,8 @@
 void start()
 {
 	music::volume(0);
-	music::open("doodle110_start");
-	music::fade_volume(70, 5);
+	music::open("doodle110_2-AFV-Overture");
+	music::fade_volume(0.7, 5);
 	set_visible(get_player(), false);
   pause::lock(true);
 }

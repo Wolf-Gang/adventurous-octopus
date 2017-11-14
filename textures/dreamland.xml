@@ -43,4 +43,5 @@
     <water x="256" y="160" w="32" h="32" frames="2" interval="300" loop="1"/>
     <waterfall x="256" y="192" w="32" h="32" frames="2" interval="300" loop="1"/>
     <waterfall_mist x="256" y="224" w="32" h="32" frames="2" interval="300" loop="1"/>
+    <fence_lr x="256" y="32" w="32" h="32"/>
 </atlas>
