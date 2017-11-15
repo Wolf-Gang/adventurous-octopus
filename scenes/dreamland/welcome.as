@@ -3,6 +3,40 @@
 #include "../characters/unicorn.as"
 
 
+entity froggo;
+
+[start]
+void create_froggo()
+{
+  froggo = add_entity("Frog");
+  set_position(froggo, vec(24, -12));
+}
+
+[group frog1]
+void frog1()
+{
+  narrative::show();
+  narrative::set_expression("frog_expression", "default:default");
+  say(".....");
+  narrative::set_expression("mc_expression", "default:default");
+  say(".....");
+  narrative::end();
+  
+  music::pause();
+  fx::sound("FX_nom", 0.7);
+  set_atlas(froggo, "eat");
+  set_visible(get_player(), false);
+  animation::play_wait(froggo);
+  wait(0.5);
+  
+  fx::sound("FX_splash", 0.5);
+  set_atlas(froggo, "swim");
+  set_position(froggo, vec(25.5, -12));
+  move(froggo, vec(28, -12), speed(2));
+  // Goes to next scene
+}
+
+
 entity hamster_police1;
 
 [start]

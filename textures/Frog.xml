@@ -1,0 +1,5 @@
+<atlas>
+    <default:default x="0" y="0" w="50" h="41"/>
+    <eat x="50" y="0" w="50" h="41" frames="4" interval="100"/>
+    <swim x="250" y="0" w="50" h="41"/>
+</atlas>
