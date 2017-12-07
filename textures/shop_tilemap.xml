@@ -1,0 +1,6 @@
+<atlas>
+    <floor x="0" y="0" w="32" h="32"/>
+    <sale_counter x="32" y="0" w="64" h="32"/>
+    <counter x="96" y="0" w="32" h="32"/>
+    <carpet x="0" y="32" w="64" h="32"/>
+</atlas>

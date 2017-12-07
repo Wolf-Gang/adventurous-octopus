@@ -1,0 +1,18 @@
+<scene>
+    <map>
+        <texture>shop_tilemap</texture>
+        <layer id="0">
+            <floor x="1" y="0" w="4" h="3"/>
+            <floor x="1" y="3" w="4"/>
+        </layer>
+        <layer id="1">
+            <counter x="1" y="1"/>
+            <counter x="4" y="1"/>
+            <carpet x="2" y="3"/>
+        </layer>
+    </map>
+    <collisionboxes>
+        <wall x="1" y="1.59375" w="4" h="0.15625"/>
+        <door x="2" y="4" w="2" h="1" name="" destination="" scene="dreamland/welcome" offsetx="0" offsety="-1"/>
+    </collisionboxes>
+</scene>

@@ -10,9 +10,7 @@
             <water x="25" y="-13" w="4"/>
             <water x="25" y="-12" w="2" h="2"/>
             <water x="27" y="-12" w="2" h="2" r="2"/>
-            <ground x="-3" y="-11" w="28"/>
-            <ground x="-3" y="-10" w="27" h="2"/>
-            <ground x="24" y="-10" h="2"/>
+            <ground x="-3" y="-11" w="28" h="3"/>
             <waterfall x="25" y="-10" w="4" h="5"/>
             <ground x="-3" y="-8" w="3" h="9"/>
             <ground x="0" y="-8" w="25"/>
@@ -97,33 +95,27 @@
             <purpleflower x="1.5" y="1.5"/>
             <purpleflower x="10" y="1.5"/>
             <redflower x="1" y="2"/>
-            <purpleflower x="2" y="2"/>
             <purpleflower x="9.5" y="2"/>
             <redflower x="10.5" y="2"/>
             <redflower x="1.5" y="2.5"/>
-            <purpleflower x="2.5" y="2.5"/>
             <purpleflower x="9" y="2.5"/>
             <redflower x="10" y="2.5"/>
             <purpleflower x="1" y="3"/>
-            <redflower x="2" y="3"/>
             <redflower x="9.5" y="3"/>
             <purpleflower x="10.5" y="3"/>
             <purpleflower x="1.5" y="3.5"/>
-            <redflower x="2.5" y="3.5"/>
             <redflower x="9" y="3.5"/>
             <purpleflower x="10" y="3.5"/>
             <orangeflower x="1" y="4"/>
-            <purpleflower x="2" y="4"/>
             <purpleflower x="9.5" y="4"/>
             <orangeflower x="10.5" y="4"/>
             <orangeflower x="1.5" y="4.5"/>
             <purpleflower x="4.5" y="4.5"/>
             <purpleflower x="9" y="4.5"/>
-            <orangeflower x="10" y="4.5"/>
             <blueflower x="1" y="5"/>
             <orangeflower x="2" y="5"/>
-            <purpleflower x="3.5" y="5"/>
-            <purpleflower x="4" y="5"/>
+            <blueflower x="3.5" y="5"/>
+            <redflower x="4" y="5"/>
             <blueflower x="1.5" y="5.5"/>
             <orangeflower x="2.5" y="5.5"/>
             <orangeflower x="9" y="5.5"/>
@@ -147,11 +139,9 @@
             <side_clouds_edge x="15" y="-7" r="3"/>
             <side_clouds_edge x="24" y="-7"/>
             <side_clouds_edge x="11" y="-1" r="3"/>
-            <welcome x="2" y="2.5"/>
         </layer>
     </map>
     <collisionboxes>
-        <wall x="1.5" y="1.5" w="0.5" h="0.5"/>
         <wall x="9" y="2.5" w="0.5" h="0.5"/>
         <wall x="9.5" y="2" w="0.5" h="0.5"/>
         <wall x="10" y="1.5" w="0.5" h="0.5"/>
@@ -160,8 +150,6 @@
         <wall x="8.5" y="7.3125" w="0.5" h="0.1875"/>
         <wall x="9" y="3" w="0.5" h="4.28125"/>
         <wall x="3" y="7.3125" w="0.5" h="0.1875"/>
-        <wall x="2" y="2" w="0.5" h="0.5"/>
-        <wall x="2.5" y="2.5" w="0.5" h="4.8125"/>
         <wall x="3" y="4.5" w="1.5" h="1"/>
         <wall x="4.53125" y="4.5" w="0.5" h="0.5"/>
         <wall x="3.5" y="8" w="5" h="0.5"/>
@@ -176,11 +164,15 @@
         <wall x="8.3125" y="-0.6875" w="7.34375" h="0.375"/>
         <wall x="8.3125" y="-1.15625" w="0.3125" h="0.46875"/>
         <wall x="5.5" y="-11.75" w="3" h="1.25"/>
-        <button x="13" y="-2" w="1" h="0.5" group="eggswing"/>
+        <button x="13" y="-2.34375" w="1" h="1" group="eggswing"/>
         <wall x="9.71875" y="-5.25" w="1.5" h="1.125"/>
         <trigger x="5" y="4.5" w="4" h="0.5" group="unicorn1"/>
         <wall x="0.5" y="-15" w="3.5" h="0.5"/>
         <button x="2" y="-15.5" w="1" h="1" group="talktohamster1"/>
         <button x="23.5" y="-13" w="1" h="1" group="frog1"/>
+        <button x="5.6875" y="-11.34375" w="0.625" h="0.84375" group="house_door"/>
+        <wall x="2.5" y="4.5" w="0.5" h="3"/>
+        <wall x="2" y="4.5" w="0.5" h="0.5"/>
+        <wall x="1.5" y="1.5" w="0.5" h="3"/>
     </collisionboxes>
 </scene>

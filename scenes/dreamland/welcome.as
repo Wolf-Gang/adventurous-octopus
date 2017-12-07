@@ -12,6 +12,13 @@ void create_froggo()
   set_position(froggo, vec(24, -12));
 }
 
+[start]
+void create_welcome_sign()
+{
+  entity welcome_sign = add_entity("dreamland", "welcome");
+  set_position(welcome_sign, pixel(115,160));
+}
+
 [group frog1]
 void frog1()
 {
@@ -134,6 +141,16 @@ void eggswing_talks()
   player::lock(false);
 }
 
+[group house_door]
+void talk_door()
+{
+  if(!has_flag("shopisopen"))
+  {
+    say("Wanna come in? The door's open.");
+    set_flag("shopisopen");
+  }
+  load_scene("dreamland/shop");
+}
 
 
 [start]

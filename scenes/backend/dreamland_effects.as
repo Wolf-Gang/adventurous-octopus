@@ -62,8 +62,13 @@ void create_bush(vec pPosition, int t)
 	entity bush;
 	if(t == 1)
 		bush = add_entity("dreamland", "cloudbush1");
-	if(t == 2)
+	else if(t == 2)
 		bush = add_entity("dreamland", "cloudbush2");
+  else
+  {
+    eprint("t can onely be 1 and 2");
+    return;
+  }
 	set_position(bush, pPosition);
   
   const vec offset = pixel(-7, -8);
