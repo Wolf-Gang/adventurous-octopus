@@ -10,16 +10,6 @@ void start()
 	set_position(get_player(), vec(-0.5, 5));
 }
 
-[start]
-void create_field()
-{
-  aura = add_entity("smiletiles", "aura");
-  animation::start(aura);
-  set_parent(aura, get_player());
-  set_position(aura, vec(0, -0.001));
-}
-
-
 [group say1]
 void say1()
 {

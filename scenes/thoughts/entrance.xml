@@ -4,6 +4,9 @@
         <layer id="0">
             <sideleft x="-3" y="-8"/>
             <sideright x="1" y="-8"/>
+            <bricklightdown x="-1" y="-6"/>
+            <bricklightupdown x="-1" y="-5" h="9"/>
+            <bricklightup x="-1" y="4"/>
         </layer>
     </map>
     <collisionboxes>

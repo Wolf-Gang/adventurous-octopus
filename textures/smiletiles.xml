@@ -3,4 +3,7 @@
     <auradisappear x="96" y="64" w="32" h="96" frames="7" interval="120"/>
     <sideleft x="0" y="48" w="32" h="96"/>
     <sideright x="32" y="48" w="32" h="96"/>
+    <bricklightup x="0" y="144" w="32" h="32"/>
+    <bricklightupdown x="32" y="144" w="32" h="32"/>
+    <bricklightdown x="0" y="176" w="32" h="32"/>
 </atlas>
