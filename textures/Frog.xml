@@ -1,5 +1,6 @@
 <atlas>
     <default:default x="0" y="0" w="50" h="41"/>
     <eat x="50" y="0" w="50" h="41" frames="4" interval="100"/>
-    <swim x="250" y="0" w="50" h="41"/>
+    <swim_right x="250" y="0" w="50" h="41" frames="2" interval="200" loop="1"/>
+    <swim_left x="350" y="0" w="50" h="41" frames="2" interval="200" loop="1"/>
 </atlas>

@@ -12,13 +12,6 @@ void create_froggo()
   set_position(froggo, vec(24, -12));
 }
 
-[start]
-void create_welcome_sign()
-{
-  entity welcome_sign = add_entity("dreamland", "welcome");
-  set_position(welcome_sign, pixel(115,160));
-}
-
 [group frog1]
 void frog1()
 {
@@ -37,12 +30,21 @@ void frog1()
   wait(0.5);
   
   fx::sound("FX_splash", 0.5);
-  set_atlas(froggo, "swim");
+  set_atlas(froggo, "swim_right");
+	animation::start(froggo);
   set_position(froggo, vec(25.5, -12));
-  move(froggo, vec(28, -12), speed(2));
-  // Goes to next scene
+	fx::fade_out(2, threaded());
+  move(froggo, vec(28, -12), 2);
+	set_flag("frog_travel");
+  load_scene("dreamland/residential");
 }
 
+[start]
+void create_welcome_sign()
+{
+  entity welcome_sign = add_entity("dreamland", "welcome");
+  set_position(welcome_sign, pixel(115,160));
+}
 
 entity hamster_police1;
 
@@ -63,8 +65,6 @@ void talktohamster1()
   player::lock(false);
 }
 
-
-
 /*
 [group unicorn1]
 void unicorn1()
@@ -81,17 +81,6 @@ void unicorn1()
   group::enable("unicorn1", false);
   player::lock(false);
 }*/
-
-void create_forest(vec pPosition, vec pSize)
-{
-  for (float y = 0; y < pSize.y; y++)
-    if (y % 2 == 0)
-      for (float x = 0; x < pSize.x; x++)
-          create_tree(pPosition + vec(x*2, y));
-    else
-      for (float x = 0; x < pSize.x - 1; x++)
-          create_tree(pPosition + vec(x*2 + 1, y));
-}
 
 [start]
 void create_trees()
@@ -157,5 +146,11 @@ void talk_door()
 void start()
 {
   music::open("doodle169-AFV-Dreamland-Guitar");
-	set_position(get_player(), vec(6, 7));
+	if (has_flag("frog_travel"))
+	{
+		set_position(get_player(), vec(24, -11));
+		unset_flag("frog_travel");
+	}
+	else
+		set_position(get_player(), vec(6, 7));
 }

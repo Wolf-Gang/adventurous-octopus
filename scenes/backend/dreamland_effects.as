@@ -122,3 +122,13 @@ void unicorn_disappear(entity pUnicorn)
 	animation::play_wait(hearts);
 }
 
+void create_forest(vec pPosition, vec pSize)
+{
+  for (float y = 0; y < pSize.y; y++)
+    if (y % 2 == 0)
+      for (float x = 0; x < pSize.x; x++)
+          create_tree(pPosition + vec(x*2, y));
+    else
+      for (float x = 0; x < pSize.x - 1; x++)
+          create_tree(pPosition + vec(x*2 + 1, y));
+}
