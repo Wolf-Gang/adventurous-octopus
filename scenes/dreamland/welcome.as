@@ -138,7 +138,7 @@ void talk_door()
     say("door is open. come in?");
     set_flag("shopisopen");
   }
-  load_scene("dreamland/shop");
+  load_scene("worfel/shop");
 }
 
 

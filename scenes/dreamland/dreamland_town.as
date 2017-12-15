@@ -10,7 +10,7 @@ void start()
 {
 	music::open("doodle104_2");
 	
-	music::volume(0.7);
+	music::set_volume(0.7);
 	set_position(get_player(), vec(5.5, 22));
 	set_direction(get_player(), direction::up);
 }
@@ -232,7 +232,7 @@ void worfel() {
   say("It likes flowers, yes it does!");
   nl("It wants the flowers!");
   
-  load_scene("dreamland/worfel");
+  load_scene("worfel/intro");
   
 }
 

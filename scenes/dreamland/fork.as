@@ -11,7 +11,7 @@ void save_thing()
 void start()
 {
 	music::open("doodle104_2");
-	music::volume(70);
+	music::set_volume(70);
 	set_position(get_player(), vec(5, 9));
 	set_direction(get_player(), direction::up);
 }

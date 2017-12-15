@@ -175,6 +175,6 @@
         <wall x="2.5" y="4.5" w="0.5" h="3"/>
         <wall x="2" y="4.5" w="0.5" h="0.5"/>
         <wall x="1.5" y="1.5" w="0.5" h="3"/>
-        <door x="5.5" y="-11.5" w="1" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="dreamland/shop" offsetx="0" offsety="1"/>
+        <door x="5.5" y="-11.5" w="1" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="worfel/shop" offsetx="0" offsety="1"/>
     </collisionboxes>
 </scene>
