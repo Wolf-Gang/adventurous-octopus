@@ -4,6 +4,7 @@ void start()
 {
   set_position(get_player(), vec(3, 3.8));
   set_direction(get_player(), direction::up);
+  music::open("doodle181-shop-guy");
   fx::fade_in(1.5);
 }
 
