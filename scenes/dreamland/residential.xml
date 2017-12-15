@@ -2,19 +2,31 @@
     <map>
         <texture>dreamland</texture>
         <layer id="0">
+            <cloudwall x="-2" y="-4" w="7" h="5"/>
             <waterfall x="-5" y="-3" w="3" h="4"/>
-            <water x="-5" y="1" w="3" h="6"/>
-            <ground x="-2" y="1" w="8" h="5" r="2"/>
-            <ground x="-2" y="6" w="8" r="2"/>
+            <ground x="5" y="-1" w="13" r="1"/>
+            <ground x="5" y="0" w="9"/>
+            <ground x="14" y="0" w="4" h="7" r="1"/>
+            <water x="-5" y="1" w="3" h="7"/>
+            <ground x="-2" y="1" w="8" h="6" r="2"/>
+            <ground x="6" y="1" w="4" h="6"/>
+            <ground x="10" y="1" w="2" h="6" r="2"/>
+            <ground x="12" y="1" w="2" h="7"/>
+            <ground x="-2" y="7" w="14" r="2"/>
+            <ground x="14" y="7" w="4" r="1"/>
         </layer>
         <layer id="1">
+            <side_clouds x="-2" y="-4.5" w="7" r="1"/>
             <waterfall_mist x="-5" y="0.5"/>
             <waterfall_mist x="-4.5" y="0.5"/>
             <waterfall_mist x="-4" y="0.5"/>
             <waterfall_mist x="-3.5" y="0.5"/>
             <waterfall_mist x="-3" y="0.5"/>
-            <side_clouds x="-2.5" y="1" h="5" r="2"/>
-            <side_clouds x="-2.5" y="6" r="2"/>
+            <side_clouds x="-2.5" y="1" h="6" r="2"/>
+            <side_clouds x="-2.5" y="7" r="2"/>
+        </layer>
+        <layer id="2">
+            <cloudwall_bottom x="-2" y="1" w="7"/>
         </layer>
     </map>
     <collisionboxes>

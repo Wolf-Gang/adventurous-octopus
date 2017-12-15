@@ -46,7 +46,7 @@ void things()
   nl("You awake?");
   narrative::hide();
   
-  music::volume(1);
+  music::set_volume(1);
   music::open("doodle132-dreamland-start_2");
   fx::fade_out(blackout, 5);
   set_direction(get_player(), direction::up);

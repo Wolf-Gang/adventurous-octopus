@@ -6,6 +6,7 @@ entity aura;
 [start]
 void start()
 {
+	music::set_volume(80);
   music::open("doodle171-AFV-First-Meet");
 	set_position(get_player(), vec(-0.5, 5));
 }

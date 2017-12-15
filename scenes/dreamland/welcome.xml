@@ -3,10 +3,10 @@
         <texture>dreamland</texture>
         <layer id="0">
             <ground x="-3" y="-23" w="22" h="12"/>
+            <cloudwall x="20" y="-19" w="5" h="6"/>
             <waterfall x="25" y="-19" w="4" h="6"/>
-            <ground x="22" y="-18" w="3" h="4"/>
             <ground x="19" y="-17" h="6"/>
-            <ground x="20" y="-14" w="5" h="3"/>
+            <ground x="20" y="-13" w="5" h="2"/>
             <water x="25" y="-13" w="4"/>
             <water x="25" y="-12" w="2" h="2"/>
             <water x="27" y="-12" w="2" h="2" r="2"/>
@@ -136,6 +136,7 @@
             <side_cloud_corner x="11" y="7" r="3"/>
         </layer>
         <layer id="3">
+            <cloudwall_bottom x="20" y="-13" w="5"/>
             <side_clouds_edge x="15" y="-7" r="3"/>
             <side_clouds_edge x="24" y="-7"/>
             <side_clouds_edge x="11" y="-1" r="3"/>
