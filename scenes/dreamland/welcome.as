@@ -135,7 +135,7 @@ void talk_door()
 {
   if(!has_flag("shopisopen"))
   {
-    say("Wanna come in? The door's open.");
+    say("door is open. come in?");
     set_flag("shopisopen");
   }
   load_scene("dreamland/shop");

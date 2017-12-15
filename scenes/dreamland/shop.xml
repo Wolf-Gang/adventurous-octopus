@@ -2,17 +2,21 @@
     <map>
         <texture>shop_tilemap</texture>
         <layer id="0">
+            <wall x="1" y="-11" w="4" h="11"/>
             <floor x="1" y="0" w="4" h="3"/>
             <floor x="1" y="3" w="4"/>
         </layer>
         <layer id="1">
-            <counter x="1" y="1"/>
-            <counter x="4" y="1"/>
             <carpet x="2" y="3"/>
         </layer>
     </map>
     <collisionboxes>
         <wall x="1" y="1.59375" w="4" h="0.15625"/>
-        <door x="2" y="4" w="2" h="1" name="" destination="" scene="dreamland/welcome" offsetx="0" offsety="-1"/>
+        <wall x="1" y="4" w="1" h="1"/>
+        <wall x="0" y="2" w="1" h="2"/>
+        <wall x="5" y="2" w="1" h="2"/>
+        <wall x="4" y="4" w="1" h="1"/>
+        <button x="2" y="1" w="2" h="1" group="shopguyy"/>
+        <door x="2" y="4" w="2" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="dreamland/welcome" offsetx="0" offsety="-0.69999999"/>
     </collisionboxes>
 </scene>
