@@ -46,6 +46,12 @@ void create_welcome_sign()
   set_position(welcome_sign, pixel(115,160));
 }
 
+[start]
+void inconspicuous_bush()
+{
+  create_bush(vec(10.1, -15), 1);
+}
+
 entity hamster_police1;
 
 [start]

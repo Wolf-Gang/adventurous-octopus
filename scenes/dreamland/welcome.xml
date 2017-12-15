@@ -168,7 +168,7 @@
         <button x="13" y="-2.34375" w="1" h="1" group="eggswing"/>
         <wall x="9.71875" y="-5.25" w="1.5" h="1.125"/>
         <trigger x="5" y="4.5" w="4" h="0.5" group="unicorn1"/>
-        <wall x="0.5" y="-15" w="3.5" h="0.5"/>
+        <wall x="0.5" y="-15.3125" w="3.5" h="0.8125"/>
         <button x="2" y="-15.5" w="1" h="1" group="talktohamster1"/>
         <button x="23.5" y="-13" w="1" h="1" group="frog1"/>
         <button x="5.6875" y="-11.34375" w="0.625" h="0.84375" group="house_door"/>
