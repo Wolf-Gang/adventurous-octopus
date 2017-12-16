@@ -46,7 +46,7 @@ void heyllo()
     wait(.5);
     say("heyllo.");
     say("weylcome to shop.");
-    fsay("you like... ");
+    fsay("you ylike... ");
     wait(1.312);
     append("potion?");
     if(select("yes.", "no.") == option::first)
