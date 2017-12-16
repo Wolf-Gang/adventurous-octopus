@@ -39,7 +39,7 @@ void frog1()
   set_atlas(froggo, "swim_left");
 	animation::start(froggo);
   set_position(froggo, vec(-2.5, 2));
-	fx::fade_out(2, threaded());
+	fx::fade_out(2, thread());
   move(froggo, vec(-5, 2), 2);
 	set_flag("frog_travel");
   load_scene("dreamland/welcome");

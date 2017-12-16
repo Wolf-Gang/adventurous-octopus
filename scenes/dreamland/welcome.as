@@ -33,8 +33,12 @@ void frog1()
   set_atlas(froggo, "swim_right");
 	animation::start(froggo);
   set_position(froggo, vec(25.5, -12));
-	fx::fade_out(2, threaded());
-  move(froggo, vec(28, -12), 2);
+	
+	thread thread_frogmove;
+	fx::fade_out(2, thread_frogmove);
+  move(froggo, vec(28, -12), 2, thread_frogmove);
+	thread_frogmove.wait();
+	
 	set_flag("frog_travel");
   load_scene("dreamland/residential");
 }
