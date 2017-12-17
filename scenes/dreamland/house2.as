@@ -1,19 +1,15 @@
-
-#include "../backend/dreamland_effects.as"
-
 entity housedude;
 
 [start]
 void start()
 {
 	music::open("doodle108");
-	music::volume(70);
+	music::set_volume(0.7);
 	//set_position(get_player(), vec(0, 0));
   housedude = add_character("voidian");
   set_position(housedude, vec(-3.5, 0));
   set_direction(housedude, direction::left);
-  wait(.2);
-  remove_dreamland_effects();
+  wait(0.2);
 }
 
 int talk_count;

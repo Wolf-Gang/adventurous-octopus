@@ -170,11 +170,15 @@
         <trigger x="5" y="4.5" w="4" h="0.5" group="unicorn1"/>
         <wall x="0.5" y="-15.3125" w="3.5" h="0.8125"/>
         <button x="2" y="-15.5" w="1" h="1" group="talktohamster1"/>
-        <button x="23.5" y="-13" w="1" h="1" group="frog1"/>
         <button x="5.6875" y="-11.34375" w="0.625" h="0.84375" group="house_door"/>
         <wall x="2.5" y="4.5" w="0.5" h="3"/>
         <wall x="2" y="4.5" w="0.5" h="0.5"/>
         <wall x="1.5" y="1.5" w="0.5" h="3"/>
         <door x="5.5" y="-11.5" w="1" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="worfel/shop" offsetx="0" offsety="1"/>
+        <button x="23.5" y="-13" w="1" h="1" group="frog1"/>
+        <wall x="23.5" y="-12.5" w="1" h="0.5"/>
+        <wall x="20" y="-13.5" w="5" h="0.5"/>
+        <wall x="15.625" y="-6.6875" w="9.375" h="0.6875"/>
+        <wall x="25" y="-13" w="0.5" h="6.5"/>
     </collisionboxes>
 </scene>
