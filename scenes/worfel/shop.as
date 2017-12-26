@@ -24,9 +24,6 @@ void make_counter()
   left_counter  = add_entity("shop_tilemap", "counter");
   right_counter = add_entity("shop_tilemap", "counter");
   
-  //set_anchor(left_counter, anchor::topleft);
-  //set_anchor(right_counter, anchor::topleft);
-  
   set_position(left_counter,  vec(1.5, 2));
   set_position(right_counter, vec(4.5, 2));
 }
@@ -46,10 +43,9 @@ entity shopkeep;
 void add_shopkeep()
 {
   shopkeep = add_entity("shopkeep", (has_flag("shopguy_intro") ? "default:default" : "hello"));
-  //set_anchor(shopkeep, anchor::top);
   set_position(shopkeep, pixel(96, 50));
   if(!has_flag("shopguy_intro"))
-    set_z(shopkeep, -.761);
+    set_z(shopkeep, -24/32);
 }
 
 [start]
