@@ -2,7 +2,9 @@
     <map>
         <texture>shop_tilemap</texture>
         <layer id="0">
-            <wall x="1" y="-11" w="4" h="11"/>
+            <wall x="1" y="-11" w="4" h="10"/>
+            <wall x="1" y="-1" w="3"/>
+            <door_frame x="4" y="-1"/>
             <floor x="1" y="0" w="4" h="3"/>
             <floor x="1" y="3" w="4"/>
         </layer>
@@ -11,12 +13,16 @@
         </layer>
     </map>
     <collisionboxes>
-        <wall x="1" y="1.59375" w="4" h="0.15625"/>
+        <wall x="1" y="1.59375" w="2.96875" h="0.15625"/>
         <wall x="1" y="4" w="1" h="1"/>
-        <wall x="0" y="2" w="1" h="2"/>
-        <wall x="5" y="2" w="1" h="2"/>
+        <wall x="0" y="0" w="1" h="4"/>
+        <wall x="5" y="0" w="1" h="4"/>
         <wall x="4" y="4" w="1" h="1"/>
         <button x="2" y="1" w="2" h="1" group="shopguyy"/>
         <door x="2" y="4" w="2" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="dreamland/welcome" offsetx="0" offsety="-0.69999999"/>
+        <wall x="1" y="-1" w="4" h="1"/>
+        <door x="4" y="-1" w="1" h="1" group="shop_backdoor" name="backdoor" destination="" scene="" offsetx="0" offsety="0.5"/>
+        <door x="-4.40625" y="-2.46875" w="0.03125" h="0.0625" name="" destination="" scene="" offsetx="0" offsety="0"/>
+        <wall x="4" y="1.59375" w="1" h="0.15625" group="counter_right"/>
     </collisionboxes>
 </scene>

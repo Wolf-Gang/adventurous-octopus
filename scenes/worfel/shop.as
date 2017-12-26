@@ -1,3 +1,5 @@
+//go here for *all* dialogue
+#include "shop_dialogue.as"
 
 [start]
 void start()
@@ -8,6 +10,9 @@ void start()
   fx::fade_in(1.5);
 }
 
+entity right_counter;
+entity left_counter;
+
 [start]
 void make_counter()
 {
@@ -15,8 +20,8 @@ void make_counter()
   set_anchor(counter, anchor::topleft);
   set_position(counter, vec(2, 1));
   
-  entity left_counter  = add_entity("shop_tilemap", "counter");
-  entity right_counter = add_entity("shop_tilemap", "counter");
+  left_counter  = add_entity("shop_tilemap", "counter");
+  right_counter = add_entity("shop_tilemap", "counter");
   
   set_anchor(left_counter, anchor::topleft);
   set_anchor(right_counter, anchor::topleft);
@@ -25,56 +30,24 @@ void make_counter()
   set_position(right_counter, vec(4, 1));
 }
 
+entity back_door;
+
+[start]
+void make_door()
+{
+  back_door = add_entity("shop_tilemap", "back_door");
+  set_position(back_door, vec(4.5, 0));
+}
+
 entity shopkeep;
 
 [start]
 void add_shopkeep()
 {
-  shopkeep = add_entity("shopkeep", "hello");
+  shopkeep = add_entity("shopkeep", (has_flag("heyllo_intro") ? "default:default" : "hello"));
   set_anchor(shopkeep, anchor::top);
   set_position(shopkeep, vec(3, .3));
   if(!has_flag("heyllo_intro"))
     set_z(shopkeep, -.761);
-}
-
-[group shopguyy]
-void heyllo()
-{
-  if(!has_flag("heyllo_intro"))
-  {
-    rise();
-    wait(.5);
-    say("heyllo.");
-    say("weylcome to shop.");
-    fsay("you ylike... ");
-    wait(1.312);
-    append("potion?");
-    if(select("yes.", "no.") == option::first)
-    {
-      say("sorry.");
-      nl("potion not ready now.");
-      nl("and have big order to fiyll.");
-      say("apoylogies for inconvenience.");
-    }
-    else
-    {
-      say("that okay.");
-    }
-    set_flag("heyllo_intro");
-  }
-  else
-  {
-    say("how you?");
-  }
-  
-  narrative::end();
-  player::lock(false);
-  return;
-}
-
-void rise()
-{
-  player::lock(true);
-  move_z(shopkeep, 0, .2);
 }
 

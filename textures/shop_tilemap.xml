@@ -4,4 +4,6 @@
     <counter x="96" y="0" w="32" h="32"/>
     <carpet x="0" y="32" w="64" h="32"/>
     <wall x="64" y="32" w="32" h="32"/>
+    <door_frame x="96" y="32" w="32" h="32"/>
+    <back_door x="0" y="64" w="32" h="32"/>
 </atlas>
