@@ -1,0 +1,10 @@
+<atlas>
+    <grass x="0" y="0" w="32" h="32"/>
+    <path x="32" y="0" w="32" h="32"/>
+    <path_end x="64" y="0" w="32" h="32"/>
+    <redflower x="96" y="0" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <blueflower x="96" y="16" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <orangeflower x="96" y="32" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <purpleflower x="96" y="48" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <tree x="0" y="32" w="60" h="87"/>
+</atlas>

@@ -68,7 +68,6 @@ void hmmmmmm()
     deny();
   }
   set_flag("hmmmm");
-  set_flag("hmmmm");
 }
 
 void begin_quest()

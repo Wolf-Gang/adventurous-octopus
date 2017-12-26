@@ -21,7 +21,7 @@
         <button x="2" y="1" w="2" h="1" group="shopguyy"/>
         <door x="2" y="4" w="2" h="1" group="dorr" name="frontdorr" destination="frontdorr" scene="dreamland/welcome" offsetx="0" offsety="-0.69999999"/>
         <wall x="1" y="-1" w="3" h="1"/>
-        <door x="4" y="-1" w="1" h="1" group="shop_backdoor" name="backdoor" destination="shop" scene="worfel/woods" offsetx="0" offsety="0.69999999"/>
+        <door x="4" y="-1" w="1" h="1" group="shop_backdoor" name="back_door" destination="shop" scene="worfel/woods" offsetx="0" offsety="1"/>
         <wall x="4" y="1.59375" w="1" h="0.15625" group="counter_right"/>
     </collisionboxes>
 </scene>
