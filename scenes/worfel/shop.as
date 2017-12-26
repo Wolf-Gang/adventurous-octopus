@@ -17,17 +17,17 @@ entity left_counter;
 void make_counter()
 {
   entity counter = add_entity("shop_tilemap", "sale_counter");
-  set_anchor(counter, anchor::topleft);
-  set_position(counter, vec(2, 1));
+  //set_anchor(counter, anchor::topleft);
+  set_position(counter, vec(3, 2));
   
   left_counter  = add_entity("shop_tilemap", "counter");
   right_counter = add_entity("shop_tilemap", "counter");
   
-  set_anchor(left_counter, anchor::topleft);
-  set_anchor(right_counter, anchor::topleft);
+  //set_anchor(left_counter, anchor::topleft);
+  //set_anchor(right_counter, anchor::topleft);
   
-  set_position(left_counter,  vec(1, 1));
-  set_position(right_counter, vec(4, 1));
+  set_position(left_counter,  vec(1.5, 2));
+  set_position(right_counter, vec(4.5, 2));
 }
 
 entity back_door;
@@ -44,10 +44,20 @@ entity shopkeep;
 [start]
 void add_shopkeep()
 {
-  shopkeep = add_entity("shopkeep", (has_flag("heyllo_intro") ? "default:default" : "hello"));
-  set_anchor(shopkeep, anchor::top);
-  set_position(shopkeep, vec(3, .3));
-  if(!has_flag("heyllo_intro"))
+  shopkeep = add_entity("shopkeep", (has_flag("shopguy_intro") ? "default:default" : "hello"));
+  //set_anchor(shopkeep, anchor::top);
+  set_position(shopkeep, pixel(96, 50));
+  if(!has_flag("shopguy_intro"))
     set_z(shopkeep, -.761);
+}
+
+[start]
+void open_door()
+{
+  if(!has_flag("begin_shopguy_worfel_quest"))
+    return;
+  set_z(back_door, 1);
+  set_visible(right_counter, false);
+  group::enable("counter_right", false);
 }
 

@@ -25,13 +25,13 @@ void heyllo()
   }
   
   narrative::hide();
-  wait(.5);
+  wait(1.5);
   fsay("hmmm...");
-  wait(.5);
+  wait(1.2489);
   
   append(" oh!");
   nl("i have thing.");
-  append(" but only if you heylp me.");
+  nl("but only if you heylp me.");
   
   set_flag("shopguy_intro");
   
@@ -62,16 +62,9 @@ void begin_quest()
   nl("it wiyll teyll you what to do.");
   narrative::hide();
   
-  set_visible(right_counter, false);
-  group::enable("counter_right", false);
   open_door();
   
   say("go out this way.");
-}
-
-void open_door()
-{
-  move_z(back_door, 1, 1);
 }
 
 void talk_quest()
