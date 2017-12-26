@@ -66,14 +66,14 @@ void create_flowers()
 void create_cloud()
 {  
 	entity cloud = add_entity("yet another cloud");
-  set_depth(cloud, fixed_depth::background);
+	set_depth(cloud, fixed_depth::background);
 	cloud_movement(cloud, .374, -2, -3);
 }
 
 [start]
 void create_cloud_2()
 {  
-    wait(random(19400, 26700) / 1000); // Lag it behind the other one
+	wait(random(19400, 26700) / 1000); // Lag it behind the other one
 	entity cloud = add_entity("yet again a cloud");
 	cloud_movement(cloud, .513, 1, 1.5);
 }
@@ -107,11 +107,9 @@ void mainmenu()
     meun_text.insertLast(entity(main.get_option(i)));
   
   bool exit = false;
-  
+	
 	do
   {
-    
-    
     switch(main.tick())
     {
       case menu_command::back:
@@ -123,17 +121,14 @@ void mainmenu()
       
       //'Start'
       case 0:
-        
-        music::fade_volume(0, 2);
-        fx::fade_out(2);
+        fx::scene_fade_out();
         load_scene("thoughts/entrance");
         break;
         
       //'Continue'
       case 1:
-        
-        if(are_there_saves()) {
-          
+        if(are_there_saves())
+				{
           set_color(meun_text[0], 255, 255, 255, 50);
           set_color(meun_text[2], 255, 255, 255, 50);
           main.hide_cursor();
@@ -143,23 +138,18 @@ void mainmenu()
           main.show_cursor();
           set_color(meun_text[0], 255, 255, 255, 255);
           set_color(meun_text[2], 255, 255, 255, 255);
-          
         }
-        
         break;
         
       //'Exit'
       case 2:
-        
         abort_game();
         break;
-        
     }
-    
 	} while(yield() && !exit);
-  
+	
+  fx::scene_fade_out();
   load_scene("overture");
-  
 }
 
 void saves_menu() {

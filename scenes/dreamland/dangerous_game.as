@@ -9,7 +9,7 @@
 void start()
 {
 	music::open("doodle58");
-	music::volume(100);
+	music::set_volume(100);
 	set_position(get_player(), vec(17.5, 6.5));
 }
 

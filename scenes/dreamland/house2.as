@@ -12,7 +12,7 @@ void start()
   wait(0.2);
 }
 
-int talk_count;
+int talk_count; // you can use the save value system, it might be better.
 
 [start]
 void dialogue_check() {

@@ -1,7 +1,7 @@
 [start]
 void start()
 {
-  music::volume(70);
+  music::set_volume(70);
   music::open("scribbles86");
 	set_position(get_player(), vec(5, 7));
 }
@@ -60,7 +60,7 @@ void sivoraintro()
   */
   
   
-  music::volume(70);
+  music::set_volume(70);
   music::open("doodle167-AFV-Sivora");
   
   narrative::show();

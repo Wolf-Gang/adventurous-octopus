@@ -5,7 +5,7 @@ void start()
 {
 	music::set_volume(0);
 	music::open("doodle110_2-AFV-Overture");
-	music::fade_volume(0.7, 5);
+	music::fade_volume(0.7, 5, thread());
 	set_visible(get_player(), false);
   pause::lock(true);
 }
@@ -59,8 +59,7 @@ void stuff()
 	say("Wear this mask and lose yourself.");
 	
 	say("For your adventure starts here.");
-	music::fade_volume(0, 3);
-	fx::fade_out(3);
+	fx::scene_fade_out();
 	narrative::end();
 	load_scene("mainmenu");
 }

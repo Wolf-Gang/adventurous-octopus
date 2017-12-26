@@ -155,6 +155,7 @@ void talk_door()
 [start]
 void start()
 {
+	music::set_volume(0.7);
   music::open("doodle169-AFV-Dreamland-Guitar");
 	if (has_flag("frog_travel"))
 	{
