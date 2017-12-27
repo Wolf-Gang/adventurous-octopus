@@ -4,7 +4,7 @@
 
 entity worfel;
 
-const vec worfel_spot (4.5, 3.5);
+const vec worfel_spot (4.5, 3.51);
 
 [start]
 void giverofflowers()
@@ -63,5 +63,42 @@ void create_trees()
         create_tree(pos);
     }
   }
+}
+
+[start]
+void flowers()
+{
+  //create_flower_patch(vec(3, 1.5),  vec(6, 2));
+  
+  create_flower_patch(vec(1.75, 1.5), vec(12, 6), 3, flower_type::red);
+}
+
+[group worfel_notice]
+void flowery_thing()
+{
+  player::lock(true);
+  
+  narrative::show();
+  narrative::set_expression("question_expr", "default:default");
+  
+  say("Hmmm?");
+  append(" A visitor?");
+  
+  narrative::hide();
+  
+  focus::move(worfel_spot, 1);
+  
+  move(get_player(), vec(4.5, 6), speed(2));
+  set_direction(get_player(), direction::up);
+  
+  narrative::set_expression("worfel_expressions", "default:default");
+  
+  say("It is a very visitor, indeed.");
+  
+  say("It is from shop, yes?");
+  nl("Worfel must ask it for help.");
+  
+  narrative::end();
+  player::lock(false);
 }
 
