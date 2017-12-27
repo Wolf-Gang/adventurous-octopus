@@ -16,6 +16,9 @@ void giverofflowers()
 void start()
 {
   set_position(get_player(), vec(4.5, 17.8));
+  
+  if(has_flag("spreader_of_joy"))
+    group::enable("worfel_notice", false);
 }
 
 const vec tree_box_offset = pixel(-11, -5);
@@ -68,8 +71,6 @@ void create_trees()
 [start]
 void flowers()
 {
-  //create_flower_patch(vec(3, 1.5),  vec(6, 2));
-  
   create_flower_patch(vec(1.75, 1.5), vec(12, 6), 3, flower_type::red);
 }
 
@@ -86,7 +87,8 @@ void flowery_thing()
   
   narrative::hide();
   
-  focus::move(worfel_spot, 1);
+  focus::move(worfel_spot, 2);
+  wait(.5);
   
   move(get_player(), vec(4.5, 6), speed(2));
   set_direction(get_player(), direction::up);
@@ -98,7 +100,53 @@ void flowery_thing()
   say("It is from shop, yes?");
   nl("Worfel must ask it for help.");
   
+  narrative::hide();
+  
+  //worfel_move(worfel_spot + vec(-1, 0));
+  
+  say("Dreamland once had flowers.");
+  nl("Flowers everywhere.");
+  
+  say("Now, nearly all the flowers are gone.");
+  nl("Empty clouds stretch from horizon to horizon,");
+  append(" nary a petal in sight.");
+  
+  say("The only ones left are where that child went missing.");
+  
+  //worfel_move(worfel_spot + vec(1, 0));
+  
+  say("The rest of the world, too, lacks flowers.");
+  nl("Trees and bushes abound, but blossoms are absent.");
+  
+  say("This is what Worfel needs its help with.");
+  
+  //worfel_move(worfel_spot);
+  
+  say("Worfel must protect this forest.");
+  nl("But it can go out, and spread the flowers.");
+  
+  get_flower();
+  
+  say("Take this, and give joy.");
+  nl("Then, maybe, the flowers will come back.");
+  
+  focus::move(get_position(get_player()), .5);
+  focus::player();
+  
+  set_flag("spreader_of_joy");
+  group::enable("worfel_notice", false);
   narrative::end();
   player::lock(false);
+}
+
+void worfel_move(vec pPos)
+{
+  create_thread(
+  function(pArgs)
+  {
+    move(entity(pArgs["worfel"]), vec(pArgs["pPosition"]), speed(.3));
+  }, dictionary = {
+  {"worfel", worfel},
+  {"pPosition", pPos}});
 }
 

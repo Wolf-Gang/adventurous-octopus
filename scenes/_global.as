@@ -2,4 +2,4 @@
 // Only use when you REALLY REALLY need to.
 
 #include "backend/pause.as"
-//#include "backend/worfel_quest.as"
+#include "backend/worfel_quest.as"

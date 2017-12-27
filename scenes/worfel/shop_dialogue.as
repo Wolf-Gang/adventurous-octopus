@@ -54,7 +54,7 @@ void hmmmmmm()
   
   append(" oh!");
   nl("i have thing.");
-  say("but only if you heylp me.");
+  say("but only if you heylp.");
   
   set_flag("hmmmm");
   
