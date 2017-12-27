@@ -4,7 +4,7 @@
 
 //move the shop closer to the end of dreamland when we get to that point
 //so as to not overload the player with new things or distract overmuch
-//from the main story
+//from the main story of the area
 
 
 [start]

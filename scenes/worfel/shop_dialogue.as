@@ -91,6 +91,11 @@ void talk_quest()
   nl("do what it says.");
 }
 
+void joy_count()
+{
+  say("Michael do more dreamland");
+}
+
 void howyou()
 {
   say("how you?");
@@ -127,9 +132,13 @@ void dialogue()
         deny();
       }
     }
-    else if(!has_flag("shopguy_quest_compylete"))
+    else if(!has_flag("spreader_of_joy"))
     {
       talk_quest();
+    }
+    else if(!has_flag("dreamland_flowers_returned"))
+    {
+      joy_count();
     }
   }
   else
