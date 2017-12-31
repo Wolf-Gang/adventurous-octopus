@@ -17,19 +17,20 @@
             <ground x="-3" y="-8" w="3" h="9"/>
             <ground x="0" y="-8" w="21"/>
             <ground x="0" y="-7" w="12" h="14"/>
-            <ground x="12" y="-7" w="7" h="14" r="3"/>
-            <ground x="19" y="-7" w="2" h="4"/>
-            <water x="21" y="-5" w="4" h="3"/>
+            <ground x="12" y="-7" w="7" r="3"/>
+            <ground x="19" y="-7" w="2"/>
+            <ground x="12" y="-6" w="4" h="6" r="3"/>
+            <cloudwall x="16" y="-6" w="5" h="5"/>
+            <water x="21" y="-5" w="4" h="4"/>
             <water x="25" y="-5" w="4" h="7"/>
-            <ground x="19" y="-3" h="6"/>
-            <ground x="20" y="-3" r="3"/>
-            <ground x="20" y="-2" w="4" h="3" r="3"/>
+            <water x="16" y="-1" w="9" h="3"/>
+            <cloudwall x="12" y="0" w="4" h="5"/>
             <ground x="-4" y="1" w="4" h="3"/>
+            <water x="16" y="2" w="6" h="3"/>
             <ground x="-3" y="4" w="3" h="3"/>
-            <ground x="19" y="4"/>
-            <ground x="19" y="6"/>
+            <water x="12" y="5" w="10" h="2"/>
             <ground x="-3" y="7" w="15"/>
-            <ground x="12" y="7" w="7" r="3"/>
+            <water x="12" y="7" w="10"/>
         </layer>
         <layer id="1">
             <fence_lr x="1" y="-15.5"/>
@@ -80,7 +81,8 @@
             <waterfall_mist x="25" y="-13.5" w="4"/>
             <side_clouds x="24.5" y="-13" h="3"/>
             <side_clouds x="24.5" y="-11.5"/>
-            <side_clouds x="21" y="-10" w="3" r="1"/>
+            <side_cloud_corner x="21" y="-10" r="1"/>
+            <side_clouds x="22" y="-10" w="2" r="1"/>
             <side_clouds x="23.5" y="-10" r="1"/>
             <side_clouds_edge x="24.5" y="-10" r="1"/>
             <side_cloud_corner x="8" y="-7" r="1"/>
@@ -88,16 +90,22 @@
             <stairs_d x="13" y="-7"/>
             <side_clouds x="14" y="-7" r="1"/>
             <side_cloud_corner x="15" y="-7" r="2"/>
-            <side_clouds x="16" y="-7" w="5" r="3"/>
             <side_clouds x="8" y="-6" h="4"/>
             <side_clouds x="15" y="-6" h="5" r="2"/>
+            <side_cloud_corner x="16" y="-6" r="1"/>
+            <side_clouds x="17" y="-6" w="4" r="1"/>
+            <side_clouds_edge x="21" y="-6" r="1"/>
+            <side_clouds x="16" y="-5" h="5"/>
             <stairs_r x="8" y="-2"/>
             <side_cloud_corner x="8" y="-1"/>
             <side_clouds x="9" y="-1" w="6" r="3"/>
             <side_cloud_corner x="15" y="-1" r="3"/>
-            <side_clouds x="11" y="0" h="7" r="2"/>
+            <side_cloud_corner x="12" y="0" r="1"/>
+            <side_clouds x="13" y="0" w="3" r="1"/>
+            <side_clouds_edge x="16" y="0" r="1"/>
             <purpleflower x="1" y="1"/>
             <purpleflower x="10.5" y="1"/>
+            <side_clouds x="12" y="1" h="6"/>
             <purpleflower x="1.5" y="1.5"/>
             <purpleflower x="10" y="1.5"/>
             <redflower x="1" y="2"/>
@@ -139,28 +147,22 @@
             <side_clouds_edge x="3" y="7"/>
             <side_clouds_edge x="8" y="7" r="3"/>
             <side_clouds x="9" y="7" w="2" r="3"/>
-            <side_cloud_corner x="11" y="7" r="3"/>
+            <side_clouds_edge x="11" y="7"/>
+            <side_clouds x="12" y="7"/>
         </layer>
         <layer id="3">
             <cloudwall_bottom x="20" y="-13" w="5"/>
-            <side_clouds_edge x="15" y="-7" r="3"/>
-            <side_clouds_edge x="11" y="-1" r="3"/>
+            <side_clouds x="21" y="-9" h="2"/>
+            <side_clouds x="21" y="-7"/>
         </layer>
     </map>
     <collisionboxes>
-        <wall x="9" y="2.5" w="0.5" h="0.5"/>
-        <wall x="9.5" y="2" w="0.5" h="0.5"/>
-        <wall x="10" y="1.5" w="0.5" h="0.5"/>
-        <wall x="10.5" y="1" w="1.46875" h="0.5"/>
-        <wall x="8.3125" y="7.5" w="0.1875" h="0.5"/>
-        <wall x="8.5" y="7.3125" w="0.5" h="0.1875"/>
-        <wall x="9" y="3" w="0.5" h="4.28125"/>
+        <wall x="8.3125" y="7.3125" w="3.375" h="0.6875"/>
         <wall x="3" y="7.3125" w="0.5" h="0.1875"/>
         <wall x="3" y="4.5" w="1.5" h="1"/>
         <wall x="4.53125" y="4.5" w="0.5" h="0.5"/>
         <wall x="3.5" y="8" w="5" h="0.5"/>
         <wall x="3.34375" y="7.46875" w="0.34375" h="0.53125"/>
-        <wall x="11" y="0.5" w="8" h="0.5"/>
         <wall x="8.34375" y="-6.71875" w="0.34375" h="4.9375"/>
         <wall x="14" y="-6.6875" w="1.65625" h="0.375"/>
         <wall x="15.3125" y="-6.3125" w="0.34375" h="5.59375"/>
@@ -172,7 +174,6 @@
         <wall x="5.5" y="-11.75" w="3" h="1.25"/>
         <button x="13" y="-2.34375" w="1" h="1" group="eggswing"/>
         <wall x="9.71875" y="-5.25" w="1.5" h="1.125"/>
-        <trigger x="5" y="4.5" w="4" h="0.5" group="unicorn1"/>
         <wall x="0.5" y="-15.3125" w="3.5" h="0.8125"/>
         <button x="2" y="-15.5" w="1" h="1" group="talktohamster1"/>
         <button x="5.6875" y="-11.34375" w="0.625" h="0.84375" group="house_door"/>
@@ -183,7 +184,11 @@
         <button x="23.5" y="-13" w="1" h="1" group="frog1"/>
         <wall x="23.5" y="-12.5" w="1" h="0.5"/>
         <wall x="20" y="-13.5" w="5" h="0.5"/>
-        <wall x="15.625" y="-6.6875" w="9.375" h="0.6875"/>
-        <wall x="25" y="-13" w="0.5" h="6.5"/>
+        <wall x="15.65625" y="-5.5625" w="5.875" h="0.6875"/>
+        <wall x="25" y="-13" w="0.25" h="3.75"/>
+        <wall x="12.40625" y="-0.3125" w="0.28125" h="8.28125"/>
+        <wall x="21.5" y="-9.53125" w="0.21875" h="3.96875"/>
+        <wall x="21.75" y="-9.53125" w="3.25" h="0.21875"/>
+        <wall x="11" y="8" w="2" h="1"/>
     </collisionboxes>
 </scene>
