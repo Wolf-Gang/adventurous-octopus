@@ -141,7 +141,7 @@ void phlooph_game()
 	narrative::hide();
 	
 	
-	music::volume(70);
+	music::set_volume(70);
 	music::open("doodle109");
 	bros.all_talk("HAHAHAHA");
 	wait(1);
@@ -323,7 +323,7 @@ void phlooph_game()
   narrative::set_expression("mrphlooph icon", "sleepy");
   say("...");
   
-  music::volume(0);
+  music::set_volume(0);
   music::open("doodle111");
   music::fade_volume(70, 6);
   

@@ -91,3 +91,22 @@ bool confirm_save() {
   
 }
 
+array<entity> gifters (1);
+
+void show_gifts()
+{
+  if(user_data::has_gift("Cloud"))
+  {
+    gifters[0] = add_entity("little_phlooph");
+    make_gui(gifters[0], 3);
+    set_position(gifters[0], pixel(160, 200));
+  }
+}
+
+void hide_gifters()
+{
+  for(uint i = 0; i < gifters.length(); i++)
+    if(gifters[i].is_valid())
+      remove_entity(gifters[i]);
+}
+
