@@ -1,4 +1,10 @@
 
+enum gift_received
+{
+  not_received = 0,
+  received
+}
+
 abstract class gift
 {
   gift() {}
@@ -8,60 +14,104 @@ abstract class gift
     mName = pName;
     mDesc = pDescription;
     
-    load_count();
+    mTexture = pTexture;
+    mAtlas = pAtlas;
   }
   
-  string name;
-  string desc;
+  protected string mName;
+  protected string mDesc;
   
-  string texture;
-  string atlas;
+  string get_name()
+  {
+    return mName;
+  }
   
-  private bool mRecieved;
+  string get_desc()
+  {
+    return mDesc;
+  }
+  
+  protected string mTexture;
+  protected string mAtlas;
+  
+  string get_texture()
+  {
+    return mTexture;
+  }
+  
+  string get_atlas()
+  {
+    return mAtlas;
+  }
+  
+  entity create_entity()
+  {
+    entity e = add_entity(mTexture, mAtlas);
+    return e;
+  }
+  
+  protected bool mReceived;
   
   void give()
   {
-    mRecieved = true;
+    mReceived = true;
+    save_received();
   }
   
   void remove()
   {
-    mrecieved = false;
+    mReceived = false;
+    save_received();
   }
   
-  bool has()
+  bool has_gift()
   {
-    return mRecieved;
+    return mReceived;
   }
   
   void use()
   {
     say("You should not see this message. Check the debug log.");
-    dprint("Gift " + mName + " was used without a use() function defined.");
+    eprint("Gift " + mName + " was used without a use() function defined.");
   }
   
-  private void load_recieved()
+  protected void load_received()
   {
-    if(values::exists("player/gifts/" + mName + "/recieved"))
+    if(values::exists("player/gifts/" + mName + "/received"))
     {
-      mRecieved = values::get("player/gifts/" + mName + "/recieved");
+      mReceived = (values::get_int("player/gifts/" + mName + "/received") == gift_received::received);
     }
     else
     {
-      mrecieved = false;
-      save_recieved();
+      mReceived = false;
+      save_received();
     }
   }
   
-  private void save_recieved()
+  protected void save_received()
   {
-    values::set("player/gifts/" + mName + "/recieved", mRecieved);
+    if(mReceived)
+      values::set("player/gifts/" + mName + "/received", gift_received::received);
+    else
+      values::set("player/gifts/" + mName + "/received", gift_received::not_received);
   }
 }
 
 array<gift> gift_list;
 
+bool player_has_a_gift()
+{
+  for(uint i = 0; i < gift_list.length() i++)
+    if(gift_list[i].has_gift())
+      return true;
+  return false;
+}
+
 class cloud_thingy : gift
 {
-  
+  void use()
+  {
+    
+  }
 }
+

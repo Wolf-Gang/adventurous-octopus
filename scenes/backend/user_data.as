@@ -19,15 +19,25 @@ namespace user_data
     {
       
     }
+    
+    void save_inv()
+    {
+      values::remove(player_inventory);
+      for(uint i = 0; i < inventory.length() i++)
+        values::set(player_inventory + "/" + formatInt(i));
+    }
   }
   
   //--------------------------Inventory---------------------------------------//
   
   array<item@> inventory;
   
-  array<item@> get_inventory()
+  array<string> get_inventory_list()
   {
-    return inventory;
+    array<string> item_names;
+    for(uint i = 0; i < inventory.length(); i++)
+      item_names.insertLast(inventory[i].get_name());
+    return item_names;
   }
   
   bool has_item(const string&in pName)
@@ -43,7 +53,7 @@ namespace user_data
   {
     uint slot = 0;
     for(; slot < inventory.length(); slot++)
-      if(inventory[slot] == pName)
+      if(inventory[slot].get_name() == pName)
         return slot;
     return -1;
   }
@@ -51,14 +61,13 @@ namespace user_data
   void add_inventory(item@ pItem)
   {
     inventory.insertLast(pItem);
-    values::save(user_data::priv::player_inventory + "/" + formatInt(inventory.length() - 1), pItem.name);
+    values::set(user_data::priv::player_inventory + "/" + formatInt(inventory.length() - 1), pItem.name);
   }
   
-  void remove_inventory(const string&in pName/*, const uint pCount = 1*/)
+  void remove_inventory(const string&in pName)
   {
     if(has_item(pName))
-      inventory.removeAt(uint(get_item_slot(pName)));
-      values::remove(user_data::priv::player_inventory + "/" + formatInt(get_item_slot(pName)));
+      remove_inventory(get_item_slot(pName));
     else
       dprint("Attempt to remove non-held item " + pName);
   }
@@ -66,7 +75,7 @@ namespace user_data
   void remove_inventory(uint pSlot)
   {
     inventory.removeAt(pSlot);
-    values::remove(user_data::priv::player_inventory + "/" + formatInt(pSlot));
+    user_data::priv::save_inv();
   }
   
   //------------------------------Gifts------------------------------------------//
@@ -74,12 +83,11 @@ namespace user_data
   void give_gift(gift@ pGift)
   {
     pGift.give();
-    values::save(user_data::priv::player_gifts + "/" + pGift.name, "Given");
   }
   
-  void remove_gift()
+  void remove_gift(gift@ pGift)
   {
-    
+    pGift.remove();
   }
 }
 

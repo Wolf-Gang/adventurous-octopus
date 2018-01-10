@@ -65,7 +65,7 @@ const vec pause_option_padding = pixel(5, 7);
 void open_menu()
 {
   array<string> pause_options = {"Items"};
-  if(user_data::get_gift_list().length() > 0)
+  if(player_has_a_gift())
     pause_options.insertLast("Gifts");
   
   menu pause_menu (pause::priv::make_text_items(pause_options), pause_menu_position, pause_option_padding, vec(1, 3));
