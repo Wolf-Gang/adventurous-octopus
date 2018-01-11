@@ -23,8 +23,8 @@ namespace user_data
     void save_inv()
     {
       values::remove(player_inventory);
-      for(uint i = 0; i < inventory.length() i++)
-        values::set(player_inventory + "/" + formatInt(i));
+      for(uint i = 0; i < inventory.length(); i++)
+        values::set(player_inventory + "/" + formatInt(i), "dfalh");
     }
   }
   
@@ -79,6 +79,15 @@ namespace user_data
   }
   
   //------------------------------Gifts------------------------------------------//
+  
+  array<string> get_gift_list()
+  {
+    array<string> names;
+    for(uint i = 0; i < gift_list.length(); i++)
+      if(gift_list[i].has_gift())
+        names.insertLast(gift_list[i].get_name());
+    return names;
+  }
   
   void give_gift(gift@ pGift)
   {

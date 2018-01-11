@@ -107,8 +107,7 @@ void open_menu()
 
 void open_inv()
 {
-  array<string> inv_list = user_data::get_inventory_items();
-  array<entity> inv_sprites(inv_list.length());
+  array<string> inv_list = user_data::get_inventory_list();
   
   /*
   for(uint i = 0; i < inv_sprites.length(); i++)
@@ -141,7 +140,7 @@ void open_inv()
       default:
         if(inv_list.length() == 0)
           break;
-        say(user_data::get_item_desc(inv_list[sel]));
+        say(user_data::inventory[sel].get_desc());
         narrative::end();
         break;
     }
@@ -151,13 +150,14 @@ void open_inv()
 
 void open_gifts()
 {
-  array<string> gift_list = user_data::get_gift_list();
+  array<string> gift_names = user_data::get_gift_list();
   array<array<string>> gift_sprites;
   
   for(uint i = 0; i < gift_list.length(); i++)
-    gift_sprites.insertLast(user_data::get_gift_sprite(gift_list[i]));
+    if(gift_list[i].has_gift())
+        gift_sprites.insertLast(array<string> = {gift_list[i].get_texture(), gift_list[i].get_atlas()});
   
-  menu gift_menu (pause::priv::make_text_sprite_items(gift_list, gift_sprites), pause_menu_position, pause_option_padding, vec(1, gift_list.length()));
+  menu gift_menu (pause::priv::make_text_sprite_items(gift_names, gift_sprites), pause_menu_position, pause_option_padding, vec(1, gift_list.length()));
   
   bool exit = false;
   
@@ -174,15 +174,8 @@ void open_gifts()
       case menu_command::nothing:
         break;
         
-      case 0: //Phloophs
-        say(user_data::get_gift_description(gift_list[sel]));
-        narrative::end();
-        break;
-      
-      case 1: //Sivora
-        fx::sound("bells");
-        say(user_data::get_gift_description(gift_list[sel]));
-        narrative::end();
+      default:
+        
         break;
     }
   }

@@ -3,6 +3,7 @@
     <map>
         <texture>lost</texture>
         <layer id="0">
+            <edge x="0" y="-1" w="10"/>
             <edge_ce x="-0.5" y="-0.5" r="3"/>
             <edge x="0" y="-0.5"/>
             <edge x="0.5" y="-0.5"/>
@@ -23,35 +24,15 @@
             <edge x="8" y="-0.5"/>
             <edge x="8.5" y="-0.5"/>
             <edge x="9" y="-0.5"/>
-            <edge x="9.5" y="-0.5"/>
             <edge_ce x="10" y="-0.5"/>
-            <edge x="-0.5" y="0" h="8" r="3"/>
+            <edge x="-1" y="0" h="8" r="3"/>
+            <edge x="-0.5" y="0" r="3"/>
             <wall x="0" y="0" w="10"/>
             <edge x="10" y="0" h="8" r="1"/>
-            <edge x="-0.5" y="0.5" h="8" r="3"/>
-            <edge x="10" y="0.5" h="8" r="1"/>
             <floor x="0" y="2" w="10" h="6"/>
             <edge_ce x="-0.5" y="8" r="2"/>
-            <edge x="0" y="8" r="2"/>
-            <edge x="0.5" y="8" r="2"/>
-            <edge x="1" y="8" r="2"/>
-            <edge x="1.5" y="8" r="2"/>
-            <edge x="2" y="8" r="2"/>
-            <edge x="2.5" y="8" r="2"/>
-            <edge x="3" y="8" r="2"/>
-            <edge x="3.5" y="8" r="2"/>
-            <edge x="4" y="8" r="2"/>
-            <edge x="4.5" y="8" r="2"/>
-            <edge x="5" y="8" r="2"/>
-            <edge x="5.5" y="8" r="2"/>
-            <edge x="6" y="8" r="2"/>
-            <edge x="6.5" y="8" r="2"/>
-            <edge x="7" y="8" r="2"/>
-            <edge x="7.5" y="8" r="2"/>
-            <edge x="8" y="8" r="2"/>
-            <edge x="8.5" y="8" r="2"/>
-            <edge x="9" y="8" r="2"/>
-            <edge x="9.5" y="8" r="2"/>
+            <edge x="0" y="8" w="3" r="2"/>
+            <edge x="7" y="8" w="3" r="2"/>
             <edge_ce x="10" y="8" r="1"/>
         </layer>
         <layer id="1">

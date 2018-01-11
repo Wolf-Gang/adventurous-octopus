@@ -9,44 +9,17 @@ abstract class gift
 {
   gift() {}
   
-  gift(string pName, string pDescription, string pTexture, string pAtlas = "default:default")
-  {
-    mName = pName;
-    mDesc = pDescription;
-    
-    mTexture = pTexture;
-    mAtlas = pAtlas;
-  }
+  string get_name()    {return "";}
   
-  protected string mName;
-  protected string mDesc;
+  string get_desc()    {return "";}
   
-  string get_name()
-  {
-    return mName;
-  }
+  string get_texture() {return "";}
   
-  string get_desc()
-  {
-    return mDesc;
-  }
-  
-  protected string mTexture;
-  protected string mAtlas;
-  
-  string get_texture()
-  {
-    return mTexture;
-  }
-  
-  string get_atlas()
-  {
-    return mAtlas;
-  }
+  string get_atlas()   {return "";}
   
   entity create_entity()
   {
-    entity e = add_entity(mTexture, mAtlas);
+    entity e = add_entity("vill");
     return e;
   }
   
@@ -55,13 +28,13 @@ abstract class gift
   void give()
   {
     mReceived = true;
-    save_received();
+    //save_received();
   }
   
   void remove()
   {
     mReceived = false;
-    save_received();
+    //save_received();
   }
   
   bool has_gift()
@@ -72,9 +45,10 @@ abstract class gift
   void use()
   {
     say("You should not see this message. Check the debug log.");
-    eprint("Gift " + mName + " was used without a use() function defined.");
+    eprint("Gift was used without a use() function defined.");
   }
   
+  /*
   protected void load_received()
   {
     if(values::exists("player/gifts/" + mName + "/received"))
@@ -95,13 +69,14 @@ abstract class gift
     else
       values::set("player/gifts/" + mName + "/received", gift_received::not_received);
   }
+  */
 }
 
-array<gift> gift_list;
+const array<gift@> gift_list = {};
 
 bool player_has_a_gift()
 {
-  for(uint i = 0; i < gift_list.length() i++)
+  for(uint i = 0; i < gift_list.length(); i++)
     if(gift_list[i].has_gift())
       return true;
   return false;
@@ -109,6 +84,16 @@ bool player_has_a_gift()
 
 class cloud_thingy : gift
 {
+  string get_name() override
+  {
+    return "Cloud";
+  }
+  
+  string get_desc() override
+  {
+    return "";
+  }
+  
   void use()
   {
     
