@@ -124,7 +124,7 @@ void open_inv()
   
   bool exit = false;
   
-  while(yield() && !exit)
+  while(!exit && yield())
   {
     int sel = inv.tick();
     
@@ -146,6 +146,8 @@ void open_inv()
     }
     
   }
+  
+  
 }
 
 void open_gifts()
@@ -161,7 +163,7 @@ void open_gifts()
   
   bool exit = false;
   
-  while(yield() && !exit)
+  while(!exit && yield())
   {
     int sel = gift_menu.tick();
     

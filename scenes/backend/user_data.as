@@ -17,14 +17,21 @@ namespace user_data
     [start]
     void setup()
     {
-      
+      load_inv();
     }
     
     void save_inv()
     {
       values::remove(player_inventory);
       for(uint i = 0; i < inventory.length(); i++)
-        values::set(player_inventory + "/" + formatInt(i), "dfalh");
+        values::set(player_inventory + "/" + inventory[i].get_name(), "placeholder value");
+    }
+    
+    void load_inv()
+    {
+      array<string> item_names = values::get_entries(player_inventory);
+      for(uint i = 0; i < item_names.length(); i++)
+        inventory.insertLast(item_named(item_names[i]));
     }
   }
   
@@ -40,6 +47,15 @@ namespace user_data
     return item_names;
   }
   
+  item@ item_named(const string&in pName)
+  {
+    for(uint i = 0; i < complete_item_list.length(); i++)
+      if(complete_item_list[i].get_name() == pName)
+        return complete_item_list[i];
+    eprint(pName + " is not a valid item name.");
+    return null;
+  }
+  
   bool has_item(const string&in pName)
   {
     for(uint i = 0; i < inventory.length(); i++)
@@ -49,7 +65,7 @@ namespace user_data
     return false;
   }
   
-  int get_item_slot(const string &in pName)
+  int get_item_slot(const string&in pName)
   {
     uint slot = 0;
     for(; slot < inventory.length(); slot++)
@@ -58,10 +74,10 @@ namespace user_data
     return -1;
   }
   
-  void add_inventory(item@ pItem)
+  void add_inventory(const string&in pName)
   {
-    inventory.insertLast(pItem);
-    values::set(user_data::priv::player_inventory + "/" + formatInt(inventory.length() - 1), pItem.name);
+    inventory.insertLast(item_named(pName));
+    user_data::priv::save_inv();
   }
   
   void remove_inventory(const string&in pName)
@@ -70,6 +86,7 @@ namespace user_data
       remove_inventory(get_item_slot(pName));
     else
       dprint("Attempt to remove non-held item " + pName);
+    user_data::priv::save_inv();
   }
   
   void remove_inventory(uint pSlot)

@@ -21,6 +21,13 @@ class item
   {
     return mDesc;
   }
+  
+  bool opEquals(item@ a)
+  {
+    return this.mName == a.get_name() && this.mDesc == a.get_desc();
+  }
 }
 
-const item@ flower = item("Flower", "A beautiful flower. It gives you joy just looking at it.");
+array<item@> complete_item_list = {
+item("Flower", "A beautiful flower. It gives you joy just looking at it.")
+};
