@@ -97,13 +97,22 @@ namespace user_data
   
   //------------------------------Gifts------------------------------------------//
   
-  array<string> get_gift_list()
+  array<string> get_gift_names()
   {
     array<string> names;
     for(uint i = 0; i < gift_list.length(); i++)
       if(gift_list[i].has_gift())
         names.insertLast(gift_list[i].get_name());
     return names;
+  }
+  
+  array<array<string>> get_gift_sprites()
+  {
+    array<array<string>> sprites;
+    for(uint i = 0; i < gift_list.length(); i++)
+      if(gift_list[i].has_gift())
+        sprites.insertLast(array<string> = {gift_list[i].get_texture(), gift_list[i].get_atlas()});
+    return sprites;
   }
   
   void give_gift(gift@ pGift)
@@ -114,6 +123,14 @@ namespace user_data
   void remove_gift(gift@ pGift)
   {
     pGift.remove();
+  }
+  
+  bool has_gift(string pName)
+  {
+    for(uint i = 0; i < gift_list.length(); i++)
+      if(gift_list[i].get_name() == pName)
+        return true;
+    return false;
   }
 }
 

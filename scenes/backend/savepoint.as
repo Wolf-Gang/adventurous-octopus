@@ -19,8 +19,8 @@ void savepoint() {
   
 }
 
-const vec origin = pixel(70, 30);
-const vec padding = pixel(15, 10);
+const vec savepoint_origin = pixel(70, 30);
+const vec savepoint_padding = pixel(15, 10);
 
 void open_savepoint()
 {
@@ -39,13 +39,16 @@ void open_savepoint()
   
   set_direction(get_player(), direction::up);
   
-  array<string> menu_text = {"Slot 1", "Slot 2", "Slot 3"};
-  array<menu_item@> menu_items;
+  array<string> savepoint_text = {"Slot 1", "Slot 2", "Slot 3"};
+  array<menu_item@> savepoint_items;
   
-  for(uint i = 0; i < menu_text.length(); i++)
-    menu_items.insertLast(text_entry(menu_text[i]));
+  for(uint i = 0; i < savepoint_text.length(); i++)
+    savepoint_items.insertLast(text_entry(savepoint_text[i]));
   
-  menu save_menu (menu_items, origin, padding, vec(3, 1), false, true);
+  menu savepoint_menu (savepoint_origin, vec(3, 1));
+  
+  savepoint_menu.add(savepoint_items);
+  savepoint_menu.set_padding(savepoint_padding);
   
   yield();
   
@@ -54,7 +57,7 @@ void open_savepoint()
   do
   {
     
-    int sel = save_menu.tick();
+    int sel = savepoint_menu.tick();
     
     switch(sel)
     {
@@ -76,12 +79,11 @@ void open_savepoint()
     
   } while(yield() && !exit);
   
-  save_menu.set_visible(false);
+  savepoint_menu.set_visible(false);
   
   set_depth_fixed(get_player(), false);
   
   player::lock(false);
-  
 }
 
 bool confirm_save() {

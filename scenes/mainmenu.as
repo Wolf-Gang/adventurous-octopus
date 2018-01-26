@@ -84,14 +84,13 @@ const vec item_padding(pixel(3, 4));
 [start]
 void mainmenu()
 {
+  menu main (base_position, vec(1, 3));
   
-  array<menu_item@> meun_items;
+  main.add(text_entry("Start"));
+  main.add(text_entry("Continue"));
+  main.add(text_entry("Exit"));
   
-  meun_items.insertLast(text_entry("Start"));
-  meun_items.insertLast(text_entry("Continue"));
-  meun_items.insertLast(text_entry("Exit"));
-  
-  menu main (meun_items, base_position, item_padding, vec(1, 3), false);
+  main.set_padding(item_padding);
   
 	if (!are_there_saves())
 		set_color(entity(main.get_option(1)), 255, 255, 255, 50);
@@ -161,7 +160,10 @@ void saves_menu() {
   for(int i = 0; i < 3; i++)
     save_slots.insertLast(text_entry(is_slot_used(i) ? "Slot " + (i + 1) : "Empty"));
   
-  menu saves (save_slots, base_position + pixel(100, 0), item_padding, vec(1, 3),false);
+  menu saves (base_position + pixel(100, 0), vec(1, 3));
+  
+  saves.add(save_slots);
+  saves.set_padding(item_padding);
   
   for(int i = 0; i < 3; i++)
     if(!is_slot_used(i))

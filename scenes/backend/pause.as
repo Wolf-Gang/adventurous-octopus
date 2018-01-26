@@ -64,11 +64,15 @@ const vec pause_option_padding = pixel(5, 7);
 
 void open_menu()
 {
-  array<string> pause_options = {"Items"};
+  array<string> pause_strings = {"Items"};
   if(player_has_a_gift())
-    pause_options.insertLast("Gifts");
+    pause_strings.insertLast("Gifts");
   
-  menu pause_menu (pause::priv::make_text_items(pause_options), pause_menu_position, pause_option_padding, vec(1, 3));
+  menu pause_menu (pause_menu_position, vec(1, 3));
+  
+  pause_menu.add(pause::priv::make_text_items(pause_strings));
+  pause_menu.show_box(true);
+  pause_menu.set_padding(pause_option_padding);
   
   player::lock(true);
   
@@ -107,26 +111,22 @@ void open_menu()
 
 void open_inv()
 {
-  array<string> inv_list = user_data::get_inventory_list();
+  array<menu_item@> inv = pause::priv::make_text_items(user_data::get_inventory_list());
   
-  /*
-  for(uint i = 0; i < inv_sprites.length(); i++)
-  {
-    array<string> info = user_data::get_item_sprite(inv_list[i]);
-    inv_sprites[i] = add_entity(info[0], info[1]);
-  }
-  */
+  menu inv_menu (pause_menu_position, vec(1, 3));
   
-  menu inv (pause::priv::make_text_items(inv_list.length() != 0 ? inv_list : array<string> = {"Empty", "Like", "Your", "Soul"}), pause_menu_position, pause_option_padding, vec(1, (inv_list.length() ==0 ? 4 :inv_list.length())));
+  inv_menu.add(inv);
+  inv_menu.show_box(true);
+  inv_menu.set_padding(pause_option_padding);
   
-  if(inv_list.length() == 0)
-    inv.hide_cursor();
+  if(inv.length() == 0)
+    inv_menu.hide_cursor();
   
   bool exit = false;
   
   while(!exit && yield())
   {
-    int sel = inv.tick();
+    int sel = inv_menu.tick();
     
     switch(sel)
     {
@@ -138,7 +138,7 @@ void open_inv()
         break;
       
       default:
-        if(inv_list.length() == 0)
+        if(inv.length() == 0)
           break;
         say(user_data::inventory[sel].get_desc());
         narrative::end();
@@ -152,14 +152,11 @@ void open_inv()
 
 void open_gifts()
 {
-  array<string> gift_names = user_data::get_gift_list();
-  array<array<string>> gift_sprites;
+  menu gift_menu (pause_menu_position, vec(1, gift_list.length()));
   
-  for(uint i = 0; i < gift_list.length(); i++)
-    if(gift_list[i].has_gift())
-        gift_sprites.insertLast(array<string> = {gift_list[i].get_texture(), gift_list[i].get_atlas()});
-  
-  menu gift_menu (pause::priv::make_text_sprite_items(gift_names, gift_sprites), pause_menu_position, pause_option_padding, vec(1, gift_list.length()));
+  gift_menu.add(pause::priv::make_text_sprite_items(user_data::get_gift_names(), user_data::get_gift_sprites()));
+  gift_menu.show_box(true);
+  gift_menu.set_padding(pause_option_padding);
   
   bool exit = false;
   
