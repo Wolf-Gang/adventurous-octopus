@@ -92,6 +92,14 @@ void open_menu()
       
       //inventory
       case 0:
+        if(user_data::inventory.length() == 0)
+        {
+          fsay("You check your...");
+          wait(.25);
+          append(" pockets, but you don't find anything.");
+          narrative::end();
+          break;
+        }
         pause_menu.hide();
         open_inv();
         pause_menu.show();

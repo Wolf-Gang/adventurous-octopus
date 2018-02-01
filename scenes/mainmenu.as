@@ -92,6 +92,8 @@ void mainmenu()
   
   main.set_padding(item_padding);
   
+  //main.show_box(true);
+  
 	if (!are_there_saves())
 		set_color(entity(main.get_option(1)), 255, 255, 255, 50);
 	
