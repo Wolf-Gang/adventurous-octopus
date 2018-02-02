@@ -4,4 +4,3 @@ textures/Thumbs.db
 textures/*.pal
 data
 .gitignore~
-*.ase
