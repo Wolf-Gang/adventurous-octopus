@@ -45,4 +45,6 @@
     <fence_lr x="256" y="32" w="32" h="32"/>
     <cloudwall x="320" y="112" w="32" h="32"/>
     <cloudwall_bottom x="320" y="144" w="32" h="32"/>
+    <firesign1 x="0" y="368" w="57" h="57"/>
+    <firesign2 x="64" y="369" w="64" h="52"/>
 </atlas>
