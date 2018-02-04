@@ -17,13 +17,9 @@
             <cloud_tile x="-3" y="6" w="13"/>
         </layer>
         <layer id="1">
-            <side_clouds x="2" y="-3" h="2"/>
-            <side_clouds x="4" y="-3" h="2" r="2"/>
             <side_cloud_corner x="-1" y="-1" r="1"/>
-            <side_clouds x="0" y="-1" w="2" r="1"/>
-            <side_clouds_edge x="2" y="-1" r="1"/>
-            <side_clouds_edge x="4" y="-1" r="2"/>
-            <side_clouds x="5" y="-1" w="2" r="1"/>
+            <side_clouds x="0" y="-1" r="1"/>
+            <side_clouds x="6" y="-1" r="1"/>
             <side_cloud_corner x="7" y="-1" r="2"/>
             <side_clouds x="-1" y="0" h="5"/>
             <side_clouds x="7" y="0" h="5" r="2"/>
@@ -36,10 +32,17 @@
             <side_clouds x="0" y="5" w="7" r="3"/>
             <side_cloud_corner x="7" y="5" r="3"/>
         </layer>
+        <layer id="2">
+            <tunnel x="1.5" y="-2.5"/>
+        </layer>
+        <layer id="3">
+            <side_clouds_edge x="1" y="-1" r="1"/>
+            <side_clouds_edge x="5" y="-1" r="2"/>
+        </layer>
     </map>
     <collisionboxes>
         <wall x="2.6375" y="-3.3" w="0.0625" h="2.9625001"/>
-        <door x="2" y="-4" w="3" h="1" name="north" destination="south" scene="dreamland/welcome" offsetx="0" offsety="-1"/>
+        <door x="2" y="-1.5" w="3" h="1" name="north" destination="south" scene="dreamland/welcome" offsetx="0" offsety="-1"/>
         <wall x="4.3000002" y="-3.3" w="0.0625" h="2.9625001"/>
         <wall x="-0.375" y="5.3125" w="7.75" h="0.0625"/>
         <wall x="-0.375" y="-0.375" w="0.0625" h="5.75"/>

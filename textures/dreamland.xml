@@ -47,4 +47,5 @@
     <cloudwall_bottom x="320" y="144" w="32" h="32"/>
     <firesign1 x="0" y="368" w="57" h="57"/>
     <firesign2 x="64" y="369" w="64" h="52"/>
+    <tunnel x="304" y="288" w="128" h="96"/>
 </atlas>

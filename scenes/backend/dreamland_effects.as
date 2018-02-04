@@ -50,7 +50,7 @@ void dreamland_clouds()
 
 	priv::cloud = add_entity("dreamland", "cloud");
 	set_anchor(priv::cloud, anchor::bottom);
-	set_parallax(priv::cloud, 2);
+	set_parallax(priv::cloud, 0.1);
 	set_color(priv::cloud, 255, 255, 255, 100);
 	set_scale(priv::cloud, vec(4, 4));
 	set_depth(priv::cloud, -100);
@@ -62,7 +62,7 @@ void dreamland_clouds()
 	{
 		set_position(priv::cloud, get_position(priv::cloud) + vec(0, get_delta()*speed));
 		
-		if (get_position(priv::cloud).y >= focus::get().y + get_display_size().y)
+		if (get_position(priv::cloud).y >= focus::get().y + pixel(get_display_size()).y)
 			set_position(priv::cloud, focus::get() - vec(random(-4, 4), 2));
 	} while(yield() && priv::cloud.is_valid());
 }

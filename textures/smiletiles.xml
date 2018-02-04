@@ -6,4 +6,5 @@
     <bricklightup x="0" y="144" w="32" h="32"/>
     <bricklightupdown x="32" y="144" w="32" h="32"/>
     <bricklightdown x="0" y="176" w="32" h="32"/>
+    <mask-spin x="0" y="208" w="14" h="13" frames="10" interval="100" loop="1"/>
 </atlas>

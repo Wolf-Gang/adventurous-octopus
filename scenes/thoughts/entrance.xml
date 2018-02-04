@@ -5,18 +5,19 @@
             <sideleft x="-3" y="-8"/>
             <sideright x="1" y="-8"/>
             <bricklightdown x="-1" y="-6"/>
-            <bricklightupdown x="-1" y="-5" h="9"/>
-            <bricklightup x="-1" y="4"/>
+            <bricklightupdown x="-1" y="-5" h="16"/>
+            <bricklightup x="-1" y="11"/>
         </layer>
     </map>
     <collisionboxes>
-        <wall x="-2" y="-6" w="1" h="12"/>
-        <wall x="0" y="-4" w="1" h="10"/>
+        <wall x="-2" y="-6" w="1" h="20"/>
+        <wall x="0" y="-4" w="1" h="18"/>
         <trigger x="-1" y="-6.4000001" w="1" h="1" group="throughthedoor"/>
         <wall x="0" y="-6" w="1" h="2"/>
         <wall x="-2" y="-6" w="1" h="2"/>
         <wall x="-1" y="14" w="1" h="1"/>
-        <trigger x="-1" y="-1" w="1" h="1" group="say1"/>
-        <wall x="-1" y="6" w="1" h="1"/>
+        <trigger x="-1" y="6" w="1" h="1" group="say1"/>
+        <trigger x="-1" y="13" w="1" h="1" group="notthatway"/>
+        <trigger x="-1" y="-1" w="1" h="1" group="say2"/>
     </collisionboxes>
 </scene>

@@ -48,17 +48,20 @@ void stuff()
 {
 	wait(2);
 	narrative::show();
-	narrative::set_interval(100);
+	narrative::set_interval(80);
 	
-	say("Broken, lost, and nothing left.");
+	say("In the world of the unknown, a darkness lingers among the residents.");
 	
-	say("You are just a fading glimpse of your past.");
+	say("A darkness that will consume the land and bring chaos. However...");
 	
-	say("Ugly, soulless, and disgraceful.");
+	say("Once in a great while, a robed figure replenishes the happiness of this world.");
 	
-	say("Wear this mask and lose yourself.");
+	say("One who sees the sadness of others yet ignores its own.");
 	
-	say("For your adventure starts here.");
+	say("One such character will reveal itself and step forward...");
+	
+	say("For a new adventure starts here.");
+	
 	fx::scene_fade_out();
 	narrative::end();
 	load_scene("mainmenu");

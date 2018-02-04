@@ -8,28 +8,77 @@ void start()
 {
 	music::set_volume(80);
   music::open("doodle171-AFV-First-Meet");
-	set_position(get_player(), vec(-0.5, 5));
+	set_position(get_player(), vec(-0.5, 12));
+	
+	player::lock(true);
+	wait(1.5);
+	say("<shake>Hello...</shake>");
+	say("<shake>My only friend...</shake>");
+	say("<shake>Come this way...</shake>");
+	narrative::end();
+	player::lock(false);
+}
+
+[group notthatway]
+void notthatway()
+{
+	player::lock(true);
+	say("<shake>Not that way...</shake>");
+	say("<shake>Turn around...</shake>");
+	move(get_player(), direction::up, 0.5, 0.5);
+	narrative::end();
+	player::lock(false);
+}
+
+entity mask;
+
+[start]
+void create_mask()
+{
+	mask = add_entity("smiletiles", "mask-spin");
+	animation::start(mask);
+	set_position(mask, vec(-0.5, 0));
+	set_z(mask, 1);
+	
+	
+	float a = 0;
+	while(yield())
+	{
+		set_z(mask, 1 + sin(a*2*3.14)*0.2);
+		a += get_delta()*0.4;
+	}
 }
 
 [group say1]
 void say1()
 {
-  say("<shake>Happiness...</shake>");
-  say("<shake>Flowers...</shake>");
-  say("<shake>Peace...</shake>");
-  say("<shake>There is only one thing I need to do...</shake>");
-  narrative::end();
-  group::enable("say1", false);
-  player::lock(false);
+	say("<shake>I crave...</shake>");
+	say("<shake>Happiness...</shake>");
+	say("<shake>And peace...</shake>");
+	say("<shake>Help me...</shake>");
+	say("<shake>There is only one thing you need to do...</shake>");
+	narrative::end();
+	group::enable("say1", false);
+	player::lock(false);
+}
+
+[group say2]
+void say2()
+{
+	say("<shake>Take this mask...</shake>");
+	set_visible(mask, false);
+	narrative::end();
+	group::enable("say2", false);
+	player::lock(false);
 }
 
 [start]
 void create_door()
 {
-  smile_door = add_entity("smile", "door");
-  set_anchor(smile_door, anchor::center);
-  set_position(smile_door, vec(-0.5, -6.4));
-  animation::start(smile_door);
+	smile_door = add_entity("smile", "door");
+	set_anchor(smile_door, anchor::center);
+	set_position(smile_door, vec(-0.5, -6.4));
+	animation::start(smile_door);
 }
 
 [group throughthedoor]
@@ -50,7 +99,7 @@ void throughthedoor()
   wait(0.5);
   
   set_atlas(smile_door, "default:default");
-  fsay("... Smile ...");
+  fsay("<shake>... And Smile ...</shake>");
   
   wait(1);
   narrative::end();
