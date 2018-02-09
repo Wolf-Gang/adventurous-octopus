@@ -47,22 +47,43 @@ void test_values()
 void stuff()
 {
 	wait(2);
+  
+  entity pretty_pictures = add_entity("intro", "a1");
+  set_position(pretty_pictures, pixel(0, 30));
+  
 	narrative::show();
 	narrative::set_interval(80);
 	
-	say("In the world of the unknown, a darkness lingers among the residents.");
+	say("In the world of the unknown, a darkness lingers among the people.");
+  
+  set_atlas(pretty_pictures, "a2");
 	
 	say("A darkness that will consume the land and bring chaos. However...");
 	
+  set_atlas(pretty_pictures, "a3");
+  
 	say("Once in a great while, a robed figure replenishes the happiness of this world.");
 	
+  set_atlas(pretty_pictures, "a4");
+  
 	say("One who sees the sadness of others yet ignores its own.");
+  
+  set_atlas(pretty_pictures, "a5");
 	
 	say("One such character will reveal itself and step forward...");
+  
+  set_atlas(pretty_pictures, "a6");
 	
 	say("For a new adventure starts here.");
-	
-	fx::scene_fade_out();
+  
+  set_atlas(pretty_pictures, "a7");
+  
 	narrative::end();
+  wait(1);
+  
+  fx::fade_out(1.5);
+	
+	//fx::scene_fade_out();
 	load_scene("mainmenu");
 }
+
