@@ -1,4 +1,7 @@
 <game>
+	
+	<title>A Friendly Venture</title>
+	
 	<scene  name="overture"/>
 	
 	<player texture="mc"/>

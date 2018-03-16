@@ -1,4 +1,5 @@
 #include "../backend/dreamland_effects.as"
+#include "../characters/unicorn.as"
 
 namespace bar
 {
@@ -15,9 +16,43 @@ void show_bar()
 
 }
 
+characters::unicorn unicorn;
+
 [start]
-void create_houses() {
+void create_unicorn()
+{
+	unicorn.create();
+  set_position(unicorn, vec(4, 2.5));
+}
+
+[group unicorn_talk]
+void unicorn_talk()
+{
+	player::lock(true);
+	
+	wait(0.5);
+	
+	narrative::show();
   
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	
+	say("This is where the very normal residents live.");
+	
+	say("Caution, however... you may be overwhelmed.");
+	nl("By normality that is.");
+	
+	narrative::end();
+	unicorn.disappear();
+	player::lock(false);
+	
+	group::enable("unicorn_talk", false);
+}
+
+
+[start]
+void create_houses()
+{
   entity house1 = add_entity("dreamland", "house");
   set_position(house1, vec(7, 0.5));
   entity house2 = add_entity("dreamland", "house");

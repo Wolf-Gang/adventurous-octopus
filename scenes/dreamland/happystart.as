@@ -1,6 +1,7 @@
 #include "../backend/dreamland_effects.as"
 #include "../backend/emote.as"
 #include "../characters/unicorn.as"
+#include "../characters/unicorn.as"
 
 characters::unicorn unicorn;
 
@@ -48,6 +49,7 @@ void things()
   
   music::set_volume(1);
   music::open("doodle132-dreamland-start_2");
+	wait(1);
   fx::fade_out(blackout, 5);
   set_direction(get_player(), direction::up);
   wait(0.5);
@@ -72,40 +74,33 @@ void things()
   
   narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
-  say("Anyway, where do you live? Are you new?");
+  fsay("Anyway, where do you live? Are you new?");
   
-  narrative::clear_speakers();
-	narrative::set_expression("mc_expression", "default:default");
-  say("...");
-  
-  narrative::set_speaker(unicorn);
-	narrative::set_expression("unicorn icon", "default:default");
-  say("Hello?");
-  
-  narrative::clear_speakers();
-	narrative::set_expression("mc_expression", "default:default");
-  say("...");
-  
-  narrative::set_speaker(unicorn);
-	narrative::set_expression("unicorn icon", "default:default");
-  say("Rather quiet, aren't you?");
-  say("How about you come with me to sort things out?");
-  narrative::hide();
-  
-  music::stop();
-  
-  fx::sound("rumble");
-  set_boundary_enable(false);
-  fx::shake(0.5, 2);
-  quick_emote(unicorn, emote_type::surprise, 1);
-  
-  wait(0.5);
-  say("Hmmm...");
-  nl("Some trouble has happened, again...");
-  say("I will have to go. Don't get lost and die.");
+	if (select("Yes", "...") == option::first)
+	{
+		say("I love new comers!");
+		say("Meet on the other side of this tunnel.");
+		nl("I will show you around.");
+	}
+	else
+  {
+		narrative::set_speaker(unicorn);
+		narrative::set_expression("unicorn icon", "default:default");
+		say("Rather quiet, aren't you?");
+		say("Your speech must be beyond normal comprehension.");
+		say("How bout' I talk to you on a spiritual level!");
+		
+		narrative::clear_speakers();
+		say("*Stares deeply*\n.......\n.......");
+		
+		narrative::set_speaker(unicorn);
+		narrative::set_expression("unicorn icon", "default:default");
+		say("I see... come with me though this tunnel.");
+		say("We can sort things out then.");
+	}
+	
   narrative::end();
   
-  music::open("doodle132-dreamland-start_2");
   unicorn.disappear();
   player::lock(false);
   

@@ -2,6 +2,14 @@
 #include "../backend/emote.as"
 #include "../characters/unicorn.as"
 
+characters::unicorn unicorn;
+
+[start]
+void create_unicorn()
+{
+	unicorn.create();
+  set_position(unicorn, vec(6, 5));
+}
 
 entity froggo;
 
@@ -75,23 +83,6 @@ void talktohamster1()
   player::lock(false);
 }
 
-/*
-[group unicorn1]
-void unicorn1()
-{
-  characters::unicorn unicorn;
-  unicorn.create();
-  unicorn.appear(vec(7.5, 3));
-  
-  narrative::show();
-  narrative::set_speaker(unicorn);
-	narrative::set_expression("unicorn icon", "default:default");
-  say("");
-  narrative::end();
-  group::enable("unicorn1", false);
-  player::lock(false);
-}*/
-
 [start]
 void create_trees()
 {
@@ -151,6 +142,58 @@ void talk_door()
   load_scene("worfel/shop");
 }
 
+[group unicorn_talk]
+void unicorn_talk()
+{
+	player::lock(true);
+	
+	wait(0.5);
+	
+	narrative::show();
+  
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	
+	say("Welcome");
+	
+	say("This is the magical dreamland of, well, I don't know...");
+	set_atlas(unicorn, "talk_headup");
+	nl("<wave>DREAMS?</wave>");
+	set_atlas(unicorn, "talk");
+	
+	say("But, perhaps that's too mythical.");
+	
+	narrative::end();
+	unicorn.disappear();
+	player::lock(false);
+	
+	group::enable("unicorn_talk", false);
+}
+
+[group unicorn_talk2]
+void unicorn_talk2()
+{
+	player::lock(true);
+	
+	unicorn.appear(vec(23, -11));
+	
+	wait(0.5);
+	
+	narrative::show();
+  
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	
+	say("Say hello to frog. He can take you anywhere.");
+	say("By \"anywhere\", I mean <c r='155' g='155' b='100'><b>anywhere</b></c>.");
+	say("But you only need to get across this waterfall.");
+	
+	narrative::end();
+	unicorn.disappear();
+	player::lock(false);
+	
+	group::enable("unicorn_talk2", false);
+}
 
 [start]
 void start()
@@ -163,5 +206,5 @@ void start()
 		unset_flag("frog_travel");
 	}
 	else
-		set_position(get_player(), vec(6, 7));
+		set_position(get_player(), vec(6, 7.5));
 }

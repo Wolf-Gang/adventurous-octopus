@@ -190,5 +190,8 @@
         <wall x="21.5" y="-9.53125" w="0.21875" h="3.96875"/>
         <wall x="21.75" y="-9.53125" w="3.25" h="0.21875"/>
         <wall x="11" y="8" w="2" h="1"/>
+        <trigger x="3.25" y="5.25" w="5.5" h="1.5" group="unicorn_talk"/>
+        <wall x="7" y="7.25" w="0.25" h="0.25"/>
+        <trigger x="20.75" y="-13" w="1.25" h="3.5" group="unicorn_talk2"/>
     </collisionboxes>
 </scene>

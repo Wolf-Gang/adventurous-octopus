@@ -37,6 +37,11 @@ class unicorn
   void appear(vec pPosition)
   {
     set_position(mEntity, pPosition);
+    appear();
+  }
+	
+	void appear()
+  {
     set_visible(mEntity, true);
     
     fx::sound("FX_away");
