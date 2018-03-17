@@ -59,7 +59,6 @@ void sivoraintro()
   load_scene("credits");
   */
   
-  
   music::set_volume(70);
   music::open("doodle167-AFV-Sivora");
   

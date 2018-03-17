@@ -1,30 +1,29 @@
 #include "../backend/dreamland_effects.as"
 #include "../backend/user_data.as"
-
-entity unicorn;
+#include "../characters/unicorn.as"
 
 entity smol_phlooph;
+
+characters::unicorn unicorn;
 
 [start]
 void start()
 {
 	music::open("doodle104_2");
-	music::volume(70);
 	set_position(get_player(), vec(5, 3));
 }
 
 [start]
 void create_unicorn()
 {
+	unicorn.create();
 	if (!has_flag("uncorn_hmmmmlocked"))
 	{
-		unicorn = add_entity("unicorn", "talk");
-		set_position(unicorn, vec(5.5,0));
+		set_position(unicorn, vec(7.5,-.5));
 		return;
 	}
 	if(!has_flag("bridge_unicorn") && has_flag("unlockedgate"))
 	{
-		unicorn = add_entity("unicorn", "talk");
 		set_position(unicorn, vec(11,1));
 	}
 	else
@@ -59,10 +58,26 @@ void create_gate()
 [group thisisagate]
 void thisisagate()
 {
-	say("It's a locked gate to a majestic rainbow bridge.");
+	player::lock(true);
+	narrative::show();
+  
+	narrative::set_speaker(unicorn);
+	narrative::set_expression("unicorn icon", "default:default");
+	
+	fsay("That bridge is dangerous. You might fall off and...");
+	wait(0.2);
+	append(" die.");
+	say("Go this way. You have to meet someone.");
+	
 	narrative::end();
 	player::lock(false);
+	
+	group::enable("unicorn_talk", false);
 }
+
+
+// Keeping all this for now.
+/*
 
 [group phloophgift]
 void takethis()
@@ -241,5 +256,5 @@ void crushingyourhopesanddreams()
   
   load_scene("lost/fallen");
   
-}
+}*/
 

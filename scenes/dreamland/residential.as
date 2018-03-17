@@ -11,12 +11,27 @@ void show_bar()
   topbar = add_entity("pixel");
   set_color(topbar, 0, 0, 0, 255);
   set_scale(topbar, pixel(get_display_size().x, 50));
-  
 }
 
 }
 
+entity jimmy;
 characters::unicorn unicorn;
+
+[start]
+void create_jimmy()
+{
+	jimmy = add_entity("bunny", "default:down");
+	set_position(jimmy, vec(13.5, 1.5));
+}
+
+
+[group jimmyintro]
+void jimmyintro()
+{
+	say("Jimmy me cretin!");
+	say("Can you be my friend?");
+}
 
 [start]
 void create_unicorn()
@@ -24,6 +39,7 @@ void create_unicorn()
 	unicorn.create();
   set_position(unicorn, vec(4, 2.5));
 }
+
 
 [group unicorn_talk]
 void unicorn_talk()

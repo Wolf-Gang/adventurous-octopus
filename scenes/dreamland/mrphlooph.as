@@ -31,7 +31,7 @@ void create_phlooph()
     
     if (!has_flag("unlockedgate"))
     {
-    
+			player::lock(true);
       set_position(get_player(), vec(5, 6));
       set_direction(get_player(), direction::up);
       narrative::show();
@@ -85,7 +85,6 @@ void create_unicorn()
 void start()
 {
 	music::open("doodle104_2");
-	music::volume(70);
   
   if (!has_flag("caughtthephloophs") || has_flag("unlockedgate"))
     set_position(get_player(), vec(5, 9));
@@ -109,8 +108,8 @@ void event_check() {
 [group mrphlooph]
 void mrphlooph()
 {
-	once_flag("phloophgate");
-	music::fade_volume(40, 1);
+	//once_flag("phloophgate");
+	music::fade_volume(40, 1, thread());
 	player::lock(true);
 	focus::move(vec(5, 4), 1);
 	
@@ -147,8 +146,29 @@ void mrphlooph()
 	
 	narrative::set_expression("unicorn icon", "default:default");
 	narrative::set_speaker(unicorn);
-	say("You left your gate closed again.");
+	say("I am not a Druggy.");
+	say("Anyhow, someone new has appeared.");
 	
+	narrative::set_expression("mrphlooph icon", "default:default");
+	narrative::set_speaker(phlooph);
+	say("Again?!");
+	say("I'm guessing this one wants through the bridge as well?");
+	
+	narrative::set_expression("unicorn icon", "default:default");
+	narrative::set_speaker(unicorn);
+	say("Of course not!\nHe is not ready.");
+	
+	narrative::set_expression("mrphlooph icon", "default:default");
+	narrative::set_speaker(phlooph);
+	fsay("Hmm...");
+	wait(0.2);
+	nl("That mask isn't the most intimidating");
+	nl("Smiley child, I will call you Smiley.");
+	say("");
+	
+	
+	
+	/*
 	narrative::set_expression("mrphlooph icon", "default:default");
 	narrative::set_speaker(phlooph);
 	say("Can a phlooph not have his privacy?");
@@ -206,7 +226,7 @@ void mrphlooph()
 	fsay("Hmmm...");
 	wait(0.2);
 	append(" fine.");
-	narrative::end();
+	narrative::end();*/
 	
 	set_atlas(phlooph, "default:default");
 	animation::start(phlooph);

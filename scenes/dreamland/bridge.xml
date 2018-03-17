@@ -19,26 +19,27 @@
         </layer>
         <layer id="1">
             <side_clouds x="4" y="-4"/>
-            <hearts x="5" y="-4" h="10"/>
+            <hearts x="5" y="-4" h="5"/>
             <side_clouds x="6" y="-4" r="2"/>
-            <hearts x="5.5" y="-3.5" h="9"/>
+            <hearts x="5.5" y="-3.5" h="4"/>
             <side_cloud_corner x="2.5" y="-3" r="1"/>
             <side_clouds x="3" y="-3" r="1"/>
             <side_clouds_edge x="4" y="-3" r="1"/>
             <side_clouds_edge x="6" y="-3" r="2"/>
             <side_clouds x="7" y="-3" w="29" r="1"/>
-            <side_clouds x="2.5" y="-2" h="6"/>
+            <side_clouds x="2.5" y="-2"/>
+            <side_clouds x="2.5" y="-1.5"/>
+            <side_clouds x="0.5" y="-0.5" w="2" r="1"/>
+            <side_clouds_edge x="2.5" y="-0.5" r="1"/>
             <sparkles x="12" y="0" w="24" h="2"/>
-            <hearts x="6.5" y="0.5" w="6" r="1"/>
-            <hearts x="6" y="1" w="6" r="1"/>
+            <hearts x="0.5" y="0.5" w="12" r="1"/>
+            <hearts x="1" y="1" w="11" r="1"/>
+            <side_clouds x="0.5" y="1.5" w="2" r="3"/>
+            <side_clouds_edge x="2.5" y="1.5"/>
+            <side_clouds x="2.5" y="2.5"/>
+            <side_clouds x="2.5" y="3"/>
             <side_cloud_corner x="2.5" y="4"/>
-            <side_clouds x="3" y="4" r="3"/>
-            <side_clouds_edge x="4" y="4"/>
-            <side_clouds_edge x="6" y="4" r="3"/>
-            <side_clouds x="7" y="4" w="29" r="3"/>
-            <side_clouds x="4" y="5"/>
-            <side_clouds x="6" y="5" r="2"/>
-            <hearts x="5.5" y="5.5"/>
+            <side_clouds x="3" y="4" w="33" r="3"/>
         </layer>
     </map>
     <collisionboxes>

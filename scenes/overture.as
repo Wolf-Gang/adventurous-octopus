@@ -7,7 +7,6 @@ void start()
 	music::open("doodle110_2-AFV-Overture");
 	music::fade_volume(0.7, 5, thread());
 	set_visible(get_player(), false);
-	pieasdf();
   pause::lock(true);
 }
 

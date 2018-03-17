@@ -78,8 +78,8 @@ void things()
   
 	if (select("Yes", "...") == option::first)
 	{
-		say("I love new comers!");
-		say("Meet on the other side of this tunnel.");
+		say("I love newcomers!");
+		say("Meet me on the other side of this tunnel.");
 		nl("I will show you around.");
 	}
 	else
