@@ -164,9 +164,42 @@ void mrphlooph()
 	wait(0.2);
 	nl("That mask isn't the most intimidating");
 	nl("Smiley child, I will call you Smiley.");
-	say("");
+	say("I have to measure your strength and worthiness.");
+	fsay("It may be harsh");
+	narrative::set_expression("mrphlooph icon", "sinister");
+	append(" but this is necessary.");
 	
+	music::pause();
+	narrative::set_expression("mrphlooph icon", "sleepy");
+	say("MMMMMMMMMMMM.");
+	narrative::set_expression("mrphlooph icon", "default:default");
+	fnl("BAM!");
 	
+	// Drop a phlooph
+	entity phloo = add_entity("little phlooph", "default:default");
+	set_position(phloo, get_position(get_player()));
+	set_z(phloo, 8);
+	move_z(phloo, 0, 6);
+	
+	fx::sound("heh");
+	set_atlas(get_player(), "oof"); // MC kinda fails
+	
+	wait(0.5);
+	
+	move_hop(phloo, get_position(phloo) - vec(1, 0), 0.5, 1);
+	
+	wait(0.2);
+	
+	music::play();
+	narrative::set_expression("mrphlooph icon", "default:default");
+	say("........");
+	
+	narrative::set_expression("unicorn icon", "default:default");
+	narrative::set_speaker(unicorn);
+	say("I told you he is not ready!");
+	
+	narrative::set_expression("mrphlooph icon", "default:default");
+	say("I just wanted to have a little fun.");
 	
 	/*
 	narrative::set_expression("mrphlooph icon", "default:default");
@@ -240,7 +273,7 @@ void mrphlooph()
 }
 
 [group unicornbehere]
-void ajsdfh()
+void unicornbehere()
 {
 	narrative::show();
 	narrative::set_speaker(unicorn);

@@ -2,13 +2,13 @@
     <boundary x="4" w="15" h="8"/>
     <map>
         <texture>dreamland</texture>
-        <layer id="-1">
+        <layer id="0">
             <ground x="4" y="0" w="6" h="5" r="2"/>
             <ground x="4" y="5" w="11" h="3" r="2"/>
             <ground x="15" y="5" w="4" h="2" r="3"/>
             <ground x="15" y="7" w="4" r="3"/>
         </layer>
-        <layer id="0">
+        <layer id="1">
             <side_cloud_corner x="4" y="0" r="1"/>
             <side_clouds x="5" y="0" w="4" r="1"/>
             <side_cloud_corner x="9" y="0" r="2"/>
@@ -24,7 +24,7 @@
             <side_clouds x="5" y="7" w="13" r="3"/>
             <side_cloud_corner x="18" y="7" r="3"/>
         </layer>
-        <layer id="1">
+        <layer id="2">
             <phlooph_hideout x="10" y="3"/>
         </layer>
     </map>

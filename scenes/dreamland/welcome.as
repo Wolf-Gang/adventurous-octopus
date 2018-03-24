@@ -185,7 +185,7 @@ void unicorn_talk2()
 	narrative::set_expression("unicorn icon", "default:default");
 	
 	say("Say hello to frog. He can take you anywhere.");
-	say("By \"anywhere\", I mean <c r='155' g='155' b='100'><b>anywhere</b></c>.");
+	say("By \"anywhere\", I mean <c r='255' g='0' b='0'><b>anywhere</b></c>.");
 	say("But you only need to get across this waterfall.");
 	
 	narrative::end();
