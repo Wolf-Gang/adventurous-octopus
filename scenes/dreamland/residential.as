@@ -26,11 +26,14 @@ void create_jimmy()
 }
 
 
-[group jimmyintro]
-void jimmyintro()
+[group jimmysayshi]
+void jimmysayshi()
 {
-	say("Jimmy me cretin!");
-	say("Can you be my friend?");
+	say("Jimmy me cretins!");
+	nl("You must be new.");
+	say("Welcome to dreamland! Hehe.");
+	narrative::end();
+	player::lock(false);
 }
 
 [start]

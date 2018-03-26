@@ -9,6 +9,7 @@ characters::unicorn unicorn;
 [start]
 void start()
 {
+	music::set_volume(1);
 	music::open("doodle104_2");
 	set_position(get_player(), vec(5, 3));
 }
@@ -64,9 +65,9 @@ void thisisagate()
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
 	
-	fsay("That bridge is dangerous. You might fall off and...");
+	say("That bridge is dangerous. You might fall off and...");
 	wait(0.2);
-	append(" die.");
+	say("I don't want to talk about it.");
 	say("Go this way. You have to meet someone.");
 	
 	narrative::end();

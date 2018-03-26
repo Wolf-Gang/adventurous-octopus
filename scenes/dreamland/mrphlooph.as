@@ -1,6 +1,7 @@
 
 #include "../backend/dreamland_effects.as"
 #include "../backend/emote.as"
+#include "../backend/shadows.as"
 
 entity unicorn;
 entity phlooph;
@@ -171,6 +172,7 @@ void mrphlooph()
 	
 	music::pause();
 	narrative::set_expression("mrphlooph icon", "sleepy");
+	narrative::set_speaker(phlooph);
 	say("MMMMMMMMMMMM.");
 	narrative::set_expression("mrphlooph icon", "default:default");
 	fnl("BAM!");
@@ -178,6 +180,7 @@ void mrphlooph()
 	// Drop a phlooph
 	entity phloo = add_entity("little phlooph", "default:default");
 	set_position(phloo, get_position(get_player()));
+	shadows::add(phloo);
 	set_z(phloo, 8);
 	move_z(phloo, 0, 6);
 	
@@ -185,81 +188,27 @@ void mrphlooph()
 	set_atlas(get_player(), "oof"); // MC kinda fails
 	
 	wait(0.5);
-	
 	move_hop(phloo, get_position(phloo) - vec(1, 0), 0.5, 1);
-	
+	wait(0.5);
+	move_hop(phloo, get_position(phloo) - vec(6, 0), 3, 2);
 	wait(0.2);
 	
-	music::play();
+	//music::play();
+	narrative::clear_speakers();
 	narrative::set_expression("mrphlooph icon", "default:default");
 	say("........");
 	
 	narrative::set_expression("unicorn icon", "default:default");
+	say("........");
+	wait(0.3);
+	quick_emote(unicorn, emote_type::angry, 1);
 	narrative::set_speaker(unicorn);
+	say("Oh no!");
 	say("I told you he is not ready!");
 	
 	narrative::set_expression("mrphlooph icon", "default:default");
+	narrative::set_speaker(phlooph);
 	say("I just wanted to have a little fun.");
-	
-	/*
-	narrative::set_expression("mrphlooph icon", "default:default");
-	narrative::set_speaker(phlooph);
-	say("Can a phlooph not have his privacy?");
-	
-	narrative::set_expression("unicorn icon", "default:default");
-	narrative::set_speaker(unicorn);
-	say("Not that. The bridge!");
-	
-	narrative::set_expression("mrphlooph icon", "default:default");
-	narrative::set_speaker(phlooph);
-	say("Let's make this clear.");
-	nl("I only open my gate when I want to.");
-	
-	narrative::set_speaker(unicorn);
-	narrative::set_expression("unicorn icon", "default:default");
-	set_atlas(unicorn, "talk_headup");
-	say("Ugh!");
-	set_atlas(unicorn, "talk");
-	nl("What do you want?");
-	
-	narrative::set_speaker(phlooph);
-	narrative::set_expression("mrphlooph icon", "default:default");
-	say("Silence, druggy. Let me talk to your friend.");
-	say("You. Yes you.");
-	nl("Hood'n mask.");
-	say("I have a task for you.");
-	say("Find all my beautiful little phloophs");
-	nl("and I will open the gate.");
-	narrative::set_expression("mrphlooph icon", "sleepy");
-	say("The only problem is...");
-	narrative::set_expression("mrphlooph icon", "default:default");
-	nl("They are Veeerry persistent.");
-	narrative::set_expression("mrphlooph icon", "sinister");
-	nl("And might just kill you.");
-	narrative::set_expression("mrphlooph icon", "default:default");
-	say("Off you go, now.");
-	
-	narrative::set_expression("unicorn icon", "default:default");
-	narrative::set_speaker(unicorn);
-	set_atlas(unicorn, "talk_headup");
-	say("HOLD IT!");
-	set_atlas(unicorn, "talk");
-	nl("This our special guest.");
-	nl("Why would you send h...umm out to an errand?");
-	
-	narrative::set_expression("mrphlooph icon", "sleepy");
-	narrative::set_speaker(phlooph);
-	say("You see... They are around that age now.");
-	nl("And they don't like me for some reason...");
-	narrative::set_expression("mrphlooph icon", "default:default");
-	nl("As a father, I would be very thankful.");
-	
-	narrative::set_expression("unicorn icon", "default:default");
-	narrative::set_speaker(unicorn);
-	fsay("Hmmm...");
-	wait(0.2);
-	append(" fine.");
-	narrative::end();*/
 	
 	set_atlas(phlooph, "default:default");
 	animation::start(phlooph);

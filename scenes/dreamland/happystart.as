@@ -1,7 +1,6 @@
 #include "../backend/dreamland_effects.as"
 #include "../backend/emote.as"
 #include "../characters/unicorn.as"
-#include "../characters/unicorn.as"
 
 characters::unicorn unicorn;
 

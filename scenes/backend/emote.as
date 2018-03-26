@@ -89,3 +89,18 @@ void quick_emote(entity pTarget, emote_type pType, float pTime)
   wait(pTime);
   current_emote.remove_emote();
 }
+
+void quick_emote(entity pTarget, emote_type pType, float pTime, thread@ pThread)
+{
+	pThread.thread_start();
+	create_thread(
+	function(pArgs)
+	{
+		quick_emote(entity(pArgs["pTarget"]), emote_type(pArgs["pType"]), float(pArgs["pTime"]));
+		cast<thread@>(pArgs["pThread"]).thread_end();
+	}, dictionary = {
+		{"pTarget", pTarget},
+		{"pType", pType},
+		{"pTime", pTime},
+		{"pThread", pThread}});
+}

@@ -79,5 +79,6 @@
         <wall x="8.75" y="-2" w="0.25" h="0.75"/>
         <wall x="9" y="-2.25" w="4" h="0.25"/>
         <trigger x="1.25" y="1.25" w="2" h="3.25" group="unicorn_talk"/>
+        <button x="13" y="1" w="1" h="1" group="jimmysayshi"/>
     </collisionboxes>
 </scene>
