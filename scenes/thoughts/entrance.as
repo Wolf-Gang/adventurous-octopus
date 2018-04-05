@@ -8,7 +8,7 @@ void start()
 {
 	music::set_volume(80);
   music::open("doodle171-AFV-First-Meet");
-	set_position(get_player(), vec(-0.5, 12));
+	set_position(player::get(), vec(-0.5, 12));
 	
 	player::lock(true);
 	wait(1.5);
@@ -25,7 +25,7 @@ void notthatway()
 	player::lock(true);
 	say("<shake>Not that way...</shake>");
 	say("<shake>Turn around...</shake>");
-	move(get_player(), direction::up, 0.5, 0.5);
+	move(player::get(), direction::up, 0.5, 0.5);
 	narrative::end();
 	player::lock(false);
 }
@@ -87,7 +87,7 @@ void throughthedoor()
   player::lock(true);
   set_atlas(aura, "auradisappear");
   animation::start(aura);
-  fx::fade_out(get_player(), 1);
+  fx::fade_out(player::get(), 1);
   
   music::stop();
   fx::sound("augmenting");

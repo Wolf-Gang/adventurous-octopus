@@ -51,7 +51,7 @@ void dreamland_clouds()
 	priv::cloud = add_entity("dreamland", "cloud");
 	set_anchor(priv::cloud, anchor::bottom);
 	set_parallax(priv::cloud, 0.1);
-	set_color(priv::cloud, 255, 255, 255, 100);
+	set_color(priv::cloud, 1, 1, 1, 0.4);
 	set_scale(priv::cloud, vec(4, 4));
 	set_depth(priv::cloud, -100);
   

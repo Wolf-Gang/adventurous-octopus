@@ -2,17 +2,16 @@
 #include "../backend/shadows.as"
 #include "../backend/emote.as"
 
-[start]
-void start()
-{
-	set_position(get_player(), vec(22.5, 25));
-}
-
 bool should_scram = false;
 array<entity> phloophs;
 
 entity jimmy;
 
+[start]
+void start()
+{
+	set_position(get_player(), vec(22.5, 25));
+}
 
 [start]
 void create_jimmy()
@@ -43,9 +42,19 @@ void talktoJimmy()
 	
 	animation::stop(jimmy);
 	set_atlas(jimmy, "default:down");
+	music::set_volume(0);
+	music::open("doodle212-Jimmys-Theme_2");
+	music::fade_volume(1, 2, thread());
 	say("Oh! Jimmy me cretins!");
 	say("Sorry, I didn't see you there.");
 	nl("I was playing with my friends.");
+	nl("We play here a whoooole lot.");
+	say("You're new, right?");
+	nl("Do you want to play?");
+	say("Let's play hide and go seek.\nCome find me!");
+	narrative::end();
+	move(jimmy, vec(30, 13), 2);
+	player::lock(false);
 }
 
 [start]

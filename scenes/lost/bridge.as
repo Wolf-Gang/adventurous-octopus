@@ -1,7 +1,7 @@
 [start]
 void start()
 {
-	set_position(get_player(), vec(1, 20));
+	set_position(player::get(), vec(1, 20));
 }
 
 

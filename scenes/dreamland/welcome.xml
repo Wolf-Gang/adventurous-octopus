@@ -1,159 +1,159 @@
 <scene>
     <map>
         <texture>dreamland</texture>
-        <layer id="0">
-            <ground x="-3" y="-23" w="22" h="12"/>
-            <cloudwall x="20" y="-19" w="5" h="6"/>
-            <waterfall x="25" y="-19" w="4" h="6"/>
-            <ground x="19" y="-17" h="6"/>
-            <ground x="20" y="-13" w="5" h="2"/>
+        <layer id="0" name="Ground">
+            <ground x="-4" y="1" w="16" h="3"/>
+            <ground x="-3" y="-23" w="22" h="6"/>
+            <ground x="-3" y="-17" w="23" h="4"/>
+            <ground x="-3" y="-13" w="28"/>
+            <ground x="-3" y="-12" w="23"/>
+            <ground x="-3" y="-11" w="28"/>
+            <ground x="-3" y="-10" w="24" h="3"/>
+            <ground x="-3" y="-7" w="15" h="8"/>
+            <ground x="-3" y="4" w="15" h="4"/>
+            <ground x="12" y="-7" w="7" r="3"/>
+            <ground x="12" y="-6" w="4" h="6" r="3"/>
+            <cloudwall x="12" y="0" w="4" h="3"/>
+            <water x="12" y="3" w="10" h="5"/>
+            <cloudwall x="16" y="-6" w="5" h="3"/>
+            <water x="16" y="-3" w="13" h="5"/>
+            <water x="16" y="2" w="6"/>
+            <ground x="19" y="-7" w="2"/>
+            <ground x="20" y="-18" w="5" h="2" r="1"/>
+            <cloudwall x="20" y="-16" w="5" h="3"/>
+            <ground x="20" y="-12" r="1"/>
+            <ground x="21" y="-12" w="4"/>
+            <cloudwall x="21" y="-10" w="4" h="3"/>
+            <water x="21" y="-7" w="8" h="4"/>
+            <water x="25" y="-18" w="4" h="3"/>
+            <waterfall x="25" y="-15" w="4" h="2"/>
             <water x="25" y="-13" w="4"/>
             <water x="25" y="-12" w="2" h="2"/>
+            <waterfall x="25" y="-10" w="4" h="2"/>
+            <water x="25" y="-8" w="4"/>
             <water x="27" y="-12" w="2" h="2" r="2"/>
-            <ground x="-3" y="-11" w="28"/>
-            <ground x="-3" y="-10" w="24" h="2"/>
-            <cloudwall x="21" y="-10" w="4" h="5"/>
-            <waterfall x="25" y="-10" w="4" h="5"/>
-            <ground x="-3" y="-8" w="3" h="9"/>
-            <ground x="0" y="-8" w="21"/>
-            <ground x="0" y="-7" w="12" h="14"/>
-            <ground x="12" y="-7" w="7" r="3"/>
-            <ground x="19" y="-7" w="2"/>
-            <ground x="12" y="-6" w="4" h="6" r="3"/>
-            <cloudwall x="16" y="-6" w="5" h="5"/>
-            <water x="21" y="-5" w="4" h="4"/>
-            <water x="25" y="-5" w="4" h="7"/>
-            <water x="16" y="-1" w="9" h="3"/>
-            <cloudwall x="12" y="0" w="4" h="5"/>
-            <ground x="-4" y="1" w="4" h="3"/>
-            <water x="16" y="2" w="6" h="3"/>
-            <ground x="-3" y="4" w="3" h="3"/>
-            <water x="12" y="5" w="10" h="2"/>
-            <ground x="-3" y="7" w="15"/>
-            <water x="12" y="7" w="10"/>
         </layer>
-        <layer id="1">
+        <layer id="1" name="Paths">
             <fence_lr x="1" y="-15.5"/>
-            <fence_lr x="3" y="-15.5"/>
-            <hearts x="2.5" y="-14.5" h="6"/>
             <hearts x="2" y="-14" h="6"/>
-            <hearts x="5.5" y="-10.5" h="18"/>
-            <hearts x="19.5" y="-10.5" r="1"/>
-            <hearts x="6" y="-10" h="18"/>
-            <hearts x="19" y="-10" r="1"/>
-            <hearts x="20" y="-10"/>
-            <hearts x="18.5" y="-9.5" r="1"/>
-            <hearts x="19.5" y="-9.5"/>
-            <hearts x="3" y="-9" w="3" r="3"/>
-            <hearts x="7" y="-9" w="12" r="1"/>
-            <hearts x="19" y="-9"/>
+            <hearts x="2.5" y="-14.5" h="6"/>
             <hearts x="2.5" y="-8.5" w="3" r="3"/>
+            <fence_lr x="3" y="-15.5"/>
+            <hearts x="3" y="-9" w="3" r="3"/>
+            <hearts x="5.5" y="-10.5" h="19"/>
+            <hearts x="6" y="-10" h="18"/>
             <hearts x="6.5" y="-8.5" w="13" r="1"/>
-            <hearts x="13" y="-8" r="2"/>
-            <hearts x="13.5" y="-7.5" r="2"/>
-            <fountain x="9.5" y="-6"/>
-            <flowers x="12" y="-6" r="2"/>
-            <path_end x="13" y="-6" r="1"/>
-            <flowers x="14" y="-6" h="3"/>
-            <waterfall_mist x="25" y="-5.5" w="4"/>
-            <flowers x="12" y="-5" r="3"/>
-            <path x="13" y="-5" r="1"/>
-            <flowers x="11" y="-4" r="2"/>
-            <path_corner x="12" y="-4" r="3"/>
-            <path_corner x="13" y="-4" r="1"/>
-            <flowers x="9" y="-3" r="2"/>
-            <flowers x="10" y="-3" r="3"/>
-            <path_corner x="11" y="-3" r="3"/>
-            <path_corner x="12" y="-3" r="1"/>
-            <flowers x="13" y="-3" w="2" h="2" r="3"/>
-            <hearts x="7" y="-2" r="1"/>
-            <path_end x="9" y="-2"/>
-            <path x="10" y="-2"/>
-            <path_corner x="11" y="-2" r="1"/>
-            <flowers x="12" y="-2"/>
             <hearts x="6.5" y="-1.5" w="2" r="1"/>
-            <hearts x="5.5" y="7.5"/>
+            <hearts x="7" y="-9" w="12" r="1"/>
+            <hearts x="7" y="-2" r="1"/>
+            <flowers x="9" y="-3" r="2"/>
+            <path_end x="9" y="-2"/>
+            <fountain x="9.5" y="-6"/>
+            <flowers x="10" y="-3" r="3"/>
+            <path x="10" y="-2"/>
+            <flowers x="11" y="-4" r="2"/>
+            <path_corner x="11" y="-3" r="3"/>
+            <path_corner x="11" y="-2" r="1"/>
+            <flowers x="12" y="-6" r="2"/>
+            <flowers x="12" y="-5" r="3"/>
+            <path_corner x="12" y="-4" r="3"/>
+            <path_corner x="12" y="-3" r="1"/>
+            <flowers x="12" y="-2"/>
+            <hearts x="13" y="-8" r="2"/>
+            <path_end x="13" y="-6" r="1"/>
+            <path x="13" y="-5" r="1"/>
+            <path_corner x="13" y="-4" r="1"/>
+            <flowers x="13" y="-3" w="2" h="2" r="3"/>
+            <hearts x="13.5" y="-7.5" r="2"/>
+            <flowers x="14" y="-6" h="3"/>
+            <hearts x="18.5" y="-9.5" r="1"/>
+            <hearts x="19" y="-10" r="1"/>
+            <hearts x="19" y="-9"/>
+            <hearts x="19.5" y="-10.5" r="1"/>
+            <hearts x="19.5" y="-9.5"/>
+            <hearts x="20" y="-10"/>
+            <waterfall_mist x="25" y="-5.5" w="4"/>
         </layer>
-        <layer id="2">
+        <layer id="2" name="Edges">
             <side_clouds x="-2" y="-15" w="2" r="3"/>
             <side_clouds_edge x="0" y="-15"/>
             <side_clouds x="0" y="-14" h="21"/>
-            <waterfall_mist x="25" y="-13.5" w="4"/>
-            <side_clouds x="24.5" y="-13" h="3"/>
-            <side_clouds x="24.5" y="-11.5"/>
-            <side_cloud_corner x="21" y="-10" r="1"/>
-            <side_clouds x="22" y="-10" w="2" r="1"/>
-            <side_clouds x="23.5" y="-10" r="1"/>
-            <side_clouds_edge x="24.5" y="-10" r="1"/>
-            <side_cloud_corner x="8" y="-7" r="1"/>
-            <side_clouds x="9" y="-7" w="4" r="1"/>
-            <stairs_d x="13" y="-7"/>
-            <side_clouds x="14" y="-7" r="1"/>
-            <side_cloud_corner x="15" y="-7" r="2"/>
-            <side_clouds x="8" y="-6" h="4"/>
-            <side_clouds x="15" y="-6" h="5" r="2"/>
-            <side_cloud_corner x="16" y="-6" r="1"/>
-            <side_clouds x="17" y="-6" w="4" r="1"/>
-            <side_clouds_edge x="21" y="-6" r="1"/>
-            <side_clouds x="16" y="-5" h="5"/>
-            <stairs_r x="8" y="-2"/>
-            <side_cloud_corner x="8" y="-1"/>
-            <side_clouds x="9" y="-1" w="6" r="3"/>
-            <side_cloud_corner x="15" y="-1" r="3"/>
-            <side_cloud_corner x="12" y="0" r="1"/>
-            <side_clouds x="13" y="0" w="3" r="1"/>
-            <side_clouds_edge x="16" y="0" r="1"/>
+            <side_cloud_corner x="0" y="7"/>
             <purpleflower x="1" y="1"/>
-            <purpleflower x="10.5" y="1"/>
-            <side_clouds x="12" y="1" h="6"/>
-            <purpleflower x="1.5" y="1.5"/>
-            <purpleflower x="10" y="1.5"/>
             <redflower x="1" y="2"/>
-            <purpleflower x="9.5" y="2"/>
-            <redflower x="10.5" y="2"/>
-            <redflower x="1.5" y="2.5"/>
-            <purpleflower x="9" y="2.5"/>
-            <redflower x="10" y="2.5"/>
             <purpleflower x="1" y="3"/>
-            <redflower x="9.5" y="3"/>
-            <purpleflower x="10.5" y="3"/>
-            <purpleflower x="1.5" y="3.5"/>
-            <redflower x="9" y="3.5"/>
-            <purpleflower x="10" y="3.5"/>
             <orangeflower x="1" y="4"/>
-            <purpleflower x="9.5" y="4"/>
-            <orangeflower x="10.5" y="4"/>
-            <orangeflower x="1.5" y="4.5"/>
-            <purpleflower x="4.5" y="4.5"/>
-            <purpleflower x="9" y="4.5"/>
             <blueflower x="1" y="5"/>
+            <orangeflower x="1" y="6"/>
+            <side_clouds x="1" y="7" w="2" r="3"/>
+            <purpleflower x="1.5" y="1.5"/>
+            <redflower x="1.5" y="2.5"/>
+            <purpleflower x="1.5" y="3.5"/>
+            <orangeflower x="1.5" y="4.5"/>
+            <blueflower x="1.5" y="5.5"/>
+            <orangeflower x="1.5" y="6.5"/>
             <orangeflower x="2" y="5"/>
+            <blueflower x="2" y="6"/>
+            <orangeflower x="2.5" y="5.5"/>
+            <blueflower x="2.5" y="6.5"/>
+            <side_clouds_edge x="3" y="7"/>
             <blueflower x="3.5" y="5"/>
             <redflower x="4" y="5"/>
-            <blueflower x="1.5" y="5.5"/>
-            <orangeflower x="2.5" y="5.5"/>
-            <orangeflower x="9" y="5.5"/>
-            <blueflower x="10" y="5.5"/>
-            <orangeflower x="1" y="6"/>
-            <blueflower x="2" y="6"/>
-            <blueflower x="9.5" y="6"/>
-            <orangeflower x="10.5" y="6"/>
-            <orangeflower x="1.5" y="6.5"/>
-            <blueflower x="2.5" y="6.5"/>
-            <blueflower x="9" y="6.5"/>
-            <orangeflower x="10" y="6.5"/>
-            <side_cloud_corner x="0" y="7"/>
-            <side_clouds x="1" y="7" w="2" r="3"/>
-            <side_clouds_edge x="3" y="7"/>
+            <purpleflower x="4.5" y="4.5"/>
+            <side_cloud_corner x="8" y="-7" r="1"/>
+            <side_clouds x="8" y="-6" h="4"/>
+            <stairs_r x="8" y="-2"/>
+            <side_cloud_corner x="8" y="-1"/>
             <side_clouds_edge x="8" y="7" r="3"/>
+            <side_clouds x="9" y="-7" w="4" r="1"/>
+            <side_clouds x="9" y="-1" w="6" r="3"/>
+            <purpleflower x="9" y="2.5"/>
+            <redflower x="9" y="3.5"/>
+            <purpleflower x="9" y="4.5"/>
+            <orangeflower x="9" y="5.5"/>
+            <blueflower x="9" y="6.5"/>
             <side_clouds x="9" y="7" w="2" r="3"/>
+            <purpleflower x="9.5" y="2"/>
+            <redflower x="9.5" y="3"/>
+            <purpleflower x="9.5" y="4"/>
+            <blueflower x="9.5" y="6"/>
+            <purpleflower x="10" y="1.5"/>
+            <redflower x="10" y="2.5"/>
+            <purpleflower x="10" y="3.5"/>
+            <blueflower x="10" y="5.5"/>
+            <orangeflower x="10" y="6.5"/>
+            <purpleflower x="10.5" y="1"/>
+            <redflower x="10.5" y="2"/>
+            <purpleflower x="10.5" y="3"/>
+            <orangeflower x="10.5" y="4"/>
+            <orangeflower x="10.5" y="6"/>
             <side_clouds_edge x="11" y="7"/>
-            <side_clouds x="12" y="7"/>
+            <side_cloud_corner x="12" y="0" r="1"/>
+            <side_clouds x="12" y="1" h="7"/>
+            <stairs_d x="13" y="-7"/>
+            <side_clouds x="13" y="0" w="3" r="1"/>
+            <side_clouds x="14" y="-7" r="1"/>
+            <side_cloud_corner x="15" y="-7" r="2"/>
+            <side_clouds x="15" y="-6" h="5" r="2"/>
+            <side_cloud_corner x="15" y="-1" r="3"/>
+            <side_cloud_corner x="16" y="-6" r="1"/>
+            <side_clouds x="16" y="-5" h="5"/>
+            <side_clouds_edge x="16" y="0" r="1"/>
+            <side_clouds x="17" y="-6" w="4" r="1"/>
+            <side_clouds x="20" y="-16" w="5" r="1"/>
+            <side_cloud_corner x="21" y="-10" r="1"/>
+            <side_clouds x="21" y="-9" h="3"/>
+            <side_clouds_edge x="21" y="-6" r="1"/>
+            <side_clouds x="22" y="-10" w="2" r="1"/>
+            <side_clouds x="23.5" y="-10" r="1"/>
+            <side_clouds x="24.5" y="-13" h="2"/>
+            <side_clouds x="24.5" y="-11.5"/>
+            <side_clouds x="24.5" y="-11"/>
+            <side_clouds_edge x="24.5" y="-10" r="1"/>
+            <waterfall_mist x="25" y="-13.5" w="4"/>
         </layer>
-        <layer id="3">
+        <layer id="3" name="Other Details">
             <cloudwall_bottom x="20" y="-13" w="5"/>
-            <side_clouds x="21" y="-9" h="2"/>
-            <side_clouds x="21" y="-7"/>
         </layer>
     </map>
     <collisionboxes>

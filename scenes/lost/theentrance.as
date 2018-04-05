@@ -19,10 +19,12 @@ void whereareyougoing()
 {
   fx::sound("bells");
   player::lock(true);
+	
   scoped_entity sivora = add_character("sivora");
   set_direction(sivora, direction::down);
   set_position(sivora, vec(5, 2));
   set_color(sivora, 0, 0, 0, 255);
+	
   move(sivora, direction::down, 0.5, speed(1));
   move(sivora, direction::right, 1, speed(1));
   

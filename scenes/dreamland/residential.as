@@ -138,7 +138,7 @@ void phloophsintroduce()
 	say("Hey!");
 	narrative::hide();
 	
-	set_direction(get_player(), direction::right);
+	set_direction(player::get(), direction::right);
 	
 	entity npc1 = add_character("mc");
 	set_position(npc1, vec(5, 3));
@@ -156,7 +156,7 @@ void phloophsintroduce()
 	narrative::set_expression("tiki-masks", "tiki1");
 	say("MWAHAHAHA");
 	narrative::end();
-	focus::move(get_position(get_player()), 2);
+	focus::move(get_position(player::get()), 2);
   focus::player(true);
   player::lock(false);
 }
@@ -168,7 +168,7 @@ void start()
   music::open("doodle169-AFV-Dreamland-Guitar");
 	//if (has_flag("frog_travel"))
 	{
-		set_position(get_player(), vec(-1, 2.8));
+		set_position(player::get(), vec(-1, 2.8));
 		unset_flag("frog_travel");
 	}
 }
@@ -195,7 +195,7 @@ void frog1()
   music::pause();
   fx::sound("FX_nom", 0.7);
   set_atlas(froggo, "eat");
-  set_visible(get_player(), false);
+  set_visible(player::get(), false);
   animation::play_wait(froggo);
   wait(0.5);
   

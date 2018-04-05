@@ -10,8 +10,8 @@
 [start]
 void start()
 {
-  set_position(get_player(), vec(3, 3.8));
-  set_direction(get_player(), direction::up);
+  set_position(player::get(), vec(3, 3.8));
+  set_direction(player::get(), direction::up);
 	
 	music::set_volume(0.7);
   music::open("doodle181-shop-guy");

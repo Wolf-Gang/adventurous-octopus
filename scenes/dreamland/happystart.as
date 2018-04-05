@@ -28,8 +28,8 @@ void create_unicorn()
 [start]
 void start()
 {
-	set_position(get_player(), vec(3.5, 4));
-  set_atlas(get_player(), "oof");
+	set_position(player::get(), vec(3.5, 4));
+  set_atlas(player::get(), "oof");
 }
 
 [start]
@@ -50,7 +50,7 @@ void things()
   music::open("doodle132-dreamland-start_2");
 	wait(1);
   fx::fade_out(blackout, 5);
-  set_direction(get_player(), direction::up);
+  set_direction(player::get(), direction::up);
   wait(0.5);
   quick_emote(unicorn, emote_type::surprise, 1);
   

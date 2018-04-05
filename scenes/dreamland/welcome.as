@@ -33,7 +33,7 @@ void frog1()
   music::pause();
   fx::sound("FX_nom", 0.7);
   set_atlas(froggo, "eat");
-  set_visible(get_player(), false);
+  set_visible(player::get(), false);
   animation::play_wait(froggo);
   wait(0.5);
   
@@ -185,7 +185,7 @@ void unicorn_talk2()
 	narrative::set_expression("unicorn icon", "default:default");
 	
 	say("Say hello to frog. He can take you anywhere.");
-	say("By \"anywhere\", I mean <c r='255' g='0' b='0'><b>anywhere</b></c>.");
+	say("By \"anywhere\", I mean <c r='1' g='0' b='0'><b>anywhere</b></c>.");
 	say("But you only need to get across this waterfall.");
 	
 	narrative::end();
@@ -202,9 +202,9 @@ void start()
   music::open("doodle169-AFV-Dreamland-Guitar");
 	if (has_flag("frog_travel"))
 	{
-		set_position(get_player(), vec(24, -11));
+		set_position(player::get(), vec(24, -11));
 		unset_flag("frog_travel");
 	}
-	else
-		set_position(get_player(), vec(6, 7.5));
+	else if(!has_came_through_door())
+		set_position(player::get(), vec(6, 7.5));
 }
