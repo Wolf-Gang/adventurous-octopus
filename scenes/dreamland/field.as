@@ -10,7 +10,7 @@ entity jimmy;
 [start]
 void start()
 {
-	set_position(get_player(), vec(22.5, 25));
+	set_position(player::get(), vec(22.5, 25));
 }
 
 [start]
@@ -54,6 +54,8 @@ void talktoJimmy()
 	say("Let's play hide and go seek.\nCome find me!");
 	narrative::end();
 	move(jimmy, vec(30, 13), 2);
+	set_visible(jimmy, false);
+	
 	player::lock(false);
 }
 

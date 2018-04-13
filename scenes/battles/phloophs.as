@@ -23,7 +23,7 @@ void goto_area()
   priv::last_boundary_size = get_boundary_size();
 	get_boundary_position(game_position); // TODO: Fix these names in the engine
 	get_boundary_size(vec(10, 8));
-	set_position(get_player(), (game_position + vec(10, 8)/2));
+	set_position(player::get(), (game_position + vec(10, 8)/2));
 }
 
 void quick_text(vec pPosition, string pText)

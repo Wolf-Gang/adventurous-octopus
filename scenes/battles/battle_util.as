@@ -21,7 +21,7 @@ void ded()
 
 bool check_hit(entity pHitter, float pRadius) {
   
-  return (get_position(get_player()).distance(get_position(pHitter)) < pRadius);
+  return (get_position(player::get()).distance(get_position(pHitter)) < pRadius);
   
 }
 

@@ -46,8 +46,9 @@ void things()
   nl("You awake?");
   narrative::hide();
   
-  music::set_volume(1);
-  music::open("doodle132-dreamland-start_2");
+  music::set_volume(0);
+  music::open("doodle219-Unicorns-Tour");
+	music::fade_volume(1, 8, thread());
 	wait(1);
   fx::fade_out(blackout, 5);
   set_direction(player::get(), direction::up);
@@ -58,7 +59,7 @@ void things()
   
 	narrative::set_speaker(unicorn);
 	narrative::set_expression("unicorn icon", "default:default");
-  
+  music::fade_volume(0.6, 1, thread());
   say("AH Hello there!");
 	say("I'm the majestic unicorn of <b>DEATH</b>.");
 	nl("A fighter against world hunger.");
@@ -66,7 +67,7 @@ void things()
   say("You must <b>REALLY</b> like flowers.");
   say("Don't worry...");
   say("Your secret is safe with me.");
-  
+	
   narrative::clear_speakers();
 	narrative::set_expression("mc_expression", "default:default");
   say("...");
@@ -98,6 +99,7 @@ void things()
 		say("We can sort things out then.");
 	}
 	
+  music::fade_volume(1, 1, thread());
   narrative::end();
   
   unicorn.disappear();

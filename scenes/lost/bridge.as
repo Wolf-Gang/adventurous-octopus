@@ -1,10 +1,9 @@
 [start]
 void start()
 {
-	set_position(player::get(), vec(1, 20));
+	if (!has_came_through_door())
+		set_position(player::get(), vec(1, 20));
 }
-
-
 
 [start]
 void create_boxes()

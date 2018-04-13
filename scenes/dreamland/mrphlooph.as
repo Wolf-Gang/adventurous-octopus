@@ -33,8 +33,8 @@ void create_phlooph()
     if (!has_flag("unlockedgate"))
     {
 			player::lock(true);
-      set_position(get_player(), vec(5, 6));
-      set_direction(get_player(), direction::up);
+      set_position(player::get(), vec(5, 6));
+      set_direction(player::get(), direction::up);
       narrative::show();
       narrative::set_expression("mrphlooph icon", "default:default");
       say("My little friend. Thank you.");
@@ -85,10 +85,10 @@ void create_unicorn()
 [start]
 void start()
 {
-	music::open("doodle104_2");
+	music::open("doodle219-Unicorns-Tour");
   
   if (!has_flag("caughtthephloophs") || has_flag("unlockedgate"))
-    set_position(get_player(), vec(5, 9));
+    set_position(player::get(), vec(5, 9));
 }
 
 [start]
@@ -179,13 +179,13 @@ void mrphlooph()
 	
 	// Drop a phlooph
 	entity phloo = add_entity("little phlooph", "default:default");
-	set_position(phloo, get_position(get_player()));
+	set_position(phloo, get_position(player::get()));
 	shadows::add(phloo);
 	set_z(phloo, 8);
 	move_z(phloo, 0, 6);
 	
 	fx::sound("heh");
-	set_atlas(get_player(), "oof"); // MC kinda fails
+	set_atlas(player::get(), "oof"); // MC kinda fails
 	
 	wait(0.5);
 	move_hop(phloo, get_position(phloo) - vec(1, 0), 0.5, 1);
@@ -214,7 +214,7 @@ void mrphlooph()
 	animation::start(phlooph);
 	
 	music::fade_volume(70, 1);
-	focus::move(get_position(get_player()), 0.5);
+	focus::move(get_position(player::get()), 0.5);
 	focus::player();
 	player::lock(false);
 	group::enable("mrphlooph", false);

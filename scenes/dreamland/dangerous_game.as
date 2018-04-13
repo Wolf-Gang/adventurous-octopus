@@ -10,7 +10,7 @@ void start()
 {
 	music::open("doodle58");
 	music::set_volume(100);
-	set_position(get_player(), vec(17.5, 6.5));
+	set_position(player::get(), vec(17.5, 6.5));
 }
 
 
@@ -89,7 +89,7 @@ void phloophs_talk()
 	}else{
 		say("I hope we will be the bestest of friends.");
 		narrative::end();
-		move(get_player(), direction::down, 0.5, 0.5);
+		move(player::get(), direction::down, 0.5, 0.5);
 		player::lock(false);
 	}
 }

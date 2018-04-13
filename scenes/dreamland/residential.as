@@ -133,7 +133,7 @@ void phloophsintroduce()
   //for (int i = 0; i < 1000; i++)
   //  create_running_person(vec(random(30, 60)/10.0,random(18, 40)/10.0));
   
-  set_position(get_player(), vec(-1, 2.8));
+  set_position(player::get(), vec(-1, 2.8));
 	
 	say("Hey!");
 	narrative::hide();

@@ -15,7 +15,7 @@ void giverofflowers()
 [start]
 void start()
 {
-  set_position(get_player(), vec(4.5, 17.8));
+  set_position(player::get(), vec(4.5, 17.8));
   
   if(has_flag("spreader_of_joy"))
     group::enable("worfel_notice", false);
@@ -90,8 +90,8 @@ void flowery_thing()
   focus::move(worfel_spot, 2);
   wait(.5);
   
-  move(get_player(), vec(4.5, 6), speed(2));
-  set_direction(get_player(), direction::up);
+  move(player::get(), vec(4.5, 6), speed(2));
+  set_direction(player::get(), direction::up);
   
   narrative::set_expression("worfel_expressions", "default:default");
   
@@ -130,7 +130,7 @@ void flowery_thing()
   say("Take this, and give joy.");
   nl("Then, maybe, the flowers will come back.");
   
-  focus::move(get_position(get_player()), .5);
+  focus::move(get_position(player::get()), .5);
   focus::player();
   
   set_flag("spreader_of_joy");
